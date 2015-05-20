@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Encapsulate field &apos;edu.vadimnesterenko.airline.entity.Airline.airplanes&apos; in &apos;edu.vadimnesterenko.airline.entity.Airline&apos;&#x0D;&#x0A;- Original project: &apos;airline(lab1)&apos;&#x0D;&#x0A;- Original element: &apos;edu.vadimnesterenko.airline.entity.Airline.airplanes&apos;&#x0D;&#x0A;- Getter method name: &apos;getAirplanes&apos;&#x0D;&#x0A;- Setter method name: &apos;setAirplanes&apos;&#x0D;&#x0A;- Field visibility: &apos;public&apos;&#x0D;&#x0A;- Use getter and setter methods in declaring type" comments="false" declaring="true" description="Encapsulate field &apos;airplanes&apos;" flags="589830" getter="getAirplanes" id="org.eclipse.jdt.ui.self.encapsulate" input="/src&lt;edu.vadimnesterenko.airline.entity{Airline.java[Airline^airplanes" insertion="-1" setter="setAirplanes" stamp="1432147810347" version="1.0" visibility="1"/>
+</session>
