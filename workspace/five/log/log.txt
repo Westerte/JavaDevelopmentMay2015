@@ -1,0 +1,5 @@
+20.05.2015 10:59:55 [main] DEBUG com.epam.five.run.FirstLogRunner  - message!!!
+20.05.2015 11:01:25 [main] DEBUG com.epam.five.run.FirstLogRunner  - message!!!
+20.05.2015 11:01:32 [main] DEBUG com.epam.five.run.FirstLogRunner  - message!!!
+20.05.2015 11:02:10 [main] DEBUG com.epam.five.run.FirstLogRunner  - message!!!
+20.05.2015 11:03:03 [main] INFO  com.epam.five.run.FirstLogRunner  - info

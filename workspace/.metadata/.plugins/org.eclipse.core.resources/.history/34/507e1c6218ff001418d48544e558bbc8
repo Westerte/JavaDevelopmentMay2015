@@ -1,0 +1,30 @@
+package edu.vadimnesterenko.airline.entity;
+
+import org.apache.log4j.Logger;
+import edu.vadimnesterenko.airline.logger.LoggerConfigurator;
+
+public abstract class Airplane {
+	private static final Logger LOG = Logger.getLogger(LoggerConfigurator.class);
+	private int capacity;
+	private int bearingCapacity;
+	
+	public int getCapacity() {
+		return capacity;
+	}
+	
+	public void setCapacity(int capacity) {
+		if(capacity > 0) {
+			this.capacity = capacity; 
+		} else
+		
+	}
+	
+	public int getBearingCapacity() {
+		return bearingCapacity;
+	}
+	
+	public void setBearingCapacity(int bearingCapacity) {
+		this.bearingCapacity = bearingCapacity;
+	}
+	
+}

@@ -1,0 +1,5 @@
+20.05.2015 11:22:11 [main] INFO  com.epam.five.run.FirstLogRunner  - info
+20.05.2015 11:22:43 [main] INFO  com.epam.five.run.FirstLogRunner  - info
+20.05.2015 11:23:47 [main] INFO  com.epam.five.run.FirstLogRunner  - info
+20.05.2015 11:27:48 [main] INFO  com.epam.five.run.FirstLogRunner  - info
+20.05.2015 11:27:54 [main] INFO  com.epam.five.run.FirstLogRunner  - info

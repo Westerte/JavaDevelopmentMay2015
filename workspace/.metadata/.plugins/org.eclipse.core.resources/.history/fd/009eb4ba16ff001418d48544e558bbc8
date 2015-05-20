@@ -1,0 +1,5 @@
+package edu.vadimnesterenko.airline.logger;
+
+public class Logger {
+
+}

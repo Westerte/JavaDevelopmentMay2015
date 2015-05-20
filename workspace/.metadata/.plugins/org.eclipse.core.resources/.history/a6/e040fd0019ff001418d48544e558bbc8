@@ -1,0 +1,5 @@
+package edu.vadimnesterenko.airline.entity;
+
+public class BadParamException extends Exception {
+
+}

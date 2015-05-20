@@ -1,0 +1,17 @@
+package com.epam.five.run;
+
+import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
+import org.apache.log4j.LogManager;
+
+public class FirstLogRunner {
+	final static Logger LOG = Logger.getLogger(FirstLogRunner.class);
+	
+	static {
+		new DOMConfigurator().doConfigure("config/log4j.xml", LogManager.getLoggerRepository());
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+}

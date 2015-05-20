@@ -1,0 +1,5 @@
+package com.epam.five.exception;
+
+public class LogicException extends Exception {
+
+}

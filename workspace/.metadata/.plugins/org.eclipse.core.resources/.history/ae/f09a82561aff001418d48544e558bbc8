@@ -1,0 +1,11 @@
+package edu.vadimnesterenko.airline.entity;
+
+public class Airbus extends Airplane {
+	private int sitsCount;
+	private int 
+	
+	public Airbus(int capacity, int bearingCapacity, int fuelConsumption) {
+		super(capacity, bearingCapacity, fuelConsumption);
+	}
+
+}

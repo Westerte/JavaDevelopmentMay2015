@@ -1,0 +1,34 @@
+package edu.vadimnesterenko.airline.entity;
+
+import org.apache.log4j.Logger;
+import edu.vadimnesterenko.airline.logger.LoggerConfigurator;
+
+public abstract class Airplane {
+	private int capacity;
+	private int bearingCapacity;
+	
+	public int getCapacity() {
+		return capacity;
+	}
+	
+	public void setCapacity(int capacity) throws BadParamException{
+		if (capacity > 0) {
+			this.capacity = capacity; 
+		} else {
+			throw new BadParamException("capacity must be greater then 0");
+		}		
+	}
+	
+	public int getBearingCapacity() {
+		return bearingCapacity;
+	}
+	
+	public void setBearingCapacity(int bearingCapacity) {
+		if (bearingCapacity > 0) {
+			this.bearingCapacity = bearingCapacity;
+		} else {
+			throw new BadParamException("bearingCapacity must be greater then 0");
+		}	
+	}
+	
+}

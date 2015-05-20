@@ -1,0 +1,10 @@
+1432142165132	Delete element
+1432142203619	Copy file
+1432143462013	Rename type 'Logger'
+1432144038412	Encapsulate field 'capacity'
+1432144042236	Encapsulate field 'bearingCapacity'
+1432144601969	Encapsulate field 'fuelConsumption'
+1432145097536	Encapsulate field 'seatsCount'
+1432145101401	Encapsulate field 'classCount'
+1432145105469	Encapsulate field 'luggageCapacity'
+1432146923908	Encapsulate field 'cargoHoldCount'
