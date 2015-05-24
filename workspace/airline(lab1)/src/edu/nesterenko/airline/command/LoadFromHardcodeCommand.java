@@ -13,6 +13,9 @@ import edu.nesterenko.airline.logic.Loader;
 public class LoadFromHardcodeCommand implements Command {
 	private final static Logger LOG = Logger.getLogger(LoadFromHardcodeCommand.class);
 	private static LoadFromHardcodeCommand instance;
+	
+	private LoadFromHardcodeCommand() {}
+	
 	static {
 		instance = new LoadFromHardcodeCommand();
 	}

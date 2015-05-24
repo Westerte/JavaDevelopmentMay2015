@@ -1,0 +1,43 @@
+package edu.nesterenko.airline.dao;
+
+import org.xml.sax.helpers.DefaultHandler;
+
+import edu.nesterenko.airline.exception.LogicalException;
+import edu.nesterenko.airline.exception.PhisicalException;
+
+public class SaxParserDao extends DefaultHandler implements DataAccessable {
+
+	@Override
+	public void loadDataFromSource(Object... args) throws PhisicalException,
+			LogicalException {
+		
+	}
+	
+	@Override 
+    public void startElement(String namespaceURI, String localName, String qName, Attributes atts) { 
+       
+  
+    }
+    
+    @Override
+    public void endElement(String uri, String localName,String qName){
+        
+    }
+    
+    @Override 
+    public void characters(char[] ch, int start, int length) throws SAXException { 
+        
+    }
+
+	@Override
+	public void saveDataToSource(Object... args) {
+		throw new UnsupportedOperationException();
+	}
+	
+	enum TagsEnum{
+	    MODEL, MAX_RANGE, CAPACITY, BEARING_CAPACITY, FUEL_CONSUMPTION, SEATS_COUNT
+		<class_count>2</class_count>
+		<luggage_capacity>1</luggage_capacity;
+	}
+
+}

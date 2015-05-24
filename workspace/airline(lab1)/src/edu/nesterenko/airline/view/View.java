@@ -99,4 +99,12 @@ public class View {
 		Response response = controller.sendReques(command , null);
 		Reporter.report(command, response, filePath);	
 	}
+	
+	public void loadWithSaxParser(String filePath) {
+		CommandEnum command = CommandEnum.LOAD_WITH_SAX;
+		Request request = new Request();
+		request.setParameter(RequestEnum.FILE_PATH, filePath);
+		Response response = controller.sendReques(command , request);
+		Reporter.report(command, response, this.filePath);	
+	}
 }

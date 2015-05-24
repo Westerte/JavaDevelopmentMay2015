@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<library
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:noNamespaceSchemaLocation='LibraryXsd.xsd'>
+    <book ID="id-1" bookName=" An American tragedy">
+        <writer>Theodore Dreiser</writer>
+        <paperback>hard cover</paperback>
+        <year>1993-01-01</year>
+        <page>800</page>
+    </book>
+    
+    <book ID="id-2" bookName="One Flew Over the Cuckoo's Nest">
+        <writer>Ken Kesey</writer>
+        <paperback>soft cover</paperback>
+        <year>2012</year>
+        <page>432</page>
+    </book>
+    
+    <book ID="id-3" bookName=" The fighting club">
+        <writer>Chuck Palahniuk</writer>
+        <paperback>soft cover</paperback>
+        <year>2013</year>
+        <page>352</page>
+    </book>
+
+</library>

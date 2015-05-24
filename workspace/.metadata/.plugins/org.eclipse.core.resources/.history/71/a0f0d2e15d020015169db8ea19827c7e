@@ -1,0 +1,16 @@
+package edu.nesterenko.airline.command;
+
+import edu.nesterenko.airline.bean.Request;
+import edu.nesterenko.airline.bean.Response;
+
+public class LoadWithSaxParser implements Command {
+	private static LoadWithSaxParser instance;
+	private LoadWithSaxParser() {}
+	
+	@Override
+	public Response processRequest(Request request) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

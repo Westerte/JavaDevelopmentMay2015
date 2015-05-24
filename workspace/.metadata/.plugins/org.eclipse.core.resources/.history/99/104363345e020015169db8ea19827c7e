@@ -1,0 +1,19 @@
+package edu.nesterenko.airline.dao;
+
+import edu.nesterenko.airline.exception.LogicalException;
+import edu.nesterenko.airline.exception.PhisicalException;
+
+public class StaxParserDao implements DataAccessable {
+
+	@Override
+	public void loadDataFromSource(Object... args) throws PhisicalException,
+			LogicalException {
+		
+	}
+
+	@Override
+	public void saveDataToSource(Object... args) {
+		throw new UnsupportedOperationException();
+	}
+
+}

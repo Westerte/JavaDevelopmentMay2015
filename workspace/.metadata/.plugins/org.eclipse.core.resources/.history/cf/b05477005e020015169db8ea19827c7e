@@ -1,0 +1,23 @@
+package edu.nesterenko.airline.command;
+
+import org.apache.log4j.Logger;
+
+import edu.nesterenko.airline.bean.Request;
+import edu.nesterenko.airline.bean.Response;
+
+public class LoadWithSaxParser implements Command {
+	private final static Logger LOG = Logger.getLogger(LoadFromHardcodeCommand.class);
+	private static LoadWithSaxParser instance;
+	
+	private LoadWithSaxParser() {}
+	
+	static {
+		instance = new LoadWithSaxParser();
+	}
+	@Override
+	public Response processRequest(Request request) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

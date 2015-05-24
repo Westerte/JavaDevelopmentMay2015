@@ -23,6 +23,8 @@ public class CommandFactory {
 			return SortAirplainsByMaxRangeCommand.getInstance();
 		case LOAD_FROM_HARDCODE:
 			return LoadFromHardcodeCommand.getInstance();
+		case LOAD_WITH_SAX:
+			return LoadWithSaxParserCommand.getInstance();
 		default:
 			throw new LogicalException("Enum doesn't contain this value.");
 		}		

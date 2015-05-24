@@ -12,7 +12,7 @@ public class Runner {
 
 	public static void main(String[] args) throws PhisicalException, LogicalException {
 		View view = new View(new Controller(), "exitFile.txt");
-		view.loadFromHardcode();
+		view.loadWithSaxParser("xml\\AirlineXML.xml");
 		view.calculateGeneralBearingCapacity();
 		view.calculateGeneralCapacity();
 		view.findAll();

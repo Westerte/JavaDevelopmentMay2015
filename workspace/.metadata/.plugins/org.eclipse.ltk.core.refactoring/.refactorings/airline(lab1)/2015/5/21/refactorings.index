@@ -31,3 +31,5 @@
 1432486601069	Encapsulate field 'model'
 1432487256368	Rename local variable 'object'
 1432487725033	Delete element
+1432503933377	Rename type 'StaxParserDao'
+1432504175438	Rename type 'LoadWithSaxParser'

@@ -60,6 +60,9 @@ public class Reporter {
 			case LOAD_FROM_HARDCODE:
 				exitString = response.getParameter(ResponseEnum.IS_OK).toString() + "\n";
 				break;
+			case LOAD_WITH_SAX:
+				exitString = response.getParameter(ResponseEnum.IS_OK).toString() + "\n";
+				break;
 			default:
 				throw new LogicalException("Enum doesn't contain this value.");
 			}		

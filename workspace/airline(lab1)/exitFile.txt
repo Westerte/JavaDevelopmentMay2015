@@ -1,27 +1,27 @@
-LOAD_FROM_HARDCODE
+LOAD_WITH_SAX
 true
 CALCULATE_GENERAL_BEARING_CAPACITY
-16
+14
 CALCULATE_GENERAL_CAPACITY
-16
+14
 FIND_ALL
-model: AIRBUS_A320 maxRange: 7 capacity: 6 bearingCapacity: 5 fuelConsumption: 4 cargoHoldCount: 4
 model: BOEING_747 maxRange: 1 capacity: 2 bearingCapacity: 3 fuelConsumption: 4 seatsCount: 5 classCount: 6 luggageCapacity: 7
 model: BOEING_777 maxRange: 7 capacity: 6 bearingCapacity: 5 fuelConsumption: 4 seatsCount: 3 classCount: 2 luggageCapacity: 1
-model: AIRBUS_A380 maxRange: 1 capacity: 2 bearingCapacity: 3 fuelConsumption: 4 cargoHoldCount: 4
+model: AIRBUS_A320 maxRange: 1 capacity: 2 bearingCapacity: 3 fuelConsumption: 4 cargoHoldCount: 4
+model: AIRBUS_A380 maxRange: 5 capacity: 4 bearingCapacity: 3 fuelConsumption: 2 cargoHoldCount: 2
 DELETE
 true
 CALCULATE_GENERAL_BEARING_CAPACITY
 11
 CALCULATE_GENERAL_CAPACITY
-10
+12
 FIND_BY_FUEL_CONSUMPTION
-model: AIRBUS_A320 maxRange: 7 capacity: 6 bearingCapacity: 5 fuelConsumption: 4 cargoHoldCount: 4
 model: BOEING_747 maxRange: 1 capacity: 2 bearingCapacity: 3 fuelConsumption: 4 seatsCount: 5 classCount: 6 luggageCapacity: 7
-model: AIRBUS_A380 maxRange: 1 capacity: 2 bearingCapacity: 3 fuelConsumption: 4 cargoHoldCount: 4
+model: BOEING_777 maxRange: 7 capacity: 6 bearingCapacity: 5 fuelConsumption: 4 seatsCount: 3 classCount: 2 luggageCapacity: 1
+model: AIRBUS_A380 maxRange: 5 capacity: 4 bearingCapacity: 3 fuelConsumption: 2 cargoHoldCount: 2
 SORT_AIRPLAINS_BY_MAX_RANGE
 true
 FIND_ALL
 model: BOEING_747 maxRange: 1 capacity: 2 bearingCapacity: 3 fuelConsumption: 4 seatsCount: 5 classCount: 6 luggageCapacity: 7
-model: AIRBUS_A380 maxRange: 1 capacity: 2 bearingCapacity: 3 fuelConsumption: 4 cargoHoldCount: 4
-model: AIRBUS_A320 maxRange: 7 capacity: 6 bearingCapacity: 5 fuelConsumption: 4 cargoHoldCount: 4
+model: AIRBUS_A380 maxRange: 5 capacity: 4 bearingCapacity: 3 fuelConsumption: 2 cargoHoldCount: 2
+model: BOEING_777 maxRange: 7 capacity: 6 bearingCapacity: 5 fuelConsumption: 4 seatsCount: 3 classCount: 2 luggageCapacity: 1

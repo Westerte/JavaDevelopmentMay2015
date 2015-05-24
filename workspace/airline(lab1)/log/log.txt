@@ -1,7 +1,27 @@
-2015-05-24 17:30:45,980 [main] ERROR edu.nesterenko.airline.controller.Controller  - edu.nesterenko.airline.exception.PhisicalException: Bad args.
-2015-05-24 17:30:53,202 [main] ERROR edu.nesterenko.airline.controller.Controller  - edu.nesterenko.airline.exception.PhisicalException: Bad args.
-2015-05-24 18:17:49,287 [main] ERROR edu.nesterenko.airline.command.AddFreighterCommand  - edu.nesterenko.airline.exception.PhisicalException: Bad args.
-2015-05-24 20:18:13,973 [main] ERROR edu.nesterenko.airline.view.Reporter  - edu.nesterenko.airline.exception.LogicalException: Enum doesn't contain this value.
-2015-05-24 20:18:38,788 [main] ERROR edu.nesterenko.airline.view.Reporter  - edu.nesterenko.airline.exception.LogicalException: Enum doesn't contain this value.
-2015-05-24 20:19:21,068 [main] ERROR edu.nesterenko.airline.view.Reporter  - edu.nesterenko.airline.exception.LogicalException: Enum doesn't contain this value.
-2015-05-24 23:55:50,004 [main] ERROR edu.nesterenko.airline.view.Reporter  - edu.nesterenko.airline.exception.LogicalException: Enum doesn't contain this value.
+2015-05-25 01:18:07,255 [main] ERROR edu.nesterenko.airline.command.LoadWithSaxParserCommand  - edu.nesterenko.airline.exception.PhisicalException: java.io.FileNotFoundException: D:\Westerte\JavaDevelopmentMay2015\workspace\airline(lab1)\xml\Airline.xml (Не удается найти указанный файл)
+2015-05-25 01:18:07,255 [main] ERROR edu.nesterenko.airline.command.DeleteCommand  - edu.nesterenko.airline.exception.PhisicalException: java.lang.IndexOutOfBoundsException: Index: 2, Size: 0
+2015-05-25 01:27:50,856 [main] ERROR edu.nesterenko.airline.command.LoadWithSaxParserCommand  - edu.nesterenko.airline.exception.PhisicalException: org.xml.sax.SAXException
+2015-05-25 01:27:50,856 [main] ERROR edu.nesterenko.airline.command.DeleteCommand  - edu.nesterenko.airline.exception.PhisicalException: java.lang.IndexOutOfBoundsException: Index: 2, Size: 0
+2015-05-25 01:28:13,606 [main] ERROR edu.nesterenko.airline.command.LoadWithSaxParserCommand  - edu.nesterenko.airline.exception.PhisicalException: org.xml.sax.SAXException: maxRange must be greater then 0
+edu.nesterenko.airline.exception.LogicalException: maxRange must be greater then 0
+2015-05-25 01:28:13,622 [main] ERROR edu.nesterenko.airline.command.DeleteCommand  - edu.nesterenko.airline.exception.PhisicalException: java.lang.IndexOutOfBoundsException: Index: 2, Size: 0
+2015-05-25 01:29:44,193 [main] ERROR edu.nesterenko.airline.command.LoadWithSaxParserCommand  - edu.nesterenko.airline.exception.PhisicalException: org.xml.sax.SAXException: maxRange must be greater then 0
+edu.nesterenko.airline.exception.LogicalException: maxRange must be greater then 0
+2015-05-25 01:29:44,208 [main] ERROR edu.nesterenko.airline.command.DeleteCommand  - edu.nesterenko.airline.exception.PhisicalException: java.lang.IndexOutOfBoundsException: Index: 2, Size: 0
+2015-05-25 01:30:11,010 [main] ERROR edu.nesterenko.airline.command.LoadWithSaxParserCommand  - edu.nesterenko.airline.exception.PhisicalException: org.xml.sax.SAXException: maxRange must be greater then 0
+edu.nesterenko.airline.exception.LogicalException: maxRange must be greater then 0
+2015-05-25 01:30:11,026 [main] ERROR edu.nesterenko.airline.command.DeleteCommand  - edu.nesterenko.airline.exception.PhisicalException: java.lang.IndexOutOfBoundsException: Index: 2, Size: 0
+2015-05-25 01:30:44,008 [main] ERROR edu.nesterenko.airline.command.LoadWithSaxParserCommand  - edu.nesterenko.airline.exception.PhisicalException: org.xml.sax.SAXException: maxRange must be greater then 0
+edu.nesterenko.airline.exception.LogicalException: maxRange must be greater then 0
+2015-05-25 01:30:44,008 [main] ERROR edu.nesterenko.airline.command.DeleteCommand  - edu.nesterenko.airline.exception.PhisicalException: java.lang.IndexOutOfBoundsException: Index: 2, Size: 0
+2015-05-25 01:31:17,890 [main] ERROR edu.nesterenko.airline.command.LoadWithSaxParserCommand  - edu.nesterenko.airline.exception.PhisicalException: org.xml.sax.SAXException: maxRange must be greater then 0
+edu.nesterenko.airline.exception.LogicalException: maxRange must be greater then 0
+2015-05-25 01:31:17,906 [main] ERROR edu.nesterenko.airline.command.DeleteCommand  - edu.nesterenko.airline.exception.PhisicalException: java.lang.IndexOutOfBoundsException: Index: 2, Size: 0
+2015-05-25 01:32:19,740 [main] ERROR edu.nesterenko.airline.command.LoadWithSaxParserCommand  - edu.nesterenko.airline.exception.PhisicalException: org.xml.sax.SAXException: maxRange must be greater then 0
+edu.nesterenko.airline.exception.LogicalException: maxRange must be greater then 0
+2015-05-25 01:32:19,756 [main] ERROR edu.nesterenko.airline.command.DeleteCommand  - edu.nesterenko.airline.exception.PhisicalException: java.lang.IndexOutOfBoundsException: Index: 2, Size: 0
+2015-05-25 01:32:32,340 [main] ERROR edu.nesterenko.airline.command.LoadWithSaxParserCommand  - edu.nesterenko.airline.exception.PhisicalException: org.xml.sax.SAXException: maxRange must be greater then 0
+edu.nesterenko.airline.exception.LogicalException: maxRange must be greater then 0
+2015-05-25 01:32:32,355 [main] ERROR edu.nesterenko.airline.command.DeleteCommand  - edu.nesterenko.airline.exception.PhisicalException: java.lang.IndexOutOfBoundsException: Index: 2, Size: 0
+2015-05-25 01:41:48,692 [main] ERROR edu.nesterenko.airline.command.DeleteCommand  - edu.nesterenko.airline.exception.PhisicalException: java.lang.IndexOutOfBoundsException: Index: 2, Size: 0
+2015-05-25 01:43:02,899 [main] ERROR edu.nesterenko.airline.command.DeleteCommand  - edu.nesterenko.airline.exception.PhisicalException: java.lang.IndexOutOfBoundsException: Index: 2, Size: 0
