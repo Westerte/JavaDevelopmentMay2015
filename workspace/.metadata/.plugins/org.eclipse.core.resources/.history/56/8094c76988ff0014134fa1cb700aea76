@@ -1,0 +1,5 @@
+package edu.vadimnesterenko.airline.logic;
+
+public class AirlinePlainFinder {
+
+}

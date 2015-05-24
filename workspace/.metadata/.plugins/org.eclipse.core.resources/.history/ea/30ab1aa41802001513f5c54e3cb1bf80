@@ -1,0 +1,32 @@
+package edu.vadimnesterenko.airline.view;
+
+
+import edu.nesterenko.airline.bean.Request;
+import edu.nesterenko.airline.bean.RequestEnum;
+import edu.nesterenko.airline.bean.Response;
+import edu.nesterenko.airline.command.CommandEnum;
+import edu.nesterenko.airline.controller.Controller;
+
+public class View {
+	private Controller controller;
+
+	public View(Controller controller) {
+		setController(controller);
+	}
+	
+	public Controller getController() {
+		return controller;
+	}
+
+	public void setController(Controller controller) {
+		this.controller = controller;
+	}
+	
+	public void addAirbus(int maxRange, int capacity, int bearingCapacity, int fuelConsumption,
+		      int seatsCount, int classCount, int luggageCapacity) {
+		Object[] args = {maxRange, capacity, bearingCapacity, fuelConsumption, seatsCount, classCount, luggageCapacity};
+		Request request = new Request();
+		request.setParameter(RequestEnum.ARGS, args);
+		Response response = controller.sendReques(CommandEnum.ADD_AIRBUS, request);
+	}
+}

@@ -1,0 +1,7 @@
+package edu.vadimnesterenko.airline.command;
+
+public interface Command {
+	public Response processRequest(Request) {
+		
+	}
+}

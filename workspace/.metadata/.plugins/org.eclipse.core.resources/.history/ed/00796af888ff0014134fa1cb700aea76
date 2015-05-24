@@ -1,0 +1,6 @@
+package edu.vadimnesterenko.airline.logic;
+
+
+public class MaxRangeComparator extends Comparator {
+
+}

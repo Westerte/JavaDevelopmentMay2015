@@ -1,0 +1,9 @@
+package edu.vadimnesterenko.airline.logic;
+
+public class AirlineAirplainSorter {
+	private AirlineAirplainSorter() {}
+	
+	public static void sortAirplanes() {
+		
+	}
+}

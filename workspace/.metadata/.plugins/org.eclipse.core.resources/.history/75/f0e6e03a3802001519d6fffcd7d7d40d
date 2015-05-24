@@ -1,0 +1,11 @@
+package edu.nesterenko.airline.entity;
+
+public enum Model1 {
+	BOEING extends Object {
+		enum BoeingModel {
+			
+		}
+	}, 
+	AIRBUS,
+	
+}

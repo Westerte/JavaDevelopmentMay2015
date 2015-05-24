@@ -1,0 +1,36 @@
+package edu.vadimnesterenko.airline.command;
+
+import org.apache.log4j.Logger;
+
+import edu.vadimnesterenko.airline.bean.Request;
+import edu.vadimnesterenko.airline.bean.RequestEnum;
+import edu.vadimnesterenko.airline.bean.Response;
+import edu.vadimnesterenko.airline.bean.ResponseEnum;
+import edu.vadimnesterenko.airline.exception.PhisicalException;
+import edu.vadimnesterenko.airline.logic.AirlineEditor;
+
+public class DeleteCommand implements Command{
+	private static DeleteCommand instance;
+	
+	static {
+		instance = new DeleteCommand();
+	}
+	
+	private DeleteCommand() {}
+	
+	public static DeleteCommand getInstance() {
+		return instance;
+	}
+	@Override
+	public Response processRequest(Request request) throws PhisicalException {
+		Response response = new Response();
+		try {
+			int index = (int)request.getParameter(RequestEnum.INDEX);
+			AirlineEditor.deleteAirplane(index);
+			response.setParameter(ResponseEnum.IS_OK, true);
+		} catch(ClassCastException e) {
+			throw new PhisicalException("index must be int parameter");
+		}			
+		return response;
+	}
+}

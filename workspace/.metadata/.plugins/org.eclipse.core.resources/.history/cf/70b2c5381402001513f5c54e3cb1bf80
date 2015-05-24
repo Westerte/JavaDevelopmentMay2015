@@ -1,0 +1,39 @@
+package edu.vadimnesterenko.airline.command;
+
+import java.util.List;
+
+import org.apache.log4j.Logger;
+
+import edu.vadimnesterenko.airline.bean.Request;
+import edu.vadimnesterenko.airline.bean.RequestEnum;
+import edu.vadimnesterenko.airline.bean.Response;
+import edu.vadimnesterenko.airline.bean.ResponseEnum;
+import edu.vadimnesterenko.airline.entity.Airplane;
+import edu.vadimnesterenko.airline.logic.AirlineAirplainsFinder;
+
+public class FindByFuelCondumptionCommand implements Command{
+	private final static Logger LOG = Logger.getLogger(FindByFuelCondumptionCommand.class);
+	private static FindByFuelCondumptionCommand instance;
+	
+	static {
+		instance = new FindByFuelCondumptionCommand();
+	}
+	
+	public static FindByFuelCondumptionCommand getInstance() {
+		return instance;
+	}
+	@Override
+	public Response processRequest(Request request) {
+		Response response = new Response();
+		try {
+			int minRange = (int)request.getParameter(RequestEnum.MIN_RANGE);
+			int maxRange = (int)request.getParameter(RequestEnum.MAX_RANGE);
+		} catch (PhisicalException e) {
+			
+		}
+		List<Airplane> airplanes = AirlineAirplainsFinder.findByFuelConsumption();
+		response.setParameter(ResponseEnum.AIRPLANES_LIST, airplanes);		
+		return response;
+	}
+
+}

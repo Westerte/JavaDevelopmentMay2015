@@ -1,0 +1,5 @@
+package edu.nesterenko.airline.entity;
+
+public enum Manufacturer {
+	BOEING , AIRBUS;
+}

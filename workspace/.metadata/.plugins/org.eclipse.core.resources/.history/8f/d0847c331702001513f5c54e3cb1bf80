@@ -1,0 +1,13 @@
+package edu.vadimnesterenko.airline.controller;
+
+import edu.vadimnesterenko.airline.bean.Request;
+import edu.vadimnesterenko.airline.bean.Response;
+import edu.vadimnesterenko.airline.command.CommandEnum;
+import edu.vadimnesterenko.airline.command.CommandFactory;
+
+public class Controller {
+	public Response sendReques(CommandEnum command,Request request) {
+		
+		return CommandFactory.getCommand(command).processRequest(request);
+	}
+}

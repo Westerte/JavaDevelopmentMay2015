@@ -1,1 +1,33 @@
 1432147810347	Encapsulate field 'airplanes'
+1432192057870	Encapsulate field 'maxRange'
+1432192208391	Rename type 'AirlinePlainFinder'
+1432193160123	Rename type 'AirlineAirplainSorter'
+1432193173390	Rename type 'AirlineAirplainFinder'
+1432193565302	Move compilation unit
+1432193580175	Rename type 'BadParamException'
+1432193935799	Rename compilation unit 'AirlineAirplainsCounter.java'
+1432453241337	Delete element
+1432455732104	Encapsulate field 'controller'
+1432469584198	Rename compilation unit 'AddCommand.java'
+1432470375191	Rename type 'AddFrigterCommand'
+1432470695220	Rename type 'AddFrighterCommand'
+1432472431926	Rename resource 'FindByFuelCondumptionCommand.java'
+1432472746109	Rename type 'CalculateGeneraBearingCapacityCommand'
+1432472836117	Rename method 'calculateGeneralCopacity'
+1432473986122	Rename package 'edu.vadimnesterenko.airline.bean'
+1432473993420	Rename package 'edu.vadimnesterenko.airline.command'
+1432474004140	Rename package 'edu.vadimnesterenko.airline.controller'
+1432474012484	Rename package 'edu.vadimnesterenko.airline.entity'
+1432474020391	Rename package 'edu.vadimnesterenko.airline.exception'
+1432474030173	Rename package 'edu.vadimnesterenko.airline.logger'
+1432474037518	Rename package 'edu.vadimnesterenko.airline.logic'
+1432474048269	Rename package 'edu.vadimnesterenko.airline.run'
+1432474056035	Rename package 'edu.vadimnesterenko.airline.view'
+1432474269819	Rename method 'Report'
+1432474955004	Delete element
+1432480651796	Rename method 'deleteAirPlane'
+1432486088597	Delete element
+1432486309469	Delete element
+1432486601069	Encapsulate field 'model'
+1432487256368	Rename local variable 'object'
+1432487725033	Delete element

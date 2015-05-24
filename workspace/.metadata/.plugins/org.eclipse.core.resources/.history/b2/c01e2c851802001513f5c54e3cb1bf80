@@ -1,0 +1,22 @@
+package edu.vadimnesterenko.airline.controller;
+
+import org.apache.log4j.Logger;
+
+import edu.nesterenko.airline.bean.Request;
+import edu.nesterenko.airline.bean.Response;
+import edu.nesterenko.airline.command.CommandEnum;
+import edu.nesterenko.airline.command.CommandFactory;
+import edu.vadimnesterenko.airline.exception.LogicalException;
+import edu.vadimnesterenko.airline.exception.PhisicalException;
+
+public class Controller {
+	private final static Logger LOG = Logger.getLogger(Controller.class);
+	public Response sendReques(CommandEnum command,Request request) {		
+		try {
+			return CommandFactory.getCommand(command).processRequest(request);
+		} catch (LogicalException | PhisicalException e) {
+				LOG.error(e);
+				return null;
+		}	
+	}
+}

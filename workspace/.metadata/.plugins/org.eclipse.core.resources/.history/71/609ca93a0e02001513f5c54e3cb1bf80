@@ -1,0 +1,14 @@
+package edu.vadimnesterenko.airline.command;
+
+import edu.vadimnesterenko.airline.bean.Request;
+import edu.vadimnesterenko.airline.bean.Response;
+
+public class AddCommand implements Command {
+
+	@Override
+	public Response processRequest(Request request) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

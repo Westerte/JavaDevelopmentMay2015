@@ -1,0 +1,14 @@
+package edu.vadimnesterenko.airline.command;
+
+public class CommandFactory {
+	public Command getCommand(CommandEnum command) {
+		switch (command) {
+		case ADD_AIRBUS:
+			return AddAirbusCommand.getInstance();
+		case ADD_FREIGHTER:
+			return AddFreighterCommand.getInstance();
+		default:
+			return null;
+		}		
+	}
+}

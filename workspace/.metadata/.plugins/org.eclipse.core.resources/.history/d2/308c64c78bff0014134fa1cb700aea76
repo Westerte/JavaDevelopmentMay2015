@@ -1,0 +1,22 @@
+package edu.vadimnesterenko.airline.logic;
+
+import java.util.List;
+
+import edu.vadimnesterenko.airline.entity.Airline;
+import edu.vadimnesterenko.airline.entity.Airplane;
+
+public class AirlineAirplainsFinder {
+	
+	public static Airplane findByFuelConsumption(int minRange, int maxRange) {
+		if(minRange < 0 || maxRange < 0) {
+			throw new LogicalExceptin("minRange and maxRange must be greater then 0");
+		}
+		List<Airplane> airplanes = Airline.getInstance().getAirplanes();
+		for(Airplane airplane : airplanes) {
+			if(airplane.getFuelConsumption() > minRange  && airplane.getFuelConsumption() < maxRange) {
+				return airplane;
+			}
+		}
+		return null;
+	}
+}

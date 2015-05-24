@@ -1,0 +1,17 @@
+package edu.vadimnesterenko.airline.logic;
+
+import java.util.List;
+import java.util.Collection;
+
+import edu.vadimnesterenko.airline.entity.Airline;
+import edu.vadimnesterenko.airline.entity.Airplane;
+
+
+public class AirlineAirplainSorter {
+	private AirlineAirplainSorter() {}
+	
+	public static void sortAirplanes() {
+		List<Airplane> airplanes = Airline.getInstance().getAirplanes();
+		Collection.
+	}
+}

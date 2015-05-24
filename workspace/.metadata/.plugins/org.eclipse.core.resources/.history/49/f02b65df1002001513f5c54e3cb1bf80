@@ -1,0 +1,35 @@
+package edu.vadimnesterenko.airline.command;
+
+import org.apache.log4j.Logger;
+
+import edu.vadimnesterenko.airline.bean.Request;
+import edu.vadimnesterenko.airline.bean.RequestEnum;
+import edu.vadimnesterenko.airline.bean.Response;
+import edu.vadimnesterenko.airline.exception.LogicalException;
+import edu.vadimnesterenko.airline.exception.PhisicalException;
+import edu.vadimnesterenko.airline.logic.AirlineEditor;
+import edu.vadimnesterenko.airline.logic.FreighterCreator;
+
+public class AddFreighterCommand implements Command {
+	private final static Logger LOG = Logger.getLogger(AddFreighterCommand.class);
+	private static AddFreighterCommand instance;
+	
+	static {
+		instance = new AddFreighterCommand();
+	}
+	
+	public static AddFreighterCommand getInstance() {
+		return instance;
+	}
+	@Override
+	public Response processRequest(Request request) {
+		try {
+			AirlineEditor.addAirplane(new FreighterCreator(), request.getParameter(RequestEnum.ARGS));
+		} catch (PhisicalException | LogicalException e) {
+			// TODO Auto-generated catch block
+			LOG.error(e);
+		}
+		return null;
+	}
+
+}

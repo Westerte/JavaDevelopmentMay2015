@@ -1,0 +1,9 @@
+package edu.vadimnesterenko.airline.logic;
+
+import edu.nesterenko.airline.entity.Airplane;
+import edu.vadimnesterenko.airline.exception.LogicalException;
+import edu.vadimnesterenko.airline.exception.PhisicalException;
+
+public interface Creator {
+	public Airplane createAirplane(Object[] args) throws PhisicalException, LogicalException;
+}

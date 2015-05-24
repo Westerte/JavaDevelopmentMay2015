@@ -1,0 +1,19 @@
+package edu.vadimnesterenko.airline.logic;
+
+import java.util.List;
+
+import edu.vadimnesterenko.airline.entity.Airline;
+import edu.vadimnesterenko.airline.entity.Airplane;
+
+public class AirlineAirplainsCalculator {
+	private AirlineAirplainsCalculator() {}
+	
+	public static int calculateGeneralCopacity() {
+		List<Airplane> airplanes = Airline.getInstance().getAirplanes();
+		int sum = 0;
+		for(Airplane airplane: airplanes) {
+			sum += airplane.getCapacity();
+		}
+		return sum;
+	}
+}

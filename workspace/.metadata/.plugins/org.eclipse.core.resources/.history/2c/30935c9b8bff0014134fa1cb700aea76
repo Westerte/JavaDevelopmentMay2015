@@ -1,0 +1,42 @@
+package edu.vadimnesterenko.airline.entity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import edu.vadimnesterenko.airline.exception.BadParamException;
+
+public class Airline {
+	static final Airline instance;
+	
+	static {
+		instance = new Airline();
+	}
+	
+	private Airline() {}
+	
+	public static Airline getInstance() {
+		return instance; 
+	}
+	
+	private List<Airplane> airplanes = new ArrayList<Airplane>();
+	
+	public Airplane getAirplanes(int index) throws BadParamException {
+		try {
+			return airplanes.get(index);		
+		} catch (IndexOutOfBoundsException ex) {
+			throw new BadParamException(ex);
+		}
+	}
+	
+	public void setAirplanes(Airplane airplane) {
+		this.airplanes.add(airplane);
+	}
+
+	public List<Airplane> getAirplanes() {
+		return airplanes;
+	}
+
+	public void setAirplanes(List<Airplane> airplanes) {
+		this.airplanes = airplanes;
+	}	
+}

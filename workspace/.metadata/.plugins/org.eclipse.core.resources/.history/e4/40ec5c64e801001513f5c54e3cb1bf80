@@ -1,0 +1,19 @@
+package edu.vadimnesterenko.airline.logic;
+
+import edu.vadimnesterenko.airline.entity.Airplane;
+
+public class AirbusCreator implements Creator {
+
+	@Override
+	public Airplane createAirplane(Object... args) {
+		int maxRange = (int)args[0];
+		int capacity = (int)args[1];
+		int bearingCapacity;
+		int fuelConsumption;
+		int seatsCount;
+		int classCount;
+		int luggageCapacity;
+		return null;
+	}
+
+}

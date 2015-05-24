@@ -1,0 +1,11 @@
+package edu.vadimnesterenko.airline.entity;
+
+public enum PlaneManufacturer {
+	BOEING {
+		public enum Model {
+			747,
+			777;
+		}
+	}
+	, TORPEDO , BELARUS_PLANES;
+}

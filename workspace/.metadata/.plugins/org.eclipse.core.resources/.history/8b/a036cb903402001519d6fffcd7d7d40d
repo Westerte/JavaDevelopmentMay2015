@@ -1,0 +1,13 @@
+package edu.nesterenko.airline.entity;
+
+public enum Model {
+	BOEING(BoeingModel model);
+	
+	public Model() {
+		
+	}
+	
+	enum BoeingModel {
+		747 , 777 ;
+	}
+}

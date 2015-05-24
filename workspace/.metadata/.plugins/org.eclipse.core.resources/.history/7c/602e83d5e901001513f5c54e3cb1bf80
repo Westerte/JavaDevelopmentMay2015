@@ -1,0 +1,16 @@
+package edu.vadimnesterenko.airline.logic;
+
+import edu.vadimnesterenko.airline.entity.Airplane;
+import edu.vadimnesterenko.airline.exception.LogicalException;
+import edu.vadimnesterenko.airline.exception.PhisicalException;
+
+public class FreighterCreator implements Creator {
+
+	@Override
+	public Airplane createAirplane(Object... args) throws PhisicalException,
+			LogicalException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

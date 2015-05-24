@@ -1,0 +1,41 @@
+package edu.vadimnesterenko.airline.command;
+
+import org.apache.log4j.Logger;
+
+import edu.vadimnesterenko.airline.bean.Request;
+import edu.vadimnesterenko.airline.bean.RequestEnum;
+import edu.vadimnesterenko.airline.bean.Response;
+import edu.vadimnesterenko.airline.bean.ResponseEnum;
+import edu.vadimnesterenko.airline.exception.LogicalException;
+import edu.vadimnesterenko.airline.exception.PhisicalException;
+import edu.vadimnesterenko.airline.logic.AirbusCreator;
+import edu.vadimnesterenko.airline.logic.AirlineEditor;
+
+public class AddAirbusCommand implements Command {
+	private final static Logger LOG = Logger.getLogger(AddAirbusCommand.class);
+	private static AddAirbusCommand instance;
+	
+	static {
+		instance = new AddAirbusCommand();
+	}
+	private AddAirbusCommand(){	}
+	
+	public static AddAirbusCommand getInstance() {
+		return instance;
+	}
+	@Override
+	public Response processRequest(Request request) {
+		Response response = new Response();
+		try {
+			AirlineEditor.addAirplane(new AirbusCreator(), request.getParameter(RequestEnum.ARGS));
+			response.setParameter(ResponseEnum.IS_OK, true);
+		} catch (PhisicalException | LogicalException e) {
+			response.setParameter(ResponseEnum.IS_OK, false);
+			LOG.error(e);
+		}
+		
+		
+		return response;;
+	}
+
+}

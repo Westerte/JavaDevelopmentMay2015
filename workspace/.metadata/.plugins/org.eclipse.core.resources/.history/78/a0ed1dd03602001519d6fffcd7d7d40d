@@ -1,0 +1,23 @@
+package edu.nesterenko.airline.entity;
+
+public enum Model {
+	_747(Manufacturer.BOEING, "747"), 
+	_777(Manufacturer.BOEING, "777"),
+	
+	A320(Manufacturer.AIRBUS),
+	A380(Manufacturer.AIRBUS);
+	
+	
+	private Manufacturer manufacturer;
+	private String value;
+	
+	Model(Manufacturer manufacturer, String value) {
+		this.manufacturer = manufacturer;
+		this.value = value;
+	}
+	
+	enum Manufacturer {
+		BOEING,
+		AIRBUS;
+	}
+}

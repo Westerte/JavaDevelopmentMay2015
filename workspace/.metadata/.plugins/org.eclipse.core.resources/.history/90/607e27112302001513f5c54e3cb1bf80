@@ -1,0 +1,31 @@
+package edu.nesterenko.airline.command;
+
+import edu.nesterenko.airline.bean.Request;
+import edu.nesterenko.airline.bean.RequestEnum;
+import edu.nesterenko.airline.bean.Response;
+import edu.nesterenko.airline.bean.ResponseEnum;
+import edu.nesterenko.airline.exception.LogicalException;
+import edu.nesterenko.airline.exception.PhisicalException;
+import edu.nesterenko.airline.logic.AirlineEditor;
+import edu.nesterenko.airline.logic.FreighterCreator;
+
+public class AddFreighterCommand implements Command {
+	private static AddFreighterCommand instance;
+	
+	static {
+		instance = new AddFreighterCommand();
+	}
+	private AddFreighterCommand() {}
+	
+	public static AddFreighterCommand getInstance() {
+		return instance;
+	}
+	@Override
+	public Response processRequest(Request request) throws PhisicalException, LogicalException {
+		Response response = new Response();
+		AirlineEditor.addAirplane(new FreighterCreator(), request.getParameter(RequestEnum.ARGS));
+		response.setParameter(ResponseEnum.IS_OK, true);
+		return response;
+	}
+
+}

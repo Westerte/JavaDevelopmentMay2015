@@ -1,0 +1,5 @@
+package edu.vadimnesterenko.airline.bean;
+
+public class Request {
+	private final Map<RequestEnum,Object> parameters = new HashMap<>();
+}

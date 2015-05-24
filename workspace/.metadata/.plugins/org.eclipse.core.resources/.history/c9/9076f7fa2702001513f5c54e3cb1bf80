@@ -1,0 +1,21 @@
+package edu.nesterenko.airline.run;
+
+import edu.nesterenko.airline.controller.Controller;
+import edu.nesterenko.airline.exception.LogicalException;
+import edu.nesterenko.airline.exception.PhisicalException;
+import edu.nesterenko.airline.logic.AirbusCreator;
+import edu.nesterenko.airline.logic.Creator;
+import edu.nesterenko.airline.view.View;
+
+public class Runner {
+
+	public static void main(String[] args) throws PhisicalException, LogicalException {
+		View view = new View(new Controller(), "exitFile.txt");
+		view.addAirbus(1, 2, 3, 4, 5, 6, 7);
+		view.addAirbus(7, 6, 5, 4, 3, 2, 1);
+		view.addFreighter(1, 2, 3, 4, 6);
+		view.addFreighter(6, 4, 3, 2, 1);
+		view.calculateGeneralBearingCapacity();
+		view.calculateGeneralCapacity();
+	}
+}

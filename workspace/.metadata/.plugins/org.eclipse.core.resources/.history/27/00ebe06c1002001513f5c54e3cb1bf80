@@ -1,0 +1,25 @@
+package edu.vadimnesterenko.airline.command;
+
+import org.apache.log4j.Logger;
+
+import edu.vadimnesterenko.airline.bean.Request;
+import edu.vadimnesterenko.airline.bean.Response;
+
+public class AddFrighterCommand implements Command {
+	private final static Logger LOG = Logger.getLogger(AddFrighterCommand.class);
+	private static AddFrighterCommand instance;
+	
+	static {
+		instance = new AddFrigtherCommand();
+	}
+	
+	public static AddFrighterCommand getInstance() {
+		return instance;
+	}
+	@Override
+	public Response processRequest(Request request) {
+		
+		return null;
+	}
+
+}

@@ -1,0 +1,10 @@
+package edu.vadimnesterenko.airline.controller;
+
+import edu.vadimnesterenko.airline.bean.Request;
+import edu.vadimnesterenko.airline.bean.Response;
+
+public class Controller {
+	public Response sendReques(Request request) {
+		return null;
+	}
+}

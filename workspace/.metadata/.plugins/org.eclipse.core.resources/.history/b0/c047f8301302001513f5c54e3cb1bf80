@@ -1,0 +1,5 @@
+package edu.vadimnesterenko.airline.command;
+
+public class FindAllCommand {
+
+}

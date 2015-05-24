@@ -1,0 +1,47 @@
+package edu.vadimnesterenko.airline.command;
+
+import java.util.List;
+
+import org.apache.log4j.Logger;
+
+import edu.vadimnesterenko.airline.bean.Request;
+import edu.vadimnesterenko.airline.bean.RequestEnum;
+import edu.vadimnesterenko.airline.bean.Response;
+import edu.vadimnesterenko.airline.bean.ResponseEnum;
+import edu.vadimnesterenko.airline.entity.Airplane;
+import edu.vadimnesterenko.airline.exception.LogicalException;
+import edu.vadimnesterenko.airline.exception.PhisicalException;
+import edu.vadimnesterenko.airline.logic.AirlineAirplainsFinder;
+
+public class FindByFuelCondumptionCommand implements Command{
+	private final static Logger LOG = Logger.getLogger(FindByFuelCondumptionCommand.class);
+	private static FindByFuelCondumptionCommand instance;
+	
+	static {
+		instance = new FindByFuelCondumptionCommand();
+	}
+	
+	public static FindByFuelCondumptionCommand getInstance() {
+		return instance;
+	}
+	@Override
+	public Response processRequest(Request request) {
+		Response response = new Response();
+		try {
+			try {
+				int minRange = (int)request.getParameter(RequestEnum.MIN_RANGE);
+				int maxRange = (int)request.getParameter(RequestEnum.MAX_RANGE);
+				List<Airplane> airplanes = AirlineAirplainsFinder.findByFuelConsumption(minRange, maxRange);
+				response.setParameter(ResponseEnum.AIRPLANES_LIST, airplanes);
+			} catch (ClassCastException e) {
+				throw new PhisicalException("minRange and maxRange must be int.");
+			}		
+			
+		} catch (PhisicalException e) {
+			
+		}
+		
+		return response;
+	}
+
+}

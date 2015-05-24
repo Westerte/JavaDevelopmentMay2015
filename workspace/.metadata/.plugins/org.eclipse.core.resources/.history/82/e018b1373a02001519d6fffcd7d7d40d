@@ -1,0 +1,17 @@
+package edu.nesterenko.airline.logic;
+
+import java.util.Collections;
+import java.util.List;
+
+import edu.nesterenko.airline.entity.Airline;
+import edu.nesterenko.airline.entity.Airplane;
+
+public class AirlineAirplainsSorter {
+	private AirlineAirplainsSorter() {}
+	
+	public static void sortAirplanesByMaxRange() {
+		ArrayList<Airplane> airplanes = Airline.getInstance().getAirplanes();
+		List<Airplane> airplanesClone = 
+		Collections.sort(airplanes, new MaxRangeComparator());
+	}
+}

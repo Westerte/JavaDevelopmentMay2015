@@ -1,0 +1,8 @@
+package edu.vadimnesterenko.airline.command;
+
+import edu.vadimnesterenko.airline.bean.Response;
+import edu.vadimnesterenko.airline.bean.Request;
+
+public interface Command {
+	public Response processRequest(Request);
+}

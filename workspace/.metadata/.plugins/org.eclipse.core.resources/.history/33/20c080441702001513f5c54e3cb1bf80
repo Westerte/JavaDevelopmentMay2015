@@ -1,0 +1,21 @@
+package edu.vadimnesterenko.airline.controller;
+
+import org.apache.log4j.Logger;
+
+import edu.vadimnesterenko.airline.bean.Request;
+import edu.vadimnesterenko.airline.bean.Response;
+import edu.vadimnesterenko.airline.command.AddAirbusCommand;
+import edu.vadimnesterenko.airline.command.CommandEnum;
+import edu.vadimnesterenko.airline.command.CommandFactory;
+import edu.vadimnesterenko.airline.exception.LogicalException;
+
+public class Controller {
+	private final static Logger LOG = Logger.getLogger(Controller.class);
+	public Response sendReques(CommandEnum command,Request request) {		
+		try {
+			return CommandFactory.getCommand(command).processRequest(request);
+		} catch (LogicalException e) {
+				LOG.error(e);
+		}
+	}
+}

@@ -1,0 +1,7 @@
+package edu.vadimnesterenko.airline.logic;
+
+public class AirlineAirplainsCalculator {
+	private AirlineAirplainsCalculator() {}
+	
+	public static 
+}
