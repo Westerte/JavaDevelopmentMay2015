@@ -57,6 +57,9 @@ public class Reporter {
 			case SORT_AIRPLAINS_BY_MAX_RANGE:
 				exitString = response.getParameter(ResponseEnum.IS_OK).toString() + "\n";
 				break;
+			case LOAD_FROM_HARDCODE:
+				exitString = response.getParameter(ResponseEnum.IS_OK).toString() + "\n";
+				break;
 			default:
 				throw new LogicalException("Enum doesn't contain this value.");
 			}		

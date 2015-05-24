@@ -93,4 +93,10 @@ public class View {
 		Response response = controller.sendReques(command , null);
 		Reporter.report(command, response, filePath);	
 	}
+	
+	public void loadFromHardcode() {
+		CommandEnum command = CommandEnum.LOAD_FROM_HARDCODE;
+		Response response = controller.sendReques(command , null);
+		Reporter.report(command, response, filePath);	
+	}
 }

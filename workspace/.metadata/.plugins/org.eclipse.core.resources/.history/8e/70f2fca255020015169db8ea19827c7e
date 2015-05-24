@@ -1,0 +1,11 @@
+package edu.nesterenko.airline.logic;
+
+import edu.nesterenko.airline.dao.DataAccessable;
+
+public class Loader {
+	private Loader() {}
+	
+	public static void load(DataAccessable dao) {
+		
+	}
+}

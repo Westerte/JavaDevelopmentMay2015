@@ -1,0 +1,26 @@
+package edu.nesterenko.airline.command;
+
+import org.apache.log4j.Logger;
+
+import edu.nesterenko.airline.bean.Request;
+import edu.nesterenko.airline.bean.Response;
+import edu.nesterenko.airline.dao.HardcodeDao;
+import edu.nesterenko.airline.logic.Loader;
+
+public class LoadFromHardcodeCommand implements Command {
+	private final static Logger LOG = Logger.getLogger(LoadFromHardcodeCommand.class);
+	private static LoadFromHardcodeCommand instance;
+	static {
+		instance = new LoadFromHardcodeCommand();
+	}
+	public LoadFromHardcodeCommand getInstance() {
+		return instance;
+	}
+	
+	@Override
+	public Response processRequest(Request request) {
+		Loader.load(new HardcodeDao(), args);
+		return null;
+	}
+
+}

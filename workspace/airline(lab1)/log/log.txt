@@ -4,3 +4,4 @@
 2015-05-24 20:18:13,973 [main] ERROR edu.nesterenko.airline.view.Reporter  - edu.nesterenko.airline.exception.LogicalException: Enum doesn't contain this value.
 2015-05-24 20:18:38,788 [main] ERROR edu.nesterenko.airline.view.Reporter  - edu.nesterenko.airline.exception.LogicalException: Enum doesn't contain this value.
 2015-05-24 20:19:21,068 [main] ERROR edu.nesterenko.airline.view.Reporter  - edu.nesterenko.airline.exception.LogicalException: Enum doesn't contain this value.
+2015-05-24 23:55:50,004 [main] ERROR edu.nesterenko.airline.view.Reporter  - edu.nesterenko.airline.exception.LogicalException: Enum doesn't contain this value.

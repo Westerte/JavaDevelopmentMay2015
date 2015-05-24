@@ -42,7 +42,7 @@ public class Airline {
 	}
 
 	public void setAirplanes(List<Airplane> airplanes) {
-		this.airplanes = airplanes;
+		this.airplanes = new ArrayList<Airplane>(airplanes);
 	}
 
 	public Airplane removeAirplane(int index) throws PhisicalException {

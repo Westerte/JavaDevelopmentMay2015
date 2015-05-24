@@ -1,28 +1,27 @@
-ADD_AIRBUS
-true
-ADD_AIRBUS
-true
-ADD_FREIGHTER
-true
-ADD_FREIGHTER
+LOAD_FROM_HARDCODE
 true
 CALCULATE_GENERAL_BEARING_CAPACITY
-14
+16
 CALCULATE_GENERAL_CAPACITY
-14
+16
+FIND_ALL
+model: AIRBUS_A320 maxRange: 7 capacity: 6 bearingCapacity: 5 fuelConsumption: 4 cargoHoldCount: 4
+model: BOEING_747 maxRange: 1 capacity: 2 bearingCapacity: 3 fuelConsumption: 4 seatsCount: 5 classCount: 6 luggageCapacity: 7
+model: BOEING_777 maxRange: 7 capacity: 6 bearingCapacity: 5 fuelConsumption: 4 seatsCount: 3 classCount: 2 luggageCapacity: 1
+model: AIRBUS_A380 maxRange: 1 capacity: 2 bearingCapacity: 3 fuelConsumption: 4 cargoHoldCount: 4
 DELETE
 true
 CALCULATE_GENERAL_BEARING_CAPACITY
 11
 CALCULATE_GENERAL_CAPACITY
-12
+10
 FIND_BY_FUEL_CONSUMPTION
+model: AIRBUS_A320 maxRange: 7 capacity: 6 bearingCapacity: 5 fuelConsumption: 4 cargoHoldCount: 4
 model: BOEING_747 maxRange: 1 capacity: 2 bearingCapacity: 3 fuelConsumption: 4 seatsCount: 5 classCount: 6 luggageCapacity: 7
-model: BOEING_777 maxRange: 7 capacity: 6 bearingCapacity: 5 fuelConsumption: 4 seatsCount: 3 classCount: 2 luggageCapacity: 1
-model: AIRBUS_A380 maxRange: 6 capacity: 4 bearingCapacity: 3 fuelConsumption: 2 cargoHoldCount: 2
+model: AIRBUS_A380 maxRange: 1 capacity: 2 bearingCapacity: 3 fuelConsumption: 4 cargoHoldCount: 4
 SORT_AIRPLAINS_BY_MAX_RANGE
 true
 FIND_ALL
 model: BOEING_747 maxRange: 1 capacity: 2 bearingCapacity: 3 fuelConsumption: 4 seatsCount: 5 classCount: 6 luggageCapacity: 7
-model: AIRBUS_A380 maxRange: 6 capacity: 4 bearingCapacity: 3 fuelConsumption: 2 cargoHoldCount: 2
-model: BOEING_777 maxRange: 7 capacity: 6 bearingCapacity: 5 fuelConsumption: 4 seatsCount: 3 classCount: 2 luggageCapacity: 1
+model: AIRBUS_A380 maxRange: 1 capacity: 2 bearingCapacity: 3 fuelConsumption: 4 cargoHoldCount: 4
+model: AIRBUS_A320 maxRange: 7 capacity: 6 bearingCapacity: 5 fuelConsumption: 4 cargoHoldCount: 4

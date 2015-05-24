@@ -1,0 +1,10 @@
+package edu.nesterenko.airline.dao;
+
+import java.util.List;
+
+import edu.nesterenko.airline.entity.Airplane;
+
+public interface DataAccessable {
+	public void loadDataFromSource(Object ... args);
+	public void saveDataToSource(Object ... args);
+}

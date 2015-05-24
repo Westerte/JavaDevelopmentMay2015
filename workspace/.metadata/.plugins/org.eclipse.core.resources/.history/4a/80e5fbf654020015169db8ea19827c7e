@@ -1,0 +1,17 @@
+package edu.nesterenko.airline.dao;
+
+import edu.nesterenko.airline.logic.AirlineEditor;
+
+public class HardcodeDao implements DataAccessable {
+
+	@Override
+	public void loadDataFromSource(Object... args) {
+		AirlineEditor.addAirplane(creator, args);
+	}
+
+	@Override
+	public void saveDataToSource(Object... args) {
+		throw new UnsupportedOperationException();
+	}
+
+}

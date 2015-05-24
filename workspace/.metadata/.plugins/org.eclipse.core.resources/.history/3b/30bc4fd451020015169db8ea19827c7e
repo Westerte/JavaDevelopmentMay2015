@@ -1,0 +1,20 @@
+package edu.nesterenko.airline.dao;
+
+import java.util.List;
+
+import edu.nesterenko.airline.entity.Airplane;
+
+public class HardcodeDao implements DataAccessable {
+
+	@Override
+	public List<Airplane> loadDataFromSource(Object... args) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void saveDataToSource(Object... args) {
+		throw new UnsupportedOperationException
+	}
+
+}

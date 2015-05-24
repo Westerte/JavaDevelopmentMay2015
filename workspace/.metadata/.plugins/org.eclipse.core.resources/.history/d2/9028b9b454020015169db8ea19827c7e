@@ -1,0 +1,23 @@
+package edu.nesterenko.airline.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import edu.nesterenko.airline.entity.Airline;
+import edu.nesterenko.airline.entity.Airplane;
+import edu.nesterenko.airline.entity.Model;
+
+public class HardcodeDao implements DataAccessable {
+
+	@Override
+	public void loadDataFromSource(Object... args) {
+		Airline airline = Airline.getInstance();
+		return null;
+	}
+
+	@Override
+	public void saveDataToSource(Object... args) {
+		throw new UnsupportedOperationException();
+	}
+
+}
