@@ -13,23 +13,32 @@ and open the template in the editor.
     
     <xs:complexType name="airline_type">
         <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="airbus" type="airbus_type"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="airliner" type="airbus_type"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="freighter" type="freighter_type"/>
         </xs:sequence>
     </xs:complexType>
     
     <xs:complexType name="airplane_type">        
         <xs:sequence >
-            <xs:element name="model">
-                <xs:simpleType>
-                    <xs:restriction base="xs:string">
-                        <xs:enumeration value="BOEING_747"/>
-						<xs:enumeration value="BOEING_777"/>
-						<xs:enumeration value="AIRBUS_A320"/>
-						<xs:enumeration value="AIRBUS_A380"/>
-                    </xs:restriction>
-                </xs:simpleType>
-            </xs:element>
+	        <xs:choice>
+	            <xs:element name="boeing">
+	            	<xs:simpleType>
+	            		<xs:restriction base="xs:string">
+	            			<xs:enumeration value="747"/>
+	            			<xs:enumeration value="777"/>
+	            		</xs:restriction>
+	            	</xs:simpleType>
+	            </xs:element>            
+	            <xs:element  name="airbus">
+	            	<xs:simpleType>
+	            		<xs:restriction base="xs:string">
+	            			<xs:enumeration value="a320"/>
+	            			<xs:enumeration value="a380"/>
+	            		</xs:restriction>
+	            	</xs:simpleType>
+	            </xs:element>
+	         </xs:choice>
+         
             
             <xs:element name="max_range">
                 <xs:simpleType>
@@ -111,7 +120,6 @@ and open the template in the editor.
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
-    </xs:complexType> 
-	
+    </xs:complexType>   	
 </xs:schema>
 

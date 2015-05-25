@@ -6,7 +6,7 @@ import edu.nesterenko.airline.bean.RequestEnum;
 import edu.nesterenko.airline.bean.Response;
 import edu.nesterenko.airline.command.CommandEnum;
 import edu.nesterenko.airline.controller.Controller;
-import edu.nesterenko.airline.entity.Model;
+import edu.nesterenko.airline.entity.Manufacturer;
 
 public class View {
 	private Controller controller;
@@ -33,9 +33,9 @@ public class View {
 		this.controller = controller;
 	}
 	
-	public void addAirbus(Model model, int maxRange, int capacity, int bearingCapacity, int fuelConsumption,
+	public void addAirbus(Manufacturer manufacturer, String model, int maxRange, int capacity, int bearingCapacity, int fuelConsumption,
 		      int seatsCount, int classCount, int luggageCapacity) {
-		Object[] args = {model, maxRange, capacity, bearingCapacity, fuelConsumption, seatsCount, classCount, luggageCapacity};
+		Object[] args = {manufacturer, model, maxRange, capacity, bearingCapacity, fuelConsumption, seatsCount, classCount, luggageCapacity};
 		CommandEnum command = CommandEnum.ADD_AIRBUS;
 		Request request = new Request();
 		request.setParameter(RequestEnum.ARGS, args);
@@ -43,9 +43,9 @@ public class View {
 		Reporter.report(command, response, filePath);
 	}
 	
-	public void addFreighter(Model model, int maxRange, int capacity, int bearingCapacity, int fuelConsumption,
+	public void addFreighter(Manufacturer manufacturer, String model, int maxRange, int capacity, int bearingCapacity, int fuelConsumption,
 			 int cargoHoldCount) {
-		Object[] args = {model, maxRange, capacity, bearingCapacity, fuelConsumption, cargoHoldCount};
+		Object[] args = {manufacturer, model, maxRange, capacity, bearingCapacity, fuelConsumption, cargoHoldCount};
 		CommandEnum command = CommandEnum.ADD_FREIGHTER;
 		Request request = new Request();
 		request.setParameter(RequestEnum.ARGS, args);

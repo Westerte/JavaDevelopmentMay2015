@@ -11,17 +11,18 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import edu.nesterenko.airline.entity.Model;
+import edu.nesterenko.airline.entity.Manufacturer;
 import edu.nesterenko.airline.exception.LogicalException;
 import edu.nesterenko.airline.exception.PhisicalException;
-import edu.nesterenko.airline.logic.AirbusCreator;
+import edu.nesterenko.airline.logic.AirlinerCreator;
 import edu.nesterenko.airline.logic.AirlineEditor;
 import edu.nesterenko.airline.logic.FreighterCreator;
 
 public class SaxParserDao extends DefaultHandler implements DataAccessable {
 
 	private TagsEnum currentTag;
-	private Model model;
+	private Manufacturer manufacturer;
+	private String model;
 	private int maxRange;
 	private int capacity;
 	private int bearingCapacity;
@@ -30,9 +31,9 @@ public class SaxParserDao extends DefaultHandler implements DataAccessable {
 	private int classCount;
 	private int luggageCapacity;
 	private int cargoHoldCount;
+	
 	@Override
-	public void loadDataFromSource(Object... args) throws PhisicalException,
-			LogicalException {
+	public void loadDataFromSource(Object ... args) throws PhisicalException, LogicalException {
 		String filePath = (String) args[0];
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SAXParser parser;
@@ -45,20 +46,23 @@ public class SaxParserDao extends DefaultHandler implements DataAccessable {
         
 	}
 	
-	private void addAirbus() throws PhisicalException, LogicalException {
-		AirlineEditor.addAirplane(new AirbusCreator(), new Object[] {model, maxRange, capacity, bearingCapacity, 
-								                                     fuelConsumption, seatsCount, classCount
-								                                     , luggageCapacity});	
+	private void addAirliner(){
+		try {
+			AirlineEditor.addAirplane(new AirlinerCreator(), new Object[] {manufacturer, model, maxRange, capacity, bearingCapacity, 
+									  fuelConsumption, seatsCount, classCount, luggageCapacity});
+		} catch (PhisicalException | LogicalException e) {}	
 	}
 	
-	private void addFrighter() throws PhisicalException, LogicalException {
-		AirlineEditor.addAirplane(new FreighterCreator(), new Object[] {model, maxRange, capacity, bearingCapacity, 
-			                                                            fuelConsumption, cargoHoldCount});
+	private void addFrighter()  {
+		try {
+			AirlineEditor.addAirplane(new FreighterCreator(), new Object[] {manufacturer, model, maxRange, capacity, bearingCapacity, 
+				                      fuelConsumption, cargoHoldCount});
+		} catch (PhisicalException | LogicalException e) {}
 	}
 	
 	@Override 
     public void startElement(String namespaceURI, String localName, String qName, Attributes atts) { 
-		if(!"airline".equals(qName) && !"airbus".equals(qName) && !"freighter".equals(qName) ) {
+		if(!"airline".equals(qName) && !"airliner".equals(qName) && !"freighter".equals(qName) ) {
 			currentTag = TagsEnum.valueOf(qName.toUpperCase()); 
 		} else {
 			currentTag = null;
@@ -67,7 +71,7 @@ public class SaxParserDao extends DefaultHandler implements DataAccessable {
     
     @Override
     public void endElement(String uri, String localName,String qName){
-    	if("airbus".equals(qName) || "freighter".equals(qName)) {
+    	if("airliner".equals(qName) || "freighter".equals(qName)) {
 			currentTag = TagsEnum.valueOf(qName.toUpperCase()); 
 		} else {
 			currentTag = null;
@@ -81,9 +85,6 @@ public class SaxParserDao extends DefaultHandler implements DataAccessable {
     		return;
     	}
         switch (currentTag) {
-        case MODEL:
-        	model = Model.valueOf(value.toUpperCase());
-        	break;
         case MAX_RANGE:
         	maxRange = Integer.parseInt(value);
         	break;
@@ -108,31 +109,31 @@ public class SaxParserDao extends DefaultHandler implements DataAccessable {
         case CARGO_HOLD_COUNT:
         	cargoHoldCount = Integer.parseInt(value);
         	break;
-        case AIRBUS:  
-			try {
-				addAirbus();
-			} catch (PhisicalException | LogicalException e) {
-				throw new SAXException(e);
-			}		
+        case AIRLINER:  
+			addAirliner();	
         	break;
         case FREIGHTER:
-        	try {
-				addFrighter();
-			} catch (PhisicalException | LogicalException e) {
-				throw new SAXException(e);
-			}
+			addFrighter();
+        	break;
+        case AIRBUS:
+        	manufacturer = Manufacturer.valueOf(currentTag.name());
+        	model = value;
+        	break;
+        case BOEING:
+        	manufacturer = Manufacturer.valueOf(currentTag.name());
+        	model = value;
         	break;
         }
     }
 
 	@Override
-	public void saveDataToSource(Object... args) {
+	public void saveDataToSource(Object ... args) {
 		throw new UnsupportedOperationException();
 	}
 	
 	enum TagsEnum{
-	    MODEL, MAX_RANGE, CAPACITY, BEARING_CAPACITY, FUEL_CONSUMPTION,
-	    SEATS_COUNT, CLASS_COUNT, LUGGAGE_CAPACITY, CARGO_HOLD_COUNT, AIRBUS, FREIGHTER;
+	    MAX_RANGE, CAPACITY, BEARING_CAPACITY, FUEL_CONSUMPTION,
+	    SEATS_COUNT, CLASS_COUNT, LUGGAGE_CAPACITY, CARGO_HOLD_COUNT, AIRBUS, FREIGHTER, AIRLINER, BOEING;
 	}
 
 }

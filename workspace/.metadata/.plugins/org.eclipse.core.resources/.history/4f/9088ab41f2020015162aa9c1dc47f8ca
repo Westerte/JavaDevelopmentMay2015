@@ -1,0 +1,5 @@
+package edu.nesterenko.airline.entity;
+
+public class Manufacturer {
+	private ManufacturerEnum;
+}

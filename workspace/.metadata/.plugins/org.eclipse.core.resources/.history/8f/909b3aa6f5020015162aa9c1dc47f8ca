@@ -1,0 +1,14 @@
+package edu.nesterenko.airline.entity;
+
+import java.util.List;
+
+public enum Manufacturer {
+	BOEING(new String[]{"747", "777"}), 
+	AIRBUS(new String[]{"a320", "a380"});
+	
+	Manufacturer(String[] models) {
+		this.models = models;
+	}
+	
+	public final List<String> models;
+}

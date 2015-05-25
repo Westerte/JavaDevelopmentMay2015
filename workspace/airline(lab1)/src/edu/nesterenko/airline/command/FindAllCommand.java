@@ -24,6 +24,7 @@ public class FindAllCommand implements Command {
 	public static  FindAllCommand getInstance() {
 		return instance;
 	}
+	
 	@Override
 	public Response processRequest(Request request) {
 		Response response = new Response();

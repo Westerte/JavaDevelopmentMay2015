@@ -25,3 +25,11 @@ edu.nesterenko.airline.exception.LogicalException: maxRange must be greater then
 2015-05-25 01:32:32,355 [main] ERROR edu.nesterenko.airline.command.DeleteCommand  - edu.nesterenko.airline.exception.PhisicalException: java.lang.IndexOutOfBoundsException: Index: 2, Size: 0
 2015-05-25 01:41:48,692 [main] ERROR edu.nesterenko.airline.command.DeleteCommand  - edu.nesterenko.airline.exception.PhisicalException: java.lang.IndexOutOfBoundsException: Index: 2, Size: 0
 2015-05-25 01:43:02,899 [main] ERROR edu.nesterenko.airline.command.DeleteCommand  - edu.nesterenko.airline.exception.PhisicalException: java.lang.IndexOutOfBoundsException: Index: 2, Size: 0
+2015-05-25 19:05:04,729 [main] ERROR edu.nesterenko.airline.command.LoadFromHardcodeCommand  - edu.nesterenko.airline.exception.PhisicalException: Bad args.
+2015-05-25 19:05:04,745 [main] ERROR edu.nesterenko.airline.command.DeleteCommand  - edu.nesterenko.airline.exception.PhisicalException: java.lang.IndexOutOfBoundsException: Index: 2, Size: 0
+2015-05-25 19:07:00,219 [main] ERROR edu.nesterenko.airline.command.LoadFromHardcodeCommand  - edu.nesterenko.airline.exception.LogicalException: This manufacturer don't have such model
+2015-05-25 19:07:00,235 [main] ERROR edu.nesterenko.airline.command.DeleteCommand  - edu.nesterenko.airline.exception.PhisicalException: java.lang.IndexOutOfBoundsException: Index: 2, Size: 0
+2015-05-25 20:17:46,287 [main] ERROR edu.nesterenko.airline.command.DeleteCommand  - edu.nesterenko.airline.exception.PhisicalException: java.lang.IndexOutOfBoundsException: Index: 2, Size: 0
+2015-05-25 20:17:55,622 [main] ERROR edu.nesterenko.airline.command.DeleteCommand  - edu.nesterenko.airline.exception.PhisicalException: java.lang.IndexOutOfBoundsException: Index: 2, Size: 0
+2015-05-25 20:18:57,436 [main] ERROR edu.nesterenko.airline.command.DeleteCommand  - edu.nesterenko.airline.exception.PhisicalException: java.lang.IndexOutOfBoundsException: Index: 2, Size: 0
+2015-05-25 20:21:07,618 [main] ERROR edu.nesterenko.airline.command.DeleteCommand  - edu.nesterenko.airline.exception.PhisicalException: java.lang.IndexOutOfBoundsException: Index: 2, Size: 0

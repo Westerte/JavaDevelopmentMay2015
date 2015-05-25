@@ -18,11 +18,13 @@ public class AddFreighterCommand implements Command {
 	static {
 		instance = new AddFreighterCommand();
 	}
+	
 	private AddFreighterCommand() {}
 	
 	public static AddFreighterCommand getInstance() {
 		return instance;
 	}
+	
 	@Override
 	public Response processRequest(Request request){
 		Response response = new Response();

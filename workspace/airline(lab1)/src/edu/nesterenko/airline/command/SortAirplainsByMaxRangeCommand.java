@@ -17,6 +17,7 @@ public class SortAirplainsByMaxRangeCommand implements Command{
 	public static SortAirplainsByMaxRangeCommand getInstance() {
 		return instance;
 	}
+	
 	@Override
 	public Response processRequest(Request request) {
 		Response response = new Response();

@@ -1,0 +1,5 @@
+package edu.nesterenko.airline.entity;
+
+public enum ModelEnum {
+	_747, _777, A320, A380
+}

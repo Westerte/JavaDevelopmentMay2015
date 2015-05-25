@@ -1,0 +1,12 @@
+package edu.nesterenko.airline.entity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public enum Model {
+	BOEING { 
+		m
+		String[] modelArray = new ArrayList<String>();		
+	},
+	AIRBUS
+}

@@ -1,0 +1,19 @@
+package edu.nesterenko.airline.entity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public enum ManufacturerEnum {
+	BOEING{
+		
+	},
+	AIRBUS(AirbusModel);
+	
+	public enum BoeingModel {
+		_747, _777;
+	}
+	
+	public enum AirbusModel {
+		A320, A380;
+	}
+}

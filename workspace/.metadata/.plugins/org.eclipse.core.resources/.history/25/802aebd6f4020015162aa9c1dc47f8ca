@@ -1,0 +1,10 @@
+package edu.nesterenko.airline.entity;
+
+public enum Manufacturer {
+	BOEING {
+		public final String[] models = {"747", "777"};
+	}, 
+	AIRBUS {
+		public final String[] models = {"a320", "a380"};
+	};	
+}

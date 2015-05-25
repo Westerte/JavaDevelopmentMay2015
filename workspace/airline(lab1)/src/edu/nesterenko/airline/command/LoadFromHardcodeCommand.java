@@ -19,6 +19,7 @@ public class LoadFromHardcodeCommand implements Command {
 	static {
 		instance = new LoadFromHardcodeCommand();
 	}
+	
 	public static LoadFromHardcodeCommand getInstance() {
 		return instance;
 	}

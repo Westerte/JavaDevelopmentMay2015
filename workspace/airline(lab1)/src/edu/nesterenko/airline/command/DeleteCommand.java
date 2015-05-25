@@ -22,6 +22,7 @@ public class DeleteCommand implements Command{
 	public static DeleteCommand getInstance() {
 		return instance;
 	}
+	
 	@Override
 	public Response processRequest(Request request) {
 		Response response = new Response();

@@ -17,6 +17,7 @@ public class CalculateGeneralCapacityCommand implements Command{
 	public static CalculateGeneralCapacityCommand getInstance() {
 		return instance;
 	}
+	
 	@Override
 	public Response processRequest(Request request) {
 		Response response = new Response();

@@ -3,20 +3,24 @@ package edu.nesterenko.airline.entity;
 import edu.nesterenko.airline.exception.LogicalException;
 
 public abstract class Airplane {
-	private Model model;
+	private Manufacturer manufacturer;
+	private String model;
 	private int maxRange;
 	private int capacity;
 	private int bearingCapacity;
 	private int fuelConsumption;	
 	
 	
-	public Airplane(Model model, int maxRange, int capacity, int bearingCapacity, int fuelConsumption) throws LogicalException {
+	public Airplane(Manufacturer manufacturer, String model, int maxRange,
+			int capacity, int bearingCapacity, int fuelConsumption) throws LogicalException {
+		setManufacturer(manufacturer);
 		setModel(model);
 		setMaxRange(maxRange);
 		setCapacity(capacity);
 		setBearingCapacity(bearingCapacity);
 		setFuelConsumption(fuelConsumption);
 	}
+
 
 	public int getCapacity() {
 		return capacity;
@@ -66,12 +70,28 @@ public abstract class Airplane {
 		}
 	}
 
-	public Model getModel() {
+	public Manufacturer getManufacturer() {
+		return manufacturer;
+	}
+
+
+	public void setManufacturer(Manufacturer manufacturer) {
+		this.manufacturer = manufacturer;
+	}
+
+
+	public String getModel() {
 		return model;
 	}
 
-	public void setModel(Model model) {
-		this.model = model;
+
+	public void setModel(String model) throws LogicalException {
+		if(manufacturer.models.contains(model)) {
+			this.model = model;
+		} else {
+			throw new LogicalException("This manufacturer don't have such model");
+		}
 	}
+
 	
 }
