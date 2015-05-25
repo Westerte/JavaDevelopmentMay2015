@@ -46,14 +46,14 @@ public class SaxParserDao extends DefaultHandler implements DataAccessable {
         
 	}
 	
-	private void addAirliner(){
+	private void addAirliner() {
 		try {
 			AirlineEditor.addAirplane(new AirlinerCreator(), new Object[] {manufacturer, model, maxRange, capacity, bearingCapacity, 
 									  fuelConsumption, seatsCount, classCount, luggageCapacity});
 		} catch (PhisicalException | LogicalException e) {}	
 	}
 	
-	private void addFrighter()  {
+	private void addFrighter() {
 		try {
 			AirlineEditor.addAirplane(new FreighterCreator(), new Object[] {manufacturer, model, maxRange, capacity, bearingCapacity, 
 				                      fuelConsumption, cargoHoldCount});
@@ -70,7 +70,7 @@ public class SaxParserDao extends DefaultHandler implements DataAccessable {
     }
     
     @Override
-    public void endElement(String uri, String localName,String qName){
+    public void endElement(String uri, String localName,String qName) {
     	if("airliner".equals(qName) || "freighter".equals(qName)) {
 			currentTag = TagsEnum.valueOf(qName.toUpperCase()); 
 		} else {
@@ -79,7 +79,7 @@ public class SaxParserDao extends DefaultHandler implements DataAccessable {
     }
     
     @Override 
-    public void characters(char[] ch, int start, int length) throws SAXException{ 
+    public void characters(char[] ch, int start, int length) throws SAXException { 
     	String value = new String(ch, start, length).trim();
     	if (null == currentTag) {
     		return;

@@ -5,7 +5,7 @@ import edu.nesterenko.airline.bean.Response;
 import edu.nesterenko.airline.bean.ResponseEnum;
 import edu.nesterenko.airline.logic.AirlineAirplainsCalculator;
 
-public class CalculateGeneralBearingCapacityCommand  implements Command{
+public class CalculateGeneralBearingCapacityCommand  implements Command {
 	private static CalculateGeneralBearingCapacityCommand instance;
 	
 	static {

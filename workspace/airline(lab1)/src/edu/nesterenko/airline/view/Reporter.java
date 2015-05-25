@@ -14,8 +14,8 @@ import edu.nesterenko.airline.entity.Airplane;
 import edu.nesterenko.airline.exception.LogicalException;
 
 public class Reporter {
-	private final static Logger LOG = Logger.getLogger(Reporter.class);
-	private Reporter() {}
+	private static final Logger LOG = Logger.getLogger(Reporter.class);
+	private Reporter() { }
 	public static void report(CommandEnum command, Response response, String filePath) {
 		try(BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) {
 			StringBuilder exitString = new StringBuilder();
@@ -37,14 +37,14 @@ public class Reporter {
 				airplanes = (List<Airplane>) response.getParameter(ResponseEnum.AIRPLANES_LIST);
 				for(Airplane airplane : airplanes) {
 					exitString.append(airplane.toString());
-					exitString.append('\n');
+					exitString.append("\n");
 				}
 				break;
 			case FIND_BY_FUEL_CONSUMPTION:
 				airplanes = (List<Airplane>) response.getParameter(ResponseEnum.AIRPLANES_LIST);
-				for(Airplane airplane : airplanes) {
+				for (Airplane airplane : airplanes) {
 					exitString.append(airplane.toString());
-					exitString.append('\n');
+					exitString.append("\n");
 				}
 				break;
 			case CALCULATE_GENERAL_BEARING_CAPACITY:
@@ -67,8 +67,8 @@ public class Reporter {
 			default:
 				throw new LogicalException("Enum doesn't contain this value.");
 			}		
-			if(exitString.charAt(exitString.length() - 1) != '\n') {
-				exitString.append('\n');
+			if (exitString.charAt(exitString.length() - 1) != '\n') {
+				exitString.append("\n");
 			}
 			writer.write(exitString.toString());
 		} catch (IOException | LogicalException e) {

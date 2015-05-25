@@ -26,7 +26,7 @@ public class AddFreighterCommand implements Command {
 	}
 	
 	@Override
-	public Response processRequest(Request request){
+	public Response processRequest(Request request) {
 		Response response = new Response();
 		try {
 			try {
@@ -39,7 +39,6 @@ public class AddFreighterCommand implements Command {
 			response.setParameter(ResponseEnum.IS_OK, false);
 			LOG.error(e);
 		}
-		
 		return response;
 	}
 

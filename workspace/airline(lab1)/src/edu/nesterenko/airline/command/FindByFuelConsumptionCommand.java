@@ -13,7 +13,7 @@ import edu.nesterenko.airline.exception.LogicalException;
 import edu.nesterenko.airline.exception.PhisicalException;
 import edu.nesterenko.airline.logic.AirlineAirplainsFinder;
 
-public class FindByFuelConsumptionCommand implements Command{
+public class FindByFuelConsumptionCommand implements Command {
 	private final static Logger LOG = Logger.getLogger(FindByFuelConsumptionCommand.class);
 	private static FindByFuelConsumptionCommand instance;
 	

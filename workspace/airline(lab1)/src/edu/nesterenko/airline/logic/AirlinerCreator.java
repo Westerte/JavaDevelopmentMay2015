@@ -8,7 +8,7 @@ import edu.nesterenko.airline.exception.*;
 public class AirlinerCreator implements Creator {
 
 	@Override
-	public Airplane createAirplane(Object[] args) throws PhisicalException, LogicalException{
+	public Airplane createAirplane(Object[] args) throws PhisicalException, LogicalException {
 		Airplane airbus = null;
 		try {
 			Manufacturer manufacturer = (Manufacturer) args[0];
@@ -20,8 +20,8 @@ public class AirlinerCreator implements Creator {
 			int seatsCount = (int) args[6];
 			int classCount = (int) args[7];
 			int luggageCapacity = (int) args[8];
-			airbus = new Airliner(manufacturer, model, maxRange, capacity, bearingCapacity, fuelConsumption, 
-					seatsCount, classCount, luggageCapacity);
+			airbus = new Airliner(manufacturer, model, maxRange, capacity, bearingCapacity, 
+					 fuelConsumption, seatsCount, classCount, luggageCapacity);
 		} catch (LogicalException e) {
 			throw e;
 		} catch  (ClassCastException e) {

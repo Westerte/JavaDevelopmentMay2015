@@ -4,5 +4,5 @@ import edu.nesterenko.airline.bean.Request;
 import edu.nesterenko.airline.bean.Response;
 
 public interface Command {
-	public Response processRequest(Request request);
+  public Response processRequest(Request request);
 }

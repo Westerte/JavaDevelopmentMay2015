@@ -5,7 +5,7 @@ import edu.nesterenko.airline.bean.Response;
 import edu.nesterenko.airline.bean.ResponseEnum;
 import edu.nesterenko.airline.logic.AirlineAirplainsSorter;
 
-public class SortAirplainsByMaxRangeCommand implements Command{
+public class SortAirplainsByMaxRangeCommand implements Command {
 	private static SortAirplainsByMaxRangeCommand instance;	
 	
 	static {

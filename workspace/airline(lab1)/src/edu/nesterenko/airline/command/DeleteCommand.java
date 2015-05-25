@@ -9,7 +9,7 @@ import edu.nesterenko.airline.bean.ResponseEnum;
 import edu.nesterenko.airline.exception.PhisicalException;
 import edu.nesterenko.airline.logic.AirlineEditor;
 
-public class DeleteCommand implements Command{
+public class DeleteCommand implements Command {
 	private final static Logger LOG = Logger.getLogger(DeleteCommand.class);
 	private static DeleteCommand instance;
 	
