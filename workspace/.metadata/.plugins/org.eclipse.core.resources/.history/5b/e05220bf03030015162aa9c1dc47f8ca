@@ -1,7 +1,6 @@
 package edu.nesterenko.airline.entity;
 
 import edu.nesterenko.airline.exception.LogicalException;
-import edu.nesterenko.airline.exception.PhisicalException;
 
 public class Airliner extends Airplane {
 	private int seatsCount;
@@ -9,7 +8,7 @@ public class Airliner extends Airplane {
 	private int luggageCapacity;
 	
 	public Airliner(Manufacturer manufacturer, String model, int maxRange, int capacity, int bearingCapacity, int fuelConsumption,
-			        int seatsCount, int classCount, int luggageCapacity) throws LogicalException, PhisicalException {
+			      int seatsCount, int classCount, int luggageCapacity) throws LogicalException {
 		super(manufacturer, model, maxRange, capacity, bearingCapacity, fuelConsumption);
 		setSeatsCount(seatsCount);
 		setClassCount(classCount);
@@ -55,8 +54,8 @@ public class Airliner extends Airplane {
 	@Override
 	public String toString() {
 		return String.format("manufacturer: %s model: %s maxRange: %d capacity: %d bearingCapacity: %d "
-			   + "fuelConsumption: %d seatsCount: %d classCount: %d luggageCapacity: %d",
-			   getManufacturer(), getModel(), getMaxRange(), getCapacity(), getBearingCapacity(), getFuelConsumption(), seatsCount,
-			   classCount, luggageCapacity);
+				+ "fuelConsumption: %d seatsCount: %d classCount: %d luggageCapacity: %d",
+				getManufacturer(), getModel(), getMaxRange(), getCapacity(), getBearingCapacity(), getFuelConsumption(), seatsCount,
+				classCount, luggageCapacity);
 	}
 }

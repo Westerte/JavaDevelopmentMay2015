@@ -13,7 +13,7 @@ public abstract class Airplane {
 	
 	
 	public Airplane(Manufacturer manufacturer, String model, int maxRange,
-		   int capacity, int bearingCapacity, int fuelConsumption) throws LogicalException, PhisicalException {
+			int capacity, int bearingCapacity, int fuelConsumption) throws LogicalException, PhisicalException {
 		setManufacturer(manufacturer);
 		setModel(model);
 		setMaxRange(maxRange);
@@ -26,7 +26,7 @@ public abstract class Airplane {
 		return capacity;
 	}	
 
-	public void setCapacity(int capacity) throws LogicalException {
+	public void setCapacity(int capacity) throws LogicalException{
 		if (capacity > 0) {
 			this.capacity = capacity; 
 		} else {
@@ -88,10 +88,10 @@ public abstract class Airplane {
 	}
 
 	public void setModel(String model) throws LogicalException {
-		if(manufacturer.getModels().contains(model)) {
+		if(manufacturer.models.contains(model)) {
 			this.model = model;
 		} else {
-			throw new LogicalException("manufacturer doesn't have this model");
+			throw new LogicalException("This manufacturer don't have such model");
 		}
 	}
 
