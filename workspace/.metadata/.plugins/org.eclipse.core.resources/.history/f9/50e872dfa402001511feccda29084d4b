@@ -1,5 +1,8 @@
 package edu.nesterenko.airline.dao;
 
+import java.util.List;
+
+import edu.nesterenko.airline.entity.Airplane;
 import edu.nesterenko.airline.exception.LogicalException;
 import edu.nesterenko.airline.exception.PhisicalException;
 
