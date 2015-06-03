@@ -1,0 +1,10 @@
+package edu.nesterenko.parcer.entity;
+
+import edu.nesterenko.parcer.exception.PhisicalException;
+
+public interface Component {
+	
+	void addComponent(Component c) throws PhisicalException;	
+	void removeComponet(Component c) throws PhisicalException;	
+	Component getChild(int index);
+}

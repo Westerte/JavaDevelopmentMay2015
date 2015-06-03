@@ -1,0 +1,6 @@
+package edu.nesterenko.parcer.entity;
+
+public class Leaf implements Component {
+	private final TextUnitType ;
+
+}

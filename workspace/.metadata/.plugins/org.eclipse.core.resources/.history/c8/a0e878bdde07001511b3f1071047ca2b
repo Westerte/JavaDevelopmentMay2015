@@ -1,0 +1,16 @@
+package edu.nesterenko.parcer.run;
+
+
+import edu.nesterenko.parcer.entity.Component;
+import edu.nesterenko.parcer.exception.LogicalException;
+import edu.nesterenko.parcer.logic.Parcer;
+
+public class Runner {
+	public static void main(String... args) throws IOException, LogicalException {
+		Parcer parcer = new Parcer();
+		parcer.configure("config\\conf.properties");
+
+		parcer.parce(String.valueOf(cbuf));
+		Component component = parcer.getHierarchy();
+	}
+}

@@ -1,0 +1,9 @@
+elem1.name=paragraph
+elem1.father=root
+elem1.pattern=
+elem1.type=leaf
+
+elem2.name=code
+elem2.father=root
+elem2.pattern=[a-zA-Z]+
+elem2.type=leaf

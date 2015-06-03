@@ -1,0 +1,15 @@
+package edu.nesterenko.parcer.entity;
+
+public abstract class Component {
+	private String name;
+	
+	public abstract Component getComponent(int index);
+	public abstract void addComponent(Component c);
+	public abstract void removeComponent(Component c);
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+}

@@ -1,0 +1,29 @@
+package edu.nesterenko.parcer.entity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Composite implements Component {
+	public final TextUnitType TEXT_UNIT_TYPE;
+	private List<Component> components = new ArrayList<Component>();
+	
+	public Composite(TextUnitType textUnitType) {
+		TEXT_UNIT_TYPE = textUnitType;
+	}	
+
+	@Override
+	public void addComponent(Component c) {
+		components.add(c);
+	}
+
+	@Override
+	public void removeComponet(Component c) {
+		
+	}
+
+	@Override
+	public Component getChild(int index) {
+		
+		return null;
+	}
+}
