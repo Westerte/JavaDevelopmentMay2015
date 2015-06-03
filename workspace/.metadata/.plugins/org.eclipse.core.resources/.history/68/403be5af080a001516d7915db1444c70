@@ -1,0 +1,5 @@
+package edu.nesterenko.parcer.logic;
+
+public class TextReviver {
+
+}

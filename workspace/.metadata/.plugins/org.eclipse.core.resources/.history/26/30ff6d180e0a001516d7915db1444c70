@@ -1,0 +1,60 @@
+package edu.nesterenko.parcer.entity;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import edu.nesterenko.parcer.exception.LogicalException;
+
+public class Composite extends Component {
+	
+	private List<Component> components = new ArrayList<Component>();
+
+	public Composite(String name) {
+		super(name);
+	}
+	
+	@Override
+	public Component getComponent(int index) {
+		if(index < 0 || index > size()) {
+			throw new PhisicalException();
+		}
+		return components.get(index);
+	}
+	
+	public void setComponent(int index, Component component) {
+		components.set(index, component);
+	}
+
+	@Override
+	public void addComponent(Component c) throws LogicalException {
+		if(null != c) {
+			components.add(c);
+		} else {
+			throw new LogicalException("Component must not be null");
+		}
+	}
+
+	@Override
+	public boolean removeComponent(Component c) throws LogicalException {
+		if(null != c) {
+			components.add(c);
+		} else {
+			throw new LogicalException("Component must not be null");
+		}
+		return components.remove(c);
+	}
+	
+	public int size() {
+		return components.size();		
+	}
+	@Override
+	public Iterator<Component> iterator() {
+        return components.iterator();
+    }
+
+	@Override
+	public String getContent() {
+		throw new UnsupportedOperationException();
+	}
+}

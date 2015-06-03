@@ -1,6 +1,0 @@
-package edu.nesterenko.airline.entity;
-
-public class AirplainModel {
-	public ManufacturerEnum manufacturer;
-	public ModelEnum model;
-}

@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import edu.nesterenko.parcer.exception.LogicalException;
+import edu.nesterenko.parcer.exception.PhisicalException;
 
 public class Composite extends Component {
 	
@@ -15,30 +16,36 @@ public class Composite extends Component {
 	}
 	
 	@Override
-	public Component getComponent(int index) {
-		// TODO Auto-generated method stub
-		return null;
+	public Component getComponent(int index) throws PhisicalException {
+		if(index < 0 || index > size()) {
+			throw new PhisicalException("Value of index is out of bounds");
+		}
+		return components.get(index);
+	}
+	
+	public void setComponent(int index, Component component) throws PhisicalException, LogicalException {
+		if(index < 0 || index > size()) {
+			throw new PhisicalException("Value of index is out of bounds");
+		}
+		if(null == component) {
+			throw new LogicalException("Component must be not null");
+		}
+		components.set(index, component);
 	}
 
 	@Override
-	public void addComponent(Component c) throws LogicalException {
-		if(null != c) {
-			components.add(c);
-		} else {
+	public void addComponent(Component component) throws LogicalException {
+		if(null == component) {
 			throw new LogicalException("Component must not be null");
 		}
+		components.add(component);
 	}
-
+	
 	@Override
-	public boolean removeComponent(Component c) throws LogicalException {
-		if(null != c) {
-			components.add(c);
-		} else {
-			throw new LogicalException("Component must not be null");
-		}
-		return components.remove(c);
+	public int size() {
+		return components.size();		
 	}
-
+	
 	@Override
 	public Iterator<Component> iterator() {
         return components.iterator();
@@ -47,5 +54,13 @@ public class Composite extends Component {
 	@Override
 	public String getContent() {
 		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public void removeComponent(Component component) throws LogicalException {
+		if(null == component) {
+			throw new LogicalException("Component must not be null");
+		} 			
+		components.remove(component);	
 	}
 }

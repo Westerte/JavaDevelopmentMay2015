@@ -1,6 +1,0 @@
-package edu.nesterenko.parcer.entity;
-
-public interface Component {
-	private TextUnitType textUnitType;
-
-}

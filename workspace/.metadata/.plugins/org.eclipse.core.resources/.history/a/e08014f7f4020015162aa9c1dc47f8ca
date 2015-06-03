@@ -1,7 +1,0 @@
-package edu.nesterenko.airline.entity;
-
-public enum Manufacturer {
-	BOEING({"747", "777"}), 
-	AIRBUS({"a320", "a380"})	;
-	public String[] models;
-}
