@@ -1,0 +1,9 @@
+package edu.nesterenko.parcer.entity;
+
+public interface Component {
+	
+	void addComponent();	
+	void removeComponet();
+	
+	void parse();
+}

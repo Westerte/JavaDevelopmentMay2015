@@ -9,16 +9,16 @@ and open the template in the editor.
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            elementFormDefault="qualified">
    
-    <xs:element name="airline" type="airline_type"/>
+    <xs:element name="airline" type="airline-type"/>
     
-    <xs:complexType name="airline_type">
+    <xs:complexType name="airline-type">
         <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="airliner" type="airbus_type"/>
-			<xs:element minOccurs="0" maxOccurs="unbounded" name="freighter" type="freighter_type"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="airliner" type="airbus-type"/>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="freighter" type="freighter-type"/>
         </xs:sequence>
     </xs:complexType>
     
-    <xs:complexType name="airplane_type">        
+    <xs:complexType name="airplane-type">        
         <xs:sequence >
 	        <xs:choice>
 	            <xs:element name="boeing">
@@ -40,7 +40,7 @@ and open the template in the editor.
 	         </xs:choice>
          
             
-            <xs:element name="max_range">
+            <xs:element name="max-range">
                 <xs:simpleType>
                     <xs:restriction base="xs:integer">
                         <xs:minInclusive value="1"/>
@@ -56,7 +56,7 @@ and open the template in the editor.
                 </xs:simpleType>
             </xs:element>
             
-            <xs:element name="bearing_capacity">
+            <xs:element name="bearing-capacity">
                 <xs:simpleType>
                     <xs:restriction base="xs:integer">
                         <xs:minInclusive value="1"/>
@@ -64,7 +64,7 @@ and open the template in the editor.
                 </xs:simpleType>
             </xs:element>
 			
-			<xs:element name="fuel_consumption">
+			<xs:element name="fuel-consumption">
                 <xs:simpleType>
                     <xs:restriction base="xs:integer">
                         <xs:minInclusive value="1"/>
@@ -74,11 +74,11 @@ and open the template in the editor.
         </xs:sequence>
     </xs:complexType>   
 	
-	<xs:complexType name="airbus_type">
+	<xs:complexType name="airbus-type">
 		<xs:complexContent>
-            <xs:extension base="airplane_type">
+            <xs:extension base="airplane-type">
                 <xs:sequence>                    
-					<xs:element name="seats_count">
+					<xs:element name="seats-count">
 						<xs:simpleType>
 							<xs:restriction base="xs:integer">
 								<xs:minInclusive value="1"/>
@@ -86,7 +86,7 @@ and open the template in the editor.
 						</xs:simpleType>
 					</xs:element>
 					
-					<xs:element name="class_count">
+					<xs:element name="class-count">
 						<xs:simpleType>
 							<xs:restriction base="xs:integer">
 								<xs:minInclusive value="1"/>
@@ -94,7 +94,7 @@ and open the template in the editor.
 						</xs:simpleType>
 					</xs:element>
 					
-					<xs:element name="luggage_capacity">
+					<xs:element name="luggage-capacity">
 						<xs:simpleType>
 							<xs:restriction base="xs:integer">
 								<xs:minInclusive value="1"/>
@@ -106,11 +106,11 @@ and open the template in the editor.
         </xs:complexContent>
     </xs:complexType> 
 	
-	<xs:complexType name="freighter_type">
+	<xs:complexType name="freighter-type">
 		<xs:complexContent>
-            <xs:extension base="airplane_type">
+            <xs:extension base="airplane-type">
                 <xs:sequence>                    
-					<xs:element name="cargo_hold_count">
+					<xs:element name="cargo-hold-count">
 						<xs:simpleType>
 							<xs:restriction base="xs:integer">
 								<xs:minInclusive value="1"/>

@@ -1,5 +1,0 @@
-package edu.nesterenko.airline.dao;
-
-public interface DataAccessable {
-
-}

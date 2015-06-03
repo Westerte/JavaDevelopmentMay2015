@@ -1,0 +1,15 @@
+elem1.name=paragraph
+elem1.father=root
+elem1.pattern=
+elem1.type=composite
+
+elem2.name=code
+elem2.father=root
+elem2.pattern= (?>.*?\{([^}]|(?<!\n)\})*\}\s*?\n)|([\n|^][\w\s]+([-+=/][\w\s]+?)+[;]*[\s]*?\n)
+elem2.type=leaf
+
+elem3.name=sentence
+elem3.father=paragraph
+elem3.pattern=(\d(\.\d)*.*\n)|([\s\S]*?(([.?!]+?)|([:]\s*?\n))[\s]*)
+elem3.type=leaf
+

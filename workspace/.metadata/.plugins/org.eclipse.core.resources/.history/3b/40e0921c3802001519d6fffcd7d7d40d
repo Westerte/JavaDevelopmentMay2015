@@ -1,5 +1,0 @@
-package edu.nesterenko.airline.entity;
-
-public enum Model1 {
-
-}

@@ -1,5 +1,0 @@
-package edu.vadimnesterenko.airline.bean;
-
-public enum RequestEnum {
-	ARGS, FILE_PATH'
-}

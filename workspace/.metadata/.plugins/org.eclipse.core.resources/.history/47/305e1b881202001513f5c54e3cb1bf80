@@ -1,8 +1,0 @@
-package edu.vadimnesterenko.airline.run;
-
-public class Runner {
-
-	public static void main(String[] args) {
-		Airplane airplane = new AirbusException(1, 2 , 3, 4,5 ,"lol");
-	}
-}

@@ -1,7 +1,0 @@
-package edu.vadimnesterenko.airline.logic;
-
-import edu.vadimnesterenko.airline.entity.Airplane;
-
-public interface Creator {
-	public Airplane createAirplane(Object ... args);
-}

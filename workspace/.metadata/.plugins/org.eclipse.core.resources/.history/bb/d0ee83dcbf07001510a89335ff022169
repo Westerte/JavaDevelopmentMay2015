@@ -1,0 +1,25 @@
+package edu.nesterenko.parcer.entity;
+
+import edu.nesterenko.parcer.exception.LogicalException;
+
+public class Leaf extends Component {
+
+	@Override
+	public Component getComponent(int index) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void addComponent(Component c) throws LogicalException {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public boolean removeComponent(Component c) throws LogicalException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

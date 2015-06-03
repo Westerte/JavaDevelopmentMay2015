@@ -1,0 +1,30 @@
+package edu.nesterenko.parcer.entity;
+
+public class Leaf implements Component {
+	public final TextUnitType TEXT_UNIT_TYPE;
+	
+	public Leaf(TextUnitType textUnitType) {
+		TEXT_UNIT_TYPE = textUnitType;
+	}
+
+	@Override
+	public void addComponent(Component c) {
+		
+	}
+
+	@Override
+	public void removeComponet(Component c) {
+		
+	}
+
+	@Override
+	public void parse(String text) {
+		
+	}
+
+	@Override
+	public Component getChild(int index) {
+		return null;
+	}
+
+}

@@ -1,0 +1,25 @@
+package edu.nesterenko.parcer.entity;
+
+public class Composite extends Component {
+	
+	private List<Component> components = new ArrayLists<Component>();
+
+	@Override
+	public Component getComponent(int index) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void addComponent(Component c) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void removeComponent(Component c) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

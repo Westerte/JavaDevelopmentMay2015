@@ -11,38 +11,38 @@ and open the template in the editor.
     xsi:noNamespaceSchemaLocation='AirlineXsd.xsd'>
 	<airliner>
 		<boeing>747</boeing>
-		<max_range>1</max_range>
+		<max-range>1</max-range>
 		<capacity>2</capacity>
-		<bearing_capacity>3</bearing_capacity>
-		<fuel_consumption>4</fuel_consumption>
-		<seats_count>5</seats_count>
-		<class_count>6</class_count>
-		<luggage_capacity>7</luggage_capacity>
+		<bearing-capacity>3</bearing-capacity>
+		<fuel-consumption>4</fuel-consumption>
+		<seats-count>5</seats-count>
+		<class-count>6</class-count>
+		<luggage-capacity>7</luggage-capacity>
 	</airliner>	
 	<airliner>
 		<boeing>777</boeing>
-		<max_range>7</max_range>
+		<max-range>7</max-range>
 		<capacity>6</capacity>
-		<bearing_capacity>5</bearing_capacity>
-		<fuel_consumption>4</fuel_consumption>
-		<seats_count>3</seats_count>
-		<class_count>2</class_count>
-		<luggage_capacity>1</luggage_capacity>
+		<bearing-capacity>5</bearing-capacity>
+		<fuel-consumption>4</fuel-consumption>
+		<seats-count>3</seats-count>
+		<class-count>2</class-count>
+		<luggage-capacity>1</luggage-capacity>
 	</airliner>
 	<freighter>
 		<airbus>a320</airbus>
-		<max_range>1</max_range>
+		<max-range>1</max-range>
 		<capacity>2</capacity>
-		<bearing_capacity>3</bearing_capacity>
-		<fuel_consumption>4</fuel_consumption>
-		<cargo_hold_count>5</cargo_hold_count>
+		<bearing-capacity>3</bearing-capacity>
+		<fuel-consumption>4</fuel-consumption>
+		<cargo-hold-count>5</cargo-hold-count>
 	</freighter>
 	<freighter>
 		<airbus>a380</airbus>
-		<max_range>5</max_range>
+		<max-range>5</max-range>
 		<capacity>4</capacity>
-		<bearing_capacity>3</bearing_capacity>
-		<fuel_consumption>2</fuel_consumption>
-		<cargo_hold_count>1</cargo_hold_count>
+		<bearing-capacity>3</bearing-capacity>
+		<fuel-consumption>2</fuel-consumption>
+		<cargo-hold-count>1</cargo-hold-count>
 	</freighter>
 </airline>

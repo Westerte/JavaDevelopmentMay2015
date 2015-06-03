@@ -1,5 +1,0 @@
-package edu.vadimnesterenko.airline.exception;
-
-public class PhisicalException extends Exception {
-
-}

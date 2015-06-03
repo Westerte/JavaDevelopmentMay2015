@@ -1,0 +1,4 @@
+elem1.name=handle
+elem1.father=root
+elem1.pattern=(((\\d\\.)+.*\\n))
+elem1.type=leaf

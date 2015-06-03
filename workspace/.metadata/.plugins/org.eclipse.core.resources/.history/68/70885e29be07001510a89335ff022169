@@ -1,0 +1,8 @@
+package edu.nesterenko.parcer.entity;
+
+public abstract class Component {
+	private String name;
+	
+	public abstract Component getComponent(int index);
+	public abstract Component addComponent(Component c);
+}

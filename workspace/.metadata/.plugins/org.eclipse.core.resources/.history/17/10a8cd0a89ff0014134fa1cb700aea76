@@ -1,6 +1,0 @@
-package edu.vadimnesterenko.airline.logic;
-
-import java.util.Comparator;
-public class MaxRangeComparator implements Comparator<Airplane> {
-
-}

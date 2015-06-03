@@ -1,9 +1,0 @@
-package edu.nesterenko.airline.logic;
-
-public class Loader {
-	private Loader() {}
-	
-	public static void load() {
-		
-	}
-}

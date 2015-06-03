@@ -1,0 +1,6 @@
+package edu.nesterenko.parcer.entity;
+
+public interface Component {
+	TextUnitType textUnitType;
+
+}

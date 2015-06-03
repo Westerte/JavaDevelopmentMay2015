@@ -1,0 +1,9 @@
+package edu.nesterenko.parcer.run;
+
+import edu.nesterenko.parcer.entity.Component;
+import edu.nesterenko.parcer.entity.Composite;
+
+public class Runner {
+	public static void main(String... args) {
+	}
+}

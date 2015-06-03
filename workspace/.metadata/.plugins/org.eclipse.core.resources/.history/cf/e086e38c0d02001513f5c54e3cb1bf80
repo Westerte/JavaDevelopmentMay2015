@@ -1,7 +1,0 @@
-package edu.vadimnesterenko.airline.command;
-
-public class CommandFactory {
-	public Command getCommand() {
-		
-	}
-}

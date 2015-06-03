@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.apache.log4j.xml.DOMConfigurator"/>
-<fullyQualifiedTypeName name="java.util.logging.LogManager"/>
-<fullyQualifiedTypeName name="org.apache.log4j.LogManager"/>
-<fullyQualifiedTypeName name="com.epam.five.exception.LogicException"/>
-<fullyQualifiedTypeName name="edu.vadimnesterenko.airline.entity.Airbus"/>
-<fullyQualifiedTypeName name="edu.vadimnesterenko.airline.entity.Freighter"/>
-<fullyQualifiedTypeName name="edu.vadimnesterenko.airline.entity.Airplane"/>
-<fullyQualifiedTypeName name="edu.vadimnesterenko.airline.entity.Airline"/>
 <fullyQualifiedTypeName name="org.apache.log4j.Logger"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
@@ -27,13 +19,9 @@
 <fullyQualifiedTypeName name="edu.vadimnesterenko.airline.bean.Response"/>
 <fullyQualifiedTypeName name="edu.nesterenko.airline.command.CommandEnum"/>
 <fullyQualifiedTypeName name="edu.nesterenko.airline.bean.Response"/>
-<fullyQualifiedTypeName name="java.io.OutputStreamWriter"/>
-<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
 <fullyQualifiedTypeName name="edu.nesterenko.airline.view.View"/>
 <fullyQualifiedTypeName name="edu.nesterenko.airline.controller.Controller"/>
-<fullyQualifiedTypeName name="java.io.BufferedWriter"/>
 <fullyQualifiedTypeName name="java.io.Writer"/>
-<fullyQualifiedTypeName name="java.io.FileWriter"/>
 <fullyQualifiedTypeName name="edu.nesterenko.airline.entity.Airline"/>
 <fullyQualifiedTypeName name="edu.nesterenko.airline.logic.AirlineEditor"/>
 <fullyQualifiedTypeName name="edu.nesterenko.airline.logic.AirbusCreator"/>
@@ -49,10 +37,27 @@
 <fullyQualifiedTypeName name="org.xml.sax.Attributes"/>
 <fullyQualifiedTypeName name="javax.xml.parsers.SAXParserFactory"/>
 <fullyQualifiedTypeName name="javax.xml.parsers.SAXParser"/>
-<fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="edu.nesterenko.airline.entity.Manufacturer"/>
 <fullyQualifiedTypeName name="edu.nesterenko.airline.exception.PhisicalException"/>
 <fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="java.util.Locale"/>
+<fullyQualifiedTypeName name="java.util.ResourceBundle"/>
+<fullyQualifiedTypeName name="edu.nesterenko.parcer.exception.PhisicalException"/>
+<fullyQualifiedTypeName name="edu.nesterenko.parcer.entity.Component"/>
+<fullyQualifiedTypeName name="edu.nesterenko.parcer.entity.Composite"/>
+<fullyQualifiedTypeName name="edu.nesterenko.parcer.entity.Leaf"/>
+<fullyQualifiedTypeName name="edu.nesterenko.parcer.entity.TextUnitType"/>
+<fullyQualifiedTypeName name="edu.nesterenko.parcer.exception.LogicalException"/>
+<fullyQualifiedTypeName name="java.nio.file.Path"/>
+<fullyQualifiedTypeName name="java.nio.file.Files"/>
+<fullyQualifiedTypeName name="java.nio.charset.StandardCharsets"/>
+<fullyQualifiedTypeName name="java.nio.file.Paths"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="java.io.FileWriter"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.io.OutputStreamWriter"/>
+<fullyQualifiedTypeName name="java.io.BufferedWriter"/>
+<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
 </qualifiedTypeNameHistroy>

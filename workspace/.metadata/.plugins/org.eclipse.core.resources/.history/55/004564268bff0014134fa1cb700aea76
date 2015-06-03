@@ -1,8 +1,0 @@
-package edu.vadimnesterenko.airline.logic;
-
-public class AirlineAirplainsFinder {
-	
-	public static Airplane findByFuelConsumption() {
-		
-	}
-}

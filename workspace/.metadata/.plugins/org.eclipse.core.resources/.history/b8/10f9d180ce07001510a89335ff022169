@@ -1,0 +1,19 @@
+package edu.nesterenko.parcer.run;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+
+import edu.nesterenko.parcer.entity.Component;
+import edu.nesterenko.parcer.logic.Parcer;
+
+public class Runner {
+	public static void main(String... args) {
+		Parcer parcer = new Parcer();
+		parcer.configure("config\\conf.properties");
+		FileReader fileReader = new FileReader("text.txt");
+		char[] cbuf;
+		fileReader.read(cbuf);
+		parcer.parce(text);
+		Component component = parcer.getHierarchy();
+	}
+}

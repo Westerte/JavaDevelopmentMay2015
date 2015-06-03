@@ -1,0 +1,34 @@
+package edu.nesterenko.parcer.entity;
+
+import edu.nesterenko.parcer.exception.LogicalException;
+
+public class Leaf extends Component {
+	public Leaf(String name) {
+		super(name);
+	}
+
+	private String content;
+	@Override
+	public Component getComponent(int index) {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public void addComponent(Component c) throws LogicalException {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public boolean removeComponent(Component c) throws LogicalException {
+		throw new UnsupportedOperationException();
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+}

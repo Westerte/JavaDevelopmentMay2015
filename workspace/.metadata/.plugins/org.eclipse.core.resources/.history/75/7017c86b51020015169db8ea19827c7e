@@ -1,8 +1,0 @@
-package edu.nesterenko.airline.dao;
-
-import java.util.List;
-
-public interface DataAccessable {
-	public List<Airplain> loadDataFromSource(Object ... args);
-	public List<Airplain> saveDataToSource();
-}

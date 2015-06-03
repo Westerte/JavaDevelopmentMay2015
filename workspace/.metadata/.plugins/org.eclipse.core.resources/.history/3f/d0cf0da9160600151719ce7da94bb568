@@ -1,0 +1,37 @@
+package edu.nesterenko.parcer.entity;
+
+import java.awt.datatransfer.UnsupportedFlavorException;
+
+public class Leaf implements Component {
+	public final TextUnitType TEXT_UNIT_TYPE;
+	private String content;
+	
+	public Leaf(TextUnitType textUnitType, String content) {
+		TEXT_UNIT_TYPE = textUnitType;
+		this.content = content;
+	}
+
+	@Override
+	public void addComponent(Component c) throws UnsupportedOperationException(); {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public void removeComponet(Component c) throws UnsupportedOperationException {
+		throw UnsupportedOperationException();
+	}
+
+	@Override
+	public Component getChild(int index) {
+		return null;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+}

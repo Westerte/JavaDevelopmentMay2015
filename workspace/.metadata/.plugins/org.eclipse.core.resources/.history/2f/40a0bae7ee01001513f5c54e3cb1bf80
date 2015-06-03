@@ -1,7 +1,0 @@
-package edu.vadimnesterenko.airline.controller;
-
-public class Controller {
-	public Response sendReques(Request request) {
-		
-	}
-}

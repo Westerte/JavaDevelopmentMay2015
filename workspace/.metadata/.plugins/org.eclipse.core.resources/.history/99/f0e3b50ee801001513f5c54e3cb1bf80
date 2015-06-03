@@ -1,6 +1,0 @@
-package edu.vadimnesterenko.airline.entity;
-
-public enum PlaneManufacturer {
-	BOEING 
-	, TORPEDO , BELARUS_PLANES;
-}
