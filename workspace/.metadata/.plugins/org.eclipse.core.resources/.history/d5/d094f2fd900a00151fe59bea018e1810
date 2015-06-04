@@ -1,0 +1,10 @@
+package edu.nesterenko.parcer.filereader;
+
+public class FileReader {
+	private FileReader() {}
+	
+	public static String readFromFIle() {
+		
+	}
+	
+}

@@ -2,9 +2,6 @@ package edu.nesterenko.parcer.entity;
 
 import java.util.Iterator;
 
-import edu.nesterenko.parcer.exception.LogicalException;
-import edu.nesterenko.parcer.exception.PhisicalException;
-
 public class Leaf extends Component {
 	private String content;	
 	
@@ -14,16 +11,6 @@ public class Leaf extends Component {
 	}
 	
 	@Override
-	public Component getComponent(int index) {
-		throw new UnsupportedOperationException();
-	}
-
-	@Override
-	public void addComponent(Component component) throws LogicalException {
-		throw new UnsupportedOperationException();
-	}
-
-	@Override
 	public String getContent() {
 		return content;
 	}
@@ -31,6 +18,16 @@ public class Leaf extends Component {
 	public void setContent(String content) {
 		this.content = content;
 	}
+	
+	@Override
+	public Component getComponent(int index) {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public void addComponent(Component component) {
+		throw new UnsupportedOperationException();
+	}	
 
 	@Override
 	public Iterator<Component> iterator() {
@@ -38,8 +35,7 @@ public class Leaf extends Component {
 	}
 
 	@Override
-	public void setComponent(int index, Component component)
-			throws PhisicalException, LogicalException {
+	public void setComponent(int index, Component component){
 		throw new UnsupportedOperationException();
 	}
 

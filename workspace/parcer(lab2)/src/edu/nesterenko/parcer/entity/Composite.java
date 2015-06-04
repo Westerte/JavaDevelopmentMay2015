@@ -27,7 +27,7 @@ public class Composite extends Component {
 		if(index < 0 || index > size()) {
 			throw new PhisicalException("Value of index is out of bounds");
 		}
-		if(null == component) {
+		if(component == null) {
 			throw new LogicalException("Component must be not null");
 		}
 		components.set(index, component);
@@ -35,7 +35,7 @@ public class Composite extends Component {
 
 	@Override
 	public void addComponent(Component component) throws LogicalException {
-		if(null == component) {
+		if(component == null) {
 			throw new LogicalException("Component must not be null");
 		}
 		components.add(component);
@@ -58,7 +58,7 @@ public class Composite extends Component {
 
 	@Override
 	public void removeComponent(Component component) throws LogicalException {
-		if(null == component) {
+		if(component == null) {
 			throw new LogicalException("Component must not be null");
 		} 			
 		components.remove(component);	

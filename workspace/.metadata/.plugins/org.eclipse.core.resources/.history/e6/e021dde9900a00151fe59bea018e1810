@@ -1,0 +1,5 @@
+package edu.nesterenko.parcer.filereader;
+
+public class FileReader {
+
+}

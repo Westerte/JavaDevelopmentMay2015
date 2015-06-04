@@ -9,6 +9,7 @@ import edu.nesterenko.parcer.entity.Component;
 import edu.nesterenko.parcer.entity.Composite;
 import edu.nesterenko.parcer.exception.LogicalException;
 import edu.nesterenko.parcer.exception.PhisicalException;
+import edu.nesterenko.parcer.parser.Parser;
 
 public class TextEditor {
 	

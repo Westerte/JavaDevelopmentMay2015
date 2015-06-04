@@ -1,0 +1,14 @@
+package run;
+
+public class Six {
+	enum Type {
+		ONE, UNI, UNO;
+		
+		public Type() {
+			System.out.println("Constructor");
+			self();			
+		}
+	}
+	
+	
+}

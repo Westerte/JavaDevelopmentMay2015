@@ -1,0 +1,30 @@
+package edu.nesterenko.parcer.reporter;
+
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.util.List;
+
+import edu.nesterenko.parcer.exception.PhisicalException;
+
+public class Reporter {
+	private Reporter() {}
+	
+	public static void report(String text, String filePath, String command) throws PhisicalException {
+		try(BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
+				new FileOutputStream(filePath), "utf-8"))){			
+				writer.write(command.toUpperCase() + "\n");
+				writer.write(text);
+		} catch (IOException e) {
+			throw new PhisicalException(e);
+		}
+	}
+	
+	public static void report(List<String> stringList, String filePath, String command) {
+		StringBuilder stringBuilder = new StringBuilder();
+		for(String stringElement: stringList) {
+			
+		}
+	}
+}

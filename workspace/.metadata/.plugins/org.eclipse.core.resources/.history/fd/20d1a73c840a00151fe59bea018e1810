@@ -1,0 +1,14 @@
+package run;
+
+public class Main {
+	
+	private class Seven() {
+		private void poly() {
+			System.out.println("1");
+		}
+	}
+	
+	public static void main(String...args) {
+		
+	}
+}

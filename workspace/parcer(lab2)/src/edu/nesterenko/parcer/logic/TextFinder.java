@@ -9,11 +9,13 @@ import java.util.Map;
 
 import edu.nesterenko.parcer.entity.Component;
 import edu.nesterenko.parcer.entity.Composite;
-import edu.nesterenko.parcer.entity.Leaf;
 import edu.nesterenko.parcer.exception.LogicalException;
 import edu.nesterenko.parcer.exception.PhisicalException;
+import edu.nesterenko.parcer.parser.Parser;
+import edu.nesterenko.parcer.parser.TextReviver;
 
 public class TextFinder {
+	
 	public static List<String> findSentenceOrderedByWordCount(Parser parser) throws PhisicalException, LogicalException  {
 		Component root = parser.getHierarchy();
 		Map<Component, Integer> sentenceWordCountMap = new HashMap<Component, Integer>();
@@ -33,10 +35,11 @@ public class TextFinder {
 		}
 		return result;		
 	}
+	
 	private static void findSentences(Component father, Map<Component, Integer>  sentenceWordCountMap) throws PhisicalException {
 		for(Component component : father) {
 			if("sentence".equals(component.getName())){
-				sentenceWordCountMap.put(component, takeComponentsCountOfType("word", (Composite)component));
+				sentenceWordCountMap.put(component, takeComponentsCountOfType("word", component));
 				continue;
 			}
 			if(component instanceof Composite) {
@@ -44,8 +47,9 @@ public class TextFinder {
 			}			
 		}
 	}
-	private static int takeComponentsCountOfType(String name, Composite composite) throws PhisicalException {
-		if(null == name || null == composite) {
+	
+	private static int takeComponentsCountOfType(String name, Component composite) throws PhisicalException {
+		if(name == null || composite == null) {
 			throw new PhisicalException("name and composite must be not null");
 		}
 		int result = 0;

@@ -10,3 +10,6 @@
 1433348352373	Rename method 'findSentencesOrderedByWordCount'
 1433349248688	Rename local variable 'composite'
 1433349547009	Rename method 'findSentences'
+1433402864451	Move compilation unit
+1433404660669	Move compilation unit
+1433407357982	Rename local variable 'parcer'

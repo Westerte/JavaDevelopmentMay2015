@@ -1,0 +1,18 @@
+package run;
+
+public class Six {
+	enum Type {
+		ONE, UNI, UNO;
+		
+		Type() {
+			System.out.println("Constructor");
+			self();			
+		}
+		
+		private void self() {
+			System.out.prinf("Self%n");
+		}
+	}
+	
+	
+}

@@ -13,12 +13,12 @@ and open the template in the editor.
     
     <xs:complexType name="airline-type">
         <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="airliner" type="airbus-type"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="airliner" type="airliner-type"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="freighter" type="freighter-type"/>
         </xs:sequence>
     </xs:complexType>
     
-    <xs:complexType name="airplane-type">        
+    <xs:complexType name="airplane-type">      	
         <xs:sequence >
 	        <xs:choice>
 	            <xs:element name="boeing">
@@ -72,9 +72,10 @@ and open the template in the editor.
                 </xs:simpleType>
             </xs:element>            
         </xs:sequence>
+        <xs:attribute name = "id" type="xs:ID" use="required"/>     
     </xs:complexType>   
 	
-	<xs:complexType name="airbus-type">
+	<xs:complexType name="airliner-type">
 		<xs:complexContent>
             <xs:extension base="airplane-type">
                 <xs:sequence>                    
