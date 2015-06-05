@@ -22,9 +22,8 @@ public class TextFinder {
 		findSentences(root, sentenceWordCountMap);
 		List<Map.Entry<Component, Integer>> entrySetList = new ArrayList<Map.Entry<Component, Integer>>(sentenceWordCountMap.entrySet());
 		Comparator<Map.Entry<Component, Integer>> comp = 
-				(Map.Entry<Component, Integer> o1, Map.Entry<Component, Integer> o2) 
-				-> 
-				o1.getValue() - o2.getValue();
+				(Map.Entry<Component, Integer> o1, 
+						Map.Entry<Component, Integer> o2) -> o1.getValue() - o2.getValue();
 		Collections.sort(entrySetList, comp);
 		List<String> result = new ArrayList<String>();
 		for(Map.Entry<Component, Integer> entry : entrySetList) {
@@ -36,10 +35,11 @@ public class TextFinder {
 		return result;		
 	}
 	
-	private static void findSentences(Component father, Map<Component, Integer>  sentenceWordCountMap) throws PhisicalException {
+	private static void findSentences(Component father, Map<Component, Integer>  sentenceWordCountMap) 
+			throws PhisicalException {
 		for(Component component : father) {
 			if("sentence".equals(component.getName())){
-				sentenceWordCountMap.put(component, takeComponentsCountOfType("word", component));
+				sentenceWordCountMap.put(component, takeWordsCount(component));
 				continue;
 			}
 			if(component instanceof Composite) {
@@ -48,13 +48,13 @@ public class TextFinder {
 		}
 	}
 	
-	private static int takeComponentsCountOfType(String name, Component composite) throws PhisicalException {
-		if(name == null || composite == null) {
-			throw new PhisicalException("name and composite must be not null");
+	private static int takeWordsCount(Component composite) throws PhisicalException {
+		if(composite == null) {
+			throw new PhisicalException("composite must be not null");
 		}
 		int result = 0;
 		for(Component component : composite) {
-			if(name.equals(component.getName())) { 
+			if("word".equals(component.getName())) { 
 				result++;
 			}
 		}

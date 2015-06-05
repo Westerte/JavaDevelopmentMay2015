@@ -21,9 +21,7 @@ public class TextReviver {
 		} else {
 			if(component instanceof Leaf) {
 				stringBuilder.append(component.getContent());
-			} else {
-				throw new LogicalException("this element type can not be recognized");
-			}
+			} 
 		}
 	}
 }

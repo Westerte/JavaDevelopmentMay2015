@@ -12,8 +12,8 @@ public class Reporter {
 	private Reporter() {}
 	
 	public static void report(String text, String filePath, String command) throws PhisicalException {
-		if(text == null) {
-			throw new PhisicalException("text must be not null");
+		if(text == null || filePath == null || command == null) {
+			throw new PhisicalException("text, filePath and command must be not null");
 		}
 		try(BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
 				new FileOutputStream(filePath, true), "utf-8"))){			
@@ -25,9 +25,9 @@ public class Reporter {
 		}
 	}
 	
-	public static void report(List<String> stringList, String filePath, String command) throws PhisicalException {
-		if(stringList == null) {
-			throw new PhisicalException("stringList must be not null");
+	public static void reportWithStringList(List<String> stringList, String filePath, String command) throws PhisicalException {
+		if(stringList == null || filePath == null || command.isEmpty()) {
+			throw new PhisicalException("stringList, filePath and command must be not null");
 		}
 		StringBuilder stringBuilder = new StringBuilder();
 		for(String stringElement: stringList) {

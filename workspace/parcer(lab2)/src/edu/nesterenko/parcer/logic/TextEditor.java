@@ -25,17 +25,20 @@ public class TextEditor {
 	}
 	
 	
-	public static void swapFirstAndLastWords(Parser parser) throws LogicalException, PhisicalException {
+	public static void swapFirstAndLastWords(Parser parser) 
+			throws LogicalException, PhisicalException {
 		Component root = parser.getHierarchy();
 		findSentencesAndSwapWords(root);
 	}
 	
-	public static void deleteWordsStartingWithConsonant(Parser parser, int length) throws LogicalException, PhisicalException {
+	public static void deleteWordsStartingWithConsonant(Parser parser, int length) 
+			throws LogicalException, PhisicalException {
 		Component root = parser.getHierarchy();
 		findSentencesAndDeleteWords(root, length);
 	}	
 	
-	private static void findSentencesAndDeleteWords(Component father, int length) throws  LogicalException, PhisicalException {
+	private static void findSentencesAndDeleteWords(Component father, int length) 
+			throws  LogicalException, PhisicalException {
 		for(Component component : father) {
 			if("sentence".equals(component.getName())){
 				deleteWords(component, length);
@@ -47,17 +50,16 @@ public class TextEditor {
 		}
 	}
 	
-	private static void deleteWords(Component component, int length) throws LogicalException, PhisicalException {
+	private static void deleteWords(Component composite, int length) throws LogicalException, PhisicalException {
 		List<Component> markToRemove = new LinkedList<Component>();
-		for(int i = 0; i < component.size(); i++) {
-			Component child = component.getComponent(i);
+		for(Component child : composite) {
 			if("word".equals(child.getName()) && child.getContent().length() == length &&
 					CONSONANTS_SET.contains(child.getContent().toLowerCase().charAt(0))) {
 				markToRemove.add(child);
 			}
 		}
 		for(Component child : markToRemove) {
-			component.removeComponent(child);
+			composite.removeComponent(child);
 		}
 	}
 	
@@ -86,7 +88,7 @@ public class TextEditor {
 				i--;
 			}
 			if(i >= 0) {
-			int lastWordIndex = i;
+				int lastWordIndex = i;
 				component.setComponent(firstWordIndex, component.getComponent(lastWordIndex));
 				component.setComponent(lastWordIndex, firstWord);
 			}

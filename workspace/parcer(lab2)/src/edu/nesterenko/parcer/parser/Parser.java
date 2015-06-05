@@ -58,11 +58,11 @@ public class Parser {
 		}
 	}
 	
-	public void parce(String text) throws LogicalException {
-		parce(text, root);
+	public void parse(String text) throws LogicalException {
+		parse(text, root);
 	}
 	
-	private void parce(String text, Component father) throws LogicalException {
+	private void parse(String text, Component father) throws LogicalException {
 		List<String> childrensNames = fatherChildrenMap.get(father.getName());
 		String regEx = "";
 		for(int i = 0 ; i < childrensNames.size(); i++) {
@@ -123,7 +123,7 @@ public class Parser {
 				}
 			} 
 			if(elementName == null) {
-				throw new LogicalException("Unidentifiable symbols sequence:" + "'"+ findedText+"'" );
+				throw new LogicalException("Unidentifiable symbols sequence:" + "'"+ findedText +"'" );
 			}
 			buildComponent(findedText, father, elementName);
 		}		
@@ -137,7 +137,7 @@ public class Parser {
 			break;
 		case "composite":
 			Component composite = new Composite(elementName);
-			parce(findedText, composite);
+			parse(findedText, composite);
 			father.addComponent(composite);
 			break;			
 		}
