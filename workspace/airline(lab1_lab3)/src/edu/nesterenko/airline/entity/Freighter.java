@@ -6,9 +6,9 @@ import edu.nesterenko.airline.exception.PhisicalException;
 public class Freighter extends Airplane {
 	private int cargoHoldCount;
 	
-	public Freighter(Manufacturer manufacturer, String model, int maxRange, int capacity, int bearingCapacity, int fuelConsumption,
+	public Freighter(String numberPlate, Manufacturer manufacturer, String model, int maxRange, int capacity, int bearingCapacity, int fuelConsumption,
 		   int cargoHoldCount) throws LogicalException, PhisicalException {
-		super(manufacturer, model, maxRange, capacity, bearingCapacity, fuelConsumption);
+		super(numberPlate, manufacturer, model, maxRange, capacity, bearingCapacity, fuelConsumption);
 		setCargoHoldCount(cargoHoldCount);
 	}
 
@@ -26,9 +26,9 @@ public class Freighter extends Airplane {
 	
 	@Override
 	public String toString() {
-		return String.format("manufacturer: %s model: %s maxRange: %d capacity: %d bearingCapacity: %d "
-			   + "fuelConsumption: %d cargoHoldCount: %d",
-			   getManufacturer(), getModel(), getMaxRange(), getCapacity(), getBearingCapacity(), getFuelConsumption(), cargoHoldCount);
+		return String.format("numberPumber: %s manufacturer: %s model: %s maxRange: %d capacity: %d bearingCapacity: %d "
+			   + "fuelConsumption: %d cargoHoldCount: %d", getNumberPlate(), getManufacturer(), getModel(), 
+			   getMaxRange(), getCapacity(), getBearingCapacity(), getFuelConsumption(), cargoHoldCount);
 	}
 	
 }

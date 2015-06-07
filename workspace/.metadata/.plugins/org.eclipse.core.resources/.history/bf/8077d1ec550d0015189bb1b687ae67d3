@@ -1,0 +1,14 @@
+package edu.nesterenko.airline.command;
+
+import edu.nesterenko.airline.bean.Request;
+import edu.nesterenko.airline.bean.Response;
+
+public class LoadWithDomParserCommand implements Command {
+
+	@Override
+	public Response processRequest(Request request) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

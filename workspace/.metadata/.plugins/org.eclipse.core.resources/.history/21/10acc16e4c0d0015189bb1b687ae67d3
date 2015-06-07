@@ -1,0 +1,26 @@
+package edu.nesterenko.airline.dao;
+
+import java.io.FileInputStream;
+
+import javax.xml.stream.XMLInputFactory;
+
+import edu.nesterenko.airline.exception.LogicalException;
+import edu.nesterenko.airline.exception.PhisicalException;
+
+public class StaxParserDao implements DataAccessable {
+
+	@Override
+	public void loadDataFromSource(Object... args) throws PhisicalException,
+			LogicalException {
+		String filePath = (String)args[0];
+		XMLInputFactory inputFactory = XMLInputFactory.newInstance();
+		inputFactory.createXMLStreamReader(new FileInputStream(filePath));
+	}
+
+	@Override
+	public void saveDataToSource(Object... args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

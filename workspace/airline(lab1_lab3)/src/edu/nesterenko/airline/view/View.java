@@ -107,4 +107,20 @@ public class View {
 		Response response = controller.sendReques(command , request);
 		Reporter.report(command, response, this.filePath);	
 	}
+	
+	public void loadWithStaxParser(String filePath) {
+		CommandEnum command = CommandEnum.LOAD_WITH_STAX;
+		Request request = new Request();
+		request.setParameter(RequestEnum.FILE_PATH, filePath);
+		Response response = controller.sendReques(command , request);
+		Reporter.report(command, response, this.filePath);	
+	}
+	
+	public void loadWithDomParser(String filePath) {
+		CommandEnum command = CommandEnum.LOAD_WITH_DOM;
+		Request request = new Request();
+		request.setParameter(RequestEnum.FILE_PATH, filePath);
+		Response response = controller.sendReques(command , request);
+		Reporter.report(command, response, this.filePath);	
+	}
 }

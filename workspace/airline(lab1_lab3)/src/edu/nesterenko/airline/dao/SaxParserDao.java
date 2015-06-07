@@ -22,6 +22,7 @@ public class SaxParserDao extends DefaultHandler implements DataAccessable {
 
 	private TagsEnum currentTag;
 	private Manufacturer manufacturer;
+	private String numberPlate;
 	private String model;
 	private int maxRange;
 	private int capacity;
@@ -42,29 +43,30 @@ public class SaxParserDao extends DefaultHandler implements DataAccessable {
 			parser.parse(new File(filePath), this);
 		} catch (ParserConfigurationException | SAXException | IOException e) {
 			throw new PhisicalException(e);
-		}
-        
+		}        
 	}
 	
 	private void addAirliner() {
 		try {
-			AirlineEditor.addAirplane(new AirlinerCreator(), new Object[] {manufacturer, model, maxRange, capacity, bearingCapacity, 
+			AirlineEditor.addAirplane(new AirlinerCreator(), new Object[] {numberPlate, manufacturer, model, maxRange, capacity, bearingCapacity, 
 									  fuelConsumption, seatsCount, classCount, luggageCapacity});
 		} catch (PhisicalException | LogicalException e) {}	
 	}
 	
 	private void addFrighter() {
 		try {
-			AirlineEditor.addAirplane(new FreighterCreator(), new Object[] {manufacturer, model, maxRange, capacity, bearingCapacity, 
+			AirlineEditor.addAirplane(new FreighterCreator(), new Object[] {numberPlate, manufacturer, model, maxRange, capacity, bearingCapacity, 
 				                      fuelConsumption, cargoHoldCount});
 		} catch (PhisicalException | LogicalException e) {}
 	}
 	
-	@Override 
-    public void startElement(String namespaceURI, String localName, String qName, Attributes atts) { 
-		if(!"airline".equals(qName) && !"airliner".equals(qName) && !"freighter".equals(qName) ) {
-			currentTag = TagsEnum.valueOf(qName.toUpperCase()); 
+	public void startElement(String namespaceURI, String localName, String qName, Attributes atts) { 
+		if(!"airplanes".equals(qName) && !"airliner".equals(qName) && !"freighter".equals(qName) ) {
+			currentTag = TagsEnum.valueOf(qName.replace('-', '_').toUpperCase()); 
 		} else {
+			if(!"airline".equals(qName)) {
+				numberPlate = atts.getValue(0);
+			}
 			currentTag = null;
 		}
     }
@@ -78,7 +80,8 @@ public class SaxParserDao extends DefaultHandler implements DataAccessable {
 		}
     }
     
-    @Override 
+    @SuppressWarnings("incomplete-switch")
+	@Override 
     public void characters(char[] ch, int start, int length) throws SAXException { 
     	String value = new String(ch, start, length).trim();
     	if (null == currentTag) {
@@ -131,9 +134,6 @@ public class SaxParserDao extends DefaultHandler implements DataAccessable {
 		throw new UnsupportedOperationException();
 	}
 	
-	enum TagsEnum{
-	    MAX_RANGE, CAPACITY, BEARING_CAPACITY, FUEL_CONSUMPTION,
-	    SEATS_COUNT, CLASS_COUNT, LUGGAGE_CAPACITY, CARGO_HOLD_COUNT, AIRBUS, FREIGHTER, AIRLINER, BOEING;
-	}
+	
 
 }

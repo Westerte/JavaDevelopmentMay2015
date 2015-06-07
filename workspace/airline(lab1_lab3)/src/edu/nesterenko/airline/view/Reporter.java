@@ -16,6 +16,7 @@ import edu.nesterenko.airline.exception.LogicalException;
 public class Reporter {
 	private static final Logger LOG = Logger.getLogger(Reporter.class);
 	private Reporter() { }
+	@SuppressWarnings("unchecked")
 	public static void report(CommandEnum command, Response response, String filePath) {
 		try(BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) {
 			StringBuilder exitString = new StringBuilder();
@@ -62,6 +63,12 @@ public class Reporter {
 				exitString.append(response.getParameter(ResponseEnum.IS_OK).toString());
 				break;
 			case LOAD_WITH_SAX:
+				exitString.append(response.getParameter(ResponseEnum.IS_OK).toString());
+				break;
+			case LOAD_WITH_STAX:
+				exitString.append(response.getParameter(ResponseEnum.IS_OK).toString());
+				break;
+			case LOAD_WITH_DOM:
 				exitString.append(response.getParameter(ResponseEnum.IS_OK).toString());
 				break;
 			default:

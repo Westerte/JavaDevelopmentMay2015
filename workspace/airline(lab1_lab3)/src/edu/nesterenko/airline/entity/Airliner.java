@@ -8,9 +8,9 @@ public class Airliner extends Airplane {
 	private int classCount;
 	private int luggageCapacity;
 	
-	public Airliner(Manufacturer manufacturer, String model, int maxRange, int capacity, int bearingCapacity, int fuelConsumption,
+	public Airliner(String numberPlate, Manufacturer manufacturer, String model, int maxRange, int capacity, int bearingCapacity, int fuelConsumption,
 			        int seatsCount, int classCount, int luggageCapacity) throws LogicalException, PhisicalException {
-		super(manufacturer, model, maxRange, capacity, bearingCapacity, fuelConsumption);
+		super(numberPlate, manufacturer, model, maxRange, capacity, bearingCapacity, fuelConsumption);
 		setSeatsCount(seatsCount);
 		setClassCount(classCount);
 		setLuggageCapacity(luggageCapacity);
@@ -54,8 +54,8 @@ public class Airliner extends Airplane {
 	
 	@Override
 	public String toString() {
-		return String.format("manufacturer: %s model: %s maxRange: %d capacity: %d bearingCapacity: %d "
-			   + "fuelConsumption: %d seatsCount: %d classCount: %d luggageCapacity: %d",
+		return String.format("numberPlate: %s manufacturer: %s model: %s maxRange: %d capacity: %d bearingCapacity: %d "
+			   + "fuelConsumption: %d seatsCount: %d classCount: %d luggageCapacity: %d", getNumberPlate(),
 			   getManufacturer(), getModel(), getMaxRange(), getCapacity(), getBearingCapacity(), getFuelConsumption(), seatsCount,
 			   classCount, luggageCapacity);
 	}

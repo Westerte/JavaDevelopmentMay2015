@@ -1,9 +1,0 @@
-package edu.nesterenko.parcer.entity;
-
-public abstract class Component {
-	private String name;
-	
-	public abstract Component getComponent(int index);
-	public abstract voif addComponent(Component c);
-	public abstract 
-}

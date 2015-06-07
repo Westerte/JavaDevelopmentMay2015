@@ -7,7 +7,8 @@ public class Runner {
 
 	public static void main(String[] args) {
 		View view = new View(new Controller(), "exitFile.txt");
-		view.loadWithSaxParser("xml\\AirlineXml.xml");
+		view.loadWithDomParser("xml\\AirlineXml.xml");
+		//view.loadFromHardcode();
 		view.calculateGeneralBearingCapacity();
 		view.calculateGeneralCapacity();
 		view.findAll();

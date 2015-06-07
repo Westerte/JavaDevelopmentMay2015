@@ -25,6 +25,10 @@ public class CommandFactory {
 			return LoadFromHardcodeCommand.getInstance();
 		case LOAD_WITH_SAX:
 			return LoadWithSaxParserCommand.getInstance();
+		case LOAD_WITH_STAX:
+			return LoadWithStaxParserCommand.getInstance();
+		case LOAD_WITH_DOM:
+			return LoadWithStaxParserCommand.getInstance();
 		default:
 			throw new LogicalException("Enum doesn't contain this value.");
 		}		

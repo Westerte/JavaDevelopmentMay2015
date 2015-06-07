@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="javax.xml.ws.Response"/>
-<fullyQualifiedTypeName name="edu.vadimnesterenko.airline.bean.Response"/>
-<fullyQualifiedTypeName name="edu.nesterenko.airline.command.CommandEnum"/>
-<fullyQualifiedTypeName name="edu.nesterenko.airline.bean.Response"/>
-<fullyQualifiedTypeName name="edu.nesterenko.airline.view.View"/>
-<fullyQualifiedTypeName name="edu.nesterenko.airline.controller.Controller"/>
-<fullyQualifiedTypeName name="java.io.Writer"/>
-<fullyQualifiedTypeName name="edu.nesterenko.airline.entity.Airline"/>
-<fullyQualifiedTypeName name="edu.nesterenko.airline.logic.AirlineEditor"/>
-<fullyQualifiedTypeName name="edu.nesterenko.airline.logic.AirbusCreator"/>
-<fullyQualifiedTypeName name="edu.nesterenko.airline.dao.DataAccessable"/>
 <fullyQualifiedTypeName name="edu.nesterenko.airline.logic.Loader"/>
 <fullyQualifiedTypeName name="edu.nesterenko.airline.dao.HardcodeDao"/>
 <fullyQualifiedTypeName name="edu.nesterenko.airline.bean.ResponseEnum"/>
@@ -34,7 +23,6 @@
 <fullyQualifiedTypeName name="java.nio.file.Paths"/>
 <fullyQualifiedTypeName name="java.util.Iterator"/>
 <fullyQualifiedTypeName name="java.io.FileWriter"/>
-<fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="java.io.OutputStreamWriter"/>
 <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
 <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
@@ -60,4 +48,16 @@
 <fullyQualifiedTypeName name="edu.nesterenko.parcer.filereader.FileReader"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="edu.nesterenko.parcer.reporter.Reporter"/>
+<fullyQualifiedTypeName name="java.util.regex.Pattern"/>
+<fullyQualifiedTypeName name="javax.xml.stream.XMLInputFactory"/>
+<fullyQualifiedTypeName name="java.io.FileInputStream"/>
+<fullyQualifiedTypeName name="javax.xml.stream.XMLStreamReader"/>
+<fullyQualifiedTypeName name="javax.xml.stream.XMLStreamConstants"/>
+<fullyQualifiedTypeName name="org.w3c.dom.Document"/>
+<fullyQualifiedTypeName name="javax.xml.parsers.DocumentBuilderFactory"/>
+<fullyQualifiedTypeName name="javax.xml.parsers.DocumentBuilder"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="org.w3c.dom.Element"/>
+<fullyQualifiedTypeName name="org.w3c.dom.NodeList"/>
+<fullyQualifiedTypeName name="org.w3c.dom.Node"/>
 </qualifiedTypeNameHistroy>

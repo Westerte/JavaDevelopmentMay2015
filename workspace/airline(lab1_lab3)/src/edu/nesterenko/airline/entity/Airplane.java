@@ -1,9 +1,12 @@
 package edu.nesterenko.airline.entity;
 
+import java.util.regex.Pattern;
+
 import edu.nesterenko.airline.exception.LogicalException;
 import edu.nesterenko.airline.exception.PhisicalException;
 
 public abstract class Airplane {
+	private String numberPlate;
 	private Manufacturer manufacturer;
 	private String model;
 	private int maxRange;
@@ -12,8 +15,9 @@ public abstract class Airplane {
 	private int fuelConsumption;	
 	
 	
-	public Airplane(Manufacturer manufacturer, String model, int maxRange,
+	public Airplane(String numberPlate, Manufacturer manufacturer, String model, int maxRange,
 		   int capacity, int bearingCapacity, int fuelConsumption) throws LogicalException, PhisicalException {
+		setNumberPlate(numberPlate);
 		setManufacturer(manufacturer);
 		setModel(model);
 		setMaxRange(maxRange);
@@ -92,6 +96,18 @@ public abstract class Airplane {
 			this.model = model;
 		} else {
 			throw new LogicalException("manufacturer doesn't have this model");
+		}
+	}
+
+	public String getNumberPlate() {		
+		return numberPlate;
+	}
+
+	public void setNumberPlate(String numberPlate) throws LogicalException {
+		if(Pattern.matches("EW-[\\d]{3}(?:(?:PA)|(?:PO)|(?:PJ))", numberPlate)) {
+			this.numberPlate = numberPlate;
+		} else {
+			throw new LogicalException("numberPlate has invalid format");
 		}
 	}
 
