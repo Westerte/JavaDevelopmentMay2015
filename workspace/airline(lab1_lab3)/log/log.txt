@@ -9,3 +9,4 @@ Message: elementGetText() function expects text only elment but START_ELEMENT wa
 2015-06-07 22:59:27,224 [main] ERROR edu.nesterenko.airline.command.DeleteCommand  - edu.nesterenko.airline.exception.PhisicalException: java.lang.IndexOutOfBoundsException: Index: 2, Size: 0
 2015-06-07 23:03:16,105 [main] ERROR edu.nesterenko.airline.view.Reporter  - edu.nesterenko.airline.exception.LogicalException: Enum doesn't contain this value.
 2015-06-07 23:03:27,401 [main] ERROR edu.nesterenko.airline.view.Reporter  - edu.nesterenko.airline.exception.LogicalException: Enum doesn't contain this value.
+2015-06-07 23:50:35,860 [main] ERROR edu.nesterenko.airline.command.DeleteCommand  - edu.nesterenko.airline.exception.PhisicalException: java.lang.IndexOutOfBoundsException: Index: 2, Size: 0

@@ -38,10 +38,10 @@ public class DomParserDao implements DataAccessable {
 				Element airlinerElement = (Element)airlinerList.item(i);
 				addAirliner(airlinerElement);
 			}
-			NodeList frighterList = root.getElementsByTagName("freighter");
+			NodeList frighterList = root.getElementsByTagName("frighter");
 			for(int i = 0; i < airlinerList.getLength(); i++) {
 				Element frighterElement = (Element)frighterList.item(i);
-				addFreighter(frighterElement);
+				addFrighter(frighterElement);
 			}
 		} catch (SAXException | IOException | ParserConfigurationException e) {
 			throw new PhisicalException(e); 
@@ -50,15 +50,15 @@ public class DomParserDao implements DataAccessable {
 	}
 	
 	private void addAirliner(Element airlinerElement) {
-		String manufacturerName = takeManufacturer(airlinerElement);
-		Manufacturer manufacturer = Manufacturer.valueOf(manufacturerName.toUpperCase());
+		String manufacturerName = takeManufacturer(airlinerElement).toUpperCase();
+		Manufacturer manufacturer = Manufacturer.valueOf(manufacturerName);
 		String numberPlate = airlinerElement.getAttribute("number-plate");
 		String model = takeElementTextContent(airlinerElement, manufacturerName);
 		int maxRange = Integer.parseInt(takeElementTextContent(airlinerElement, "max-range"));
 		int capacity = Integer.parseInt(takeElementTextContent(airlinerElement, "capacity"));
 		int bearingCapacity = Integer.parseInt(takeElementTextContent(airlinerElement, "bearing-capacity"));
 		int fuelConsumption = Integer.parseInt(takeElementTextContent(airlinerElement, "fuel-consumption"));
-		int seatsCount = Integer.parseInt(takeElementTextContent(airlinerElement, "seats-count"));
+		int seatsCount = Integer.parseInt(takeElementTextContent(airlinerElement, "seats-ount"));
 		int classCount = Integer.parseInt(takeElementTextContent(airlinerElement, "class-count"));
 		int luggageCapacity = Integer.parseInt(takeElementTextContent(airlinerElement, "luggage-capacity"));
 		try {
@@ -67,9 +67,9 @@ public class DomParserDao implements DataAccessable {
 		} catch (PhisicalException | LogicalException e) {}	
 	}
 	
-	private void addFreighter(Element frighterElement) {
-		String manufacturerName = takeManufacturer(frighterElement);
-		Manufacturer manufacturer = Manufacturer.valueOf(manufacturerName.toUpperCase());
+	private void addFrighter(Element frighterElement) {
+		String manufacturerName = takeManufacturer(frighterElement).toUpperCase();
+		Manufacturer manufacturer = Manufacturer.valueOf(manufacturerName);
 		String numberPlate = frighterElement.getAttribute("number-plate");;
 		String model = takeElementTextContent(frighterElement, manufacturerName);
 		int maxRange = Integer.parseInt(takeElementTextContent(frighterElement, "max-range"));

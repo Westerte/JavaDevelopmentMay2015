@@ -58,7 +58,7 @@ public class DomParserDao implements DataAccessable {
 		int capacity = Integer.parseInt(takeElementTextContent(airlinerElement, "capacity"));
 		int bearingCapacity = Integer.parseInt(takeElementTextContent(airlinerElement, "bearing-capacity"));
 		int fuelConsumption = Integer.parseInt(takeElementTextContent(airlinerElement, "fuel-consumption"));
-		int seatsCount = Integer.parseInt(takeElementTextContent(airlinerElement, "seats-count"));
+		int seatsCount = Integer.parseInt(takeElementTextContent(airlinerElement, "seats-ount"));
 		int classCount = Integer.parseInt(takeElementTextContent(airlinerElement, "class-count"));
 		int luggageCapacity = Integer.parseInt(takeElementTextContent(airlinerElement, "luggage-capacity"));
 		try {
