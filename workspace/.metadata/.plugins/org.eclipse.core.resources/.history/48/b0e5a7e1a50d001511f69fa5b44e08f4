@@ -53,7 +53,7 @@ public class SaxParserDao extends DefaultHandler implements DataAccessable {
 		} catch (PhisicalException | LogicalException e) {}	
 	}
 	
-	private void addFreighter() {
+	private void addFrighter() {
 		try {
 			AirlineEditor.addAirplane(new FreighterCreator(), new Object[] {numberPlate, manufacturer, model, maxRange, capacity, bearingCapacity, 
 				                      fuelConsumption, cargoHoldCount});
@@ -116,7 +116,7 @@ public class SaxParserDao extends DefaultHandler implements DataAccessable {
 			addAirliner();	
         	break;
         case FREIGHTER:
-			addFreighter();
+			addFrighter();
         	break;
         case AIRBUS:
         	manufacturer = Manufacturer.valueOf(currentTag.name());

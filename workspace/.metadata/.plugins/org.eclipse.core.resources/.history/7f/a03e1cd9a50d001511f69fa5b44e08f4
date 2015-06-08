@@ -99,7 +99,7 @@ public class StaxParserDao implements DataAccessable {
 			    		addAirliner();
 			    		break;
 			    	case FREIGHTER :
-			    		addFreighter();
+			    		addFrighter();
 			    		break;
 					default:
 						break;
@@ -119,7 +119,7 @@ public class StaxParserDao implements DataAccessable {
 		} catch (PhisicalException | LogicalException e) {}	
 	}
 	
-	private void addFreighter() {
+	private void addFrighter() {
 		try {
 			AirlineEditor.addAirplane(new FreighterCreator(), new Object[] {numberPlate, manufacturer, model, maxRange, capacity, bearingCapacity, 
 				                      fuelConsumption, cargoHoldCount});
