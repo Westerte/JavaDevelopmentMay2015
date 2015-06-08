@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="edu.nesterenko.airline.logic.Loader"/>
-<fullyQualifiedTypeName name="edu.nesterenko.airline.dao.HardcodeDao"/>
-<fullyQualifiedTypeName name="edu.nesterenko.airline.bean.ResponseEnum"/>
-<fullyQualifiedTypeName name="edu.nesterenko.airline.command.LoadFromHardcodeCommand"/>
 <fullyQualifiedTypeName name="edu.nesterenko.airline.bean.RequestEnum"/>
 <fullyQualifiedTypeName name="edu.nesterenko.airline.dao.SaxParserDao"/>
 <fullyQualifiedTypeName name="org.xml.sax.helpers.DefaultHandler"/>
@@ -50,7 +46,6 @@
 <fullyQualifiedTypeName name="edu.nesterenko.parcer.reporter.Reporter"/>
 <fullyQualifiedTypeName name="java.util.regex.Pattern"/>
 <fullyQualifiedTypeName name="javax.xml.stream.XMLInputFactory"/>
-<fullyQualifiedTypeName name="java.io.FileInputStream"/>
 <fullyQualifiedTypeName name="javax.xml.stream.XMLStreamReader"/>
 <fullyQualifiedTypeName name="javax.xml.stream.XMLStreamConstants"/>
 <fullyQualifiedTypeName name="org.w3c.dom.Document"/>
@@ -60,4 +55,9 @@
 <fullyQualifiedTypeName name="org.w3c.dom.Element"/>
 <fullyQualifiedTypeName name="org.w3c.dom.NodeList"/>
 <fullyQualifiedTypeName name="org.w3c.dom.Node"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.io.Reader"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+<fullyQualifiedTypeName name="java.io.FileInputStream"/>
 </qualifiedTypeNameHistroy>

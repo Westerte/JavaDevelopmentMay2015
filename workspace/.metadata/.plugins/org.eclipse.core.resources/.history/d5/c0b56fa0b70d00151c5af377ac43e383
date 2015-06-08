@@ -26,7 +26,7 @@ public class Six {
 		Six.Type type1 = Six.Type.UNI;
 		for(;;) {
 			try {
-				BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("exit.txt")));
+				BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("\\exit.txt")));
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
