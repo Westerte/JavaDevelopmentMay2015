@@ -116,7 +116,7 @@ and open the template in the editor.
 		<fuel-consumption>40</fuel-consumption>
 		<cargo-hold-count>3</cargo-hold-count>
 	</freighter>
-	<airliner number-plate="EW-776PJ">
+	<airliner number-plate="EW-7776PJ">
 		<boeing>747</boeing>
 		<max-range>9800</max-range>
 		<capacity>1910</capacity>
@@ -126,7 +126,7 @@ and open the template in the editor.
 		<class-count>4</class-count>
 		<luggage-capacity>18430</luggage-capacity>
 	</airliner>	
-	<airliner number-plate="EW-113PO">
+	<airliner number-plate="EW-111PO">
 		<boeing>777</boeing>
 		<max-range>9700</max-range>
 		<capacity>1156</capacity>

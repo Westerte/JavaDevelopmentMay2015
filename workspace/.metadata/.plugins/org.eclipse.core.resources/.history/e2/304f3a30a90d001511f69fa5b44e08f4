@@ -49,7 +49,7 @@ and open the template in the editor.
         <xs:attribute name = "number-plate" use="required">
         	<xs:simpleType>
         		<xs:restriction base="xs:ID">
-        			<xs:pattern value="EW-[\d]{3}((PA)|(PO)|(PJ))"/>
+        			<xs:pattern value="EW-[\d]{3,3}(?:(?:PA)|(?:PO)|(?:PJ))"/>
         		</xs:restriction>
         	</xs:simpleType>
         </xs:attribute>     
