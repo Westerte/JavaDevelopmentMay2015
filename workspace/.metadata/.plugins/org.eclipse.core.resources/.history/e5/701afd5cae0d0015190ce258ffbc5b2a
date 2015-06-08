@@ -16,7 +16,7 @@ import edu.nesterenko.airline.exception.PhisicalException;
 import edu.nesterenko.airline.logic.AirlineEditor;
 
 public class StaxParserDao implements DataAccessable {
-	private XMLStreamReader reader;
+	XMLStreamReader reader;
 	private Manufacturer manufacturer;
 	private String numberPlate;
 	private String model;
@@ -42,80 +42,70 @@ public class StaxParserDao implements DataAccessable {
 		} 
 	}
 	
+	@SuppressWarnings("incomplete-switch")
 	private void parsing() throws PhisicalException {
 		try {
+			String name;
 			while (reader.hasNext()) {
 			    int type = reader.next();
 			    switch (type) {
 			    case XMLStreamConstants.START_ELEMENT:
-			    	fillField();		    	
+			    	name = reader.getLocalName();
+			    	switch(TagsEnum.valueOf(name.replace('-', '_').toUpperCase())) {
+			    	case AIRLINER :
+			    		numberPlate = reader.getAttributeValue(0);
+			    		break;
+			    	case FREIGHTER :
+			    		numberPlate = reader.getAttributeValue(0);
+			    		break;
+			    	case MAX_RANGE:
+			        	maxRange = Integer.parseInt(reader.getElementText());
+			        	break;
+			        case CAPACITY:
+			        	capacity = Integer.parseInt(reader.getElementText());
+			        	break;
+			        case BEARING_CAPACITY:
+			        	bearingCapacity = Integer.parseInt(reader.getElementText());
+			        	break;
+			        case FUEL_CONSUMPTION:
+			        	fuelConsumption = Integer.parseInt(reader.getElementText());
+			        	break;
+			        case SEATS_COUNT:
+			        	seatsCount = Integer.parseInt(reader.getElementText());
+			        	break;
+			        case CLASS_COUNT:
+			        	classCount = Integer.parseInt(reader.getElementText());
+			        	break;
+			        case LUGGAGE_CAPACITY:
+			        	luggageCapacity = Integer.parseInt(reader.getElementText());
+			        	break;
+			        case CARGO_HOLD_COUNT:
+			        	cargoHoldCount = Integer.parseInt(reader.getElementText());
+			        	break;
+			        case AIRBUS:
+			        	manufacturer = Manufacturer.AIRBUS;
+			        	model = reader.getElementText();
+			        	break;
+			        case BOEING:
+			        	manufacturer = Manufacturer.BOEING;
+			        	model = reader.getElementText();
+			        	break;	
+			    	}
 			    break;
 			    case XMLStreamConstants.END_ELEMENT:
-			    	buildAirplane();
+			    	name = reader.getLocalName();
+			    	switch(TagsEnum.valueOf(name.replace('-', '_').toUpperCase())) {
+			    	case AIRLINER :
+			    		addAirliner();
+			    		break;
+			    	case FREIGHTER :
+			    		addFreighter();
+			    		break;
+					default:
+						break;
+			    	}
 			    break;
 			    }
-			}
-		} catch (XMLStreamException e) {
-			throw new PhisicalException(e);
-		}
-	}
-	
-	@SuppressWarnings("incomplete-switch")
-	private void buildAirplane() {
-		String name = reader.getLocalName();
-    	switch(TagsEnum.valueOf(name.replace('-', '_').toUpperCase())) {
-    	case AIRLINER :
-    		addAirliner();
-    		break;
-    	case FREIGHTER :
-    		addFreighter();
-    		break;
-    	}
-	}
-	
-	@SuppressWarnings("incomplete-switch")
-	private void fillField() throws PhisicalException{
-		String name = reader.getLocalName();
-		try {
-			switch(TagsEnum.valueOf(name.replace('-', '_').toUpperCase())) {
-	    	case AIRLINER :
-	    		numberPlate = reader.getAttributeValue(0);
-	    		break;
-	    	case FREIGHTER :
-	    		numberPlate = reader.getAttributeValue(0);
-	    		break;
-	    	case MAX_RANGE:
-	        	maxRange = Integer.parseInt(reader.getElementText());
-	        	break;
-	        case CAPACITY:
-	        	capacity = Integer.parseInt(reader.getElementText());
-	        	break;
-	        case BEARING_CAPACITY:
-	        	bearingCapacity = Integer.parseInt(reader.getElementText());
-	        	break;
-	        case FUEL_CONSUMPTION:
-	        	fuelConsumption = Integer.parseInt(reader.getElementText());
-	        	break;
-	        case SEATS_COUNT:
-	        	seatsCount = Integer.parseInt(reader.getElementText());
-	        	break;
-	        case CLASS_COUNT:
-	        	classCount = Integer.parseInt(reader.getElementText());
-	        	break;
-	        case LUGGAGE_CAPACITY:
-	        	luggageCapacity = Integer.parseInt(reader.getElementText());
-	        	break;
-	        case CARGO_HOLD_COUNT:
-	        	cargoHoldCount = Integer.parseInt(reader.getElementText());
-	        	break;
-	        case AIRBUS:
-	        	manufacturer = Manufacturer.AIRBUS;
-	        	model = reader.getElementText();
-	        	break;
-	        case BOEING:
-	        	manufacturer = Manufacturer.BOEING;
-	        	model = reader.getElementText();
-	        	break;	
 			}
 		} catch (XMLStreamException e) {
 			throw new PhisicalException(e);

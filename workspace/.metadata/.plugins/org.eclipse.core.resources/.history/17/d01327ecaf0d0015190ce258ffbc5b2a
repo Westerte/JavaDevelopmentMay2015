@@ -42,6 +42,7 @@ public class StaxParserDao implements DataAccessable {
 		} 
 	}
 	
+	@SuppressWarnings("incomplete-switch")
 	private void parsing() throws PhisicalException {
 		try {
 			while (reader.hasNext()) {
@@ -51,7 +52,7 @@ public class StaxParserDao implements DataAccessable {
 			    	fillField();		    	
 			    break;
 			    case XMLStreamConstants.END_ELEMENT:
-			    	buildAirplane();
+			    	
 			    break;
 			    }
 			}
@@ -60,7 +61,6 @@ public class StaxParserDao implements DataAccessable {
 		}
 	}
 	
-	@SuppressWarnings("incomplete-switch")
 	private void buildAirplane() {
 		String name = reader.getLocalName();
     	switch(TagsEnum.valueOf(name.replace('-', '_').toUpperCase())) {
@@ -72,7 +72,6 @@ public class StaxParserDao implements DataAccessable {
     		break;
     	}
 	}
-	
 	@SuppressWarnings("incomplete-switch")
 	private void fillField() throws PhisicalException{
 		String name = reader.getLocalName();
@@ -121,7 +120,6 @@ public class StaxParserDao implements DataAccessable {
 			throw new PhisicalException(e);
 		}
 	}
-	
 	private void addAirliner() {
 		try {
 			AirlineEditor.addAirplane(new AirlinerCreator(), new Object[] {numberPlate, manufacturer, model, maxRange, capacity, bearingCapacity, 

@@ -72,7 +72,6 @@ public class StaxParserDao implements DataAccessable {
     		break;
     	}
 	}
-	
 	@SuppressWarnings("incomplete-switch")
 	private void fillField() throws PhisicalException{
 		String name = reader.getLocalName();
