@@ -1,0 +1,10 @@
+package edu.nesterenko.auction.run;
+
+import edu.nesterenko.auction.entity.*;
+
+public class AuctionDemo {
+
+	public static void main(String[] args) {
+
+	}
+}

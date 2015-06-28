@@ -1,0 +1,9 @@
+1435164166050	Encapsulate field 'lotsName'
+1435164465694	Encapsulate field 'currentLot'
+1435164773599	Encapsulate field 'lots'
+1435166290653	Encapsulate field 'confirmed'
+1435171988277	Rename field 'finishedlots'
+1435313188296	Encapsulate field 'numberOfParticipant'
+1435415233650	Infer generic type arguments
+1435423196907	Encapsulate field 'closed'
+1435424122660	Encapsulate field 'closed'

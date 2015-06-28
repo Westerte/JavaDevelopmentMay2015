@@ -1,0 +1,62 @@
+package edu.nesterenko.auction.entity;
+
+import edu.nesterenko.auction.exception.LogicalException;
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class Lot {
+	private final int startPrice; // подумать насчёт констант и их наименований	
+	private AtomicInteger finishPrice;
+	private String lotsName;
+	private Participant winner = null;
+	private AtomicBoolean confirmed;
+	
+	public Lot(int startPrice, String lotsName) throws LogicalException {
+		if(startPrice > 0) { 
+			this.startPrice = startPrice;
+			this.finishPrice.set(startPrice);
+		} else {
+			throw new LogicalException("startPrice must be greater then 0");
+		}
+		setLotsName(lotsName);
+	}
+	
+	public int getStartPrice() {
+		return startPrice;
+	}
+	
+	public int getFinishPrice() {
+		return finishPrice.get();
+	}
+	
+	public void setFinishPrice(int finishPrice) throws LogicalException {
+		if(finishPrice > this.finishPrice.get() ) {
+			this.finishPrice.set(finishPrice);
+		} else {
+			throw new LogicalException("finishPrice must be greater then current value");
+		}
+	}
+	
+	public Participant getWinner() {
+		return winner;
+	}
+	
+	public void setWinner(Participant winner) throws LogicalException {
+		if(winner != null) {
+			this.winner = winner;
+		} else {
+			throw new LogicalException("winner must be not null");
+		}
+	}
+
+	public String getLotsName() {
+		return lotsName;
+	}
+
+	public void setLotsName(String lotsName) throws LogicalException {
+		if(lotsName != null && !lotsName.isEmpty()) {
+			this.lotsName = lotsName; 
+		} else {
+			throw new LogicalException("lotsName must be ");	//посмотреть перевод слова задано
+		}
+	}
+}

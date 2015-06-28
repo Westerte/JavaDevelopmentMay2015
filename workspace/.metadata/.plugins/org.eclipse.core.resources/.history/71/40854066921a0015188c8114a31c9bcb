@@ -1,0 +1,13 @@
+package edu.nesterenko.auction.run;
+
+import java.util.concurrent.Phaser;
+
+import edu.nesterenko.auction.entity.*;
+
+public class AuctionDemo {
+
+	public static void main(String[] args) {
+		Phaser phaser = new Phaser();
+		Auction auction = new Auction();
+	}
+}

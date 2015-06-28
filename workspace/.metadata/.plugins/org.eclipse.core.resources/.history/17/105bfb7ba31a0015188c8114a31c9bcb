@@ -1,0 +1,38 @@
+package edu.nesterenko.auction.run;
+
+import java.util.concurrent.Phaser;
+
+import edu.nesterenko.auction.entity.*;
+import edu.nesterenko.auction.exception.LogicalException;
+
+public class AuctionDemo {
+
+	public static void main(String[] args) {
+		Phaser phaser = new Phaser();	//может Phaser здесь не нужен
+		Auction auction = new Auction(phaser);
+		try {
+			auction.addLot(new Lot(300, "картина"));
+			auction.addLot(new Lot(300, "корзина"));
+			auction.addLot(new Lot(300, "картока"));
+			auction.addLot(new Lot(300, "маленькая собачонка"));
+		} catch (LogicalException e) {
+			e.printStackTrace();
+		}
+		Participant p1 = new Participant(auction, phaser);
+		Participant p2 = new Participant(auction, phaser);
+		Participant p3 = new Participant(auction, phaser);
+		Participant p4 = new Participant(auction, phaser);
+		Participant p5 = new Participant(auction, phaser);
+		aucti
+		try {
+			auction.join();
+			LickedList<Lot> finishedLots = auction.getFinishedLots();
+			for(Lot lot : finishedLots) {
+				System.out.println(lot);
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+	}
+}

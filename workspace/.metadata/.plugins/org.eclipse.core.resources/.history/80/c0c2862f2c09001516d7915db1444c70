@@ -1,4 +1,0 @@
-elem1.name=handle
-elem1.father=root
-elem1.pattern=(((\\d\\.)+[\\s\\S]*\\n))
-elem1.type=leaf

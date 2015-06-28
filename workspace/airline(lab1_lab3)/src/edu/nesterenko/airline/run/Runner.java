@@ -10,7 +10,6 @@ public class Runner {
 		//view.loadWithDomParser("xml\\AirlineXml.xml");
 		//view.loadWithSaxParser("xml\\AirlineXml.xml");
 		view.loadWithStaxParser("xml\\AirlineXml.xml");
-		//view.loadFromHardcode();
 		view.calculateGeneralBearingCapacity();
 		view.calculateGeneralCapacity();
 		view.findAll();

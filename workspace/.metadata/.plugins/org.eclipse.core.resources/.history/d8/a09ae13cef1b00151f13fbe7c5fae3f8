@@ -1,0 +1,49 @@
+package edu.nesterenko.auction.run;
+
+import java.util.LinkedList;
+import java.util.List;
+import java.util.concurrent.Phaser;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.ReentrantLock;
+
+import edu.nesterenko.auction.entity.*;
+import edu.nesterenko.auction.exception.LogicalException;
+
+public class AuctionDemo {
+
+	public static void main(String[] args) {
+		Phaser phaser = new Phaser();	//может Phaser здесь не нужен
+		ReentrantLock reentrantLock = new ReentrantLock();
+		Condition condition = reentrantLock.newCondition();
+		Auction auction = new Auction(phaser);
+		try {
+			auction.addLot(new Lot(300, "картина"));
+			auction.addLot(new Lot(300, "корзина"));
+			auction.addLot(new Lot(300, "картока"));
+			auction.addLot(new Lot(300, "маленькая собачонка"));
+		} catch (LogicalException e) {
+			e.printStackTrace();
+		}
+		Participant p1 = new Participant(auction, phaser, reentrantLock, );
+		Participant p2 = new Participant(auction, phaser, reentrantLock);
+		Participant p3 = new Participant(auction, phaser, reentrantLock);
+		Participant p4 = new Participant(auction, phaser, reentrantLock);
+		Participant p5 = new Participant(auction, phaser, reentrantLock);
+		auction.start();
+		p1.start();
+		p2.start();
+		p3.start();
+		p4.start();
+		p5.start();
+		try {
+			auction.join();
+			List<Lot> finishedLots = auction.getFinishedLots();
+			for(Lot lot : finishedLots) {
+				System.out.println(lot);
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+	}
+}

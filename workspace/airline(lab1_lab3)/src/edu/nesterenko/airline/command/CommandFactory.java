@@ -21,8 +21,6 @@ public class CommandFactory {
 			return CalculateGeneralCapacityCommand.getInstance();
 		case SORT_AIRPLAINS_BY_MAX_RANGE:
 			return SortAirplainsByMaxRangeCommand.getInstance();
-		case LOAD_FROM_HARDCODE:
-			return LoadFromHardcodeCommand.getInstance();
 		case LOAD_WITH_SAX:
 			return LoadWithSaxParserCommand.getInstance();
 		case LOAD_WITH_STAX:

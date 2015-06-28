@@ -94,12 +94,6 @@ public class View {
 		Reporter.report(command, response, filePath);	
 	}
 	
-	public void loadFromHardcode() {
-		CommandEnum command = CommandEnum.LOAD_FROM_HARDCODE;
-		Response response = controller.sendReques(command , null);
-		Reporter.report(command, response, filePath);	
-	}
-	
 	public void loadWithSaxParser(String filePath) {
 		CommandEnum command = CommandEnum.LOAD_WITH_SAX;
 		Request request = new Request();

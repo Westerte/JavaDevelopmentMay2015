@@ -59,9 +59,6 @@ public class Reporter {
 			case SORT_AIRPLAINS_BY_MAX_RANGE:
 				exitString.append(response.getParameter(ResponseEnum.IS_OK).toString());
 				break;
-			case LOAD_FROM_HARDCODE:
-				exitString.append(response.getParameter(ResponseEnum.IS_OK).toString());
-				break;
 			case LOAD_WITH_SAX:
 				exitString.append(response.getParameter(ResponseEnum.IS_OK).toString());
 				break;
