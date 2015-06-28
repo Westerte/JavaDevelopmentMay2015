@@ -14,10 +14,10 @@ import edu.nesterenko.connectionPool.exception.PhisicalException;
 
 public class ConnectionPool {
 	private final static Logger LOG = Logger.getLogger(ConnectionPool.class);
-	private final static String PROPERTIES_FILE_PAHT = "config/CPconf.properties"; 
-	public final int POOL_SIZE;
+	private final static String PROPERTIES_FILE_PAHT = "config/CPconf.properties"; 	
 	private static ConnectionPool instance  = new ConnectionPool();	
-	private BlockingQueue<ConnectionWrapper> connections;
+	public final int POOL_SIZE;
+	private BlockingQueue<ConnectionWrapper> connections;s
 	
 	public class ConnectionWrapper {
 		private Connection connection;
@@ -48,7 +48,7 @@ public class ConnectionPool {
 		} catch(Exception e) {	
 			LOG.fatal(e);
 			throw new Error(e);
-		}
+		} 
 	}
 	
 	public static ConnectionPool getInstance() { 
@@ -68,12 +68,20 @@ public class ConnectionPool {
 			if(!connections.contains(connection)) {
 				connections.put(connection);
 			}
-		} catch (InterruptedException e) {
-			// it's impossible by logic
-		}
+		} catch (InterruptedException e) {}
 	}
 	
 	public int getAvailableCount() {
 		return connections.size();
+	}
+
+	public void closeConnections() throws PhisicalException  {
+		for(ConnectionWrapper connectionWrapper : connections ) {
+			try {
+				connectionWrapper.connection.close();
+			} catch (SQLException e) {
+				throw new PhisicalException(e);
+			}
+		}
 	}
 }

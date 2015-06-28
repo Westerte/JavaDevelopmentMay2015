@@ -2,3 +2,4 @@
 2015-06-28 18:55:46,270 [main] FATAL edu.nesterenko.connectionPool.connectionPool.ConnectionPool  - com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect database name 'testphones '
 2015-06-28 18:56:27,748 [main] FATAL edu.nesterenko.connectionPool.connectionPool.ConnectionPool  - com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect database name 'testphones '
 2015-06-28 18:56:45,202 [main] FATAL edu.nesterenko.connectionPool.connectionPool.ConnectionPool  - com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect database name 'testphones '
+2015-06-28 20:00:02,858 [Thread-0] FATAL edu.nesterenko.connectionPool.connectionPool.ConnectionPool  - java.io.IOException: Stream Closed
