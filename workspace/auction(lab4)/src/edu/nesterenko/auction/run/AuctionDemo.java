@@ -27,7 +27,7 @@ public class AuctionDemo {
 		} catch (LogicalException e) {
 			e.printStackTrace();
 		}
-		Participant[] participants = new Participant[10];
+		Participant[] participants = new Participant[15];
 		for(int i = 0; i < participants.length; i++) {
 			participants[i] = new Participant(auction, phaser, reentrantLock, condition);
 		}

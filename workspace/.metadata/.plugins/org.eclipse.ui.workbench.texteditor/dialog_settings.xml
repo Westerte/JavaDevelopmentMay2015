@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item value="true" key="isRegEx"/>
-		<item value="CARGO_HOLD_COUNT" key="selection"/>
-		<item value="true" key="casesensitive"/>
+		<item value="false" key="isRegEx"/>
+		<item value="getCurrentLot()" key="selection"/>
+		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="getCurrentLot()"/>
+			<item value="getCurrentLot"/>
 			<item value="[A-Z]+(_[A-Z]+)+"/>
 			<item value="[A-Z]+((_[A-Z]+)+)"/>
 			<item value="[A-Z]+((_[A-Z]+)*)"/>
 			<item value="throw new PhisicalException"/>
 			<item value="throw new PhisicalException(&quot;Bad args.&quot;); } } catch (PhisicalException"/>
 			<item value="th"/>
-			<item value="integer"/>
-			<item value="composit"/>
 		</list>
 		<list key="replacehistory">
 			<item value="[A-Z]+(-[A-Z]+)+"/>

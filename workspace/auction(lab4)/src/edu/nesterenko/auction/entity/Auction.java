@@ -1,12 +1,13 @@
 package edu.nesterenko.auction.entity;
 
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Random;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Phaser;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
@@ -17,12 +18,12 @@ public class Auction extends Thread {
 	private LinkedList<Lot> lots = new LinkedList<Lot>();
 	private LinkedList<Lot> finishedLots = new LinkedList<Lot>();
 	private Lot currentLot;
-	private HashMap<Participant, Integer> blockedParticipants = new HashMap<Participant, Integer>();
+	private Map<Participant, Integer> blockedParticipants = new ConcurrentHashMap<Participant, Integer>();
 	private Phaser phaser;
 	private Random random = new Random();
 	private ReentrantLock sync = new ReentrantLock();
 	private Condition cond = sync.newCondition();
-	private boolean closed = false;
+	private volatile boolean closed = false;
 
 	public Auction(Phaser phaser) {
 		this.phaser = phaser;
@@ -33,27 +34,30 @@ public class Auction extends Thread {
 		while(!isEmpty()) {
 			System.out.println();
 			currentLot = lots.removeFirst();
+			phaser.arriveAndAwaitAdvance(); 
 			phaser.arriveAndAwaitAdvance();
-			phaser.arriveAndAwaitAdvance();
-			phaser.arriveAndAwaitAdvance();
+			phaser.arriveAndAwaitAdvance();			
 			finishLot();
 			if(isEmpty()) {
 				setClosed(true);
+				
 			}
 			phaser.arriveAndAwaitAdvance();			
 		}
+		System.out.println(String.format("Поток: %s завершён", this.getName()));
 		phaser.arriveAndDeregister();
 	}
 	
 	private void finishLot() { 
-		updateblockedParticipants();
 		if(currentLot.getWinner() != null) {
 			try {
 				Thread.sleep(random.nextInt(500));				
 				if(currentLot.isConfirmed()) {
 					System.out.println(String.format("Поток %s заплатил, лот является завершённым", currentLot.getWinner().getName()));
 					finishedLots.add(currentLot);
+					updateblockedParticipants();
 				} else {
+					updateblockedParticipants();
 					try {
 						System.out.println(String.format("Поток %s не заплатил, лот будет переигран", currentLot.getWinner().getName()));						
 						int numberOfLotsToWait = 1 + random.nextInt(2);
@@ -77,9 +81,9 @@ public class Auction extends Thread {
 		Set<Entry<Participant, Integer>> entrySet = blockedParticipants.entrySet();
 		for(Entry<Participant, Integer> entry : entrySet) {
 			int value = entry.getValue() - 1;
-			if(value == 0) {
+			if(value == 0) {				
+				phaser.register();
 				blockedParticipants.remove(entry.getKey());
-				phaser.register();				
 			} else {
 				blockedParticipants.replace(entry.getKey(), value);
 			}
@@ -98,7 +102,7 @@ public class Auction extends Thread {
 
 	public Lot getCurrentLot() {
 		boolean isBlocked = false;
-		while(blockedParticipants.containsKey(Thread.currentThread())) {
+		while(blockedParticipants.containsKey(Thread.currentThread()) && !isClosed()) {
 			if(!isBlocked) {
 				phaser.arriveAndDeregister();
 				isBlocked = true;
