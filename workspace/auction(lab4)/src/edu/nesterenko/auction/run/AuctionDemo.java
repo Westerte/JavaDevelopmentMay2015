@@ -1,20 +1,15 @@
 package edu.nesterenko.auction.run;
 
 import java.util.List;
-import java.util.concurrent.Phaser;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.ReentrantLock;
-
-import edu.nesterenko.auction.entity.*;
+import edu.nesterenko.auction.auction.Auction;
+import edu.nesterenko.auction.auction.Lot;
 import edu.nesterenko.auction.exception.LogicalException;
+import edu.nesterenko.auction.participant.Participant;
 
 public class AuctionDemo {
 
 	public static void main(String[] args) {
-		Phaser phaser = new Phaser();	//может Phaser здесь не нужен
-		ReentrantLock reentrantLock = new ReentrantLock();
-		Condition condition = reentrantLock.newCondition();
-		Auction auction = new Auction(phaser);
+		Auction auction = new Auction();
 		try {
 			auction.addLot(new Lot(300, "картина"));
 			auction.addLot(new Lot(300, "корзина"));
@@ -29,7 +24,7 @@ public class AuctionDemo {
 		}
 		Participant[] participants = new Participant[15];
 		for(int i = 0; i < participants.length; i++) {
-			participants[i] = new Participant(auction, phaser, reentrantLock, condition);
+			participants[i] = new Participant(auction);
 		}
 		auction.start();
 		for(Participant participant : participants) {
@@ -48,7 +43,6 @@ public class AuctionDemo {
 			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();
-		}
-		
+		}		
 	}
 }

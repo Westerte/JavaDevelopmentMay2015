@@ -1,0 +1,11 @@
+1435784785444	Move compilation unit
+1435784801661	Move compilation unit
+1435784804497	Move compilation unit
+1435784808671	Delete element
+1435785621701	Rename field 'cond'
+1435785663537	Rename field 'isBlocked'
+1435788419936	Rename method 'updateblockedParticipants'
+1435788880148	Rename field 'cond'
+1435789065057	Rename field 'startPrice'
+1435789327834	Rename method 'setConfirmed'
+1435789343750	Rename method 'confirme'

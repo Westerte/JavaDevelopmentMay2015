@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<airplanes
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:noNamespaceSchemaLocation='AirlineXsd.xsd'>
+	<airliner number-plate="EW-256PJ">
+		<boeing>747</boeing>
+		<max-range>9800</max-range>
+		<capacity>1910</capacity>
+		<bearing-capacity>170990</bearing-capacity>
+		<fuel-consumption>32</fuel-consumption>
+		<seats-count>1907</seats-count>
+		<class-count>4</class-count>
+		<luggage-capacity>18430</luggage-capacity>
+	</airliner>	
+	<airliner number-plate="EW-256PO">
+		<airbus>a320</airbus>
+		<max-range>9700</max-range>
+		<capacity>1156</capacity>
+		<bearing-capacity>112400</bearing-capacity>
+		<fuel-consumption>23</fuel-consumption>
+		<seats-count>1154</seats-count>
+		<class-count>3</class-count>
+		<luggage-capacity>19920</luggage-capacity>
+	</airliner>
+	<freighter number-plate="EW-254PJ">
+		<boeing>747</boeing>
+		<max-range>4600</max-range>
+		<capacity>8</capacity>
+		<bearing-capacity>18000</bearing-capacity>
+		<fuel-consumption>17</fuel-consumption>
+		<cargo-hold-count>1</cargo-hold-count>
+	</freighter>
+	<freighter  number-plate="EW-777PA">
+		<airbus>a380</airbus>
+		<max-range>10370</max-range>
+		<capacity>10</capacity>
+		<bearing-capacity>150000</bearing-capacity>
+		<fuel-consumption>40</fuel-consumption>
+		<cargo-hold-count>3</cargo-hold-count>
+	</freighter>
+	<airliner number-plate="EW-251PJ">
+		<boeing>747</boeing>
+		<max-range>9800</max-range>
+		<capacity>1910</capacity>
+		<bearing-capacity>170990</bearing-capacity>
+		<fuel-consumption>32</fuel-consumption>
+		<seats-count>1907</seats-count>
+		<class-count>4</class-count>
+		<luggage-capacity>18430</luggage-capacity>
+	</airliner>	
+	<airliner number-plate="EW-250PO">
+		<boeing>777</boeing>
+		<max-range>9700</max-range>
+		<capacity>1156</capacity>
+		<bearing-capacity>112400</bearing-capacity>
+		<fuel-consumption>23</fuel-consumption>
+		<seats-count>1154</seats-count>
+		<class-count>3</class-count>
+		<luggage-capacity>19920</luggage-capacity>
+	</airliner>
+	<freighter number-plate="EW-258PJ">
+		<airbus>a320</airbus>
+		<max-range>4600</max-range>
+		<capacity>8</capacity>
+		<bearing-capacity>18000</bearing-capacity>
+		<fuel-consumption>17</fuel-consumption>
+		<cargo-hold-count>1</cargo-hold-count>
+	</freighter>
+	<freighter  number-plate="EW-771PA">
+		<airbus>a380</airbus>
+		<max-range>10370</max-range>
+		<capacity>10</capacity>
+		<bearing-capacity>150000</bearing-capacity>
+		<fuel-consumption>40</fuel-consumption>
+		<cargo-hold-count>3</cargo-hold-count>
+	</freighter>
+	<airliner number-plate="EW-133PJ">
+		<boeing>747</boeing>
+		<max-range>9800</max-range>
+		<capacity>1910</capacity>
+		<bearing-capacity>170990</bearing-capacity>
+		<fuel-consumption>32</fuel-consumption>
+		<seats-count>1907</seats-count>
+		<class-count>4</class-count>
+		<luggage-capacity>18430</luggage-capacity>
+	</airliner>	
+	<airliner number-plate="EW-134PO">
+		<boeing>777</boeing>
+		<max-range>9700</max-range>
+		<capacity>1156</capacity>
+		<bearing-capacity>112400</bearing-capacity>
+		<fuel-consumption>23</fuel-consumption>
+		<seats-count>1154</seats-count>
+		<class-count>3</class-count>
+		<luggage-capacity>19920</luggage-capacity>
+	</airliner>
+	<freighter number-plate="EW-001PJ">
+		<airbus>a320</airbus>
+		<max-range>4600</max-range>
+		<capacity>8</capacity>
+		<bearing-capacity>18000</bearing-capacity>
+		<fuel-consumption>17</fuel-consumption>
+		<cargo-hold-count>1</cargo-hold-count>
+	</freighter>
+	<freighter  number-plate="EW-320PA">
+		<airbus>a380</airbus>
+		<max-range>10370</max-range>
+		<capacity>10</capacity>
+		<bearing-capacity>150000</bearing-capacity>
+		<fuel-consumption>40</fuel-consumption>
+		<cargo-hold-count>3</cargo-hold-count>
+	</freighter>
+	<airliner number-plate="EW-776PJ">
+		<boeing>747</boeing>
+		<max-range>9800</max-range>
+		<capacity>1910</capacity>
+		<bearing-capacity>170990</bearing-capacity>
+		<fuel-consumption>32</fuel-consumption>
+		<seats-count>1907</seats-count>
+		<class-count>4</class-count>
+		<luggage-capacity>18430</luggage-capacity>
+	</airliner>	
+	<airliner number-plate="EW-113PO">
+		<boeing>777</boeing>
+		<max-range>9700</max-range>
+		<capacity>1156</capacity>
+		<bearing-capacity>112400</bearing-capacity>
+		<fuel-consumption>23</fuel-consumption>
+		<seats-count>1154</seats-count>
+		<class-count>3</class-count>
+		<luggage-capacity>19920</luggage-capacity>
+	</airliner>
+	<freighter number-plate="EW-123PJ">
+		<airbus>a320</airbus>
+		<max-range>4600</max-range>
+		<capacity>8</capacity>
+		<bearing-capacity>18000</bearing-capacity>
+		<fuel-consumption>17</fuel-consumption>
+		<cargo-hold-count>1</cargo-hold-count>
+	</freighter>
+	<freighter  number-plate="EW-999PA">
+		<airbus>a380</airbus>
+		<max-range>10370</max-range>
+		<capacity>10</capacity>
+		<bearing-capacity>150000</bearing-capacity>
+		<fuel-consumption>40</fuel-consumption>
+		<cargo-hold-count>3</cargo-hold-count>
+	</freighter>
+</airplanes>

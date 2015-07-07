@@ -1,0 +1,4 @@
+2015-07-07 21:56:54,620 [http-bio-8080-exec-10] ERROR edu.nesterenko.airline.controller.Controller  - edu.nesterenko.airline.exception.LogicalException: Enum doesn't contain this value.
+2015-07-07 22:08:21,530 [http-bio-8080-exec-3] ERROR edu.nesterenko.airline.controller.Controller  - edu.nesterenko.airline.exception.LogicalException: Enum doesn't contain this value.
+2015-07-07 22:31:59,318 [http-bio-8080-exec-10] ERROR edu.nesterenko.airline.controller.Controller  - edu.nesterenko.airline.exception.LogicalException: Enum doesn't contain this value.
+2015-07-07 22:34:30,831 [http-bio-8080-exec-4] ERROR edu.nesterenko.airline.controller.Controller  - edu.nesterenko.airline.exception.LogicalException: Enum doesn't contain this value.
