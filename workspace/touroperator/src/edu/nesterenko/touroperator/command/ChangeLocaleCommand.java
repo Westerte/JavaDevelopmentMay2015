@@ -1,0 +1,36 @@
+package edu.nesterenko.touroperator.command;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.apache.log4j.Logger;
+
+import edu.nesterenko.touroperator.logic.LocaleDefiner;
+import edu.nesterenko.touroperator.logic.LogicException;
+import edu.nesterenko.touroperator.resource.ConfigurationManager;
+
+public class ChangeLocaleCommand implements Command {
+	private final static Logger LOG = Logger.getLogger(LoginCommand.class);
+	private static ChangeLocaleCommand instance = new ChangeLocaleCommand();
+	
+	private ChangeLocaleCommand() {}
+	
+	public static ChangeLocaleCommand  getInstance() {
+		return instance;
+	}
+	@Override
+	public String execute(HttpServletRequest request) {
+		HttpSession session = request.getSession(); 
+		try {
+			session.setAttribute("locale", LocaleDefiner.defineLocal(request.getParameter("language")));
+		} catch (LogicException e) {
+			LOG.error(e);
+		}
+		String jspPath = (String) session.getAttribute("last_page");
+		if(jspPath == null || jspPath.isEmpty()) {
+			jspPath = ConfigurationManager.getProperty("path.page.index");
+		}
+		return jspPath;
+	}
+
+}

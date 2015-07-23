@@ -1,0 +1,15 @@
+2015-07-20 10:54:11,172 [http-bio-8080-exec-8] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: language must be not null
+2015-07-20 10:54:15,291 [http-bio-8080-exec-7] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: language must be not null
+2015-07-20 10:54:18,631 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: language must be not null
+2015-07-20 10:54:20,498 [http-bio-8080-exec-15] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: language must be not null
+2015-07-20 10:54:27,879 [http-bio-8080-exec-15] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: language must be not null
+2015-07-20 10:54:29,066 [http-bio-8080-exec-15] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: language must be not null
+2015-07-20 10:54:29,836 [http-bio-8080-exec-15] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: language must be not null
+2015-07-20 10:54:30,524 [http-bio-8080-exec-15] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: language must be not null
+2015-07-20 10:55:03,944 [http-bio-8080-exec-11] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: language must be not null
+2015-07-20 10:55:44,751 [http-bio-8080-exec-12] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: password is emtpy
+2015-07-20 10:55:51,815 [http-bio-8080-exec-12] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: Bad params
+2015-07-22 10:49:03,581 [http-bio-8080-exec-14] ERROR edu.nesterenko.touroperator.command.SignUpCommand  - edu.nesterenko.touroperator.logic.LogicException: login is emtpy
+2015-07-22 10:49:14,413 [http-bio-8080-exec-14] ERROR edu.nesterenko.touroperator.command.SignUpCommand  - edu.nesterenko.touroperator.logic.LogicException: login is emtpy
+2015-07-22 10:49:15,432 [http-bio-8080-exec-14] ERROR edu.nesterenko.touroperator.command.SignUpCommand  - edu.nesterenko.touroperator.logic.LogicException: login is emtpy
+2015-07-22 10:49:16,442 [http-bio-8080-exec-14] ERROR edu.nesterenko.touroperator.command.SignUpCommand  - edu.nesterenko.touroperator.logic.LogicException: login is emtpy

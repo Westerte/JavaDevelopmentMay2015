@@ -1,0 +1,2 @@
+2015-07-17 01:31:54,923 [http-bio-8080-exec-6] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: login is emtpy
+2015-07-17 01:32:01,630 [http-bio-8080-exec-6] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: Bad params

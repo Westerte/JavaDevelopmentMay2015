@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<taglib version="2.1"  
+xmlns="http://java.sun.com/xml/ns/javaee"  
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"> 
+	<tlib-version>1.0</tlib-version> 
+	<short-name>ctg</short-name> 
+	<uri>custom</uri> 
+	<tag>  
+		<name>locale-switch</name>  
+		<tag-class>edu.nesterenko.touroperator.tags.LocaleSwitchTag</tag-class>  
+		<body-content>empty</body-content> 
+	</tag>
+	<tag>  
+		<name>clean-last-page</name>  
+		<tag-class>edu.nesterenko.touroperator.tags.CleanLastPageTag</tag-class>  
+		<body-content>empty</body-content> 
+	</tag>    
+</taglib> 
