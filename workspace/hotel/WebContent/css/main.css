@@ -1,0 +1,120 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+#page-wrapper {
+    min-height: 100%;
+    margin-bottom: -200px;
+}
+* html #page-wrapper {
+    height: 100%;
+}
+#page-buffer {
+    height: 200px;
+}
+
+
+a {
+	text-decoration: none;
+	color: #999;
+}
+
+a:hover {
+	color: black;
+}
+
+/*login form*/
+
+#login_form {
+	max-width: 320px;
+	border: 5px solid #f0f1f1;
+	margin: 100px auto;
+	background: #f8f8f8;
+	padding: 20px 0 10px 0;
+	text-align: center;
+	font-family: trebuchet MS;
+	font-size: 14px;
+}
+
+#login_form_content {
+	display: inline-block;
+	margin: 0 auto;
+	text-align: left;
+}
+
+.input {
+	display: block;
+	margin: 10px 0 0 0;
+}
+
+#submit_button {
+	height: 32px;
+	width: 280px;
+	margin-bottom: 5px;
+	background: #999;
+	border: 0;
+	font-size: 14px;
+	color: #fff;
+}
+
+#submit_button:hover {
+	background: #99D5FD;
+}
+
+.fields {
+	width: 250px;
+	padding-left: 30px;
+	height: 30px;
+	border: 1px solid #CCC;
+}
+
+#login_field {
+	background: url("../img/login.png") no-repeat 5px #fff;
+}
+
+#email_field {
+	background: url("../img/email.png") no-repeat 5px #fff;
+}
+
+#password_field {
+	background: url("../img/lock.png") no-repeat 5px #fff;
+}
+
+#status {
+	  height: 45px;
+	  width: 280px;
+	  line-height: 45px;
+	  text-align: center;
+	  background: #99D5FD;
+	  color: #fff;
+	  font-size: 16px;
+}
+
+/*login form*/
+
+/*header*/
+header {	
+	height: 120px;
+	width: auto;
+	background: #99D5FD;			
+}
+
+.pushed {
+	color: black;
+}
+
+header a {
+	color: #fff;
+}
+
+/*header*/
+
+/*footer*/
+footer {
+	width: auto;
+    height: 200px;
+    background: #f0f1f1;
+}
+
+/*footer*/

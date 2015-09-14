@@ -1,0 +1,1 @@
+2015-08-10 21:51:01,032 [http-nio-8080-exec-5] FATAL edu.nesterenko.touroperator.connectionpool.ConnectionPool  - java.lang.ClassNotFoundException: org.gjt.mm.mysql.Driver

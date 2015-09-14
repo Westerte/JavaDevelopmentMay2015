@@ -7,12 +7,11 @@ public class Client extends BusinessEntity {
 	private String email;
 	private ClientType clientType;		
 
-	public Client(int id, String nickName, String password, String email,
+	public Client(int id, String nickName, String email,
 			String clientType) {
 		super();
 		this.id = id;
 		this.nickName = nickName;
-		this.password = password;
 		this.email = email;
 		this.clientType = ClientType.valueOf(clientType);
 	}
@@ -35,14 +34,6 @@ public class Client extends BusinessEntity {
 
 	public void setClientType(ClientType clientType) {
 		this.clientType = clientType;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
 	}
 
 	public String getEmail() {

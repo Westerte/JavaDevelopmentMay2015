@@ -1,0 +1,18 @@
+2015-08-18 11:31:50,673 [http-nio-8080-exec-3] DEBUG edu.nesterenko.touroperator.tags.LocaleSwitchTag  - localenull
+2015-08-18 11:31:51,352 [http-nio-8080-exec-5] DEBUG edu.nesterenko.touroperator.tags.LocaleSwitchTag  - localenull
+2015-08-18 11:39:12,724 [http-nio-8080-exec-3] DEBUG edu.nesterenko.touroperator.tags.LocaleSwitchTag  - localenull
+2015-08-18 11:39:12,727 [http-nio-8080-exec-3] DEBUG edu.nesterenko.touroperator.tags.LocaleSwitchTag  - ru_RU
+2015-08-18 11:39:13,429 [http-nio-8080-exec-5] DEBUG edu.nesterenko.touroperator.tags.LocaleSwitchTag  - localenull
+2015-08-18 11:39:13,429 [http-nio-8080-exec-5] DEBUG edu.nesterenko.touroperator.tags.LocaleSwitchTag  - ru_RU
+2015-08-18 11:39:19,906 [http-nio-8080-exec-6] DEBUG edu.nesterenko.touroperator.tags.LocaleSwitchTag  - localeen_EN
+2015-08-18 11:39:19,907 [http-nio-8080-exec-6] DEBUG edu.nesterenko.touroperator.tags.LocaleSwitchTag  - en_EN
+2015-08-18 11:42:01,254 [http-nio-8080-exec-9] DEBUG edu.nesterenko.touroperator.tags.LocaleSwitchTag  - localeen_EN
+2015-08-18 11:42:01,256 [http-nio-8080-exec-9] DEBUG edu.nesterenko.touroperator.tags.LocaleSwitchTag  - en_EN
+2015-08-18 11:42:01,256 [http-nio-8080-exec-9] DEBUG edu.nesterenko.touroperator.tags.LocaleSwitchTag  - en_EN
+2015-08-18 11:42:03,489 [http-nio-8080-exec-5] DEBUG edu.nesterenko.touroperator.tags.LocaleSwitchTag  - localeen_EN
+2015-08-18 11:42:03,489 [http-nio-8080-exec-5] DEBUG edu.nesterenko.touroperator.tags.LocaleSwitchTag  - en_EN
+2015-08-18 11:42:03,490 [http-nio-8080-exec-5] DEBUG edu.nesterenko.touroperator.tags.LocaleSwitchTag  - en_EN
+2015-08-18 11:42:06,734 [http-nio-8080-exec-7] DEBUG edu.nesterenko.touroperator.tags.LocaleSwitchTag  - localeru_RU
+2015-08-18 11:42:06,734 [http-nio-8080-exec-7] DEBUG edu.nesterenko.touroperator.tags.LocaleSwitchTag  - ru_RU
+2015-08-18 11:42:06,734 [http-nio-8080-exec-7] DEBUG edu.nesterenko.touroperator.tags.LocaleSwitchTag  - ru_RU
+2015-08-18 13:59:31,325 [http-nio-8080-exec-10] ERROR edu.nesterenko.touroperator.command.EmptyCommand  - Direct request to controller or bad commandName

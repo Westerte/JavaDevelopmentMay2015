@@ -2,22 +2,23 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="getCurrentLot()" key="selection"/>
+		<item value=".container" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="#page-wrapper"/>
+			<item value="status"/>
+			<item value="System.out.println"/>
+			<item value="pushed"/>
 			<item value="getCurrentLot()"/>
 			<item value="getCurrentLot"/>
 			<item value="[A-Z]+(_[A-Z]+)+"/>
 			<item value="[A-Z]+((_[A-Z]+)+)"/>
-			<item value="[A-Z]+((_[A-Z]+)*)"/>
-			<item value="throw new PhisicalException"/>
-			<item value="throw new PhisicalException(&quot;Bad args.&quot;); } } catch (PhisicalException"/>
-			<item value="th"/>
 		</list>
 		<list key="replacehistory">
+			<item value=".container"/>
 			<item value="[A-Z]+(-[A-Z]+)+"/>
 			<item value="positiveInteger"/>
 			<item value="1"/>
@@ -27,9 +28,9 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="287" key="DIALOG_WIDTH"/>
-		<item value="1|Segoe UI|9.333333|0|WINDOWS|1|-14|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
-		<item value="429" key="DIALOG_HEIGHT"/>
+		<item value="257" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="381" key="DIALOG_HEIGHT"/>
 		<item value="1089" key="DIALOG_X_ORIGIN"/>
 		<item value="275" key="DIALOG_Y_ORIGIN"/>
 	</section>

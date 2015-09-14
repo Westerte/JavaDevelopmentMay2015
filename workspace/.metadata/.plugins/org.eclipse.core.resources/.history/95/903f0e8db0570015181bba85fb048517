@@ -1,0 +1,5 @@
+db.driver = org.gjt.mm.mysql.Driver
+db.user = root
+db.password = 111
+db.url = jdbc:mysql://127.0.0.1/touroperator
+db.poolsize = 32

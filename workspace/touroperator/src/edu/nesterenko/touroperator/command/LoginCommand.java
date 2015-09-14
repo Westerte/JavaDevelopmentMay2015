@@ -27,12 +27,15 @@ public class LoginCommand implements Command {
 		String password = request.getParameter("password");
 		String pagePath;
 		try {
-			Client client = LoginLogic.checkClient(login, password);
-			httpSession.setAttribute("client", client);		
+			if(httpSession.getAttribute("client") == null) {
+				Client client = LoginLogic.checkClient(login, password);
+				httpSession.setAttribute("client", client);		
+			}
 			pagePath = ConfigurationManager.getProperty("path.page.main");
 		} catch (LogicException e) {
 			LOG.error(e);
 			request.setAttribute("login", login);
+			request.setAttribute("status", true);
 			pagePath = ConfigurationManager.getProperty("path.page.login");
 		}
 		return pagePath;

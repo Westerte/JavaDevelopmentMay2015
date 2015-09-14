@@ -9,9 +9,8 @@ public class LocaleDefiner {
 		if(language == null || language.isEmpty()) {
 			throw new LogicException("language must be not null");
 		}
-		Locale  locale = Locale.getDefault();
-		switch (language.toLowerCase()) {
-		case "russian":
+		Locale locale = new Locale("en", "EN"); 
+		if("russian".equals(language)) {
 			locale = new Locale("ru", "RU");
 		}
 		return locale;

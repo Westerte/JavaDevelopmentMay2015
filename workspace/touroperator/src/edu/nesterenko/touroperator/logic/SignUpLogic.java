@@ -2,13 +2,15 @@ package edu.nesterenko.touroperator.logic;
 
 import java.util.regex.Pattern;
 
+import org.apache.log4j.Logger;
+
 import edu.nesterenko.touroperator.dao.ClientDao;
 import edu.nesterenko.touroperator.dao.DaoException;
 import edu.nesterenko.touroperator.entity.Client;
 import edu.nesterenko.touroperator.resource.RegexManager;
 
 public class SignUpLogic {
-	
+	private final static Logger LOG = Logger.getLogger(SignUpLogic.class);
 	private SignUpLogic() {	}
 
 	public static Client signUp(String login, String password, 

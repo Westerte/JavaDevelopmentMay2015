@@ -13,19 +13,21 @@ public class LocaleSwitchTag extends TagSupport {
 
 	@Override 
 	public int doStartTag() {
-		
 		HttpServletRequest request = (HttpServletRequest)pageContext.getRequest();
 		HttpSession session = request.getSession(true);
 		Locale locale = (Locale) session.getAttribute("locale");
+		if(locale == null) {
+			locale = Locale.getDefault();
+		}
+		String localeToString = locale.toString();
 		try {
-			if(locale == null || locale.equals(Locale.getDefault()) ) {	
-				pageContext.include("/jspf/locale_links_en.jspf");		
-			} else {
+			if("ru_RU".equals(localeToString)) {
 				pageContext.include("/jspf/locale_links_ru.jspf");
+			} else {
+				pageContext.include("/jspf/locale_links_en.jspf");
 			}
 		} catch(ServletException | IOException e) {
 			e.printStackTrace();
-			System.out.println("kajsd;lkf");
 		}
 		return SKIP_BODY;
 	}

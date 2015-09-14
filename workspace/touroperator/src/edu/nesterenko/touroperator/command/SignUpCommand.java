@@ -27,13 +27,16 @@ public class SignUpCommand implements Command {
 		String password = request.getParameter("password");
 		String repeatedPassword = request.getParameter("repeated_password");
 		try {
-			Client client = SignUpLogic.signUp(login, password, repeatedPassword, email);
-			request.getSession(true).setAttribute("client", client);
+			if(request.getSession(true).getAttribute("client") == null) {
+				Client client = SignUpLogic.signUp(login, password, repeatedPassword, email);
+				request.getSession(true).setAttribute("client", client);
+			}
 			pagePath = ConfigurationManager.getProperty("path.page.main");
 		} catch (LogicException e) {
 			LOG.error(e);	
 			request.setAttribute("login", login);
 			request.setAttribute("email", email);
+			request.setAttribute("status", true);
 			pagePath = ConfigurationManager.getProperty("path.page.signup");					
 		}		
 		return pagePath;

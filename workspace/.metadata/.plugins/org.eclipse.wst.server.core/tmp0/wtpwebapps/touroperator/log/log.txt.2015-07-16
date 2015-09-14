@@ -1,0 +1,62 @@
+2015-07-16 11:34:05,492 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.LoginCommand  - russian
+2015-07-16 11:34:05,503 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: login is emtpy
+2015-07-16 11:35:04,210 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.LoginCommand  - russian
+2015-07-16 11:35:04,210 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: login is emtpy
+2015-07-16 11:35:09,042 [http-bio-8080-exec-5] ERROR edu.nesterenko.touroperator.command.LoginCommand  - english
+2015-07-16 11:35:09,042 [http-bio-8080-exec-5] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: login is emtpy
+2015-07-16 11:35:11,256 [http-bio-8080-exec-6] ERROR edu.nesterenko.touroperator.command.LoginCommand  - russian
+2015-07-16 11:35:11,256 [http-bio-8080-exec-6] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: login is emtpy
+2015-07-16 11:35:17,994 [http-bio-8080-exec-7] ERROR edu.nesterenko.touroperator.command.LoginCommand  - english
+2015-07-16 11:35:17,994 [http-bio-8080-exec-7] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: login is emtpy
+2015-07-16 11:35:20,670 [http-bio-8080-exec-8] ERROR edu.nesterenko.touroperator.command.LoginCommand  - russian
+2015-07-16 11:35:20,670 [http-bio-8080-exec-8] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: login is emtpy
+2015-07-16 11:35:23,375 [http-bio-8080-exec-9] ERROR edu.nesterenko.touroperator.command.LoginCommand  - russian
+2015-07-16 11:35:23,375 [http-bio-8080-exec-9] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: login is emtpy
+2015-07-16 11:35:25,279 [http-bio-8080-exec-10] ERROR edu.nesterenko.touroperator.command.LoginCommand  - english
+2015-07-16 11:35:25,279 [http-bio-8080-exec-10] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: login is emtpy
+2015-07-16 11:35:45,978 [http-bio-8080-exec-1] ERROR edu.nesterenko.touroperator.command.LoginCommand  - english
+2015-07-16 11:35:45,978 [http-bio-8080-exec-1] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: password is emtpy
+2015-07-16 11:35:53,702 [http-bio-8080-exec-1] ERROR edu.nesterenko.touroperator.command.LoginCommand  - russian
+2015-07-16 11:35:53,702 [http-bio-8080-exec-1] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: password is emtpy
+2015-07-16 11:37:14,521 [http-bio-8080-exec-7] ERROR edu.nesterenko.touroperator.command.LoginCommand  - english
+2015-07-16 11:37:14,521 [http-bio-8080-exec-7] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: password is emtpy
+2015-07-16 11:37:16,251 [http-bio-8080-exec-7] ERROR edu.nesterenko.touroperator.command.LoginCommand  - english
+2015-07-16 11:37:16,251 [http-bio-8080-exec-7] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: password is emtpy
+2015-07-16 11:37:18,287 [http-bio-8080-exec-7] ERROR edu.nesterenko.touroperator.command.LoginCommand  - russian
+2015-07-16 11:37:18,287 [http-bio-8080-exec-7] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: password is emtpy
+2015-07-16 11:54:23,089 [http-bio-8080-exec-8] ERROR edu.nesterenko.touroperator.command.LoginCommand  - english
+2015-07-16 11:59:39,707 [http-bio-8080-exec-5] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: login is emtpy
+2015-07-16 12:00:41,674 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: login is emtpy
+2015-07-16 12:00:42,679 [http-bio-8080-exec-4] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: login is emtpy
+2015-07-16 12:07:41,636 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: login is emtpy
+2015-07-16 12:07:51,752 [http-bio-8080-exec-4] FATAL edu.nesterenko.touroperator.connectionpool.ConnectionPool  - java.io.FileNotFoundException: config\DBconfig.properties (The system cannot find the path specified)
+2015-07-16 12:09:23,612 [http-bio-8080-exec-5] FATAL edu.nesterenko.touroperator.connectionpool.ConnectionPool  - java.io.FileNotFoundException: config\DBconfig.properties (The system cannot find the path specified)
+2015-07-16 12:11:50,931 [http-bio-8080-exec-3] FATAL edu.nesterenko.touroperator.connectionpool.ConnectionPool  - java.io.FileNotFoundException: \config\DBconfig.properties (The system cannot find the path specified)
+2015-07-16 12:15:31,999 [http-bio-8080-exec-3] FATAL edu.nesterenko.touroperator.connectionpool.ConnectionPool  - java.io.FileNotFoundException: \config\DBconfig.properties (The system cannot find the path specified)
+2015-07-16 12:16:04,615 [http-bio-8080-exec-3] FATAL edu.nesterenko.touroperator.connectionpool.ConnectionPool  - java.io.FileNotFoundException: config\DBconfig.properties (The system cannot find the path specified)
+2015-07-16 12:23:22,846 [http-bio-8080-exec-3] FATAL edu.nesterenko.touroperator.connectionpool.ConnectionPool  - java.io.FileNotFoundException: C:\apache-tomcat-7.0.61\touroperator\config\DBconfig.properties (The system cannot find the path specified)
+2015-07-16 12:24:49,159 [http-bio-8080-exec-3] FATAL edu.nesterenko.touroperator.connectionpool.ConnectionPool  - java.io.FileNotFoundException: resources\DBconfig.properties (The system cannot find the path specified)
+2015-07-16 18:47:45,466 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: Bad params
+2015-07-16 19:07:00,515 [http-bio-8080-exec-1] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: Bad params
+2015-07-16 19:07:10,632 [http-bio-8080-exec-1] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: password is emtpy
+2015-07-16 19:07:13,680 [http-bio-8080-exec-1] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: password is emtpy
+2015-07-16 19:07:14,769 [http-bio-8080-exec-1] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: password is emtpy
+2015-07-16 19:07:15,416 [http-bio-8080-exec-1] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: password is emtpy
+2015-07-16 19:07:16,064 [http-bio-8080-exec-1] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: password is emtpy
+2015-07-16 19:10:21,425 [http-bio-8080-exec-4] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: login is emtpy
+2015-07-16 19:13:07,055 [http-bio-8080-exec-8] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: login is emtpy
+2015-07-16 19:13:16,483 [http-bio-8080-exec-8] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: login is emtpy
+2015-07-16 19:15:28,954 [http-bio-8080-exec-8] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: password is emtpy
+2015-07-16 19:19:40,054 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: password is emtpy
+2015-07-16 19:23:53,103 [http-bio-8080-exec-5] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: login is emtpy
+2015-07-16 19:24:02,170 [http-bio-8080-exec-5] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: login is emtpy
+2015-07-16 19:29:38,313 [http-bio-8080-exec-7] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: Bad params
+2015-07-16 19:30:07,402 [http-bio-8080-exec-9] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: login is emtpy
+2015-07-16 19:30:14,617 [http-bio-8080-exec-9] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: password is emtpy
+2015-07-16 19:30:27,710 [http-bio-8080-exec-9] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: password is emtpy
+2015-07-16 19:40:01,128 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: password is emtpy
+2015-07-16 19:40:20,675 [http-bio-8080-exec-5] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: password is emtpy
+2015-07-16 19:41:20,239 [http-bio-8080-exec-10] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: login is emtpy
+2015-07-16 21:00:42,844 [http-bio-8080-exec-5] ERROR edu.nesterenko.touroperator.command.EmptyCommand  - Direct request to controller or bad commandName
+2015-07-16 21:01:25,418 [http-bio-8080-exec-10] ERROR edu.nesterenko.touroperator.command.EmptyCommand  - Direct request to controller or bad commandName
+2015-07-16 21:01:44,726 [http-bio-8080-exec-4] ERROR edu.nesterenko.touroperator.command.EmptyCommand  - Direct request to controller or bad commandName

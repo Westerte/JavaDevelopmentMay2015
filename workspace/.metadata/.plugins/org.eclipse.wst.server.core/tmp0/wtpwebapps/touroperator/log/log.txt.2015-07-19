@@ -1,0 +1,4 @@
+2015-07-19 16:12:36,109 [http-bio-8080-exec-8] ERROR edu.nesterenko.touroperator.command.SignUpCommand  - edu.nesterenko.touroperator.logic.LogicException: Bad params
+2015-07-19 16:13:07,304 [http-bio-8080-exec-10] ERROR edu.nesterenko.touroperator.command.SignUpCommand  - edu.nesterenko.touroperator.logic.LogicException: Bad params
+2015-07-19 16:13:20,304 [http-bio-8080-exec-10] ERROR edu.nesterenko.touroperator.command.SignUpCommand  - edu.nesterenko.touroperator.logic.LogicException: Bad params
+2015-07-19 17:16:04,869 [http-bio-8080-exec-13] ERROR edu.nesterenko.touroperator.command.SignUpCommand  - edu.nesterenko.touroperator.logic.LogicException: Bad params

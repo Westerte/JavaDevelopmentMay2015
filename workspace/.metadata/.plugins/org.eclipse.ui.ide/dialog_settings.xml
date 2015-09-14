@@ -5,6 +5,7 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="D:\Westerte\JavaDevelopmentMay2015\workspace\touroperator"/>
 			<item value="D:\Westerte\JavaDevelopmentMay2015\workspace"/>
 			<item value="D:\Westerte\JavaDevelopmentMay2015\workspace\airline(lab1)"/>
 		</list>
