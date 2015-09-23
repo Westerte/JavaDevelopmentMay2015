@@ -1,0 +1,45 @@
+package edu.nesterenko.touroperator.dao;
+
+import java.util.List;
+
+import edu.nesterenko.touroperator.entity.Resort;
+
+public class ResortDao implements AbstractDao<Integer, Resort> {
+
+	@Override
+	public List<Resort> findAll() throws DaoException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Resort findByKey(Integer key) throws DaoException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void add(Integer key, Resort entity) throws DaoException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(Integer key) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(Resort entity) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Resort update(Resort entity) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

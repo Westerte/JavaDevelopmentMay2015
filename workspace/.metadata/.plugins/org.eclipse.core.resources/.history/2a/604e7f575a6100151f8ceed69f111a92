@@ -1,0 +1,7 @@
+2015-09-22 21:38:07,072 [http-bio-8080-exec-1] ERROR edu.nesterenko.touroperator.command.AddCountryCommand  - edu.nesterenko.touroperator.logic.LogicException: edu.nesterenko.touroperator.dao.DaoException: java.sql.SQLException: Parameter index out of range (0 < 1 ).
+2015-09-22 21:39:06,333 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.ProfilePageCommand  - Client null
+2015-09-22 21:39:27,326 [http-bio-8080-exec-10] ERROR edu.nesterenko.touroperator.command.AddCountryCommand  - edu.nesterenko.touroperator.logic.LogicException: edu.nesterenko.touroperator.dao.DaoException: java.sql.SQLException: Parameter index out of range (1 > number of parameters, which is 0).
+2015-09-22 21:42:41,437 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.ProfilePageCommand  - Client null
+2015-09-22 21:42:56,853 [http-bio-8080-exec-9] ERROR edu.nesterenko.touroperator.command.AddCountryCommand  - edu.nesterenko.touroperator.logic.LogicException: edu.nesterenko.touroperator.dao.DaoException: java.sql.SQLException: Parameter index out of range (1 > number of parameters, which is 0).
+2015-09-22 21:45:34,956 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.AddCountryCommand  - Client null or no Admin
+2015-09-22 21:45:51,325 [http-bio-8080-exec-10] ERROR edu.nesterenko.touroperator.command.AddCountryCommand  - edu.nesterenko.touroperator.logic.LogicException: edu.nesterenko.touroperator.dao.DaoException: java.sql.SQLException: Can not issue data manipulation statements with executeQuery().

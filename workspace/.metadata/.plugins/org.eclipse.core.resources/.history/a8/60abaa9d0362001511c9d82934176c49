@@ -1,0 +1,11 @@
+2015-09-23 17:54:51,962 [http-bio-8080-exec-9] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 93 355 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+2015-09-23 17:54:53,908 [http-bio-8080-exec-2] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 95 298 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+2015-09-23 17:54:54,821 [http-bio-8080-exec-2] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 96 208 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+2015-09-23 17:56:39,569 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.AddCityCommand  - Client null or no Admin
+2015-09-23 17:57:02,762 [http-bio-8080-exec-9] ERROR edu.nesterenko.touroperator.command.AddCityCommand  - edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'id' in 'where clause'

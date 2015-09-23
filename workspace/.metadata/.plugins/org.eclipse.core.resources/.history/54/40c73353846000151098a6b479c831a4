@@ -1,0 +1,13 @@
+package edu.nesterenko.touroperator.entity;
+
+public class Resort extends BusinessEntity {
+	
+	private String name;
+	private String description;
+	
+	public Resort(int id) {
+		super(id);
+
+	}
+
+}

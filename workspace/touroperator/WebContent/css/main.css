@@ -16,6 +16,10 @@ html, body {
     padding: 0;
 }
 
+#content {
+	heigth: auto;
+}
+
 .clear:before,
 .clear:after {
 	content:  " ";
@@ -148,11 +152,15 @@ footer {
 .container .cols.col-12 {width: 100%;}
 
 
-@media screen and (min-width: 630px) {
+@media screen and (min-width: 490px) {
 	#login_form {
-		float: none;
-		margin: 0 auto;
+		width: 490px;
+		margin: 10% auto;
 	}
+}
+
+@media screen and (min-width: 630px) {
+	
 	#header_menu {
 		margin: auto;
 		list-style: none;	
@@ -170,9 +178,8 @@ footer {
 	}
 }
 
-
-
 @media screen and (min-width: 1020px) {
+	
 	
 	h1 {
 		color: #000;
@@ -196,28 +203,21 @@ footer {
 /*login form*/
 
 #login_form {
-	
+	float: none;	
 	border: 5px solid #f0f1f1;
 	background: #f8f8f8;
-	text-align: center;
 	font-family: trebuchet MS;
 	font-size: 14px;
 }
 
-#login_form_content {
-	display: inline-block;
-	margin: 0 auto;
-	text-align: left;
-}
-
 .input {
 	display: block;
-	margin: 10px 0 0 0;
+	float: none;
+	margin: 10px auto;
 }
 
 #submit_button {
 	height: 32px;
-	width: 280px;
 	margin-bottom: 5px;
 	background: #999;
 	border: 0;
@@ -230,7 +230,7 @@ footer {
 }
 
 .fields {
-	width: 250px;
+	text-align: left !important;
 	padding-left: 30px;
 	height: 30px;
 	border: 1px solid #CCC;
@@ -249,10 +249,9 @@ footer {
 }
 
 .status {
+	  margin: 0 0 20px 0;
 	  height: 45px;
-	  width: 280px;
 	  line-height: 45px;
-	  text-align: center;
 	  background: #99D5FD;
 	  color: #fff;
 	  font-size: 16px;
@@ -261,5 +260,6 @@ footer {
 .red {
 	background: red;
 }
+
 /*login form*/
 

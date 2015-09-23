@@ -16,22 +16,24 @@
 <body>
 	<div class="container">
 		<c:import url="/jspf/header.jsp" />
-			<div id="login_form" class="cols col-2">
-				<div id="login_form_content">
-					<div class="status ${status?'red':''} cols col-12"">
+			<div id="login_form" class="cols col-4 clear">
+				<div id="login_form_content" class="cols col-12 clear">
+					<div class="status ${status?'red':''} cols col-12">
 							<c:choose>
 								<c:when test="${ status }"><fmt:message key="lables.badData" bundle="${ rb }"/></c:when>
 								<c:otherwise><fmt:message key="login.lables.enterData" bundle="${ rb }"/></c:otherwise>
 							</c:choose>
 					</div>
-					<form action="Controller" method="post">
+					<form action="Controller" method="post" >
 						<input type="hidden" name="command" value="login">
-						<input type="text" name="login" value="${ login }" placeholder="<fmt:message key="lables.login" bundle="${ rb }"/>" class="fields input" id="login_field">
-						<input type="password" name="password" placeholder="<fmt:message key="lables.password" bundle="${ rb }"/>" class="fields input" id="password_field">
-						<input type="submit" value="<fmt:message key="login.buttons.submit" bundle="${ rb }"/>" id="submit_button" class="input">
+						<input type="text" name="login" value="${ login }" placeholder="<fmt:message key="lables.login" bundle="${ rb }"/>" class="fields cols col-12 clear input" id="login_field">
+						<input type="password" name="password" placeholder="<fmt:message key="lables.password" bundle="${ rb }"/>" class="fields cols col-12 clear input" id="password_field">
+						<input type="submit" value="<fmt:message key="login.buttons.submit" bundle="${ rb }"/>" id="submit_button" class="input cols col-12 clear">
 					</form>
-					<fmt:message key="login.lables.registerQuestion" bundle="${ rb }"/>
-					<a href="Controller?command=signup_page" ><fmt:message key="lables.signup" bundle="${ rb }"/></a>
+					<div class="input cols col-11">
+						<fmt:message key="login.lables.registerQuestion" bundle="${ rb }"/>
+						<a href="Controller?command=signup_page" ><fmt:message key="lables.signup" bundle="${ rb }"/></a>
+					</div>
 				</div>
 			</div>	
 		<div id="page-buffer"></div>	

@@ -1,0 +1,31 @@
+package edu.nesterenko.touroperator.entity;
+
+import java.sql.Date;
+
+public class Tour {
+	private int id;
+	private String name;
+	private String description;
+	private double cost;
+	private Date beginDate;
+	private Date endDate;
+	private int days;
+	private String food;
+	private String path;
+	private int pathTime;
+	private RestType restType;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+}
+

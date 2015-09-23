@@ -1,0 +1,4 @@
+2015-09-10 14:42:08,547 [http-bio-8080-exec-6] FATAL edu.nesterenko.touroperator.connectionpool.ConnectionPool  - com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+2015-09-10 16:08:22,560 [http-bio-8080-exec-9] FATAL edu.nesterenko.touroperator.connectionpool.ConnectionPool  - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.

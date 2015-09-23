@@ -1,0 +1,11 @@
+package edu.nesterenko.touroperator.logic;
+
+public class CityLogic {
+	
+	private CityLogic() {}
+	
+	public static void addCity(String name, String description, 
+			int countryId) {
+		CityDao cityDao = new CityDao();
+	}
+}

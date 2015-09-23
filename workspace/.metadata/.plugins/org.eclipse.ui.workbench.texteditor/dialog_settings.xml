@@ -1,30 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="729" key="DIALOG_X_ORIGIN"/>
+		<item value="403" key="DIALOG_Y_ORIGIN"/>
+	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value=".container" key="selection"/>
-		<item value="false" key="casesensitive"/>
+		<item value="starts" key="selection"/>
+		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="#page-wrapper"/>
-			<item value="status"/>
-			<item value="System.out.println"/>
-			<item value="pushed"/>
-			<item value="getCurrentLot()"/>
-			<item value="getCurrentLot"/>
-			<item value="[A-Z]+(_[A-Z]+)+"/>
-			<item value="[A-Z]+((_[A-Z]+)+)"/>
+			<item value="starts"/>
+			<item value="resort_hotels"/>
+			<item value="AddResortCommand"/>
+			<item value="ResortLogic"/>
+			<item value="ResortListPageCommand"/>
+			<item value="resort"/>
+			<item value="CityLogic"/>
+			<item value="AddCityCommand"/>
 		</list>
 		<list key="replacehistory">
-			<item value=".container"/>
-			<item value="[A-Z]+(-[A-Z]+)+"/>
-			<item value="positiveInteger"/>
-			<item value="1"/>
-			<item value="\1 == null"/>
-			<item value="\2 == null"/>
-			<item value="&lt;xs:minInclusive value=&quot;1&quot;/&gt;"/>
+			<item value="AddResortHotelCommand"/>
+			<item value="ResortHotelLogic"/>
+			<item value="ResortHotelListPageCommand"/>
+			<item value="resortHotel"/>
+			<item value="ResortLogic"/>
+			<item value="AddResortCommand"/>
+			<item value="City"/>
+			<item value="Country"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

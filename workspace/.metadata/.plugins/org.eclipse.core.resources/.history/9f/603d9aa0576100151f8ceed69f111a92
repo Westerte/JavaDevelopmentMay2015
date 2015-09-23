@@ -1,0 +1,17 @@
+package edu.nesterenko.touroperator.logic;
+
+import java.util.List;
+
+import edu.nesterenko.touroperator.entity.Country;
+
+public class CountryLogic {
+	
+	private CountryLogic() {}
+	
+	public static List<Country> addCountry(String name) throws LogicException {
+		if(name == null || name.isEmpty()) {
+			throw new LogicException("name is empty");
+		}
+		return null;		
+	}
+}

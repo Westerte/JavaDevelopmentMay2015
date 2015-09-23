@@ -1,0 +1,7 @@
+package edu.nesterenko.touroperator.command;
+
+public enum CommandEnum {
+	SIGNUP_PAGE, LOGIN_PAGE, SIGNUP, LOGIN, LOGOUT, 
+	CHANGE_LOCALE, COUNTRY_LIST_PAGE, PROFILE_PAGE, 
+	ADMIN_PANEL_PAGE, ADD_COUNTRY, CITY_LIST_PAGE;
+}

@@ -8,9 +8,9 @@ import edu.nesterenko.touroperator.entity.BusinessEntity;
 
 public interface AbstractDao<K, T extends BusinessEntity> {
 	
-	public List<T> findAll();
-	public List<T> findByKey(K key);
-	public void add(K key, T entity);
+	public List<T> findAll() throws DaoException;
+	public T findByKey(K key) throws DaoException;
+	public void add(K key, T entity) throws DaoException;
 	public void delete(K key);
 	public void delete(T entity);
 	public T update(T entity);

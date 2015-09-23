@@ -1,0 +1,13 @@
+package edu.nesterenko.touroperator.entity;
+
+public class RestCountry extends BusinessEntity {
+	
+	private Country country;
+	private RestType restType;
+
+	public RestCountry(int id) {
+		super(id);
+		// TODO Auto-generated constructor stub
+	}
+
+}

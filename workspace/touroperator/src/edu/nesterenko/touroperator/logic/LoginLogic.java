@@ -24,6 +24,9 @@ public class LoginLogic {
 			ClientDao clientDao = new ClientDao();
 			try {
 				client = clientDao.checkClient(login, password);
+				if(client == null) {
+					throw new LogicException("Client is null");
+				}
 				return client;
 			} catch (DaoException e) {
 				throw new LogicException(e);

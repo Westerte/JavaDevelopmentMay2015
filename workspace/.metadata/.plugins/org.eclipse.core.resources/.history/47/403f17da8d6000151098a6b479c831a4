@@ -1,0 +1,13 @@
+package edu.nesterenko.touroperator.command;
+
+import javax.servlet.http.HttpServletRequest;
+
+public class CountryListPageCommand implements Command {
+
+	@Override
+	public String execute(HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

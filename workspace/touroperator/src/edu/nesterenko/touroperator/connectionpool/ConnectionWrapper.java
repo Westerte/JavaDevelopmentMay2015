@@ -24,8 +24,8 @@ public class ConnectionWrapper {
 
 	private Connection connection;
 	
-	ConnectionWrapper(String url, String user, String password) throws SQLException {	
-		 connection = DriverManager.getConnection(url,  user, password);
+	ConnectionWrapper(String url, String user, String password) throws SQLException {	 
+		connection = DriverManager.getConnection(url,  user, password);
 	}
 
 	public void abort(Executor executor) throws SQLException {

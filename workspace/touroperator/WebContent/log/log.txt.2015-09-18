@@ -1,0 +1,5 @@
+2015-09-18 09:26:44,118 [http-bio-8080-exec-10] ERROR edu.nesterenko.touroperator.command.SignUpCommand  - edu.nesterenko.touroperator.logic.LogicException: Bad params
+2015-09-18 09:27:00,205 [http-bio-8080-exec-10] ERROR edu.nesterenko.touroperator.command.EmptyCommand  - Direct request to controller or bad commandName
+2015-09-18 09:29:36,257 [http-bio-8080-exec-5] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 163 323 milliseconds ago.  The last packet sent successfully to the server was 9 milliseconds ago.

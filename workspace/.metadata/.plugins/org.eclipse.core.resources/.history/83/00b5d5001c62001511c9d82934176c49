@@ -1,0 +1,15 @@
+package edu.nesterenko.touroperator.dao;
+
+import javax.servlet.http.HttpServletRequest;
+
+import edu.nesterenko.touroperator.command.Command;
+
+public class ResortHotelDao implements Command {
+
+	@Override
+	public String execute(HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

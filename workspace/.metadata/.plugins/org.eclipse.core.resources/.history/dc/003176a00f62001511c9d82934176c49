@@ -1,0 +1,73 @@
+package edu.nesterenko.touroperator.dao;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import edu.nesterenko.touroperator.connectionpool.ConnectionPool;
+import edu.nesterenko.touroperator.connectionpool.ConnectionPoolException;
+import edu.nesterenko.touroperator.connectionpool.ConnectionWrapper;
+import edu.nesterenko.touroperator.entity.City;
+import edu.nesterenko.touroperator.entity.Resort;
+
+public class ResortDao implements AbstractDao<Integer, Resort> {
+	
+	private final static String FIND_ALL = "SELECT * FROM `resort`";
+	private final static String ADD_NEW = "INSERT INTO `city`"
+			+ "(`city_name`, `city_description`, `country_id`)"
+			+ " VALUES(?,?,?)";
+
+	@Override
+	public List<Resort> findAll() throws DaoException {
+		List<Resort> countryList = new ArrayList<Resort>();
+		ConnectionPool connectionPool = ConnectionPool.getInstance();
+		Statement statement = null;
+		ConnectionWrapper connection = null;
+		try {
+			connection = connectionPool.grapConnection();
+			statement = connection.createStatement();
+			ResultSet resultSet = statement.executeQuery(FIND_ALL);
+			CityDao countryDao = new CityDao();
+			while(resultSet.next()) {
+				countryList.add(new Resort(resultSet.getInt("city_id"), 
+						resultSet.getString("city_name"), 
+						resultSet.getString("city_description"), 
+						countryDao.findByKey(resultSet.getInt("country_id"))));
+			}
+		} catch (ConnectionPoolException | SQLException e) {
+			throw new DaoException(e);
+		} finally {
+			closeStatement(statement);
+			connectionPool.releaseConnection(connection);
+		}
+		return countryList;
+	}
+
+	@Override
+	public Resort findByKey(Integer key) throws DaoException {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public void add(Integer key, Resort entity) throws DaoException {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public void delete(Integer key) {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public void delete(Resort entity) {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public Resort update(Resort entity) {
+		throw new UnsupportedOperationException();
+	}
+
+}

@@ -1,0 +1,44 @@
+package edu.nesterenko.touroperator.dao;
+
+import java.util.List;
+
+import edu.nesterenko.touroperator.entity.Resort;
+
+public class ResortDao implements AbstractDao<Integer, Resort> {
+	
+	private final static String FIND_ALL = "SELECT * FROM `resort`";
+	private final static String ADD_NEW = "INSERT INTO `city`"
+			+ "(`city_name`, `city_description`, `country_id`)"
+			+ " VALUES(?,?,?)";
+
+	@Override
+	public List<Resort> findAll() throws DaoException {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public Resort findByKey(Integer key) throws DaoException {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public void add(Integer key, Resort entity) throws DaoException {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public void delete(Integer key) {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public void delete(Resort entity) {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public Resort update(Resort entity) {
+		throw new UnsupportedOperationException();
+	}
+
+}

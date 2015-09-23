@@ -29,7 +29,7 @@
 						<c:choose>
 							<c:when test="${ client != null }">
 								<fmt:message key="header.lables.clientName" bundle="${rb}" />
-								<a href="Controller?command=" class="header_link"><c:out value="${ client.nickName }"/></a>
+								<a href="Controller?command=profile_page" class="header_link"><c:out value="${ client.nickName }"/></a>
 								<a href="Controller?command=logout"><fmt:message key="header.lables.logout" bundle="${ rb }"/></a>
 							</c:when>
 							<c:otherwise>

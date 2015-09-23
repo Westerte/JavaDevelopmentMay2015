@@ -1,0 +1,64 @@
+package edu.nesterenko.touroperator.dao;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.mysql.jdbc.PreparedStatement;
+
+import edu.nesterenko.touroperator.connectionpool.ConnectionPool;
+import edu.nesterenko.touroperator.connectionpool.ConnectionPoolException;
+import edu.nesterenko.touroperator.entity.Country;
+import edu.nesterenko.touroperator.connectionpool.ConnectionWrapper;
+
+public class CountryDao implements AbstractDao<Integer, Country> {
+	
+	private final static String FIND_ALL = "SELECT * FROM `country`";
+
+	@Override
+	public List<Country> findAll() {
+		List<Country> countryList = new ArrayList<Country>();
+		ConnectionPool connectionPool = ConnectionPool.getInstance();
+		PreparedStatement preparedStatement = null;
+		ConnectionWrapper connection = null;
+		try {
+			connection = connectionPool.grapConnection();
+		} catch (ConnectionPoolException) {
+			throw new DaoException(e);
+		} finally {
+			closeStatement(preparedStatement);
+			connectionPool.releaseConnection(connection);
+		}
+		return countryList;
+	}
+
+	@Override
+	public List<Country> findByKey(Integer key) {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public void add(Integer key, Country entity) {
+		throw new UnsupportedOperationException();
+		
+	}
+
+	@Override
+	public void delete(Integer key) {
+		throw new UnsupportedOperationException();
+		
+	}
+
+	@Override
+	public void delete(Country entity) {
+		throw new UnsupportedOperationException();
+		
+	}
+
+	@Override
+	public Country update(Country entity) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

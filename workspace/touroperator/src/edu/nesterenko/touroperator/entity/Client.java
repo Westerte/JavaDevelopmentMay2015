@@ -1,23 +1,17 @@
 package edu.nesterenko.touroperator.entity;
 
-public class Client extends BusinessEntity {
-	private int id;    
+public class Client extends BusinessEntity {    
 	private String nickName;
 	private String password;
 	private String email;
-	private ClientType clientType;		
+	private ClientType clientType;	
 
 	public Client(int id, String nickName, String email,
 			String clientType) {
-		super();
-		this.id = id;
+		super(id);
 		this.nickName = nickName;
 		this.email = email;
 		this.clientType = ClientType.valueOf(clientType);
-	}
-
-	public int getId() {
-		return id;
 	}
 
 	public String getNickName() {
@@ -47,6 +41,6 @@ public class Client extends BusinessEntity {
 	@Override
 	public String toString() {
 		return String.format("id: %d login: %s password: %s email: %s clientType: %s"
-				, id, nickName, password, email, clientType);
+				, getId(), nickName, password, email, clientType);
 	}
 }

@@ -9,9 +9,11 @@ public class LocaleDefiner {
 		if(language == null || language.isEmpty()) {
 			throw new LogicException("language must be not null");
 		}
-		Locale locale = new Locale("en", "EN"); 
+		Locale locale;
 		if("russian".equals(language)) {
 			locale = new Locale("ru", "RU");
+		} else {
+			locale =  new Locale("en", "EN");
 		}
 		return locale;
 	}

@@ -33,7 +33,7 @@ public class ClientDao implements AbstractDao<Integer, Client> {
 	}
 
 	@Override
-	public List<Client> findByKey(Integer key) {
+	public Client findByKey(Integer key) {
 		throw new UnsupportedOperationException();
 	}
 

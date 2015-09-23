@@ -1,0 +1,12 @@
+package edu.nesterenko.touroperator.entity;
+
+public class City extends BusinessEntity {
+	private String name;
+	private String description;
+	
+	private City(int id, String name, String description) {
+		super(id);
+		this.name = name;
+		this.description = description;
+	}
+}

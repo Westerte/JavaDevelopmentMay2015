@@ -10,12 +10,12 @@ import edu.nesterenko.touroperator.logic.LogicException;
 import edu.nesterenko.touroperator.resource.ConfigurationManager;
 
 public class ChangeLocaleCommand implements Command {
-	private final static Logger LOG = Logger.getLogger(LoginCommand.class);
+	private final static Logger LOG = Logger.getLogger(ChangeLocaleCommand.class);
 	private static ChangeLocaleCommand instance = new ChangeLocaleCommand();
 	
 	private ChangeLocaleCommand() {}
 	
-	public static ChangeLocaleCommand  getInstance() {
+	public static ChangeLocaleCommand getInstance() {
 		return instance;
 	}
 	@Override

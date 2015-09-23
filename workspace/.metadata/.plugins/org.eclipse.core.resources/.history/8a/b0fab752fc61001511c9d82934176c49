@@ -1,0 +1,34 @@
+2015-09-23 16:59:27,278 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.ProfilePageCommand  - Client null
+2015-09-23 16:59:42,400 [http-bio-8080-exec-8] ERROR edu.nesterenko.touroperator.command.EmptyCommand  - Direct request to controller or bad commandName
+2015-09-23 16:59:51,483 [http-bio-8080-exec-10] ERROR edu.nesterenko.touroperator.command.EmptyCommand  - Direct request to controller or bad commandName
+2015-09-23 17:04:08,978 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.CityListPageCommand  - Client null or no Admin
+2015-09-23 17:05:21,586 [http-bio-8080-exec-2] ERROR edu.nesterenko.touroperator.command.CityListPageCommand  - edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 67 394 milliseconds ago.  The last packet sent successfully to the server was 8 milliseconds ago.
+2015-09-23 17:05:30,300 [http-bio-8080-exec-9] ERROR edu.nesterenko.touroperator.command.CityListPageCommand  - edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 76 105 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+2015-09-23 17:05:31,095 [http-bio-8080-exec-2] ERROR edu.nesterenko.touroperator.command.CityListPageCommand  - edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 76 898 milliseconds ago.  The last packet sent successfully to the server was 1 milliseconds ago.
+2015-09-23 17:05:31,987 [http-bio-8080-exec-2] ERROR edu.nesterenko.touroperator.command.CityListPageCommand  - edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 77 786 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+2015-09-23 17:05:32,516 [http-bio-8080-exec-2] ERROR edu.nesterenko.touroperator.command.CityListPageCommand  - edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 78 312 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+2015-09-23 17:05:40,828 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.CityListPageCommand  - edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 86 621 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+2015-09-23 17:05:54,382 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.CityListPageCommand  - edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 100 173 milliseconds ago.  The last packet sent successfully to the server was 1 milliseconds ago.
+2015-09-23 17:05:55,719 [http-bio-8080-exec-10] ERROR edu.nesterenko.touroperator.command.CityListPageCommand  - edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 101 498 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+2015-09-23 17:06:25,802 [http-bio-8080-exec-8] ERROR edu.nesterenko.touroperator.command.CityListPageCommand  - edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 124 937 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+2015-09-23 17:06:31,942 [http-bio-8080-exec-6] ERROR edu.nesterenko.touroperator.command.CityListPageCommand  - edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 130 998 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
