@@ -66,7 +66,7 @@ public class ResortHotelDao implements AbstractDao<Integer, ResortHotel> {
 				int resortId = resultSet.getInt("resort_id");
 				int stars = resultSet.getInt("resort_hotel_stars");
 				ResortDao resortDao = new ResortDao();
-				resortHotel = new ResortHotel(resortId, resortHotelName, description, 
+				resortHotel = new ResortHotel(resortHotelId, resortHotelName, description, 
 							resortDao.findByKey(resortId), stars);
 			} else {
 				throw new DaoException("No resort with such key");

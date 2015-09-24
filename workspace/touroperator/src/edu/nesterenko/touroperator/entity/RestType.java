@@ -1,8 +1,15 @@
 package edu.nesterenko.touroperator.entity;
 
-public class RestType {
+public class RestType extends BusinessEntity {
 	private String name;
 	private String description;
+	
+	public RestType(int id, String name, 
+			String description) {
+		super(id);
+		setName(name);
+		setDescription(description);
+	}
 	
 	public String getName() {
 		return name;

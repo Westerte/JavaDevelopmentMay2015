@@ -16,7 +16,7 @@ public class ConnectionPool {
 	private static ConnectionPool instance;		
 	private static ReentrantLock lock = new ReentrantLock();
 	private BlockingQueue<ConnectionWrapper> connections;
-	private int poolSize;
+	private final int poolSize;
 	
 	private ConnectionPool() {
 		try {

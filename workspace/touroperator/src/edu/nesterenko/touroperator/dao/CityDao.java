@@ -11,7 +11,6 @@ import edu.nesterenko.touroperator.connectionpool.ConnectionPool;
 import edu.nesterenko.touroperator.connectionpool.ConnectionPoolException;
 import edu.nesterenko.touroperator.connectionpool.ConnectionWrapper;
 import edu.nesterenko.touroperator.entity.City;
-import edu.nesterenko.touroperator.entity.Country;
 
 public class CityDao implements AbstractDao<Integer, City> {
 	private final static String FIND_ALL = "SELECT * FROM `city`";

@@ -12,10 +12,10 @@
 <body> 
 	<c:choose>
 		<c:when test="${ client != null }">
-			<jsp:forward page="jsp/main.jsp" />
+			<jsp:forward page="jsp/common/main.jsp" />
 		</c:when>
 		<c:otherwise>
-			<jsp:forward page="jsp/login.jsp" />			
+			<jsp:forward page="jsp/common/login.jsp" />			
 		</c:otherwise>
 	</c:choose>
 </body>

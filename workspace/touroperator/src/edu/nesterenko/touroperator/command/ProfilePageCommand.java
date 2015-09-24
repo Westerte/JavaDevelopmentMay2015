@@ -1,19 +1,9 @@
 package edu.nesterenko.touroperator.command;
-
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
-
-import edu.nesterenko.touroperator.dao.CountryDao;
-import edu.nesterenko.touroperator.dao.DaoException;
 import edu.nesterenko.touroperator.entity.Client;
-import edu.nesterenko.touroperator.entity.ClientType;
-import edu.nesterenko.touroperator.entity.Country;
-import edu.nesterenko.touroperator.logic.LogicException;
-import edu.nesterenko.touroperator.logic.LoginLogic;
 import edu.nesterenko.touroperator.resource.ConfigurationManager;
 
 public class ProfilePageCommand implements Command {

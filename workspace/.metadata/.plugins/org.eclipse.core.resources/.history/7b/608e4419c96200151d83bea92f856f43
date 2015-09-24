@@ -1,0 +1,14 @@
+package edu.nesterenko.touroperator.validation;
+
+public class Validator {
+	
+	private Validator() {}
+	
+	public boolean checkLogin(String login) {
+		
+	}
+	
+	public boolean checkPassword(String password) {
+		
+	}
+}

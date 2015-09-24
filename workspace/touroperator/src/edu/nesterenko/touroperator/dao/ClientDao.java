@@ -1,23 +1,16 @@
 package edu.nesterenko.touroperator.dao;
 
-import java.security.NoSuchAlgorithmException;
-import java.security.spec.InvalidKeySpecException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
-import java.util.Random;
-
-import javax.crypto.SecretKey;
-import javax.crypto.SecretKeyFactory;
-import javax.crypto.spec.PBEKeySpec;
 
 import edu.nesterenko.touroperator.connectionpool.ConnectionPool;
 import edu.nesterenko.touroperator.connectionpool.ConnectionPoolException;
 import edu.nesterenko.touroperator.connectionpool.ConnectionWrapper;
 import edu.nesterenko.touroperator.entity.Client;
-import edu.nesterenko.touroperator.resource.ConfigurationManager;
+import edu.nesterenko.touroperator.crypto.HashPassword;
 
 public class ClientDao implements AbstractDao<Integer, Client> {
 
@@ -70,7 +63,7 @@ public class ClientDao implements AbstractDao<Integer, Client> {
 			if(resultSet.next()) {
 				String saltString = resultSet.getString("client_salt");
 				String hash = resultSet.getString("client_hash");
-				if(hash.equals(hashPasswordWithSalt(password, saltString.getBytes()))) {
+				if(hash.equals(HashPassword.hashPasswordWithSalt(password, saltString.getBytes()))) {
 					int clientId = resultSet.getInt("client_id");
 					String clientType = resultSet.getString("client_type");
 					String clientEmail = resultSet.getString("client_email");
@@ -97,8 +90,8 @@ public class ClientDao implements AbstractDao<Integer, Client> {
 			preparedStatement = 
 					connection.prepareStatement(INSERT_NEW_CLIENT, 
 							Statement.RETURN_GENERATED_KEYS);
-			byte[] salt = makeSalt();
-			String hash = hashPasswordWithSalt(repeatedPassword, salt);
+			byte[] salt = HashPassword.makeSalt();
+			String hash = HashPassword.hashPasswordWithSalt(repeatedPassword, salt);
 			preparedStatement.setString(1, login);
 			preparedStatement.setString(2, hash);
 			preparedStatement.setString(3, new String(salt));
@@ -117,27 +110,5 @@ public class ClientDao implements AbstractDao<Integer, Client> {
 			connectionPool.releaseConnection(connection);
 		}
 		return client;
-	}
-	
-	private String hashPasswordWithSalt(String password, byte[] salt) throws DaoException {
-		password += ConfigurationManager.getProperty("crypt.localParameter");
-		PBEKeySpec pbe = new PBEKeySpec(password.toCharArray(), salt, 4096, 1024);
-		byte[] keyArray;
-		try {
-			SecretKeyFactory secretKeyFactory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
-			SecretKey key = secretKeyFactory.generateSecret(pbe);
-			keyArray = key.getEncoded();
-		} catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
-			throw new DaoException(e);
-		} 
-		return new String(keyArray);
-	}
-	
-	private byte[] makeSalt() {
-		Random random = new Random();
-		int saltLength = 12 + random.nextInt(6); 
-		byte[] salt = new byte[saltLength];
-		random.nextBytes(salt);
-		return salt;
-	}
+	}	
 }

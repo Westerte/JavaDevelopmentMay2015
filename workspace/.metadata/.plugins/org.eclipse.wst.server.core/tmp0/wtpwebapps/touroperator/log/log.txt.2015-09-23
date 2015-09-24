@@ -1,0 +1,19 @@
+2015-09-23 21:36:34,257 [http-bio-8080-exec-5] ERROR edu.nesterenko.touroperator.command.AddResortHotelCommand  - edu.nesterenko.touroperator.logic.LogicException
+2015-09-23 21:36:34,257 [http-bio-8080-exec-5] ERROR edu.nesterenko.touroperator.command.AddResortHotelCommand  - edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 106 641 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+2015-09-23 21:36:34,258 [http-bio-8080-exec-5] ERROR edu.nesterenko.touroperator.command.AddResortHotelCommand  - edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 106 636 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+2015-09-23 21:37:00,270 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.AddResortHotelCommand  - Client null or no Admin
+2015-09-23 21:37:22,110 [http-bio-8080-exec-10] ERROR edu.nesterenko.touroperator.command.AddResortHotelCommand  - edu.nesterenko.touroperator.logic.LogicException
+2015-09-23 21:37:59,732 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.AddResortHotelCommand  - Client null or no Admin
+2015-09-23 21:38:14,600 [http-bio-8080-exec-10] ERROR edu.nesterenko.touroperator.command.AddResortHotelCommand  - edu.nesterenko.touroperator.logic.LogicException: edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'resort_hotels_stars' in 'field list'
+2015-09-23 21:38:56,533 [http-bio-8080-exec-1] ERROR edu.nesterenko.touroperator.command.AddResortHotelCommand  - Client null or no Admin
+2015-09-23 21:39:16,370 [http-bio-8080-exec-10] ERROR edu.nesterenko.touroperator.command.AddResortHotelCommand  - edu.nesterenko.touroperator.dao.DaoException: java.sql.SQLException: Column 'resort_hotel_starts' not found.
+2015-09-23 21:40:01,304 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.AddResortHotelCommand  - Client null or no Admin
+2015-09-23 21:41:09,959 [http-bio-8080-exec-4] ERROR edu.nesterenko.touroperator.command.AddResortHotelCommand  - edu.nesterenko.touroperator.logic.LogicException: name is empty
+2015-09-23 22:07:01,595 [http-bio-8080-exec-1] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: Client is null
+2015-09-23 22:07:07,290 [http-bio-8080-exec-1] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: Client is null
+2015-09-23 22:07:22,268 [http-bio-8080-exec-1] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: Client is null
+2015-09-23 22:08:37,494 [http-bio-8080-exec-2] ERROR edu.nesterenko.touroperator.command.EmptyCommand  - Direct request to controller or bad commandName

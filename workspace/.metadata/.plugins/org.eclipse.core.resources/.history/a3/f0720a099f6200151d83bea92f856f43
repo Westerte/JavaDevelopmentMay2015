@@ -1,0 +1,31 @@
+package edu.nesterenko.touroperator.dao;
+
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.List;
+
+import org.apache.log4j.Logger;
+
+import edu.nesterenko.touroperator.command.AddResortHotelCommand;
+import edu.nesterenko.touroperator.entity.BusinessEntity;
+
+public interface AbstractDao<K, T extends BusinessEntity> {
+	private final static Logger LOG = Logger.getLogger(AddResortHotelCommand.class);
+	
+	public List<T> findAll() throws DaoException;
+	public T findByKey(K key) throws DaoException;
+	public void add(K key, T entity) throws DaoException;
+	public void delete(K key);
+	public void delete(T entity);
+	public T update(T entity);
+	
+	default void closeStatement(Statement statement) {
+		if(statement != null) {
+			try {
+				statement.close();
+			} catch (SQLException e) {
+				throw new DaoException(e);
+			}
+		}
+	}
+}

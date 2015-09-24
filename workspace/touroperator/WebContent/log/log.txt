@@ -1,15 +1,41 @@
-2015-09-23 21:36:34,257 [http-bio-8080-exec-5] ERROR edu.nesterenko.touroperator.command.AddResortHotelCommand  - edu.nesterenko.touroperator.logic.LogicException
-2015-09-23 21:36:34,257 [http-bio-8080-exec-5] ERROR edu.nesterenko.touroperator.command.AddResortHotelCommand  - edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+2015-09-24 10:47:28,924 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.RestTypeListPageCommand  - Client null or no Admin
+2015-09-24 10:49:06,225 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.RestTypeListPageCommand  - Client null or no Admin
+2015-09-24 10:50:57,140 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.CommandFactory  - java.lang.IllegalArgumentException: No enum constant edu.nesterenko.touroperator.command.CommandEnum.ADD_RESTTYPE
+2015-09-24 10:50:57,141 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.EmptyCommand  - Direct request to controller or bad commandName
+2015-09-24 10:51:36,674 [http-bio-8080-exec-8] ERROR edu.nesterenko.touroperator.command.RestTypeListPageCommand  - edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
 
-The last packet successfully received from the server was 106 641 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
-2015-09-23 21:36:34,258 [http-bio-8080-exec-5] ERROR edu.nesterenko.touroperator.command.AddResortHotelCommand  - edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+The last packet successfully received from the server was 147 309 milliseconds ago.  The last packet sent successfully to the server was 8 milliseconds ago.
+2015-09-24 10:51:42,337 [http-bio-8080-exec-8] ERROR edu.nesterenko.touroperator.command.AddRestTypeCommand  - edu.nesterenko.touroperator.logic.LogicException: edu.nesterenko.touroperator.dao.DaoException: java.sql.SQLException: Could not retrieve transation read-only status server
+2015-09-24 10:51:42,339 [http-bio-8080-exec-8] ERROR edu.nesterenko.touroperator.command.AddRestTypeCommand  - edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
 
-The last packet successfully received from the server was 106 636 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
-2015-09-23 21:37:00,270 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.AddResortHotelCommand  - Client null or no Admin
-2015-09-23 21:37:22,110 [http-bio-8080-exec-10] ERROR edu.nesterenko.touroperator.command.AddResortHotelCommand  - edu.nesterenko.touroperator.logic.LogicException
-2015-09-23 21:37:59,732 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.AddResortHotelCommand  - Client null or no Admin
-2015-09-23 21:38:14,600 [http-bio-8080-exec-10] ERROR edu.nesterenko.touroperator.command.AddResortHotelCommand  - edu.nesterenko.touroperator.logic.LogicException: edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'resort_hotels_stars' in 'field list'
-2015-09-23 21:38:56,533 [http-bio-8080-exec-1] ERROR edu.nesterenko.touroperator.command.AddResortHotelCommand  - Client null or no Admin
-2015-09-23 21:39:16,370 [http-bio-8080-exec-10] ERROR edu.nesterenko.touroperator.command.AddResortHotelCommand  - edu.nesterenko.touroperator.dao.DaoException: java.sql.SQLException: Column 'resort_hotel_starts' not found.
-2015-09-23 21:40:01,304 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.AddResortHotelCommand  - Client null or no Admin
-2015-09-23 21:41:09,959 [http-bio-8080-exec-4] ERROR edu.nesterenko.touroperator.command.AddResortHotelCommand  - edu.nesterenko.touroperator.logic.LogicException: name is empty
+The last packet successfully received from the server was 152 968 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+2015-09-24 10:52:09,787 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.AddRestTypeCommand  - Client null or no Admin
+2015-09-24 10:52:41,622 [http-bio-8080-exec-10] ERROR edu.nesterenko.touroperator.command.AddRestTypeCommand  - edu.nesterenko.touroperator.logic.LogicException: edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'Beach Vocation' for key 'rest_type_name_UNIQUE'
+2015-09-24 10:54:38,491 [http-bio-8080-exec-9] ERROR edu.nesterenko.touroperator.command.CityListPageCommand  - edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 145 442 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+2015-09-24 10:54:41,210 [http-bio-8080-exec-9] ERROR edu.nesterenko.touroperator.command.CityListPageCommand  - edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 148 157 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+2015-09-24 10:54:48,872 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.CityListPageCommand  - edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 155 816 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+2015-09-24 10:54:54,035 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 160 977 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+2015-09-24 12:10:30,570 [http-bio-8080-exec-2] ERROR edu.nesterenko.touroperator.command.AdminPanelPageCommand  - Client null
+2015-09-24 17:56:11,195 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.AdminPanelPageCommand  - Client null
+2015-09-24 18:01:21,226 [http-bio-8080-exec-8] ERROR edu.nesterenko.touroperator.command.AddCountryCommand  - edu.nesterenko.touroperator.logic.LogicException: Bad params
+2015-09-24 18:01:25,458 [http-bio-8080-exec-9] ERROR edu.nesterenko.touroperator.command.AddCountryCommand  - edu.nesterenko.touroperator.logic.LogicException: Bad params
+2015-09-24 19:26:28,832 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 149 692 milliseconds ago.  The last packet sent successfully to the server was 30 milliseconds ago.
+2015-09-24 19:28:03,037 [http-bio-8080-exec-10] ERROR edu.nesterenko.touroperator.command.CountryListPageCommand  - edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 75 607 milliseconds ago.  The last packet sent successfully to the server was 29 milliseconds ago.
+2015-09-24 19:29:24,813 [http-bio-8080-exec-4] ERROR edu.nesterenko.touroperator.command.ResortHotelListPageCommand  - edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 60 259 milliseconds ago.  The last packet sent successfully to the server was 34 milliseconds ago.
+2015-09-24 19:29:29,583 [http-bio-8080-exec-4] ERROR edu.nesterenko.touroperator.command.CountryListPageCommand  - edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 65 024 milliseconds ago.  The last packet sent successfully to the server was 1 milliseconds ago.

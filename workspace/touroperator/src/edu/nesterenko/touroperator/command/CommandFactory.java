@@ -1,7 +1,10 @@
 package edu.nesterenko.touroperator.command;
 
+import org.apache.log4j.Logger;
 
 public class CommandFactory {
+	private final static Logger LOG = 
+			Logger.getLogger(CommandFactory.class);
 	
 	private CommandFactory() {
 	}
@@ -9,7 +12,14 @@ public class CommandFactory {
 	public static Command determineCommand(String commandName) {
 		Command command = EmptyCommand.getInstance();
 		if(commandName != null && !commandName.isEmpty()) {
-			switch(CommandEnum.valueOf(commandName.toUpperCase())) {
+			CommandEnum commandEnumValue;
+			try {
+				commandEnumValue = CommandEnum.valueOf(commandName.toUpperCase());
+			} catch(IllegalArgumentException e) {
+				LOG.error(e);
+				return command;
+			}
+			switch(commandEnumValue) {
 				case SIGNUP_PAGE:
 					command = SignUpPageCommand.getInstance();
 					break;
@@ -57,6 +67,16 @@ public class CommandFactory {
 					break;
 				case ADD_RESORT_HOTEL:
 					command = AddResortHotelCommand.getInstance();
+					break;
+				case REST_TYPE_LIST_PAGE:
+					command = RestTypeListPageCommand.getInstance();
+					break;
+				case ADD_REST_TYPE: 
+					command = AddRestTypeCommand.getInstance();
+					break;
+				case TOUR_LIST_PAGE:
+					break;
+				case ADD_TOUR:
 					break;
 			}
 		}

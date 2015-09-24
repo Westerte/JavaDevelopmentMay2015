@@ -3,6 +3,6 @@
 <typeInfo handle="=airline\(lab1_lab3)/src&lt;edu.nesterenko.airline.dao{DataAccessable.java[DataAccessable" modifiers="513" timestamp="1432534285157"/>
 <typeInfo handle="=airline\(lab1_lab3)/src&lt;edu.nesterenko.airline.command{Command.java[Command" modifiers="513" timestamp="1432578315544"/>
 <typeInfo handle="=touroperator/src&lt;edu.nesterenko.touroperator.entity{BusinessEntity.java[BusinessEntity" modifiers="1025" timestamp="1442854365599"/>
-<typeInfo handle="=touroperator/src&lt;edu.nesterenko.touroperator.dao{AbstractDao.java[AbstractDao" modifiers="513" timestamp="1443013531663"/>
 <typeInfo handle="=touroperator/src&lt;edu.nesterenko.touroperator.command{Command.java[Command" modifiers="513" timestamp="1437030905806"/>
+<typeInfo handle="=touroperator/src&lt;edu.nesterenko.touroperator.dao{AbstractDao.java[AbstractDao" modifiers="513" timestamp="1443087153506"/>
 </typeInfoHistroy>

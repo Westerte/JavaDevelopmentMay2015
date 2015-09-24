@@ -1,0 +1,12 @@
+path.page.index = /index.jsp
+path.page.login = /jsp/common/login.jsp
+path.page.main = /jsp/user/main.jsp
+path.page.signup = /jsp/common/signup.jsp
+path.page.countryList = /jsp/admin/country_list.jsp
+path.page.profile = /jsp/common/profile.jsp
+path.page.adminPanel = /jsp/admin/admin_panel.jsp
+path.page.cityList = /jsp/admin/city_list.jsp
+path.page.resortList = /jsp/admin/resorts_list.jsp
+path.page.resortHotelList = /jsp/admin/resort_hotels_list.jsp
+path.page.restTypeList = /jsp/admin/rest_types_list.jsp
+crypt.localParameter = (!)85*_2041@!*|&

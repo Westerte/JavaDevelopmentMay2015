@@ -4,25 +4,26 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import edu.nesterenko.touroperator.entity.BusinessEntity;
 
 public interface AbstractDao<K, T extends BusinessEntity> {
+	final static Logger LOG = Logger.getLogger(AbstractDao.class);
 	
-	public List<T> findAll() throws DaoException;
-	public T findByKey(K key) throws DaoException;
-	public void add(K key, T entity) throws DaoException;
-	public void delete(K key);
-	public void delete(T entity);
-	public T update(T entity);
+	List<T> findAll() throws DaoException;
+	T findByKey(K key) throws DaoException;
+	void add(K key, T entity) throws DaoException;
+	void delete(K key);
+	void delete(T entity);
+	T update(T entity);
 	
-	default void closeStatement(Statement statement) throws DaoException {
-		if(statement == null) {
-			throw new DaoException("stetement is null");
-		}
-		try {
-			statement.close();
-		} catch (SQLException e) {
-			throw new DaoException(e);
+	default void closeStatement(Statement statement) {
+		if(statement != null) {
+			try {
+				statement.close();
+			} catch (SQLException e) {
+				LOG.error(e);
+			}
 		}
 	}
 }

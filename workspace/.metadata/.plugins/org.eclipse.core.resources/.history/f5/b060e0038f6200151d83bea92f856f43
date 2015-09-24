@@ -1,0 +1,33 @@
+package edu.nesterenko.touroperator.logic;
+
+import java.util.regex.Pattern;
+
+import edu.nesterenko.touroperator.dao.CountryDao;
+import edu.nesterenko.touroperator.dao.DaoException;
+import edu.nesterenko.touroperator.entity.Country;
+import edu.nesterenko.touroperator.entity.RestType;
+import edu.nesterenko.touroperator.resource.RegexManager;
+
+public class RestTypeLogic {
+	private RestTypeLogic() {}
+	
+	 public static void addRestType(String name) throws LogicException {
+		if(name == null || name.isEmpty()) {
+			throw new LogicException("name is empty");
+		}
+		
+		if(Pattern.matches(
+				RegexManager.getProperty("pattern.onlylitter"), 
+				name)) {
+			RestType country = new RestTYpe(0, name);
+			CountryDao countryDao = new CountryDao();
+			try {
+				countryDao.add(0, country);				
+			} catch (DaoException e) {
+				throw new LogicException(e);
+			}
+		} else {
+			throw new LogicException("Bad params");
+		} 	
+	}
+}

@@ -1,16 +1,11 @@
 package edu.nesterenko.touroperator.logic;
 
-import java.util.regex.Pattern;
-
-import org.apache.log4j.Logger;
-
 import edu.nesterenko.touroperator.dao.ClientDao;
 import edu.nesterenko.touroperator.dao.DaoException;
 import edu.nesterenko.touroperator.entity.Client;
-import edu.nesterenko.touroperator.resource.RegexManager;
+import edu.nesterenko.touroperator.validation.Validator;
 
 public class SignUpLogic {
-	private final static Logger LOG = Logger.getLogger(SignUpLogic.class);
 	private SignUpLogic() {	}
 
 	public static Client signUp(String login, String password, 
@@ -29,9 +24,10 @@ public class SignUpLogic {
 			throw new LogicException("email is emtpy");
 		}
 		
-		if(!password.equals(repeatedPassword) || !Pattern.matches(RegexManager.getProperty("pattern.login"), login) 
-		   || !Pattern.matches(RegexManager.getProperty("pattern.password"), password)
-		   || !Pattern.matches(RegexManager.getProperty("pattern.email"), email)) {
+		if(!password.equals(repeatedPassword) 
+		   || !Validator.checkLogin(login) 
+		   || !Validator.checkPassword(password)
+		   || !Validator.checkEmail(email)) {
 			throw new LogicException("Bad params");
 		}
 		ClientDao clientDao = new ClientDao();

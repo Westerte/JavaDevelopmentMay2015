@@ -1,9 +1,6 @@
 package edu.nesterenko.touroperator.logic;
-
-import java.util.regex.Pattern;
-
 import edu.nesterenko.touroperator.entity.Country;
-import edu.nesterenko.touroperator.resource.RegexManager;
+import edu.nesterenko.touroperator.validation.Validator;
 import edu.nesterenko.touroperator.dao.CountryDao;
 import edu.nesterenko.touroperator.dao.DaoException; 
 
@@ -16,9 +13,7 @@ public class CountryLogic {
 			throw new LogicException("name is empty");
 		}
 		
-		if(Pattern.matches(
-				RegexManager.getProperty("pattern.onlylitter"), 
-				name)) {
+		if(Validator.checkOnlyLatters(name)) {
 			Country country = new Country(0, name);
 			CountryDao countryDao = new CountryDao();
 			try {

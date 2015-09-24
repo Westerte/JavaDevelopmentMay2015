@@ -1,0 +1,5 @@
+package edu.nesterenko.touroperator.validation;
+
+public class Validator {
+	private Validator() {}
+}
