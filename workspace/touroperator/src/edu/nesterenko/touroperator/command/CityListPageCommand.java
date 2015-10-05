@@ -7,13 +7,13 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 
-import edu.nesterenko.touroperator.dao.CityDao;
-import edu.nesterenko.touroperator.dao.CountryDao;
-import edu.nesterenko.touroperator.dao.DaoException;
 import edu.nesterenko.touroperator.entity.City;
 import edu.nesterenko.touroperator.entity.Client;
 import edu.nesterenko.touroperator.entity.ClientType;
 import edu.nesterenko.touroperator.entity.Country;
+import edu.nesterenko.touroperator.logic.CityLogic;
+import edu.nesterenko.touroperator.logic.CountryLogic;
+import edu.nesterenko.touroperator.logic.LogicException;
 import edu.nesterenko.touroperator.resource.ConfigurationManager;
 
 public class CityListPageCommand implements Command {
@@ -33,14 +33,12 @@ public class CityListPageCommand implements Command {
 		Client client = (Client)session.getAttribute("client");
 		String jspPath;
 		if(client != null && client.getClientType() == ClientType.ADMIN) {
-			CityDao cityDao = new CityDao();
-			CountryDao countryDao = new CountryDao();
 			List<City> cityList = null;	
 			List<Country> countryList = null;
 			try {
-				cityList = cityDao.findAll();
-				countryList = countryDao.findAll();
-			} catch (DaoException e) {
+				cityList = CityLogic.findAll();
+				countryList = CountryLogic.findAll();
+			} catch (LogicException e) {
 				LOG.error(e);
 			}
 			request.setAttribute("cityList", cityList);

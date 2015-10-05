@@ -30,9 +30,7 @@ public class RestTypeDao implements AbstractDao<Integer, RestType> {
 			statement = connection.createStatement();
 			ResultSet resultSet = statement.executeQuery(FIND_ALL);
 			while(resultSet.next()) {
-				restTypeList.add(new RestType(resultSet.getInt("rest_type_id"), 
-						resultSet.getString("rest_type_name"), 
-						resultSet.getString("rest_type_description")));
+				restTypeList.add(makeRestType(resultSet));
 			}
 		} catch (ConnectionPoolException | SQLException e) {
 			throw new DaoException(e);
@@ -55,10 +53,7 @@ public class RestTypeDao implements AbstractDao<Integer, RestType> {
 			statement.setInt(1, key);
 			ResultSet resultSet = statement.executeQuery();
 			if(resultSet.next()) {
-				int restTypeId = resultSet.getInt("rest_type_id");
-				String restTypeName = resultSet.getString("rest_type_name");
-				String restTypeDescription = resultSet.getString("rest_type_description");
-				restType = new RestType(restTypeId, restTypeName, restTypeDescription);
+				restType = makeRestType(resultSet);
 			} else {
 				throw new DaoException("No country with such key");
 			}
@@ -104,8 +99,17 @@ public class RestTypeDao implements AbstractDao<Integer, RestType> {
 	
 	@Override
 	public RestType update(RestType entity) {
-		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	private RestType makeRestType(ResultSet resultSet) throws DaoException{
+		try {
+			return new RestType(resultSet.getInt("rest_type_id"), 
+					resultSet.getString("rest_type_name"), 
+					resultSet.getString("rest_type_description"));
+		} catch (SQLException e) {
+			throw new DaoException(e);
+		}
 	}
 	
 }

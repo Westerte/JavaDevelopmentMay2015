@@ -1,0 +1,26 @@
+2015-10-01 20:22:06,989 [http-bio-8080-exec-4] ERROR edu.nesterenko.bank.command.EmptyCommand  - Direct request to controller or bad commandName
+2015-10-01 20:22:55,853 [http-bio-8080-exec-4] ERROR edu.nesterenko.bank.command.AddCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.bank.validation.ValidationException: bad date
+2015-10-01 20:33:24,914 [http-bio-8080-exec-1] ERROR edu.nesterenko.bank.command.AddCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.bank.validation.ValidationException: bad date
+2015-10-01 20:33:39,577 [http-bio-8080-exec-5] ERROR edu.nesterenko.bank.command.AddCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.bank.validation.ValidationException: bad date
+2015-10-01 21:25:35,723 [http-bio-8080-exec-1] ERROR edu.nesterenko.bank.command.AddCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.bank.validation.ValidationException: bad date
+2015-10-01 21:25:35,736 [http-bio-8080-exec-1] ERROR edu.nesterenko.bank.command.AddCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 82 178 milliseconds ago.  The last packet sent successfully to the server was 9 milliseconds ago.
+2015-10-01 21:28:25,554 [http-bio-8080-exec-2] ERROR edu.nesterenko.bank.command.AddPageCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 73 394 milliseconds ago.  The last packet sent successfully to the server was 10 milliseconds ago.
+2015-10-01 21:28:26,861 [http-bio-8080-exec-2] ERROR edu.nesterenko.bank.command.AddPageCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 74 699 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+2015-10-01 21:28:27,605 [http-bio-8080-exec-2] ERROR edu.nesterenko.bank.command.AddPageCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 75 441 milliseconds ago.  The last packet sent successfully to the server was 1 milliseconds ago.
+2015-10-01 21:28:30,973 [http-bio-8080-exec-2] ERROR edu.nesterenko.bank.command.AddPageCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 78 805 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+2015-10-01 21:28:59,354 [http-bio-8080-exec-7] ERROR edu.nesterenko.bank.command.AddCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.bank.validation.ValidationException: bad date
+2015-10-01 21:38:19,979 [http-bio-8080-exec-1] ERROR edu.nesterenko.bank.command.AddCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.bank.validation.ValidationException: bad passportNumber
+2015-10-01 21:38:39,551 [http-bio-8080-exec-9] ERROR edu.nesterenko.bank.command.AddCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.bank.validation.ValidationException: bad passportNumber
+2015-10-01 21:39:19,774 [http-bio-8080-exec-7] ERROR edu.nesterenko.bank.command.AddCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.bank.validation.ValidationException: bad passportNumber
+2015-10-01 21:40:40,000 [http-bio-8080-exec-7] ERROR edu.nesterenko.bank.command.AddCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.bank.validation.ValidationException: bad passportNumber
+2015-10-01 21:43:08,247 [http-bio-8080-exec-8] ERROR edu.nesterenko.bank.command.AddCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.bank.validation.ValidationException: bad passportNumber

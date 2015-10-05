@@ -1,0 +1,19 @@
+package edu.vadim.test.run;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+
+public class Runner {
+	
+	public static void main(String[] args) {			
+		String dateString = "2004-03-29";
+		try {
+		} catch (ParseException e) {
+			DateFormat dateFormat = new SimpleDateFormat(dateString);
+			System.out.println("mistake");
+		}
+	}
+}

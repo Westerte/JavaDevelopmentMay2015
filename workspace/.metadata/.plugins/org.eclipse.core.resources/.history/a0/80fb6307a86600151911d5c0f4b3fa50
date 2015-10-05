@@ -1,0 +1,36 @@
+package edu.nesterenko.bank.entity;
+
+import java.util.Date;
+
+public class Client extends Entity{
+	private String secondName;
+	private String firstName;
+	private String patronimic;
+	private Date birthday;
+	private String male;
+	private String passportSeria;
+	private String passportNumber;
+	private String passportPlace;
+	private Date passportDate;
+	private String cid;
+	private String birthplace;
+	private City currentCity;
+	private String currentAddress;
+	private String phoneHome;
+	private String phoneMobile;
+	private String email;
+	private String workPlace;
+	private String position;
+	private String registrationAddress;
+	private Nationality nationality;
+	private Martial martial;
+	private Disability disability;
+	private boolean pensioner;
+	private double income;
+	
+
+	public Client(int id) {
+		super(id);
+		
+	}	
+}

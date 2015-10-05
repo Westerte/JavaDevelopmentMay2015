@@ -1,7 +1,0 @@
-package edu.nesterenko.touroperator.logic;
-
-public class CountryLogic {
-	
-	private CountryLogic(){}
-	
-}

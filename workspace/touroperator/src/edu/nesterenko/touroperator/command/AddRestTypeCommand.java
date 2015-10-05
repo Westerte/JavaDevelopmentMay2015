@@ -7,8 +7,6 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 
-import edu.nesterenko.touroperator.dao.DaoException;
-import edu.nesterenko.touroperator.dao.RestTypeDao;
 import edu.nesterenko.touroperator.entity.Client;
 import edu.nesterenko.touroperator.entity.ClientType;
 import edu.nesterenko.touroperator.entity.RestType;
@@ -41,10 +39,9 @@ public class AddRestTypeCommand implements Command {
 			} catch (LogicException e) {
 				LOG.error(e);
 			}
-			RestTypeDao restTypeDao = new RestTypeDao();
 			try {
-				restTypeList = restTypeDao.findAll();
-			} catch (DaoException e) {
+				restTypeList = RestTypeLogic.findAll();
+			} catch (LogicException e) {
 				LOG.error(e);
 			}
 			request.setAttribute("restTypeList", restTypeList);

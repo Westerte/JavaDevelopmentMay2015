@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ValidationException.java&apos; to &apos;touroperator/src/edu.nesterenko.touroperator.validation&apos;&#x0D;&#x0A;- Original project: &apos;bank&apos;&#x0D;&#x0A;- Destination element: &apos;touroperator/src/edu.nesterenko.touroperator.validation&apos;&#x0D;&#x0A;- Original element: &apos;edu.nesterenko.bank.validation.ValidationException.java&apos;" description="Copy compilation unit" destination="=touroperator/src&lt;edu.nesterenko.touroperator.validation" element1="/src&lt;edu.nesterenko.bank.validation{ValidationException.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1444061795079" units="1" version="1.0"/>
+</session>

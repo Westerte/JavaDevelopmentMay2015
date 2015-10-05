@@ -1,0 +1,5 @@
+package edu.nesterenko.touroperator.dao;
+
+public class CityDao implements AbstractDao<Integer, City> {
+
+}

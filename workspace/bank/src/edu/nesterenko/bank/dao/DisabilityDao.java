@@ -1,0 +1,104 @@
+package edu.nesterenko.bank.dao;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import edu.nesterenko.bank.connectionpool.ConnectionPool;
+import edu.nesterenko.bank.connectionpool.ConnectionPoolException;
+import edu.nesterenko.bank.connectionpool.ConnectionWrapper;
+import edu.nesterenko.bank.entity.Disability;
+
+public class DisabilityDao implements AbstractDao<Integer, Disability> {
+	private final static String FIND_ALL = "SELECT * FROM `disability`";
+	private final static String ADD_NEW = "INSERT INTO `disability`"
+			+ "(`disability_name`) VALUES(?)";
+	private final static String SELECT_BY_ID = 
+			"SELECT * FROM `disability` WHERE `disability_id` = ?";
+
+	@Override
+	public List<Disability> findAll() throws DaoException {
+		List<Disability> disabilityList = new ArrayList<Disability>();
+		ConnectionPool connectionPool = ConnectionPool.getInstance();
+		Statement statement = null;
+		ConnectionWrapper connection = null;
+		try {
+			connection = connectionPool.grapConnection();
+			statement = connection.createStatement();
+			ResultSet resultSet = statement.executeQuery(FIND_ALL);
+			while(resultSet.next()) {
+				disabilityList.add(new Disability(resultSet.getInt("disability_id"), 
+						resultSet.getString("disability_name")));
+			}
+		} catch (ConnectionPoolException | SQLException e) {
+			throw new DaoException(e);
+		} finally {
+			closeStatement(statement);
+			connectionPool.releaseConnection(connection);
+		}
+		return disabilityList;
+	}
+
+	@Override
+	public Disability findByKey(Integer key) throws DaoException {
+		Disability disability;
+		ConnectionPool connectionPool = ConnectionPool.getInstance();
+		PreparedStatement statement = null;
+		ConnectionWrapper connection = null;
+		try {
+			connection = connectionPool.grapConnection();
+			statement = connection.prepareStatement(SELECT_BY_ID);
+			statement.setInt(1, key);
+			ResultSet resultSet = statement.executeQuery();
+			if(resultSet.next()) {
+				int disabilityId = resultSet.getInt("disability_id");
+				String disabilityName = resultSet.getString("disability_name");
+				disability = new Disability(disabilityId, disabilityName);
+			} else {
+				throw new DaoException("No disability with such key");
+			}
+		} catch (ConnectionPoolException | SQLException e) {
+			throw new DaoException(e);
+		} finally {
+			closeStatement(statement);
+			connectionPool.releaseConnection(connection);
+		}
+		return disability;
+	}
+
+	@Override
+	public void add(Integer key, Disability entity) throws DaoException {
+		ConnectionPool connectionPool = ConnectionPool.getInstance();
+		PreparedStatement statement = null;
+		ConnectionWrapper connection = null;
+		try {
+			connection = connectionPool.grapConnection();
+			statement = connection.prepareStatement(ADD_NEW);
+			statement.setString(1, entity.getName());
+			statement.executeUpdate();
+		} catch (ConnectionPoolException | SQLException e) {
+			throw new DaoException(e);
+		} finally {
+			closeStatement(statement);
+			connectionPool.releaseConnection(connection);
+		}
+	}
+
+	@Override
+	public void delete(Integer key) {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public void delete(Disability entity) {
+		throw new UnsupportedOperationException();		
+	}
+
+	@Override
+	public void update(Disability entity) {
+		throw new UnsupportedOperationException();
+	}
+}

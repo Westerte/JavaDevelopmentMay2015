@@ -1,0 +1,7 @@
+package edu.nesterenko.touroperator.dao;
+
+import edu.nesterenko.touroperator.entity.Tour;
+
+public class TourDao implements AbstractDao<Integer, Tour> {
+
+}

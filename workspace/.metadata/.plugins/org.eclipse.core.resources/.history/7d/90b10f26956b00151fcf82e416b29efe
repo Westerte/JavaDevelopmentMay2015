@@ -1,0 +1,46 @@
+package edu.nesterenko.touroperator.logic;
+
+import java.util.Date;
+import java.util.List;
+
+import edu.nesterenko.touroperator.dao.DaoException;
+import edu.nesterenko.touroperator.dao.TourDao;
+import edu.nesterenko.touroperator.entity.Tour;
+import edu.nesterenko.touroperator.validation.ValidationException;
+import edu.nesterenko.touroperator.validation.Validator;
+
+public class TourLogic {
+	
+	public static void addTour(String name, String description, String cost,
+			String beginDate, String endDate, String food, String path, 
+			String pathTime, String restType, String resortHotel) 
+			 throws LogicException {
+		try {
+			Validator.checkOnlyLatters(name);
+			Validator.checkEmpty(path);
+			double costDouble = Validator.checkDouble(cost);
+			double pathTimeDouble = Validator.checkDouble(pathTime);
+			Date beginDateObject = Validator.checkDate(beginDate);
+			Date endDateObject = Validator.checkDate(endDate);
+			int restTypeId = Validator.checkInt(restType);
+			int resortHotelId = Validator.checkInt(resortHotel);
+			Tour tour = new Tour(name, description, costDouble, beginDateObject, 
+					endDateObject, 0, food, path, 
+					pathTimeDouble, restType, resortHotel);
+			TourDao tourDao = new TourDao();
+			tourDao.add(0, tour);				
+		} catch (DaoException | ValidationException e) {
+			throw new LogicException(e);
+		}
+	}
+	 
+	public static List<Tour> findAll() throws LogicException {
+		TourDao tourDao = new TourDao();
+		try {
+			return tourDao.findAll();
+		} catch (DaoException e) {
+			throw new LogicException(e);
+		}
+	}
+
+}

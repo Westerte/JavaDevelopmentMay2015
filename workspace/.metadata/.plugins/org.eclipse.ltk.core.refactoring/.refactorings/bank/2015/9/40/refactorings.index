@@ -1,0 +1,56 @@
+1443526883677	Move packages
+1443527030826	Delete elements
+1443527037363	Delete element
+1443527041971	Delete element
+1443527045256	Delete elements
+1443527050466	Delete elements
+1443527076440	Delete elements
+1443527085101	Delete element
+1443527109120	Rename package 'edu.nesterenko.touroperator.command'
+1443527120380	Rename package 'edu.nesterenko.touroperator.connectionpool'
+1443527129015	Rename package 'edu.nesterenko.touroperator.filter'
+1443527139474	Rename package 'edu.nesterenko.touroperator.logic'
+1443527146967	Rename package 'edu.nesterenko.touroperator.resource'
+1443527706868	Rename package 'edu.nesterenko.touroperator.validation'
+1443530108669	Delete elements
+1443530171108	Encapsulate field 'id'
+1443530563650	Encapsulate field 'name'
+1443530637690	Encapsulate field 'Name'
+1443530686300	Encapsulate field 'name'
+1443530721885	Encapsulate field 'name'
+1443530787782	Encapsulate field 'secondName'
+1443530805054	Encapsulate field 'firstName'
+1443530810732	Encapsulate field 'patronimic'
+1443530828120	Encapsulate field 'birthday'
+1443530835585	Encapsulate field 'passportSeria'
+1443530839613	Encapsulate field 'male'
+1443530843099	Encapsulate field 'passportNumber'
+1443530853563	Encapsulate field 'passportPlace'
+1443530871296	Encapsulate field 'passportDate'
+1443530877227	Encapsulate field 'cid'
+1443530880265	Encapsulate field 'birthplace'
+1443530883124	Encapsulate field 'currentCity'
+1443530885908	Encapsulate field 'currentAddress'
+1443530888868	Encapsulate field 'phoneHome'
+1443530891730	Encapsulate field 'phoneMobile'
+1443530895515	Encapsulate field 'email'
+1443530898249	Encapsulate field 'workPlace'
+1443530901016	Encapsulate field 'position'
+1443530903816	Encapsulate field 'registrationAddress'
+1443530906274	Encapsulate field 'nationality'
+1443530908992	Encapsulate field 'martial'
+1443530911640	Encapsulate field 'disability'
+1443530914425	Encapsulate field 'pensioner'
+1443530917129	Encapsulate field 'income'
+1443533444133	Rename local variable 'clientCurrent_address'
+1443533823973	Rename local variable 'clientRegistration_address'
+1443543057917	Rename package 'edu.nesterenko.touroperator.controller'
+1443543169218	Rename package 'edu.nesterenko.touroperator.tags'
+1443543457050	Copy file
+1443544827737	Rename type 'MartinalLogic'
+1443545309881	Rename method 'viewAll'
+1443545343173	Rename method 'showAll'
+1443545358158	Rename method 'viewAll'
+1443545365088	Rename method 'viewAll'
+1443545372761	Rename method 'viewAll'
+1443559894600	Rename method 'viewAll'

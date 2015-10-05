@@ -1,0 +1,104 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="ctg" uri="/WEB-INF/tld/custom.tld" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<fmt:setLocale value="${ locale }"/>
+<fmt:setBundle basename="resources.messages" var="rb"/>
+<fmt:setBundle basename="resources.config" var="configBundle"/>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<body>
+	Фамилия
+	<input type="text" name="secondName" value="${secondName}" placeholder="Иванов">
+	<br><br>
+	Имя
+	<input type="text" name="firstName" value="${firstName}" placeholder="Иван">
+	<br><br>
+	Отчество
+	<input type="text" name="patronimic" value="${patronimic}" placeholder="Иванович">
+	<br><br>
+	День рождения
+	<input type="text" name="birthday" value='${birthday}' placeholder="01.01.2015">
+	<br><br>
+	Пол
+	<input type="radio" name="male" checked="checked" value="male" id="male"><label for="male">муж.</label>
+	<input type="radio" name="male" value="female" id="female"><label for="female">жен.</label>
+	<br><br>				
+	Серия пасспорта
+	<input type="text" name="passportSeria" value="${passportSeria}" placeholder="BM">
+	<br><br>
+	Номер пасспорта
+	<input type="text" name="passportNumber" value="${passportNumber}" placeholder="xxxxxxx">
+	<br><br>
+	Паспорт выдан
+	<input type="text" name="passportPlace" value="${passportPlace}" placeholder="адрес">
+	<br><br>
+	Дата получения пасспорта
+	<input type="text" name="passportDate" value="${passportDate}" placeholder="01.01.2015">
+	<br><br>
+	Идентификационный номер
+	<input type="text" name="cid" value="${cid}" placeholder="xxxx xxxx xxxx xxxx">
+	<br><br>
+	Место рождения
+	<input type="text" name="birthplace" value="${birthplace}" placeholder="адрес">
+	<br><br>
+	Город фактического проживания
+	<select name="currentCity">
+	<c:forEach items = "${ cityList }" var="city">
+		<option value="${ city.id }" <c:if test="${city.id == currentCity}">selected="selected"</c:if> label="${ city.name }"/>
+	</c:forEach>
+	</select>
+	<br><br>
+	Адрес фактического проживания
+	<input type="text" name="currentAddress" value="${currentAddress}" placeholder="адрес">
+	<br><br>
+	Телефон дом
+	<input type="text" name="phoneHome" value="${phoneHome}" placeholder="8xxx...">
+	<br><br>
+	Телефон моб
+	<input type="text" name="phoneMobile" value="${phoneMobile}" placeholder="+375-xx-xxx-xx-xx">
+	<br><br>
+	Email
+	<input type="text" name="email" value="${email}" placeholder="mymail@example.com">
+	<br><br>
+	Место работы
+	<input type="text" name="workPlace" value="${workPlace}" placeholder="Example Inc.">
+	<br><br>
+	Должность
+	<input type="text" name="position" value="${position}" placeholder="Должность">
+	<br><br>
+	Адрес регистрации
+	<input type="text" name="registrationAddress" value="${registrationAddress}" placeholder="адрес">
+	<br><br>
+	Семейное положение
+	<select name="martial">
+	<c:forEach items = "${ martialList }" var="martialItem">
+		<option value="${ martialItem.id }" <c:if test="${martialItem.id == marital}">selected="selected"</c:if> label="${ martialItem.name }" />
+	</c:forEach>
+	</select>
+	<br><br>
+	Национальность
+	<select name="nationality">
+	<c:forEach items = "${ nationalityList }" var="nationalityItem">
+		<option value="${ nationalityItem.id }" <c:if test="${nationalityItem.id == nationality}">selected="selected"</c:if> label="${ nationalityItem.name }"/>
+	</c:forEach>
+	</select>
+	<br><br>
+	Инвалидность
+	<select name="disability">
+	<c:forEach items = "${ disabilityList }" var="disabilityItem">
+		<option value="${ disabilityItem.id }" <c:if test="${disabilityItem.id == disability}">selected="selected"</c:if> label="${ disabilityItem.name }"/>
+	</c:forEach>
+	</select>
+	<br><br>
+	Пенсионер
+	<input type="radio" name="pensioner"  checked="checked"  value="true" id="yes"><label for="yes">да</label>
+	<input type="radio" name="pensioner" value="false" id="no"><label for="no">нет</label>
+	<br><br>
+	Доход
+	<input type="text" name="income" value="${income}"  placeholder="20000>
+	<br><br>	
+	<input type="submit" value="Отправить">				
+</body>
+</html>

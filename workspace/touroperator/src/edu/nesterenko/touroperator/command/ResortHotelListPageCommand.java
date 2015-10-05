@@ -7,13 +7,13 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 
-import edu.nesterenko.touroperator.dao.DaoException;
-import edu.nesterenko.touroperator.dao.ResortDao;
-import edu.nesterenko.touroperator.dao.ResortHotelDao;
 import edu.nesterenko.touroperator.entity.Client;
 import edu.nesterenko.touroperator.entity.ClientType;
 import edu.nesterenko.touroperator.entity.Resort;
 import edu.nesterenko.touroperator.entity.ResortHotel;
+import edu.nesterenko.touroperator.logic.LogicException;
+import edu.nesterenko.touroperator.logic.ResortHotelLogic;
+import edu.nesterenko.touroperator.logic.ResortLogic;
 import edu.nesterenko.touroperator.resource.ConfigurationManager;
 
 public class ResortHotelListPageCommand implements Command{
@@ -32,14 +32,12 @@ public class ResortHotelListPageCommand implements Command{
 		Client client = (Client)session.getAttribute("client");
 		String jspPath;
 		if(client != null && client.getClientType() == ClientType.ADMIN) {
-			ResortDao resortDao = new ResortDao();
-			ResortHotelDao resortHotelDao = new ResortHotelDao();
 			List<Resort> resortList = null;
 			List<ResortHotel> resortHotelList = null;
 			try {
-				resortHotelList = resortHotelDao.findAll();
-				resortList = resortDao.findAll();
-			} catch (DaoException e) {
+				resortHotelList = ResortHotelLogic.findAll();
+				resortList = ResortLogic.findAll();
+			} catch (LogicException e) {
 				LOG.error(e);
 			}
 			request.setAttribute("resortList", resortList);			

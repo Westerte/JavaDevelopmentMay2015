@@ -1,0 +1,67 @@
+package edu.nesterenko.bank.validation;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.regex.Pattern;
+
+import edu.nesterenko.bank.resource.RegexManager;
+
+public class Validator {
+	
+	private Validator() {}
+	
+	public static String checkOnlyLatters(String value) throws ValidationException{
+		if(Pattern.matches(RegexManager.getProperty("pattern.onlylitter"), value)) {
+			return value;
+		} else {
+			throw new ValidationException("is not only latters");
+		}
+	}
+	
+	public static double checkDouble(String doubleValue) throws ValidationException {
+	   try {
+		   return Double.parseDouble(doubleValue);
+	   } catch(NumberFormatException e) {
+		   throw new ValidationException(e);
+	   }
+	}
+	
+	public static Date checkDate(String format, String dateValue) throws ValidationException {
+		try {
+			return new SimpleDateFormat(format).parse(dateValue);
+		} catch (ParseException e) {
+			throw new ValidationException(e);
+		}
+	}
+
+	public static int checkInt(String integerValue) throws ValidationException {
+		try {
+			return Integer.parseInt(integerValue);
+		} catch(NumberFormatException e) {
+			throw new ValidationException(e);
+		}
+	}
+
+	public static String checkPassportNumber(String passportNumber) throws ValidationException {
+	    throw new UnsupportedOperationException();
+	}	
+	
+	public static String checkCid(String cid) throws ValidationException {
+	    throw new UnsupportedOperationException();
+	}
+
+	public static String checkPhoneHome(String phoneHome) throws ValidationException {
+	    throw new UnsupportedOperationException();
+	}
+	
+	public static String checkPhoneMobile(String phoneMobile) throws ValidationException {
+	    throw new UnsupportedOperationException();
+	}
+	
+	public static String checkEmail(String email) throws ValidationException {
+		//return Pattern.matches(RegexManager.getProperty("pattern.email"), email);
+		throw new UnsupportedOperationException();
+	}
+	
+}

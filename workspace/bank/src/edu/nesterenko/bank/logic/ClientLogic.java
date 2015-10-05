@@ -1,0 +1,145 @@
+package edu.nesterenko.bank.logic;
+
+import java.util.Date;
+import java.util.List;
+
+import edu.nesterenko.bank.entity.City;
+import edu.nesterenko.bank.entity.Client;
+import edu.nesterenko.bank.entity.Disability;
+import edu.nesterenko.bank.entity.Martial;
+import edu.nesterenko.bank.entity.Nationality;
+import edu.nesterenko.bank.validation.ValidationException;
+import edu.nesterenko.bank.validation.Validator;
+import edu.nesterenko.bank.dao.ClientDao;
+import edu.nesterenko.bank.dao.DaoException;
+
+public class ClientLogic {
+	
+	private ClientLogic() {}
+	
+	public static List<Client> findAll() throws LogicException {
+		ClientDao clientDao = new ClientDao();
+		try {
+			List<Client> clientList = clientDao.findAll();
+			return clientList;
+		} catch (DaoException e) {
+			throw new LogicException(e);
+		}
+	}
+	
+	public static void addClient(String secondName, String firstName, String patronimic, String birthday, String male,
+			String passportSeria, String passportNumber, String passportPlace, String passportDate, String cid,
+			String birthplace, String currentCity, String currentAddress, String phoneHome, String phoneMobile,
+			String email, String workPlace, String position, String registrationAddress, 
+			String martial, String nationality, String disability, String pensioner, String income) throws LogicException {
+		Date birthdayDate;
+		Date passortDateObject;
+		City currentCityObject = new City(0, null);
+		Martial martialObject = new Martial(0, null);
+		Nationality nationalityObject = new Nationality(0, null);
+		Disability disabilityObject = new Disability(0, null);
+		boolean isPensioner;
+		double incomeDouble;
+		try {
+			Validator.checkOnlyLatters(secondName);
+			Validator.checkOnlyLatters(firstName);
+			Validator.checkOnlyLatters(patronimic);
+			birthdayDate = Validator.checkDate(birthday);
+			Validator.checkOnlyLatters(passportSeria);
+			Validator.checkPassportNumber(passportNumber);
+			passortDateObject = Validator.checkDate(passportDate);
+			Validator.checkCid(cid);
+			currentCityObject.setId(Validator.checkInt(currentCity));
+			Validator.checkPhoneHome(phoneHome);
+			Validator.checkPhoneMobile(phoneMobile);
+			Validator.checkEmail(email);
+			martialObject.setId(Validator.checkInt(martial));
+			nationalityObject.setId(Validator.checkInt(nationality));
+			disabilityObject.setId(Validator.checkInt(disability));
+			isPensioner = Boolean.parseBoolean(pensioner);
+			incomeDouble = Validator.checkDouble(income);
+		} catch(ValidationException e) {
+			throw new LogicException(e);
+		}
+		
+		ClientDao clientDao = new ClientDao();
+		try {
+			clientDao.add(0, new Client(0, secondName, firstName, patronimic, birthdayDate, male, 
+					passportSeria, passportNumber, passportPlace, 
+					passortDateObject, cid, birthplace, currentCityObject, currentAddress, phoneHome,
+					phoneMobile, email, workPlace, position, registrationAddress, martialObject,
+					nationalityObject, disabilityObject, isPensioner, incomeDouble));
+		} catch (DaoException e) {
+			throw new LogicException(e);
+		}
+	}
+	
+	public static void editClient(String id, String secondName, String firstName, String patronimic, String birthday, String male,
+			String passportSeria, String passportNumber, String passportPlace, String passportDate, String cid,
+			String birthplace, String currentCity, String currentAddress, String phoneHome, String phoneMobile,
+			String email, String workPlace, String position, String registrationAddress, 
+			String martial, String nationality, String disability, String pensioner, String income) throws LogicException {
+		int idInt;
+		Date birthdayDate;
+		Date passortDateObject;
+		City currentCityObject = new City(0, null);
+		Martial martialObject = new Martial(0, null);
+		Nationality nationalityObject = new Nationality(0, null);
+		Disability disabilityObject = new Disability(0, null);
+		boolean isPensioner;
+		double incomeDouble;
+		try {
+			idInt = Validator.checkInt(id);
+			Validator.checkOnlyLatters(secondName);
+			Validator.checkOnlyLatters(firstName);
+			Validator.checkOnlyLatters(patronimic);
+			birthdayDate = Validator.checkDate(birthday);
+			Validator.checkOnlyLatters(passportSeria);
+			Validator.checkPassportNumber(passportNumber);
+			passortDateObject = Validator.checkDate(passportDate);
+			Validator.checkCid(cid);
+			currentCityObject.setId(Validator.checkInt(currentCity));
+			Validator.checkPhoneHome(phoneHome);
+			Validator.checkPhoneMobile(phoneMobile);
+			Validator.checkEmail(email);
+			martialObject.setId(Validator.checkInt(martial));
+			nationalityObject.setId(Validator.checkInt(nationality));
+			disabilityObject.setId(Validator.checkInt(disability));
+			isPensioner = Boolean.parseBoolean(pensioner);
+			incomeDouble = Validator.checkDouble(income);
+		} catch(ValidationException e) {
+			throw new LogicException(e);
+		}
+		ClientDao clientDao = new ClientDao();
+		try {
+			clientDao.update(new Client(idInt, secondName, firstName, patronimic, birthdayDate, male, 
+					passportSeria, passportNumber, passportPlace, 
+					passortDateObject, cid, birthplace, currentCityObject, currentAddress, phoneHome,
+					phoneMobile, email, workPlace, position, registrationAddress, martialObject,
+					nationalityObject, disabilityObject, isPensioner, incomeDouble));
+		} catch (DaoException e) {
+			throw new LogicException(e);
+		}
+		
+	}
+	
+	public static void delete(String id) throws LogicException {
+		ClientDao clientDao = new ClientDao();
+		try {
+			int idInt = Validator.checkInt(id);
+			clientDao.delete(idInt);
+		} catch (DaoException | ValidationException e) {
+			throw new LogicException(e);
+		}
+	}
+	
+	public static Client getClientById(String id) throws LogicException {
+		try {
+			int idInt = Validator.checkInt(id);
+			ClientDao clientDao = new ClientDao();
+			return clientDao.findByKey(idInt);
+		} catch(ValidationException | DaoException e) {
+			throw new LogicException(e);
+		}
+	}
+}

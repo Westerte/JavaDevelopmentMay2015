@@ -31,13 +31,8 @@ public class ResortHotelDao implements AbstractDao<Integer, ResortHotel> {
 			connection = connectionPool.grapConnection();
 			statement = connection.createStatement();
 			ResultSet resultSet = statement.executeQuery(FIND_ALL);
-			ResortDao resortDao = new ResortDao();
 			while(resultSet.next()) {
-				resortHotelList.add(new ResortHotel(resultSet.getInt("resort_hotel_id"), 
-						resultSet.getString("resort_hotel_name"), 
-						resultSet.getString("resort_hotel_description"), 
-						resortDao.findByKey(resultSet.getInt("resort_id")), 
-								resultSet.getInt("resort_hotel_stars")));
+				resortHotelList.add(makeResortHotel(resultSet));
 			}
 		} catch (ConnectionPoolException | SQLException e) {
 			throw new DaoException(e);
@@ -60,14 +55,7 @@ public class ResortHotelDao implements AbstractDao<Integer, ResortHotel> {
 			statement.setInt(1, key);
 			ResultSet resultSet = statement.executeQuery();
 			if(resultSet.next()) {
-				int resortHotelId = resultSet.getInt("resort_hotel_id");
-				String resortHotelName = resultSet.getString("resort_hotel_name");
-				String description = resultSet.getString("resort_hotel_description");
-				int resortId = resultSet.getInt("resort_id");
-				int stars = resultSet.getInt("resort_hotel_stars");
-				ResortDao resortDao = new ResortDao();
-				resortHotel = new ResortHotel(resortHotelId, resortHotelName, description, 
-							resortDao.findByKey(resortId), stars);
+				resortHotel = makeResortHotel(resultSet);
 			} else {
 				throw new DaoException("No resort with such key");
 			}
@@ -116,4 +104,16 @@ public class ResortHotelDao implements AbstractDao<Integer, ResortHotel> {
 		throw new UnsupportedOperationException();
 	}
 
+	private ResortHotel makeResortHotel(ResultSet resultSet) throws DaoException {
+		ResortDao resortDao = new ResortDao();
+		try {
+			return new ResortHotel(resultSet.getInt("resort_hotel_id"), 
+					resultSet.getString("resort_hotel_name"), 
+					resultSet.getString("resort_hotel_description"), 
+					resortDao.findByKey(resultSet.getInt("resort_id")), 
+							resultSet.getInt("resort_hotel_stars"));
+		} catch (SQLException e) {
+			throw new DaoException(e);
+		} 
+	}
 }

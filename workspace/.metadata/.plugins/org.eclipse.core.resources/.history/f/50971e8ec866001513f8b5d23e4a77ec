@@ -1,0 +1,5 @@
+package edu.nesterenko.bank.command;
+
+public class EditPageCommand {
+
+}

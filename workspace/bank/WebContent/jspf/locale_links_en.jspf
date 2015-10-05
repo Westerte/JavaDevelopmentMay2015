@@ -1,0 +1,6 @@
+<html>
+<body>
+	<a class="lang_link pushed">Eng</a> 
+	| <a href="Controller?command=change_locale&language=russian" class="lang_link">Rus</a>
+</body>
+</html>

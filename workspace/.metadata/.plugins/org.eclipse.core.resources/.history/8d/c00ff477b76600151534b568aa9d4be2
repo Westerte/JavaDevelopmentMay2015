@@ -1,0 +1,160 @@
+package edu.nesterenko.touroperator.dao;
+
+import java.util.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import edu.nesterenko.bank.connectionpool.ConnectionPool;
+import edu.nesterenko.bank.connectionpool.ConnectionPoolException;
+import edu.nesterenko.bank.connectionpool.ConnectionWrapper;
+import edu.nesterenko.bank.entity.Client;
+
+public class ClientDao implements AbstractDao<Integer, Client> {
+	private final static String FIND_ALL = "SELECT * FROM `client`";
+	private final static String ADD_NEW = "INSERT INTO `client`"
+			+ "(`client_secondname`,`client_firstname`,`client_patronimic`,"
+			+ "`client_birthday`,`client_male`,`client_passport_seria`,"
+			+ "`client_passport_number`,`client_passport_place`,`client_passport_date`,"
+			+ "`client_cid`,`client_birthplace`,`client_current_city`,"
+			+ "`client_current_address`,`client_phone_home`,"
+			+ "`client_phone_mobile`,`client_email`,"
+			+ "`client_work_place`,`client_position`,"
+			+ "`client_registration_address`,`martial_id`,"
+			+ "`nationality_id`,"
+			+ "`disability_id`,"
+			+ "`client_pensioner`,"
+			+ "`client_incom`) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	private final static String SELECT_BY_ID = 
+			"SELECT * FROM `client` WHERE `client_id` = ?";
+
+	@Override
+	public List<Client> findAll() throws DaoException {
+		List<Client> clientList = new ArrayList<Client>();
+		ConnectionPool connectionPool = ConnectionPool.getInstance();
+		Statement statement = null;
+		ConnectionWrapper connection = null;
+		try {
+			connection = connectionPool.grapConnection();
+			statement = connection.createStatement();
+			ResultSet resultSet = statement.executeQuery(FIND_ALL);		
+			while(resultSet.next()) {				
+				clientList.add(makeClient(resultSet));
+			}
+		} catch (ConnectionPoolException | SQLException e) {
+			throw new DaoException(e);
+		} finally {
+			closeStatement(statement);
+			connectionPool.releaseConnection(connection);
+		}
+		return clientList;
+	}
+
+	@Override
+	public Client findByKey(Integer key) throws DaoException {
+		Client client;
+		ConnectionPool connectionPool = ConnectionPool.getInstance();
+		PreparedStatement statement = null;
+		ConnectionWrapper connection = null;
+		try {
+			connection = connectionPool.grapConnection();
+			statement = connection.prepareStatement(SELECT_BY_ID);
+			statement.setInt(1, key);
+			ResultSet resultSet = statement.executeQuery();
+			if(resultSet.next()) {
+				client = makeClient(resultSet);
+			} else {
+				throw new DaoException("No client with such key");
+			}
+		} catch (ConnectionPoolException | SQLException e) {
+			throw new DaoException(e);
+		} finally {
+			closeStatement(statement);
+			connectionPool.releaseConnection(connection);
+		}
+		return client;
+	}
+
+	@Override
+	public void add(Integer key, Client entity) throws DaoException {
+		ConnectionPool connectionPool = ConnectionPool.getInstance();
+		PreparedStatement statement = null;
+		ConnectionWrapper connection = null;
+		try {
+			connection = connectionPool.grapConnection();
+			statement = connection.prepareStatement(ADD_NEW);
+			statement.setString(1, entity.getSecondName());
+			statement.setString(2, entity.getFirstName());
+			statement.setString(3, entity.getPatronimic());
+			statement.setDate(4, entity.getBirthday());
+			statement.executeUpdate();
+		} catch (ConnectionPoolException | SQLException e) {
+			throw new DaoException(e);
+		} finally {
+			closeStatement(statement);
+			connectionPool.releaseConnection(connection);
+		}
+	}
+
+	@Override
+	public void delete(Integer key) {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public void delete(Client entity) {
+		throw new UnsupportedOperationException();		
+	}
+
+	@Override
+	public Client update(Client entity) {
+		throw new UnsupportedOperationException();
+	}
+	
+	private Client makeClient(final ResultSet resultSet) throws SQLException, DaoException {
+		CityDao cityDao = new CityDao();
+		MartialDao martialDao = new MartialDao();
+		NationalityDao nationalityDao = new NationalityDao();
+		DisabilityDao disabilityDao = new DisabilityDao(); 
+		int clientId = resultSet.getInt("client_id");
+		String clientSecondname = resultSet.getString("client_secondname");
+		String clientFirstname = resultSet.getString("client_firstname");
+		String clientPatronimic = resultSet.getString("client_patronimic");
+		Date clientBirthday = resultSet.getDate("client_birthday");
+		String clientMale = resultSet.getString("client_male");
+		String clientPassportSeria = resultSet.getString("client_passport_seria");
+		String clientPassportNumber = resultSet.getString("client_passport_number");
+		String clientPassportPlace = resultSet.getString("client_passport_place");
+		Date clientPassportDate = resultSet.getDate("client_passport_date");
+		String clientCid = resultSet.getString("client_cid");
+		String clientBirthplace = resultSet.getString("client_birthplace");
+		int clientCurrentCity = resultSet.getInt("client_current_city");
+		String clientCurrentAddress = resultSet.getString("client_current_address");
+		String clientPhoneHome = resultSet.getString("client_phone_home");
+		String clientPhoneMobile = resultSet.getString("client_phone_mobile");
+		String clientEmail = resultSet.getString("client_email");
+		String clientWorkPlace = resultSet.getString("client_work_place");
+		String clientPosition = resultSet.getString("client_position");
+		String clientRegistrationAddress = resultSet.getString("client_registration_address");
+		int martialId = resultSet.getInt("martial_id");
+		int  nationalityId = resultSet.getInt ("nationality_id");
+		int  disabilityId = resultSet.getInt("disability_id");
+		boolean clientPensioner = resultSet.getBoolean("client_pensioner");
+		double clientIncom = resultSet.getDouble("client_incom");
+		return new Client(clientId , 
+				clientSecondname , clientFirstname , 
+				clientPatronimic , clientBirthday , 
+				clientMale , clientPassportSeria ,
+				clientPassportNumber , clientPassportPlace ,
+				clientPassportDate , clientCid , clientBirthplace , 
+				cityDao.findByKey(clientCurrentCity) , clientCurrentAddress , 
+				clientPhoneHome , clientPhoneMobile , 
+				clientEmail , clientWorkPlace , clientPosition , 
+				clientRegistrationAddress , martialDao.findByKey(martialId) , 
+				nationalityDao.findByKey(nationalityId) , disabilityDao.findByKey(disabilityId)
+				, clientPensioner , clientIncom);
+	}
+}

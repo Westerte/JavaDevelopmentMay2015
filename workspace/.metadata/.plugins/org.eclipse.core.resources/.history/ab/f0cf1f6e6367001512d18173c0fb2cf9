@@ -1,0 +1,57 @@
+package edu.nesterenko.bank.validation;
+
+import java.util.Date;
+import java.util.regex.Pattern;
+
+import edu.nesterenko.bank.resource.RegexManager;
+
+public class Validator {
+	
+	private Validator() {}
+	
+	public static String checkOnlyLatters(String value) throws ValidationException{
+		if(Pattern.matches(RegexManager.getProperty("pattern.onlylitter"), value)) {
+			return value;
+		} else {
+			throw new ValidationException("is not only latters");
+		}
+	}
+	
+	public static double checkDouble(String doubleValue) {
+	   try {
+		   return Double.parseDouble(doubleValue);
+	   } catch(NumberFormatException e) {
+		   throw new ValidationException(e);
+	   }
+	}
+	
+	public static Date checkDate(String format, String dateValue) {
+	    throw new UnsupportedOperationException();
+	}
+
+	public static int checktInt(String integerValue) {
+	    throw new UnsupportedOperationException();
+	}
+
+	public static String checkPassportNumber(String passportNumber) {
+	    throw new UnsupportedOperationException();
+	}	
+	
+	public static String checkCid(String cid) {
+	    throw new UnsupportedOperationException();
+	}
+
+	public static String checkPhoneHome(String phoneHome) {
+	    throw new UnsupportedOperationException();
+	}
+	
+	public static String checkPhoneMobile(String phoneMobile) {
+	    throw new UnsupportedOperationException();
+	}
+	
+	public static String checkEmail(String email) {
+		//return Pattern.matches(RegexManager.getProperty("pattern.email"), email);
+		throw new UnsupportedOperationException();
+	}
+	
+}

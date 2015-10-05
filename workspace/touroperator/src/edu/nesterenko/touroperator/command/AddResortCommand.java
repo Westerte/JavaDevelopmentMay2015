@@ -7,13 +7,11 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 
-import edu.nesterenko.touroperator.dao.CityDao;
-import edu.nesterenko.touroperator.dao.DaoException;
-import edu.nesterenko.touroperator.dao.ResortDao;
 import edu.nesterenko.touroperator.entity.City;
 import edu.nesterenko.touroperator.entity.Client;
 import edu.nesterenko.touroperator.entity.ClientType;
 import edu.nesterenko.touroperator.entity.Resort;
+import edu.nesterenko.touroperator.logic.CityLogic;
 import edu.nesterenko.touroperator.logic.LogicException;
 import edu.nesterenko.touroperator.logic.ResortLogic;
 import edu.nesterenko.touroperator.resource.ConfigurationManager;
@@ -43,18 +41,12 @@ public class AddResortCommand implements Command {
 			} catch (LogicException e) {
 				LOG.error(e);
 			}
-			ResortDao resortDao = new ResortDao();
 			List<Resort> resortList = null;
-			try {
-				resortList = resortDao.findAll();
-			} catch (DaoException e) {
-				LOG.error(e);
-			}
-			CityDao cityDao = new CityDao();
 			List<City> cityList = null;
 			try {
-				cityList = cityDao.findAll();
-			} catch (DaoException e) {
+				resortList = ResortLogic.findAll();
+				cityList = CityLogic.findAll();
+			} catch (LogicException e) {
 				LOG.error(e);
 			}
 			request.setAttribute("resortList", resortList);

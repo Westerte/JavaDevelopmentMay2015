@@ -7,8 +7,6 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 
-import edu.nesterenko.touroperator.dao.CountryDao;
-import edu.nesterenko.touroperator.dao.DaoException;
 import edu.nesterenko.touroperator.entity.Client;
 import edu.nesterenko.touroperator.entity.ClientType;
 import edu.nesterenko.touroperator.entity.Country;
@@ -40,10 +38,9 @@ public class AddCountryCommand implements Command {
 			} catch (LogicException e) {
 				LOG.error(e);
 			}
-			CountryDao countryDao = new CountryDao();
 			try {
-				countryList = countryDao.findAll();
-			} catch (DaoException e) {
+				countryList = CountryLogic.findAll();
+			} catch (LogicException e) {
 				LOG.error(e);
 			}
 			request.setAttribute("countryList", countryList);

@@ -1,0 +1,33 @@
+package edu.nesterenko.bank.command;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.apache.log4j.Logger;
+
+import edu.nesterenko.bank.logic.LocaleDefiner;
+import edu.nesterenko.bank.logic.LogicException;
+import edu.nesterenko.bank.resource.ConfigurationManager;
+
+public class ViewAllCommand implements Command {
+	private final static Logger LOG = Logger.getLogger(ViewAllCommand.class);
+	private static ViewAllCommand instance = new ViewAllCommand();
+	
+	private ViewAllCommand() {}
+	
+	public static ViewAllCommand getInstance() {
+		return instance;
+	}
+	
+	@Override
+	public String execute(HttpServletRequest request) {
+		HttpSession session = request.getSession(); 
+		try {
+			session.setAttribute("locale", LocaleDefiner.defineLocal(request.getParameter("language")));
+		} catch (LogicException e) {
+			LOG.error(e);
+		}
+		String jspPath = ConfigurationManager.getProperty("path.page.index");
+		return jspPath;
+	}
+}

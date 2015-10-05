@@ -1,0 +1,50 @@
+package edu.nesterenko.touroperator.dao;
+
+import java.util.List;
+
+import edu.nesterenko.bank.entity.City;
+
+public class CityDao implements AbstractDao<Integer, City> {
+	private final static String FIND_ALL = "SELECT * FROM `city`";
+	private final static String ADD_NEW = "INSERT INTO `city`"
+			+ "(`city_name`) VALUES(?)";
+	private final static String SELECT_BY_ID = 
+			"SELECT * FROM `city` WHERE `city_id` = ?";
+
+	@Override
+	public List<City> findAll() throws DaoException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public City findByKey(Integer key) throws DaoException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void add(Integer key, City entity) throws DaoException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(Integer key) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(City entity) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public City update(City entity) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

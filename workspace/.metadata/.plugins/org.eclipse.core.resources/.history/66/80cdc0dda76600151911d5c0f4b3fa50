@@ -1,0 +1,7 @@
+package edu.nesterenko.bank.entity;
+
+public class Martial extends Entity {
+	private String name;
+	
+	
+}

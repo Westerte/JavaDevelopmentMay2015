@@ -1,0 +1,71 @@
+package edu.nesterenko.bank.command;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.log4j.Logger;
+
+import edu.nesterenko.bank.entity.City;
+import edu.nesterenko.bank.entity.Client;
+import edu.nesterenko.bank.entity.Disability;
+import edu.nesterenko.bank.entity.Martial;
+import edu.nesterenko.bank.entity.Nationality;
+import edu.nesterenko.bank.logic.ClientLogic;
+import edu.nesterenko.bank.logic.LogicException;
+import edu.nesterenko.bank.resource.ConfigurationManager;
+
+public class AddCommand implements Command {
+	private final static Logger LOG = Logger.getLogger(AddCommand.class);
+	private static AddCommand instance = new AddCommand();
+	
+	private AddCommand() {}
+	
+	public static AddCommand getInstance() {
+		return instance;
+	}
+	
+	@Override
+	public String execute(HttpServletRequest request) {
+		String jspPath;
+		try {
+			String secondName = request.getParameter("secondName");
+			String firstName = request.getParameter("firstName");
+			String patronimic = request.getParameter("patronimic");
+			Date birthday = new SimpleDateFormat("dd.mm.yyyy").parse(request.getParameter("birthday"));
+			String male = request.getParameter("male");
+			String passportSeria = request.getParameter("passportSeria");
+			String passportNumber = request.getParameter("passportNumber");
+			String passportPlace = request.getParameter("passportPlace");
+			Date passportDate = new SimpleDateFormat("dd.mm.yyyy").parse(request.getParameter("passportDate"));
+			String cid = request.getParameter("cid");
+			String birthplace = request.getParameter("birthplace");
+			City currentCity = Integer.parseInt(request.getParameter("currentCity"));
+			String currentAddress = request.getParameter("currentAddress");
+			String phoneHome = request.getParameter("phoneHome");
+			String phoneMobile = request.getParameter("phoneMobile");
+			String email = request.getParameter("email");
+			String workPlace = request.getParameter("workPlace");
+			String position = request.getParameter("position");
+			String registrationAddress = request.getParameter("registrationAddress");
+			Martial martial = request.getParameter("martial");
+			Nationality nationality = request.getParameter("nationality");
+			Disability disability = request.getParameter("disability");
+			boolean pensioner = request.getParameter("pensioner");
+			double income = request.getParameter("income");
+			List<Client> clientList = ClientLogic.findAll();
+			request.setAttribute("clientList", clientList);
+			jspPath = ConfigurationManager.getProperty("path.page.main");
+		} catch (LogicException e) {
+			LOG.error(e);
+			e.printStackTrace();
+			request.setAttribute("status", "logicProblems");
+			request.setAttribute("status", "logicProblems");
+			jspPath = ConfigurationManager.getProperty("path.page.main");			
+		}		
+		return jspPath;
+	}
+}

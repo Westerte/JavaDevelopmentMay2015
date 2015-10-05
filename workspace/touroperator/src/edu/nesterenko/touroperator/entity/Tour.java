@@ -1,6 +1,6 @@
 package edu.nesterenko.touroperator.entity;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class Tour extends BusinessEntity {
 	private String name;
@@ -11,12 +11,12 @@ public class Tour extends BusinessEntity {
 	private int days;
 	private String food;
 	private String path;
-	private int pathTime;
+	private double pathTime;
 	private RestType restType;
 	private ResortHotel resortHotel;
 	
 	public Tour(int id, String name, String description, double cost, Date beginDate, Date endDate, int days, String food, 
-			String path, int pathTime, RestType restType, ResortHotel resortHotel) {
+			String path, double pathTime, RestType restType, ResortHotel resortHotel) {
 		super(id);
 		setName(name);
 		setDescription(description);
@@ -95,11 +95,11 @@ public class Tour extends BusinessEntity {
 		this.path = path;
 	}
 	
-	public int getPathTime() {
+	public double getPathTime() {
 		return pathTime;
 	}
 	
-	public void setPathTime(int pathTime) {
+	public void setPathTime(double pathTime) {
 		this.pathTime = pathTime;
 	}
 	

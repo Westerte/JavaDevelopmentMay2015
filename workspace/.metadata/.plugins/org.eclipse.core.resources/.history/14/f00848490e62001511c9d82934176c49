@@ -1,7 +1,0 @@
-package edu.nesterenko.touroperator.dao;
-
-import edu.nesterenko.touroperator.entity.Resort;
-
-public class ResortDao implements AbstractDao<Integer, Resort> {
-
-}

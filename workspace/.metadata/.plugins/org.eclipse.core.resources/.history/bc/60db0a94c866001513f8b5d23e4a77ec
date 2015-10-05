@@ -1,0 +1,25 @@
+package edu.nesterenko.bank.command;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.log4j.Logger;
+
+import edu.nesterenko.bank.resource.ConfigurationManager;
+
+public class EditPageCommand {
+	private final static Logger LOG = Logger.getLogger(EditPageCommand.class);
+	private static EditPageCommand instance = new EditPageCommand();
+	
+	private EditPageCommand() {}
+	
+	public static EditPageCommand getInstance() {
+		return instance;
+	}
+	
+	@Override
+	public String execute(HttpServletRequest request) {
+		LOG.error("Direct request to controller or bad commandName");
+		String pagePath = ConfigurationManager.getProperty("path.page.index"); 
+		return pagePath;
+	}
+}

@@ -1,7 +1,0 @@
-2015-09-23 17:07:56,369 [http-bio-8080-exec-1] ERROR edu.nesterenko.touroperator.command.CityListPageCommand  - Client null or no Admin
-2015-09-23 17:31:39,448 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.ProfilePageCommand  - Client null
-2015-09-23 17:32:11,212 [http-bio-8080-exec-4] ERROR edu.nesterenko.touroperator.command.AddCityCommand  - Direct request to controller or bad commandName
-2015-09-23 17:44:37,893 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.AddCityCommand  - Client null or no Admin
-2015-09-23 17:46:38,697 [http-bio-8080-exec-5] ERROR edu.nesterenko.touroperator.command.AddCityCommand  - Client null or no Admin
-2015-09-23 17:46:46,528 [http-bio-8080-exec-2] ERROR edu.nesterenko.touroperator.command.AddCityCommand  - Client null or no Admin
-2015-09-23 17:50:43,309 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.AddCityCommand  - Client null or no Admin

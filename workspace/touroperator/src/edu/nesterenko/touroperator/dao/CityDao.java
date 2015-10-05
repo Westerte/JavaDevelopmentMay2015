@@ -28,13 +28,9 @@ public class CityDao implements AbstractDao<Integer, City> {
 		try {
 			connection = connectionPool.grapConnection();
 			statement = connection.createStatement();
-			ResultSet resultSet = statement.executeQuery(FIND_ALL);
-			CountryDao countryDao = new CountryDao();
+			ResultSet resultSet = statement.executeQuery(FIND_ALL);			
 			while(resultSet.next()) {
-				cityList.add(new City(resultSet.getInt("city_id"), 
-						resultSet.getString("city_name"), 
-						resultSet.getString("city_description"), 
-						countryDao.findByKey(resultSet.getInt("country_id"))));
+				cityList.add(makeCity(resultSet));
 			}
 		} catch (ConnectionPoolException | SQLException e) {
 			throw new DaoException(e);
@@ -57,13 +53,7 @@ public class CityDao implements AbstractDao<Integer, City> {
 			statement.setInt(1, key);
 			ResultSet resultSet = statement.executeQuery();
 			if(resultSet.next()) {
-				int cityId = resultSet.getInt("city_id");
-				String cityName = resultSet.getString("city_name");
-				String description = resultSet.getString("city_description");
-				int countryId = resultSet.getInt("country_id");
-				CountryDao countryDao = new CountryDao();
-				city = new City(cityId, cityName, description, 
-							countryDao.findByKey(countryId));
+				city = makeCity(resultSet);
 			} else {
 				throw new DaoException("No city with such key");
 			}
@@ -109,6 +99,19 @@ public class CityDao implements AbstractDao<Integer, City> {
 	@Override
 	public City update(City entity) {
 		throw new UnsupportedOperationException();
+	}
+
+	
+	private City makeCity(ResultSet resultSet) throws DaoException {
+		CountryDao countryDao = new CountryDao();
+		try {
+			return new City(resultSet.getInt("city_id"), 
+			resultSet.getString("city_name"), 
+			resultSet.getString("city_description"), 
+			countryDao.findByKey(resultSet.getInt("country_id")));
+		} catch (SQLException | DaoException e) {
+			throw new DaoException(e);
+		}
 	}
 
 }

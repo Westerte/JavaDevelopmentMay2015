@@ -1,0 +1,27 @@
+2015-10-01 21:47:54,020 [http-bio-8080-exec-7] ERROR edu.nesterenko.bank.command.AddCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.bank.validation.ValidationException: bad mobile phone
+2015-10-01 21:49:04,802 [http-bio-8080-exec-7] ERROR edu.nesterenko.bank.command.AddCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.touroperator.dao.DaoException: java.sql.SQLException: No value specified for parameter 25
+2015-10-01 21:53:31,138 [http-bio-8080-exec-9] ERROR edu.nesterenko.bank.command.AddPageCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 60 501 milliseconds ago.  The last packet sent successfully to the server was 10 milliseconds ago.
+2015-10-01 21:53:34,391 [http-bio-8080-exec-10] ERROR edu.nesterenko.bank.command.AddPageCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.touroperator.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 63 753 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+2015-10-01 21:56:50,797 [http-bio-8080-exec-6] ERROR edu.nesterenko.bank.command.AddCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.bank.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'client_birthplace' cannot be null
+2015-10-01 22:01:39,459 [http-bio-8080-exec-7] ERROR edu.nesterenko.bank.command.AddCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.bank.dao.DaoException: java.sql.SQLException: Could not retrieve transation read-only status server
+2015-10-01 22:01:39,462 [http-bio-8080-exec-7] ERROR edu.nesterenko.bank.command.AddCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.bank.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 68 036 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+2015-10-01 22:02:05,095 [http-bio-8080-exec-6] ERROR edu.nesterenko.bank.command.AddCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.bank.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'client_birthplace' cannot be null
+2015-10-01 22:05:41,392 [http-bio-8080-exec-1] ERROR edu.nesterenko.bank.command.AddCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.bank.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'client_birthplace' cannot be null
+2015-10-01 22:05:41,392 [http-bio-8080-exec-3] ERROR edu.nesterenko.bank.command.AddCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.bank.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'client_birthplace' cannot be null
+2015-10-01 22:05:45,529 [http-bio-8080-exec-8] ERROR edu.nesterenko.bank.command.AddCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.bank.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'client_birthplace' cannot be null
+2015-10-01 22:07:24,115 [http-bio-8080-exec-3] ERROR edu.nesterenko.bank.command.AddCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.bank.dao.DaoException: java.sql.SQLException: Could not retrieve transation read-only status server
+2015-10-01 22:07:24,116 [http-bio-8080-exec-3] ERROR edu.nesterenko.bank.command.AddCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.bank.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 98 587 milliseconds ago.  The last packet sent successfully to the server was 1 milliseconds ago.
+2015-10-01 22:14:43,464 [http-bio-8080-exec-9] ERROR edu.nesterenko.bank.command.ViewAllCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.bank.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 104 715 milliseconds ago.  The last packet sent successfully to the server was 9 milliseconds ago.
+2015-10-01 22:16:25,856 [http-bio-8080-exec-7] ERROR edu.nesterenko.bank.command.ViewAllCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.bank.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 83 917 milliseconds ago.  The last packet sent successfully to the server was 7 milliseconds ago.

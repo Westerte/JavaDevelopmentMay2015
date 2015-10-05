@@ -1,16 +1,17 @@
 package edu.nesterenko.touroperator.command;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 
-import java.util.List;
-import edu.nesterenko.touroperator.dao.CountryDao;
-import edu.nesterenko.touroperator.dao.DaoException;
-import edu.nesterenko.touroperator.entity.Country;
 import edu.nesterenko.touroperator.entity.Client;
 import edu.nesterenko.touroperator.entity.ClientType;
+import edu.nesterenko.touroperator.entity.Country;
+import edu.nesterenko.touroperator.logic.CountryLogic;
+import edu.nesterenko.touroperator.logic.LogicException;
 import edu.nesterenko.touroperator.resource.ConfigurationManager;
 
 public class CountryListPageCommand implements Command {
@@ -31,11 +32,10 @@ public class CountryListPageCommand implements Command {
 		Client client = (Client)session.getAttribute("client");
 		String jspPath;
 		if(client != null && client.getClientType() == ClientType.ADMIN) {
-			CountryDao countryDao = new CountryDao();
 			List<Country> countryList = null;
 			try {
-				countryList = countryDao.findAll();
-			} catch (DaoException e) {
+				countryList = CountryLogic.findAll();
+			} catch (LogicException e) {
 				LOG.error(e);
 			}
 			request.setAttribute("countryList", countryList);

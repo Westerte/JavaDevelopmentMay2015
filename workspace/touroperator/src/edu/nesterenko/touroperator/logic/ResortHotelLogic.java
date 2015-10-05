@@ -1,9 +1,12 @@
 package edu.nesterenko.touroperator.logic;
 
-import edu.nesterenko.touroperator.dao.DaoException;
+import java.util.List;
+
 import edu.nesterenko.touroperator.dao.ResortHotelDao;
-import edu.nesterenko.touroperator.entity.Resort;
+import edu.nesterenko.touroperator.dao.DaoException;
 import edu.nesterenko.touroperator.entity.ResortHotel;
+import edu.nesterenko.touroperator.entity.Resort;
+import edu.nesterenko.touroperator.validation.ValidationException;
 import edu.nesterenko.touroperator.validation.Validator;
 
 public class ResortHotelLogic {
@@ -11,21 +14,27 @@ public class ResortHotelLogic {
 	private ResortHotelLogic() {}
 	
 	public static void addResortHotel(String name, String description, 
-			int resortId, int stars) throws LogicException {
-		if(name == null || name.isEmpty()) {
-			throw new LogicException("name is empty");
-		}
-		if(Validator.checkOnlyLatters(name)) {
-			ResortHotelDao resortHotelDao = new ResortHotelDao();
+			String resortId, String stars) throws LogicException {
+		try {
+			Validator.checkOnlyLatters(name);
+			int resortIdInteger = Validator.checkInt(resortId);
+			int starsInteger = Validator.checkInt(stars);
+			ResortHotelDao resortHotelDao = new ResortHotelDao();	
 			ResortHotel resortHotel = new ResortHotel(0, name, description, 
-					new Resort(resortId, null, null, null), stars);
-			try {
+					new Resort(resortIdInteger, null, null, null), starsInteger);
+			
 				resortHotelDao.add(0, resortHotel);
-			} catch (DaoException e) {
-				throw new LogicException(e);
-			}
-		} else {
-			throw new LogicException("Bad params");
+		} catch (DaoException | ValidationException e) {
+			throw new LogicException(e);
 		} 	
+	}
+	
+	public static List<ResortHotel> findAll() throws LogicException {
+		ResortHotelDao resortHotelDao = new ResortHotelDao();
+		try {
+			return resortHotelDao.findAll();
+		} catch (DaoException e) {
+			throw new LogicException(e);
+		}
 	}
 }

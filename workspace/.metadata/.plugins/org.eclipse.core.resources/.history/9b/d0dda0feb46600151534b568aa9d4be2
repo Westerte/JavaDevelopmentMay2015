@@ -1,0 +1,256 @@
+package edu.nesterenko.bank.entity;
+
+import java.util.Date;
+
+public class Client extends Entity{
+	private String secondName;
+	private String firstName;
+	private String patronimic;
+	private Date birthday;
+	private String male;
+	private String passportSeria;
+	private String passportNumber;
+	private String passportPlace;
+	private Date passportDate;
+	private String cid;
+	private String birthplace;
+	private City currentCity;
+	private String currentAddress;
+	private String phoneHome;
+	private String phoneMobile;
+	private String email;
+	private String workPlace;
+	private String position;
+	private String registrationAddress;
+	private Martial martial;
+	private Nationality nationality;
+	private Disability disability;
+	private boolean pensioner;
+	private double income;
+
+	public Client(int id, String secondName, String firstName, String patronimic, Date birthday, String male,
+			String passportSeria, String passportNumber, String passportPlace, Date passportDate, String cid,
+			String birthplace, City currentCity, String currentAddress, String phoneHome, String phoneMobile,
+			String email, String workPlace, String position, String registrationAddress, 
+			Martial martial, Nationality nationality,Disability disability, boolean pensioner, double income) {
+		super(id);
+		this.setSecondName(secondName);
+		this.setFirstName(firstName);
+		this.setPatronimic(patronimic);
+		this.setBirthday(birthday);
+		this.setMale(male);
+		this.setPassportSeria(passportSeria);
+		this.setPassportNumber(passportNumber);
+		this.setPassportPlace(passportPlace);
+		this.setPassportDate(passportDate);
+		this.setCid(cid);
+		this.setBirthplace(birthplace);
+		this.setCurrentCity(currentCity);
+		this.setCurrentAddress(currentAddress);
+		this.setPhoneHome(phoneHome);
+		this.setPhoneMobile(phoneMobile);
+		this.setEmail(email);
+		this.setWorkPlace(workPlace);
+		this.setPosition(position);
+		this.setRegistrationAddress(registrationAddress);
+		this.setNationality(nationality);
+		this.setMartial(martial);
+		this.setDisability(disability);
+		this.setPensioner(pensioner);
+		this.setIncome(income);
+	}
+
+	public String getSecondName() {
+		return secondName;
+	}
+
+	public void setSecondName(String secondName) {
+		this.secondName = secondName;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getPatronimic() {
+		return patronimic;
+	}
+
+	public void setPatronimic(String patronimic) {
+		this.patronimic = patronimic;
+	}
+
+	public Date getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
+	}
+
+	public String getPassportSeria() {
+		return passportSeria;
+	}
+
+	public void setPassportSeria(String passportSeria) {
+		this.passportSeria = passportSeria;
+	}
+
+	public String getMale() {
+		return male;
+	}
+
+	public void setMale(String male) {
+		this.male = male;
+	}
+
+	public String getPassportNumber() {
+		return passportNumber;
+	}
+
+	public void setPassportNumber(String passportNumber) {
+		this.passportNumber = passportNumber;
+	}
+
+	public String getPassportPlace() {
+		return passportPlace;
+	}
+
+	public void setPassportPlace(String passportPlace) {
+		this.passportPlace = passportPlace;
+	}
+
+	public Date getPassportDate() {
+		return passportDate;
+	}
+
+	public void setPassportDate(Date passportDate) {
+		this.passportDate = passportDate;
+	}
+
+	public String getCid() {
+		return cid;
+	}
+
+	public void setCid(String cid) {
+		this.cid = cid;
+	}
+
+	public String getBirthplace() {
+		return birthplace;
+	}
+
+	public void setBirthplace(String birthplace) {
+		this.birthplace = birthplace;
+	}
+
+	public City getCurrentCity() {
+		return currentCity;
+	}
+
+	public void setCurrentCity(City currentCity) {
+		this.currentCity = currentCity;
+	}
+
+	public String getCurrentAddress() {
+		return currentAddress;
+	}
+
+	public void setCurrentAddress(String currentAddress) {
+		this.currentAddress = currentAddress;
+	}
+
+	public String getPhoneHome() {
+		return phoneHome;
+	}
+
+	public void setPhoneHome(String phoneHome) {
+		this.phoneHome = phoneHome;
+	}
+
+	public String getPhoneMobile() {
+		return phoneMobile;
+	}
+
+	public void setPhoneMobile(String phoneMobile) {
+		this.phoneMobile = phoneMobile;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getWorkPlace() {
+		return workPlace;
+	}
+
+	public void setWorkPlace(String workPlace) {
+		this.workPlace = workPlace;
+	}
+
+	public String getPosition() {
+		return position;
+	}
+
+	public void setPosition(String position) {
+		this.position = position;
+	}
+
+	public String getRegistrationAddress() {
+		return registrationAddress;
+	}
+
+	public void setRegistrationAddress(String registrationAddress) {
+		this.registrationAddress = registrationAddress;
+	}
+
+	public Nationality getNationality() {
+		return nationality;
+	}
+
+	public void setNationality(Nationality nationality) {
+		this.nationality = nationality;
+	}
+
+	public Martial getMartial() {
+		return martial;
+	}
+
+	public void setMartial(Martial martial) {
+		this.martial = martial;
+	}
+
+	public Disability getDisability() {
+		return disability;
+	}
+
+	public void setDisability(Disability disability) {
+		this.disability = disability;
+	}
+
+	public boolean isPensioner() {
+		return pensioner;
+	}
+
+	public void setPensioner(boolean pensioner) {
+		this.pensioner = pensioner;
+	}
+
+	public double getIncome() {
+		return income;
+	}
+
+	public void setIncome(double income) {
+		this.income = income;
+	}	
+	
+	
+}

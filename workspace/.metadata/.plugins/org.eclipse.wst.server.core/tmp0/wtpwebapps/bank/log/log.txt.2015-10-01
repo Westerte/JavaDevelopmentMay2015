@@ -1,0 +1,1 @@
+2015-10-01 22:36:44,848 [http-bio-8080-exec-7] ERROR edu.nesterenko.bank.command.EditCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.bank.validation.ValidationException: java.lang.NumberFormatException: null

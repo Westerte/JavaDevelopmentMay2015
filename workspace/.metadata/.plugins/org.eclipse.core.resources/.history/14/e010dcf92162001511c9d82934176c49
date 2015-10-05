@@ -1,4 +1,0 @@
-2015-09-23 21:33:20,226 [http-bio-8080-exec-1] ERROR edu.nesterenko.touroperator.command.EmptyCommand  - Direct request to controller or bad commandName
-2015-09-23 21:33:39,270 [http-bio-8080-exec-13] ERROR edu.nesterenko.touroperator.command.EmptyCommand  - Direct request to controller or bad commandName
-2015-09-23 21:34:39,654 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.AddResortHotelCommand  - Client null or no Admin
-2015-09-23 21:34:58,937 [http-bio-8080-exec-10] ERROR edu.nesterenko.touroperator.command.AddResortHotelCommand  - edu.nesterenko.touroperator.logic.LogicException

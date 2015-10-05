@@ -1,0 +1,33 @@
+package edu.nesterenko.bank.command;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.log4j.Logger;
+
+import edu.nesterenko.bank.entity.City;
+import edu.nesterenko.bank.entity.Martial;
+import edu.nesterenko.bank.logic.CityLogic;
+import edu.nesterenko.bank.logic.MartialLogic;
+
+public class AddPageCommand implements Command {
+
+	private final static Logger LOG = Logger.getLogger(AddPageCommand.class);
+	private static AddPageCommand instance = new AddPageCommand();
+	
+	private AddPageCommand() {}
+	
+	public static AddPageCommand getInstance() {
+		return instance;
+	}
+	
+	@Override
+	public String execute(HttpServletRequest request) {
+		List<City> cityList = CityLogic.viewAll();
+		List<Martial> martialList = MartialLogic.viewAll();
+		List<Nationality> nationalityList = NationalityLogic.viewAll();
+		List<Disability> disabilityList = DisabilityLogic.viewAll();
+	}
+
+}

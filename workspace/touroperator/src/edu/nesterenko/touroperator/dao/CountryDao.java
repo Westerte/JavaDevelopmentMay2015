@@ -30,8 +30,7 @@ public class CountryDao implements AbstractDao<Integer, Country> {
 			statement = connection.createStatement();
 			ResultSet resultSet = statement.executeQuery(FIND_ALL);
 			while(resultSet.next()) {
-				countryList.add(new Country(resultSet.getInt("country_id"), 
-						resultSet.getString("country_name")));
+				countryList.add(makeCountry(resultSet));
 			}
 		} catch (ConnectionPoolException | SQLException e) {
 			throw new DaoException(e);
@@ -54,9 +53,7 @@ public class CountryDao implements AbstractDao<Integer, Country> {
 			statement.setInt(1, key);
 			ResultSet resultSet = statement.executeQuery();
 			if(resultSet.next()) {
-				int countryId = resultSet.getInt("country_id");
-				String countryName = resultSet.getString("country_name");
-				country = new Country(countryId, countryName);
+				country = makeCountry(resultSet);
 			} else {
 				throw new DaoException("No country with such key");
 			}
@@ -101,8 +98,15 @@ public class CountryDao implements AbstractDao<Integer, Country> {
 
 	@Override
 	public Country update(Country entity) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	private Country makeCountry(ResultSet resultSet) throws DaoException {
+		try {
+			return new Country(resultSet.getInt("country_id"), 
+					resultSet.getString("country_name"));
+		} catch (SQLException e) {
+			throw new DaoException(e);
+		}
+	}
 }

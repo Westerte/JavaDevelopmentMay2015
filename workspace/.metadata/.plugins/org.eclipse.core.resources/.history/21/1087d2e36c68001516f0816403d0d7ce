@@ -1,0 +1,2 @@
+2015-10-01 21:44:32,323 [http-bio-8080-exec-8] ERROR edu.nesterenko.bank.command.AddCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.bank.validation.ValidationException: bad passportNumber
+2015-10-01 21:47:13,886 [http-bio-8080-exec-1] ERROR edu.nesterenko.bank.command.AddCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.bank.validation.ValidationException: bad mobile phone

@@ -1,0 +1,6 @@
+2015-10-01 20:20:07,911 [http-bio-8080-exec-3] ERROR edu.nesterenko.bank.command.AddCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.bank.validation.ValidationException: is not only latters
+2015-10-01 20:20:13,341 [http-bio-8080-exec-5] ERROR edu.nesterenko.bank.command.EmptyCommand  - Direct request to controller or bad commandName
+2015-10-01 20:20:17,404 [http-bio-8080-exec-6] ERROR edu.nesterenko.bank.command.EmptyCommand  - Direct request to controller or bad commandName
+2015-10-01 20:20:41,373 [http-bio-8080-exec-10] ERROR edu.nesterenko.bank.command.EmptyCommand  - Direct request to controller or bad commandName
+2015-10-01 20:21:16,526 [http-bio-8080-exec-4] ERROR edu.nesterenko.bank.command.EmptyCommand  - Direct request to controller or bad commandName
+2015-10-01 20:21:30,733 [http-bio-8080-exec-6] ERROR edu.nesterenko.bank.command.EmptyCommand  - Direct request to controller or bad commandName

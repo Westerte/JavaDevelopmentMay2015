@@ -1,0 +1,23 @@
+package edu.nesterenko.bank.command;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.log4j.Logger;
+
+import edu.nesterenko.bank.resource.ConfigurationManager;
+
+public class DeleteCommand implements Command {
+	private final static Logger LOG = Logger.getLogger(DeleteCommand.class);
+	private static DeleteCommand instance = new DeleteCommand();
+	
+	private DeleteCommand() {}
+	
+	public static DeleteCommand getInstance() {
+		return instance;
+	}
+	
+	@Override
+	public String execute(HttpServletRequest request) {
+		String id = request.getParameter("id";)
+	}
+}

@@ -1,0 +1,24 @@
+package edu.nesterenko.touroperator.validation;
+
+public class Snippet {
+	public static Date checkDate(String dateValue) throws ValidationException {
+			String pattern = RegexManager.getProperty("pattern.date");
+			if(!Pattern.matches(pattern, dateValue)) {
+				throw new ValidationException("bad date");
+			}
+			try {
+				return new SimpleDateFormat(ConfigurationManager.getProperty("date.format")).parse(dateValue);
+			} catch (ParseException e) {
+				throw new ValidationException(e);
+			} 	
+		}
+	
+		public static int checkInt(String integerValue) throws ValidationException {
+			try {
+				return Integer.parseInt(integerValue);
+			} catch(NumberFormatException e) {
+				throw new ValidationException(e);
+			}
+		}
+}
+

@@ -1,0 +1,13 @@
+package edu.nesterenko.bank.resource;
+
+import java.util.ResourceBundle;
+
+public class ConfigurationManager {
+	private final static ResourceBundle RESORUCE_BUNDLE = ResourceBundle.getBundle("resources.config");  
+	
+	private ConfigurationManager() {}
+	
+	public static String getProperty(String key) {
+		return RESORUCE_BUNDLE.getString(key);
+	}
+}

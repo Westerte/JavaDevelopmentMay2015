@@ -1,5 +1,0 @@
-package edu.nesterenko.touroperator.dao;
-
-public class RestTypeDao implements AbstractDao<K, T> {
-
-}

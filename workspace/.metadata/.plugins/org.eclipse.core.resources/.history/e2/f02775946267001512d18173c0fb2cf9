@@ -1,0 +1,5 @@
+package edu.nesterenko.bank.validation;
+
+public class ValidationException extends Exception {
+
+}

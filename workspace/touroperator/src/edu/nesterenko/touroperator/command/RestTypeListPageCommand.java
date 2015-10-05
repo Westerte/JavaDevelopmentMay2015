@@ -7,11 +7,11 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 
-import edu.nesterenko.touroperator.dao.DaoException;
-import edu.nesterenko.touroperator.dao.RestTypeDao;
 import edu.nesterenko.touroperator.entity.Client;
 import edu.nesterenko.touroperator.entity.ClientType;
 import edu.nesterenko.touroperator.entity.RestType;
+import edu.nesterenko.touroperator.logic.LogicException;
+import edu.nesterenko.touroperator.logic.RestTypeLogic;
 import edu.nesterenko.touroperator.resource.ConfigurationManager;
 
 public class RestTypeListPageCommand implements Command {
@@ -30,11 +30,10 @@ public class RestTypeListPageCommand implements Command {
 		Client client = (Client)session.getAttribute("client");
 		String jspPath;
 		if(client != null && client.getClientType() == ClientType.ADMIN) {
-			RestTypeDao restTypeDao= new RestTypeDao();
 			List<RestType> restTypeList = null;
 			try {
-				restTypeList = restTypeDao.findAll();
-			} catch (DaoException e) {
+				restTypeList = RestTypeLogic.findAll();
+			} catch (LogicException e) {
 				LOG.error(e);
 			}
 			request.setAttribute("restTypeList", restTypeList);

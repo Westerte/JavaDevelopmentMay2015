@@ -1,0 +1,12 @@
+2015-10-01 22:26:20,409 [http-bio-8080-exec-7] ERROR edu.nesterenko.bank.command.AddPageCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.bank.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 71 871 milliseconds ago.  The last packet sent successfully to the server was 11 milliseconds ago.
+2015-10-01 22:26:48,997 [http-bio-8080-exec-9] ERROR edu.nesterenko.bank.command.ViewAllCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.bank.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 100 457 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+2015-10-01 22:27:03,760 [http-bio-8080-exec-10] ERROR edu.nesterenko.bank.command.ViewAllCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.bank.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 115 203 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+2015-10-01 22:27:21,132 [http-bio-8080-exec-10] ERROR edu.nesterenko.bank.command.ViewAllCommand  - edu.nesterenko.bank.logic.LogicException: edu.nesterenko.bank.dao.DaoException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 132 573 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.

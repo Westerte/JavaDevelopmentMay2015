@@ -1,7 +1,0 @@
-package edu.nesterenko.touroperator.dao;
-
-import edu.nesterenko.touroperator.entity.Country;
-
-public class CityDao implements AbstractDao<Integer, Country> {
-
-}

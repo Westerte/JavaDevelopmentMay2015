@@ -1,0 +1,6 @@
+package edu.nesterenko.bank.entity;
+
+public class Client {
+	private int id;
+	
+}

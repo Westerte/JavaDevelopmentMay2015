@@ -1,0 +1,45 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container">
+		<c:import url="${configBundle.getResourceBundle().handleGetObject('path.sample.header')}"/>
+
+			<form action="Controller" method="post"></form>
+				<td>Фамилия</td>
+				<td>Имя</td>
+				<td>Отчество</td>
+				<td>День рождения</td>
+				<td>Пол</td>
+				<td>Серия пасспорта</td>
+				<td>Номер пасспорта</td>
+				<td>Паспорт выдан</td>
+				<td>Дата получения пасспорта</td>
+				<td>Идентификационный номер</td>
+				<td>Место рождения</td>
+				<td>Город фактического проживания</td>
+				<td>Адрес фактического проживания</td>
+				<td>Телефон дом</td>
+				<td>Телефон моб</td>
+				<td>Email</td>
+				<td>Место работы</td>
+				<td>Должность</td>
+				<td>Адрес регистрации</td>
+				<td>Семейное положение</td>
+				<td>Национальность</td>
+				<td>Инвалидность</td>
+				<td>Пенсионер</td>
+				<td>Доход</td>
+				<td></td>
+				<td></td>
+			</form>
+		</tr>
+	</div>	
+	<c:import url="${configBundle.getResourceBundle().handleGetObject('path.sample.footer')}"/>
+</body>
+</html>

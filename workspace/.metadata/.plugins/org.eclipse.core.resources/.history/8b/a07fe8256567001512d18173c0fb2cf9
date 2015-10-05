@@ -1,0 +1,22 @@
+package edu.vadim.test.run;
+
+public class Runner {
+
+	public volatile boolean field1;
+	public static AtomicBoolean atomicBoolean = new AtomicBoolean();
+	
+	public static void main(String[] args) {			
+		String dateString = "29.02.2004";
+		try {
+			Date date = new SimpleDateFormat("dd.mm.yyyy").parse(dateString);
+			System.out.println(date);
+		} catch (ParseException e) {
+			System.out.println("mistake");
+		}
+	}
+	
+	public static final void method1() {
+		
+	}
+
+}

@@ -7,15 +7,13 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 
-import edu.nesterenko.touroperator.dao.DaoException;
-import edu.nesterenko.touroperator.dao.ResortDao;
-import edu.nesterenko.touroperator.dao.ResortHotelDao;
 import edu.nesterenko.touroperator.entity.Client;
 import edu.nesterenko.touroperator.entity.ClientType;
 import edu.nesterenko.touroperator.entity.Resort;
 import edu.nesterenko.touroperator.entity.ResortHotel;
 import edu.nesterenko.touroperator.logic.LogicException;
 import edu.nesterenko.touroperator.logic.ResortHotelLogic;
+import edu.nesterenko.touroperator.logic.ResortLogic;
 import edu.nesterenko.touroperator.resource.ConfigurationManager;
 
 public class AddResortHotelCommand implements Command {
@@ -37,25 +35,20 @@ public class AddResortHotelCommand implements Command {
 			
 			String name = request.getParameter("name");
 			String description = request.getParameter("description");
-			int stars = Integer.parseInt(request.getParameter("stars"));
-			int resortId = Integer.parseInt(request.getParameter("resort"));
+			String stars = request.getParameter("stars");
+			String resortId = request.getParameter("resort");
 			try {
 				ResortHotelLogic.addResortHotel(name, description, resortId, stars);
 			} catch (LogicException e) {
 				LOG.error(e);
 			}
-			ResortDao resortDao = new ResortDao();
+
 			List<Resort> resortList = null;
-			try {
-				resortList = resortDao.findAll();
-			} catch (DaoException e) {
-				LOG.error(e);
-			}
-			ResortHotelDao resortHotelDao = new ResortHotelDao();
 			List<ResortHotel> resortHotelList = null;
 			try {
-				resortHotelList = resortHotelDao.findAll();
-			} catch (DaoException e) {
+				resortList = ResortLogic.findAll();
+				resortHotelList = ResortHotelLogic.findAll();
+			} catch (LogicException e) {
 				LOG.error(e);
 			}
 			request.setAttribute("resortList", resortList);

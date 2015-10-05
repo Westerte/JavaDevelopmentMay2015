@@ -1,0 +1,106 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Добавить</title>
+</head>
+<body>
+<div class="container">
+		<c:import url="${configBundle.getResourceBundle().handleGetObject('path.sample.header')}"/>
+
+			<form action="Controller" method="post"></form>
+				<input type="hidden" name="command" value="add">
+				Фамилия
+				<input type="text" name="secondName">
+				<br>
+				Имя
+				<input type="text" name="firstName">
+				<br>
+				Отчество
+				<input type="text" name="patronimic">
+				<br>
+				День рождения
+				<input type="text" name="birthDay">
+				<br>
+				Пол
+				<input type="radio" name="male" value="male" id="male"><label for="male">муж.</label>
+				<input type="radio" name="male" value="female" id="female"><label for="female">жен.</label>
+				<br>				
+				Серия пасспорта
+				<input type="text" name="passportSeria">
+				<br>
+				Номер пасспорта
+				<input type="text" name="passportNumber">
+				<br>
+				Паспорт выдан
+				<input type="text" name="passportPlace">
+				<br>
+				Дата получения пасспорта
+				<input type="text" name="passportDate" >
+				<br>
+				Идентификационный номер
+				<input type="text" name="cid" >
+				<br>
+				Место рождения
+				<input type="text" name="birthPlace" >
+				<br>
+				Город фактического проживания
+				<select name="currentCity">
+					<c:forEach items = "${ cityList }" var="city">
+						<option value="${ city.id }" label="${ city.name }"/>
+					</c:forEach>
+				</select>
+				Адрес фактического проживания
+				<input type="text" name="currentAddress" >
+				<br>
+				Телефон дом
+				<input type="text" name="phoneHome" >
+				<br>
+				Телефон моб
+				<input type="text" name="phoneMobile" >
+				<br>
+				Email
+				<input type="text" name="email" >
+				<br>
+				Место работы
+				<input type="text" name="workPlace" >
+				<br>
+				Должность
+				<input type="text" name="position" >
+				<br>
+				Адрес регистрации
+				<input type="text" name="registrationAddress" >
+				<br>
+				Семейное положение
+				<select name="martial">
+					<c:forEach items = "${ martialList }" var="martial">
+						<option value="${ martial.id }" label="${ martial.name }"/>
+					</c:forEach>
+				</select>
+				Национальность
+				<select name="nationality">
+					<c:forEach items = "${ nationalityList }" var="nationality">
+						<option value="${ nationality.id }" label="${ nationality.name }"/>
+					</c:forEach>
+				</select>
+				Инвалидность
+				select name="disability">
+					<c:forEach items = "${ disabilityList }" var="disability">
+						<option value="${ disability.id }" label="${ disability.name }"/>
+					</c:forEach>
+				</select>
+				Пенсионер
+				<input type="radio" name="pensioner" value="true" id="yes"><label for="yes">да</label>
+				<input type="radio" name="male" value="false" id="no"><label for="no">нет</label>
+				Доход
+				<input type="text" name="income" >
+				<br>				
+			</form>
+		</tr>
+		<div id="page-buffer"></div>	
+	</div>	
+	<c:import url="${configBundle.getResourceBundle().handleGetObject('path.sample.footer')}"/>
+</body>
+</html>

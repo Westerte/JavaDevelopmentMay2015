@@ -1,5 +1,0 @@
-package edu.nesterenko.touroperator.command;
-
-public class ResortHotelListPageCommand implements Command{
-
-}

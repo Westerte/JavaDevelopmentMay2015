@@ -1,0 +1,28 @@
+package edu.nesterenko.touroperator.logic;
+
+import edu.nesterenko.touroperator.dao.ClientDao;
+import edu.nesterenko.touroperator.dao.DaoException;
+import edu.nesterenko.touroperator.entity.Client;
+import edu.nesterenko.touroperator.validation.Validator;
+
+public class SignUpLogic {
+	private SignUpLogic() {	}
+
+	public static Client signUp(String login, String password, 
+			String repeatedPassword, String email) throws LogicException {
+		
+		Validator.checkPassword(password);
+		Validator.checkPassword(repeatedPassword);
+		Validator.checkLogin(login);
+		Validator.checkEmail(email);
+		ClientDao clientDao = new ClientDao();
+		Client client;
+		try {
+			client = clientDao.registerClient(login, password, repeatedPassword, email, "USER");
+		} catch (DaoException e) {
+			throw new LogicException(e);
+		}
+		return client;		
+	}
+}
+

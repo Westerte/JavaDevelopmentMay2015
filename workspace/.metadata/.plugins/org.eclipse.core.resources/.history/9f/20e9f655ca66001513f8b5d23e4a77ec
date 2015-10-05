@@ -1,0 +1,52 @@
+package edu.nesterenko.bank.command;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.log4j.Logger;
+
+import edu.nesterenko.bank.entity.City;
+import edu.nesterenko.bank.entity.Disability;
+import edu.nesterenko.bank.entity.Martial;
+import edu.nesterenko.bank.entity.Nationality;
+import edu.nesterenko.bank.logic.CityLogic;
+import edu.nesterenko.bank.logic.DisabilityLogic;
+import edu.nesterenko.bank.logic.LogicException;
+import edu.nesterenko.bank.logic.MartialLogic;
+import edu.nesterenko.bank.logic.NationalityLogic;
+import edu.nesterenko.bank.resource.ConfigurationManager;
+
+public class AddPageCommand implements Command {
+
+	private final static Logger LOG = Logger.getLogger(AddPageCommand.class);
+	private static AddPageCommand instance = new AddPageCommand();
+	
+	private AddPageCommand() {}
+	
+	public static AddPageCommand getInstance() {
+		return instance;
+	}
+	
+	@Override
+	public String execute(HttpServletRequest request) {
+		String jspPath;
+		try {
+			List<City> cityList = CityLogic.findAll();
+			List<Martial> martialList = MartialLogic.findAll();
+			List<Nationality> nationalityList = NationalityLogic.findAll();
+			List<Disability> disabilityList = DisabilityLogic.findAll();
+			request.setAttribute("cityList", cityList);
+			request.setAttribute("martialList", martialList);
+			request.setAttribute("nationalityList", martialList);
+			request.setAttribute("disabilityList", martialList);
+			jspPath = ConfigurationManager.getProperty("path.page.add");
+		} catch (LogicException e) {
+			e.printStackTrace();
+			request.setAttribute("status", "logicProblems");
+			jspPath = ConfigurationManager.getProperty("path.page.add");
+		}		
+		return jspPath;
+	}
+
+}

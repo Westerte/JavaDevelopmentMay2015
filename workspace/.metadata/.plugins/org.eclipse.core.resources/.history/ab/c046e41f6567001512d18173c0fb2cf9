@@ -1,0 +1,27 @@
+package edu.vadim.test.run;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.concurrent.atomic.AtomicBoolean;
+
+public class Runner {
+
+	public volatile boolean field1;
+	public static AtomicBoolean atomicBoolean = new AtomicBoolean();
+	
+	public static void main(String[] args) {			
+		String dateString = "29.01.2003";
+		try {
+			Date date = new SimpleDateFormat("dd.mm.yyyy").parse(dateString);
+			System.out.println(date);
+		} catch (ParseException e) {
+			System.out.println("mistake");
+		}
+	}
+	
+	public static final void method1() {
+		
+	}
+
+}

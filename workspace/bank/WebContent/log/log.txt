@@ -1,0 +1,1 @@
+2015-10-05 18:03:17,311 [http-bio-8080-exec-10] FATAL edu.nesterenko.bank.connectionpool.ConnectionPool  - com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.

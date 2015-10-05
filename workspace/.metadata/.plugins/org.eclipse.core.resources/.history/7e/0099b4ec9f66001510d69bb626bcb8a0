@@ -1,0 +1,6 @@
+package edu.nesterenko.bank.command;
+
+public enum CommandEnum {
+	
+	CHANGE_LOCALE
+}

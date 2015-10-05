@@ -1,0 +1,5 @@
+package edu.nesterenko.touroperator.dao;
+
+public class DisabilityDao implements AbstractDao<Integer, Disability> {
+
+}

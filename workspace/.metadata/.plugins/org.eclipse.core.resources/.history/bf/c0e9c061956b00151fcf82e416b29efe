@@ -1,0 +1,122 @@
+package edu.nesterenko.touroperator.entity;
+
+import java.sql.Date;
+
+public class Tour extends BusinessEntity {
+	private String name;
+	private String description;
+	private double cost;
+	private Date beginDate;
+	private Date endDate;
+	private int days;
+	private String food;
+	private String path;
+	private double pathTime;
+	private RestType restType;
+	private ResortHotel resortHotel;
+	
+	public Tour(int id, String name, String description, double cost, Date beginDate, Date endDate, int days, String food, 
+			String path, double pathTime, RestType restType, ResortHotel resortHotel) {
+		super(id);
+		setName(name);
+		setDescription(description);
+		setCost(cost);
+		setBeginDate(beginDate);
+		setEndDate(endDate);
+		setDays(days);
+		setFood(food);
+		setPath(path);
+		setPathTime(pathTime);
+		setRestType(restType);
+		setResortHotel(resortHotel);
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+	
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	public double getCost() {
+		return cost;
+	}
+	
+	public void setCost(double cost) {
+		this.cost = cost;
+	}
+	
+	public Date getBeginDate() {
+		return beginDate;
+	}
+	
+	public void setBeginDate(Date beginDate) {
+		this.beginDate = beginDate;
+	}
+	
+	public Date getEndDate() {
+		return endDate;
+	}
+	
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
+	
+	public int getDays() {
+		return days;
+	}
+	
+	public void setDays(int days) {
+		this.days = days;
+	}
+	
+	public String getFood() {
+		return food;
+	}
+	
+	public void setFood(String food) {
+		this.food = food;
+	}
+	
+	public String getPath() {
+		return path;
+	}
+	
+	public void setPath(String path) {
+		this.path = path;
+	}
+	
+	public double getPathTime() {
+		return pathTime;
+	}
+	
+	public void setPathTime(double pathTime) {
+		this.pathTime = pathTime;
+	}
+	
+	public RestType getRestType() {
+		return restType;
+	}
+	
+	public void setRestType(RestType restType) {
+		this.restType = restType;
+	}
+
+	public ResortHotel getResortHotel() {
+		return resortHotel;
+	}
+
+	public void setResortHotel(ResortHotel resortHotel) {
+		this.resortHotel = resortHotel;
+	}
+}
+

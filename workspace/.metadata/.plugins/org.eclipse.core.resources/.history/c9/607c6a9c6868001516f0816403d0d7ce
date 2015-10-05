@@ -1,0 +1,85 @@
+package edu.nesterenko.bank.validation;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.regex.Pattern;
+
+import edu.nesterenko.bank.resource.ConfigurationManager;
+import edu.nesterenko.bank.resource.RegexManager;
+
+public class Validator {
+	
+	private Validator() {}
+	
+	public static String checkOnlyLatters(String value) throws ValidationException {
+		if(!Pattern.matches(RegexManager.getProperty("pattern.onlylitter"), value)) {
+			throw new ValidationException("is not only latters");
+		} 
+		return value;
+	}
+	
+	public static double checkDouble(String doubleValue) throws ValidationException {
+	   try {
+		   return Double.parseDouble(doubleValue);
+	   } catch(NumberFormatException e) {
+		   throw new ValidationException(e);
+	   }
+	}
+	
+	public static Date checkDate(String dateValue) throws ValidationException {
+		String pattern = RegexManager.getProperty("pattern.date");
+		if(!Pattern.matches(pattern, dateValue)) {
+			throw new ValidationException("bad date");
+		}
+		try {
+			return new SimpleDateFormat(ConfigurationManager.getProperty("date.format")).parse(dateValue);
+		} catch (ParseException e) {
+			throw new ValidationException(e);
+		} 	
+	}
+
+	public static int checkInt(String integerValue) throws ValidationException {
+		try {
+			return Integer.parseInt(integerValue);
+		} catch(NumberFormatException e) {
+			throw new ValidationException(e);
+		}
+	}
+
+	public static String checkPassportNumber(String passportNumber) throws ValidationException {
+		if(!Pattern.matches(RegexManager.getProperty("pattern.passportNumber"), passportNumber)) {
+			throw new ValidationException("bad passportNumber");
+		}
+		return passportNumber;
+	}	
+	
+	public static String checkCid(String cid) throws ValidationException {
+		if(!Pattern.matches(RegexManager.getProperty("pattern.cid"), cid)) {
+			throw new ValidationException("bad cid");
+		}
+		return cid;
+	}
+
+	public static String checkPhoneHome(String phoneHome) throws ValidationException {
+		if(!Pattern.matches(RegexManager.getProperty("pattern.home"), phoneHome)) {
+			throw new ValidationException("bad home phone");
+		}
+		return phoneHome;
+	}
+	
+	public static String checkPhoneMobile(String phoneMobile) throws ValidationException {
+		if(!Pattern.matches(RegexManager.getProperty("pattern.mobile"), phoneMobile)) {
+			throw new ValidationException("bad mobile phone");
+		}
+		return phoneMobile;
+	}
+	
+	public static String checkEmail(String email) throws ValidationException {
+		if(!Pattern.matches(RegexManager.getProperty("pattern.email"), email)) {
+			throw new ValidationException("bad email");
+		} 
+		return email;
+	}
+	
+}

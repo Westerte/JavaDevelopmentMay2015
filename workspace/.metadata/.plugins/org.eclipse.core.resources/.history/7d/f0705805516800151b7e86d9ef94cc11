@@ -1,0 +1,84 @@
+package edu.nesterenko.bank.logic;
+
+import java.util.Date;
+import java.util.List;
+
+import edu.nesterenko.bank.entity.City;
+import edu.nesterenko.bank.entity.Client;
+import edu.nesterenko.bank.entity.Disability;
+import edu.nesterenko.bank.entity.Martial;
+import edu.nesterenko.bank.entity.Nationality;
+import edu.nesterenko.bank.validation.ValidationException;
+import edu.nesterenko.bank.validation.Validator;
+import edu.nesterenko.touroperator.dao.ClientDao;
+import edu.nesterenko.touroperator.dao.DaoException;
+
+public class ClientLogic {
+	
+	private ClientLogic() {}
+	
+	public static List<Client> findAll() throws LogicException {
+		ClientDao clientDao = new ClientDao();
+		try {
+			List<Client> clientList = clientDao.findAll();
+			return clientList;
+		} catch (DaoException e) {
+			throw new LogicException(e);
+		}
+	}
+	
+	public static void addClient(String secondName, String firstName, String patronimic, String birthday, String male,
+			String passportSeria, String passportNumber, String passportPlace, String passportDate, String cid,
+			String birthplace, String currentCity, String currentAddress, String phoneHome, String phoneMobile,
+			String email, String workPlace, String position, String registrationAddress, 
+			String martial, String nationality, String disability, String pensioner, String income) throws LogicException {
+		Date birthDay;
+		try {
+			secondName = Validator.checkOnlyLatters(secondName);
+			firstName = Validator.checkOnlyLatters(firstName);
+			patronimic = Validator.checkOnlyLatters(patronimic);
+			 = Validator.checkOnlyLatters(secondName);
+			secondName = Validator.checkOnlyLatters(secondName);
+			secondName = Validator.checkOnlyLatters(secondName);
+		} catch(ValidationException e) {
+			throw new LogicException(e);
+		}
+		
+		ClientDao clientDao = new ClientDao();
+		try {
+			clientDao.add(0, new Client(0, secondName, firstName, patronimic, birthday, male, passportSeria, passportNumber, passportPlace, 
+					passportDate, cid, birthplace, currentCity, currentAddress, phoneHome,
+					phoneMobile, email, workPlace, position, registrationAddress, martial,
+					nationality, disability, pensioner, income));
+		} catch (DaoException e) {
+			throw new LogicException(e);
+		}
+	}
+	
+	public static void edit(int id, String secondName, String firstName, String patronimic, Date birthday, String male,
+			String passportSeria, String passportNumber, String passportPlace, Date passportDate, String cid,
+			String birthplace, City currentCity, String currentAddress, String phoneHome, String phoneMobile,
+			String email, String workPlace, String position, String registrationAddress, 
+			Martial martial, Nationality nationality, Disability disability, boolean pensioner, double income) throws LogicException {
+		//use validator
+		ClientDao clientDao = new ClientDao();
+		try {
+			clientDao.update(new Client(id, secondName, firstName, patronimic, birthday, male, passportSeria, passportNumber, passportPlace, 
+					passportDate, cid, birthplace, currentCity, currentAddress, phoneHome,
+					phoneMobile, email, workPlace, position, registrationAddress, martial,
+					nationality, disability, pensioner, income));
+		} catch (DaoException e) {
+			throw new LogicException(e);
+		}
+		
+	}
+	
+	public static void delete(int id) throws LogicException {
+		ClientDao clientDao = new ClientDao();
+		try {
+			clientDao.delete(id);
+		} catch (DaoException e) {
+			throw new LogicException(e);
+		}
+	}
+}

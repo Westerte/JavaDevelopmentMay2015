@@ -1,4 +1,0 @@
-2015-09-24 10:14:21,929 [http-bio-8080-exec-8] FATAL edu.nesterenko.touroperator.connectionpool.ConnectionPool  - com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
-2015-09-24 10:24:34,419 [http-bio-8080-exec-3] ERROR edu.nesterenko.touroperator.command.AdminPanelPageCommand  - Client null
-2015-09-24 10:25:43,151 [http-bio-8080-exec-10] ERROR edu.nesterenko.touroperator.command.CommandFactory  - java.lang.IllegalArgumentException: No enum constant edu.nesterenko.touroperator.command.CommandEnum.REST_TYPE_LIST_PAGE
-2015-09-24 10:25:43,153 [http-bio-8080-exec-10] ERROR edu.nesterenko.touroperator.command.EmptyCommand  - Direct request to controller or bad commandName

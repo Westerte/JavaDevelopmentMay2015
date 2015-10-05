@@ -1,0 +1,5 @@
+package edu.nesterenko.bank.entity;
+
+public class City extends Entity {
+
+}

@@ -1,0 +1,83 @@
+package edu.nesterenko.bank.validation;
+
+import java.util.regex.Pattern;
+
+import edu.nesterenko.bank.resource.RegexManager;
+
+public class Validator {
+	
+	private Validator() {}
+	
+	public static String checkSecondName(String secondName) {
+		throw new UnsupportedOperationException();
+	}
+	public static String checkFirstName(String firstName) {
+		throw new UnsupportedOperationException();
+	}
+	public static String checkPatronimic(String patronimic) {
+		throw new UnsupportedOperationException();
+	}
+	public static String checkBirthday(String birthday) {
+		throw new UnsupportedOperationException();
+	}
+	public static String checkMale(String male) {
+		throw new UnsupportedOperationException();
+	}
+	public static String checkPassportSeria(String passportSeria) {
+		throw new UnsupportedOperationException();
+	}
+	public static String checkPassportNumber(String passportNumber) {
+		throw new UnsupportedOperationException();
+	}
+	public static String checkPassportPlace(String passportPlace) {
+		throw new UnsupportedOperationException();
+	}
+	public static String checkPassportDate(String passportDate) {
+		throw new UnsupportedOperationException();
+	}
+	public static String checkCid(String cid) {
+		throw new UnsupportedOperationException();
+	}
+	public static String checkBirthplace(String birthplace) {
+		throw new UnsupportedOperationException();
+	}
+	public static String checkCurrentCity(String currentCity) {
+		throw new UnsupportedOperationException();
+	}
+	public static String checkCurrentAddress(String currentAddress) {
+		throw new UnsupportedOperationException();
+	}
+	public static String checkPhoneHome(String phoneHome) {
+		throw new UnsupportedOperationException();
+	}
+	public static String checkPhoneMobile(String phoneMobile) {
+		throw new UnsupportedOperationException();
+	}
+	public static String checkEmail(String email) {
+		throw new UnsupportedOperationException();
+	}
+	public static String checkWorkPlace(String workPlace) {
+		throw new UnsupportedOperationException();
+	}
+	public static String checkPosition(String position) {
+		throw new UnsupportedOperationException();
+	}
+	public static String checkRegistrationAddress(String registrationAddress) {
+		throw new UnsupportedOperationException();
+	}
+	public static String checkMartial(String martial) {
+		throw new UnsupportedOperationException();
+	}
+	public static String checkNationality(String nationality) {
+		throw new UnsupportedOperationException();
+	}
+	public static String checkDisability(String disability) {
+		throw new UnsupportedOperationException();
+	}
+	public static String checkPensioner(String pensioner) {
+		throw new UnsupportedOperationException();
+	}
+	public static String checkIncome(String income) {
+		throw new UnsupportedOperationException();
+	}
+}

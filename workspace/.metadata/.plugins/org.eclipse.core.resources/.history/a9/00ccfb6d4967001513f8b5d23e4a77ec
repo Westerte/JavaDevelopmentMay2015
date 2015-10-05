@@ -1,0 +1,69 @@
+package edu.nesterenko.bank.validation;
+
+import java.util.Date;
+import java.util.regex.Pattern;
+
+import edu.nesterenko.bank.entity.City;
+import edu.nesterenko.bank.entity.Disability;
+import edu.nesterenko.bank.entity.Martial;
+import edu.nesterenko.bank.entity.Nationality;
+import edu.nesterenko.bank.resource.RegexManager;
+
+public class Validator {
+	
+	private Validator() {}
+	
+	public static boolean checkLogin(String login) {
+		return Pattern.matches(RegexManager.getProperty("pattern.login"), login);
+	}
+	
+	public static boolean checkPassword(String password) {
+		return Pattern.matches(RegexManager.getProperty("pattern.password"), password);
+	}
+	
+	public static boolean checkOnlyLatters(String value) {
+		return Pattern.matches(RegexManager.getProperty("pattern.onlylitter"), value);
+	}
+	
+	public static boolean checkBoolean(String booleanValue) {
+	    throw new UnsupportedOperationException();
+	}
+	
+	public static double checkDouble(String doubleValue) {
+	    throw new UnsupportedOperationException();
+	}	
+
+	public static int checktInt(String integerValue) {
+	    throw new UnsupportedOperationException();
+	}
+	
+	public static Date checkBirthday(String birthday) {
+	    throw new UnsupportedOperationException();
+	}
+
+	public static String checkPassportNumber(String passportNumber) {
+	    throw new UnsupportedOperationException();
+	}
+
+	public static Date checkDate(String dateValue) {
+	    throw new UnsupportedOperationException();
+	}
+	
+	public static String checkCid(String cid) {
+	    throw new UnsupportedOperationException();
+	}
+
+	public static String checkPhoneHome(String phoneHome) {
+	    throw new UnsupportedOperationException();
+	}
+	
+	public static String checkPhoneMobile(String phoneMobile) {
+	    throw new UnsupportedOperationException();
+	}
+	
+	public static String checkEmail(String email) {
+		//return Pattern.matches(RegexManager.getProperty("pattern.email"), email);
+		throw new UnsupportedOperationException();
+	}
+	
+}

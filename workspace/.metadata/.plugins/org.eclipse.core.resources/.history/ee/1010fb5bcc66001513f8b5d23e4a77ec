@@ -1,0 +1,3 @@
+path.page.index = /index.jsp
+path.page.main = /jsp/common/main.jsp
+path.page.add = /jsp/common/add.jsp

@@ -75,8 +75,10 @@ public class CommandFactory {
 					command = AddRestTypeCommand.getInstance();
 					break;
 				case TOUR_LIST_PAGE:
+					command = TourListPageCommand.getInstance();
 					break;
 				case ADD_TOUR:
+					command = AddTourCommand.getInstance();
 					break;
 			}
 		}
