@@ -28,8 +28,7 @@ public class CountryEditPageCommand  implements Command {
 		try {
 			String id = request.getParameter("id");
 			Country country = CountryLogic.findByKey(id);
-			request.setAttribute("id", country.getId());
-			request.setAttribute("name", country.getName());
+			request.setAttribute("country", country);
 			jspPath = ConfigurationManager.getProperty("path.page.countryEditPage");
 		} catch (LogicException e) {
 			LOG.error(e);

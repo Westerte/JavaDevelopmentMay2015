@@ -28,9 +28,7 @@ public class RestTypeEditPageCommand  implements Command {
 		try {
 			String id = request.getParameter("id");
 			RestType restType = RestTypeLogic.findByKey(id);
-			request.setAttribute("id", restType.getId());
-			request.setAttribute("name", restType.getName());
-			request.setAttribute("description", restType.getDescription());
+			request.setAttribute("restType", restType);
 			jspPath = ConfigurationManager.getProperty("path.page.restTypeEditPage");
 		} catch (LogicException e) {
 			LOG.error(e);

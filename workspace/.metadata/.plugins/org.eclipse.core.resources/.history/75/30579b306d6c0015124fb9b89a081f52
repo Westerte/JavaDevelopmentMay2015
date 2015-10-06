@@ -33,7 +33,6 @@ public class ResortEditPageCommand  implements Command {
 			request.setAttribute("id", resort.getId());
 			request.setAttribute("name", resort.getName());
 			request.setAttribute("description", resort.getDescription());
-			request.setAttribute("city", resort.getCity());
 			jspPath = ConfigurationManager.getProperty("path.page.resortEditPage");
 		} catch (LogicException e) {
 			LOG.error(e);

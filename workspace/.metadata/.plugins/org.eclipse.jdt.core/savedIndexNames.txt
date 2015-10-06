@@ -6,7 +6,6 @@ INDEX VERSION 1.127+D:\Westerte\JavaDevelopmentMay2015\workspace\.metadata\.plug
 1288593574.index
 4091995711.index
 2071011958.index
-76926234.index
 3937570448.index
 1738031965.index
 1000147613.index

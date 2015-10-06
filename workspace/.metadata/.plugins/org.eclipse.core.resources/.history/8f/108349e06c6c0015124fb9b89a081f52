@@ -30,10 +30,7 @@ public class CityEditPageCommand  implements Command {
 		try {
 			String id = request.getParameter("id");
 			City city = CityLogic.findByKey(id);
-			request.setAttribute("id", city.getId());
-			request.setAttribute("name", city.getName());
-			request.setAttribute("description", city.getDescription());
-			request.setAttribute("country", city.getCountry());
+			request.setAttribute("city", city);
 			jspPath = ConfigurationManager.getProperty("path.page.cityEditPage");
 		} catch (LogicException e) {
 			LOG.error(e);

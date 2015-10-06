@@ -30,10 +30,7 @@ public class ResortEditPageCommand  implements Command {
 		try {
 			String id = request.getParameter("id");
 			Resort resort = ResortLogic.findByKey(id);
-			request.setAttribute("id", resort.getId());
-			request.setAttribute("name", resort.getName());
-			request.setAttribute("description", resort.getDescription());
-			request.setAttribute("city", resort.getCity());
+			request.setAttribute("resort", resort);
 			jspPath = ConfigurationManager.getProperty("path.page.resortEditPage");
 		} catch (LogicException e) {
 			LOG.error(e);

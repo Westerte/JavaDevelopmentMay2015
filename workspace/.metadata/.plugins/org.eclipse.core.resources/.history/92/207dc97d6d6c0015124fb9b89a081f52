@@ -32,17 +32,7 @@ public class TourEditPageCommand  implements Command {
 		try {
 			String id = request.getParameter("id");
 			Tour tour = TourLogic.findByKey(id);
-			request.setAttribute("id", tour.getId());
-			request.setAttribute("name", tour.getName());
-			request.setAttribute("description", tour.getDescription());
-			request.setAttribute("cost", tour.getCost() );
-			request.setAttribute("beginDate", tour.getBeginDate());
-			request.setAttribute("endDate", tour.getEndDate());
-			request.setAttribute("food", tour.getFood());
-			request.setAttribute("path", tour.getPath());
-			request.setAttribute("pathTime", tour.getPathTime());
-			request.setAttribute("restType", tour.getRestType());
-			request.setAttribute("resortHotel", tour.getResortHotel());
+			request.setAttribute("tour", tour);
 			jspPath = ConfigurationManager.getProperty("path.page.tourEditPage");
 		} catch (LogicException e) {
 			LOG.error(e);
