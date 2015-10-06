@@ -38,6 +38,9 @@ public class AddCityCommand implements Command {
 			try {
 				CityLogic.addCity(name, description, countryId);
 			} catch (LogicException e) {
+				request.setAttribute("name", name);
+				request.setAttribute("description", description);
+				request.setAttribute("country", countryId);
 				LOG.error(e);
 			}
 			List<City> cityList = null;

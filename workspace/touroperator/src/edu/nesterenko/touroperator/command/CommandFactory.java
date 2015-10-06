@@ -80,6 +80,61 @@ public class CommandFactory {
 				case ADD_TOUR:
 					command = AddTourCommand.getInstance();
 					break;
+				case DELETE_CITY:
+					command = DeleteCityCommand.getInstance();
+					break;
+				case DELETE_COUNTRY:
+					command = DeleteCountryCommand.getInstance();
+					break;
+				case DELETE_RESORT:
+					command = DeleteResortCommand.getInstance();
+					break;
+				case DELETE_RESORT_HOTEL:
+					command = DeleteResortHotelCommand.getInstance();
+					break;
+				case DELETE_REST_TYPE:
+					command = DeleteRestTypeCommand.getInstance();
+					break;
+				case DELETE_TOUR:
+					command = DeleteTourCommand.getInstance();
+					break;
+				case EDIT_CITY:
+					command = EditCityCommand.getInstance();
+					break;
+				case EDIT_COUNTRY:
+					command = EditCountryCommand.getInstance();
+					break;
+				case EDIT_RESORT:
+					command = EditResortCommand.getInstance();
+					break;
+				case EDIT_RESORT_HOTEL:
+					command = EditResortHotelCommand.getInstance();
+					break;
+				case EDIT_REST_TYPE:
+					command = EditRestTypeCommand.getInstance();
+					break;
+				case EDIT_TOUR:
+					command = EditTourCommand.getInstance();
+					break;
+				case EDIT_PAGE_CITY:
+					command = CityEditPageCommand.getInstance();
+					break;
+				case EDIT_PAGE_COUNTRY:
+					command = CountryEditPageCommand.getInstance();
+					break;
+				case EDIT_PAGE_RESORT:
+					command = ResortEditPageCommand.getInstance();
+					break;
+				case EDIT_PAGE_RESORT_HOTEL:
+					command = ResortHotelEditPageCommand.getInstance();
+					break;
+				case EDIT_PAGE_REST_TYPE:
+					command = RestTypeEditPageCommand.getInstance();
+					break;
+				case EDIT_PAGE_TOUR:
+					command = TourEditPageCommand.getInstance();
+					break;			
+				
 			}
 		}
 		return command;

@@ -30,29 +30,31 @@
 		<form action="Controller" method="post">
 			<input type="hidden" name="command" value="add_resort_hotel">
 			<br>
-			<input type="text" name="name" placeholder="<fmt:message key="resortHotel.lables.name" bundle="${rb}"/>">
+			<input type="text" name="name"
+				placeholder="<fmt:message key="resortHotel.lables.name" bundle="${rb}"/>" value="${name}">
 			<br>
 			<fmt:message key="resortHotel.lables.description" bundle="${rb}"/>
 			<br>
-			<textarea name="description" rows="10" cols="10"></textarea>
+			<textarea name="description">${description}</textarea>
 			<br>
 			<fmt:message key="resortHotel.lables.resort" bundle="${rb}" />
 			<br>
 			<select name="resort">
-				<c:forEach items = "${ resortList }" var="resort">
-					<option value="${ resort.id }" label="${ resort.name }, ${resort.city.name},
-					${resort.city.country.name}"/>
+				<c:forEach items = "${ resortList }" var="resortItem">
+					<option value="${ resortItem.id }" label="${ resortItem.name }, ${resortItem.city.name},
+					${resort.city.country.name}" <c:if test="${resort != null && resortItem.id = resort }"></c:if>
+					/>
 				</c:forEach>
 			</select>
 			<br>
 			<fmt:message key="resortHotel.lables.stars" bundle="${ rb }"></fmt:message>
 			<br>
 			<select name="stars">
-				<option value="1" label="1">
-				<option value="2" label="2">
-				<option value="3" label="3">
-				<option value="4" label="4">
-				<option value="5" label="5">
+				<option value="1" label="1" <c:if test="${stars != null && stars == 1}">selected="selected"</c:if>>
+				<option value="2" label="2" <c:if test="${stars != null && stars == 2}">selected="selected"</c:if>>
+				<option value="3" label="3" <c:if test="${stars != null && stars == 3}">selected="selected"</c:if>>
+				<option value="4" label="4" <c:if test="${stars != null && stars == 4}">selected="selected"</c:if>>
+				<option value="5" label="5" <c:if test="${stars != null && stars == 5}">selected="selected"</c:if>>
 			</select>
 			<input type="submit" value="<fmt:message key="resortHotel.lables.add" bundle="${rb}"/>">
 		</form>

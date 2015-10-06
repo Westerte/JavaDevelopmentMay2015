@@ -28,17 +28,18 @@
 		<form action="Controller" method="post">
 			<input type="hidden" name="command" value="add_city">
 			<br>
-			<input type="text" name="name" placeholder="<fmt:message key="city.lables.name" bundle="${rb}"/>">
+			<input type="text" name="name" placeholder="<fmt:message key="city.lables.name" bundle="${rb}"/>" value="${name}">
 			<br>
-			<fmt:message key="city.lables.description" bundle="${rb}"/>
+			<fmt:message key="city.lables.description" bundle="${rb}" />
 			<br>
-			<textarea name="description" rows="10" cols="10"></textarea>
+			<textarea name="description">${description}</textarea>
 			<br>
 			<fmt:message key="city.lables.country" bundle="${rb}" />
 			<br>
 			<select name="country">
-				<c:forEach items = "${ countryList }" var="country">
-					<option value="${ country.id }" label="${ country.name }"/>
+				<c:forEach items = "${ countryList }" var="countryItem">
+					<option value="${ countryItem.id }" label="${ countryItem.name }" 
+					<c:if test="${country != null && countryItem.id == country}">selected="selected"</c:if>/>
 				</c:forEach>
 			</select>
 			<input type="submit" value="<fmt:message key="city.lables.add" bundle="${rb}"/>">

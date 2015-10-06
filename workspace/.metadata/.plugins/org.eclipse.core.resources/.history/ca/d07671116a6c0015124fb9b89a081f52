@@ -1,0 +1,52 @@
+package edu.nesterenko.touroperator.command;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.log4j.Logger;
+
+import edu.nesterenko.touroperator.entity.Resort;
+import edu.nesterenko.touroperator.entity.City;
+import edu.nesterenko.touroperator.entity.Country;
+import edu.nesterenko.touroperator.logic.ResortLogic;
+import edu.nesterenko.touroperator.logic.CityLogic;
+import edu.nesterenko.touroperator.logic.CountryLogic;
+import edu.nesterenko.touroperator.logic.LogicException;
+import edu.nesterenko.touroperator.resource.ConfigurationManager;
+
+
+public class ResortEditPageCommand  implements Command {
+	private final static Logger LOG = Logger.getLogger(ResortEditPageCommand .class);
+	private static ResortEditPageCommand  instance = new ResortEditPageCommand ();
+	
+	private ResortEditPageCommand () {}
+	
+	public static ResortEditPageCommand  getInstance() {
+		return instance;
+	}
+	
+	@Override
+	public String execute(HttpServletRequest request) {
+		String jspPath;		
+		try {
+			String id = request.getParameter("id");
+			Resort resort = ResortLogic.findByKey(id);
+			request.setAttribute("resort", resort);
+			jspPath = ConfigurationManager.getProperty("path.page.resortEditPage");
+		} catch (LogicException e) {
+			LOG.error(e);
+			try {
+				List<Resort> resortList = ResortLogic.findAll();
+				List<City> cityList = CityLogic.findAll();
+				request.setAttribute("resortList", resortList);
+				request.setAttribute("cityList", cityList);
+			} catch(LogicException e1) {
+				LOG.error(e1);
+				jspPath = ConfigurationManager.getProperty("path.page.main");
+			}
+		}
+		return jspPath;
+	}
+
+}

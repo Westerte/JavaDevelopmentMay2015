@@ -32,4 +32,39 @@ public class RestTypeLogic {
 			throw new LogicException(e);
 		}
 	}
+	
+	public static void delete(String id) throws LogicException {
+		RestTypeDao restTypeDao = new RestTypeDao();
+		try {
+			int idInt = Validator.checkInt(id);
+			restTypeDao.delete(idInt);
+		} catch (DaoException | ValidationException e) {
+			throw new LogicException(e);
+		}
+	}
+	
+	public static void editRestType(String id, String name, String description) 
+			 throws LogicException {
+		try {
+			int idInteger = Validator.checkInt(id);
+			Validator.checkOnlyLatters(name);
+			RestType restType = new RestType(idInteger, name, description);
+			RestTypeDao restTypeDao = new RestTypeDao();
+			restTypeDao.update(restType);				
+		} catch (DaoException | ValidationException e) {
+			throw new LogicException(e);
+		}
+	}
+	
+	public static RestType findByKey(String id) throws LogicException {
+		RestType restType;
+		try {
+			int idInteger = Validator.checkInt(id);
+			RestTypeDao restTypeDao = new RestTypeDao();
+			restType = restTypeDao.findByKey(idInteger);
+		} catch (ValidationException | DaoException e) {
+			throw new LogicException(e);
+		}
+		return restType;
+	}
 }

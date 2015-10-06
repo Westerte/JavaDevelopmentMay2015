@@ -19,6 +19,7 @@ public class ClientDao implements AbstractDao<Integer, Client> {
 	private static final String INSERT_NEW_CLIENT = 
 			"INSERT INTO `client`(client_login, "
 			+ "client_hash, client_salt, client_email, client_type) VALUES(?,?,?,?,?)";
+	private final static String DELETE_ELEMENT = "DELETE FROM `client` WHERE `client_id` = ?"; 
 	
 	@Override
 	public List<Client> findAll() {
@@ -36,8 +37,21 @@ public class ClientDao implements AbstractDao<Integer, Client> {
 	}
 
 	@Override
-	public void delete(Integer key) {
-		throw new UnsupportedOperationException();
+	public void delete(Integer key) throws DaoException {
+		ConnectionPool connectionPool = ConnectionPool.getInstance();
+		PreparedStatement statement = null;
+		ConnectionWrapper connection = null;
+		try {
+			connection = connectionPool.grapConnection();
+			statement = connection.prepareStatement(DELETE_ELEMENT);
+			statement.setInt(1, key);
+			statement.executeUpdate();
+		} catch (ConnectionPoolException | SQLException e) {
+			throw new DaoException(e);
+		} finally {
+			closeStatement(statement);
+			connectionPool.releaseConnection(connection);
+		}
 	}
 
 	@Override
@@ -46,7 +60,7 @@ public class ClientDao implements AbstractDao<Integer, Client> {
 	}
 
 	@Override
-	public Client update(Client entity) {
+	public void update(Client entity) throws DaoException {
 		throw new UnsupportedOperationException();
 	}
 	

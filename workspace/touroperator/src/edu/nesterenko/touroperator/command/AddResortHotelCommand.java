@@ -40,6 +40,10 @@ public class AddResortHotelCommand implements Command {
 			try {
 				ResortHotelLogic.addResortHotel(name, description, resortId, stars);
 			} catch (LogicException e) {
+				request.setAttribute("name", name);
+				request.setAttribute("description", description);
+				request.setAttribute("stars", stars);
+				request.setAttribute("resort", resortId);
 				LOG.error(e);
 			}
 

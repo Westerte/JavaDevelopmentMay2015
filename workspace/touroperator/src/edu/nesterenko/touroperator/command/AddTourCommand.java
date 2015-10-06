@@ -49,6 +49,16 @@ public class AddTourCommand implements Command {
 						 beginDate, endDate, food, path, 
 						 pathTime, restType, resortHotel);
 			} catch (LogicException e) {
+				request.setAttribute("name", name );
+				request.setAttribute("description", description );
+				request.setAttribute("cost", cost );
+				request.setAttribute("beginDate", beginDate );
+				request.setAttribute("endDate", endDate );
+				request.setAttribute("food", food );
+				request.setAttribute("path", path );
+				request.setAttribute("pathTime", pathTime );
+				request.setAttribute("restType", restType );
+				request.setAttribute("resortHotel", resortHotel );
 				LOG.error(e);
 			}
 			List<Tour> tourList = null;

@@ -20,6 +20,9 @@ public class ResortDao implements AbstractDao<Integer, Resort> {
 			+ " VALUES(?,?,?)";
 	private final static String SELECT_BY_ID = 
 			"SELECT * FROM `resort` WHERE `resort_id` = ?";
+	private final static String DELETE_ELEMENT = "DELETE FROM `resort` WHERE `resort_id` = ?";
+	private final static String UPDATE_ELEMENT = "UPDATE `resort` SET `resort_name` = ?, "
+			+ "`resort_description` = ?, `city_id` = ? WHERE `resort_id` = ?";
 
 	@Override
 	public List<Resort> findAll() throws DaoException {
@@ -99,8 +102,21 @@ public class ResortDao implements AbstractDao<Integer, Resort> {
 	}
 
 	@Override
-	public void delete(Integer key) {
-		throw new UnsupportedOperationException();
+	public void delete(Integer key) throws DaoException {
+		ConnectionPool connectionPool = ConnectionPool.getInstance();
+		PreparedStatement statement = null;
+		ConnectionWrapper connection = null;
+		try {
+			connection = connectionPool.grapConnection();
+			statement = connection.prepareStatement(DELETE_ELEMENT);
+			statement.setInt(1, key);
+			statement.executeUpdate();
+		} catch (ConnectionPoolException | SQLException e) {
+			throw new DaoException(e);
+		} finally {
+			closeStatement(statement);
+			connectionPool.releaseConnection(connection);
+		}
 	}
 
 	@Override
@@ -109,8 +125,24 @@ public class ResortDao implements AbstractDao<Integer, Resort> {
 	}
 
 	@Override
-	public Resort update(Resort entity) {
-		throw new UnsupportedOperationException();
+	public void update(Resort entity) throws DaoException {
+		ConnectionPool connectionPool = ConnectionPool.getInstance();
+		PreparedStatement statement = null;
+		ConnectionWrapper connection = null;
+		try {
+			connection = connectionPool.grapConnection();
+			statement = connection.prepareStatement(UPDATE_ELEMENT);
+			statement.setString(1, entity.getName());
+			statement.setString(2, entity.getDescription());
+			statement.setInt(3, entity.getCity().getId());
+			statement.setInt(4, entity.getId());
+			statement.executeUpdate();
+		} catch (ConnectionPoolException | SQLException e) {
+			throw new DaoException(e);
+		} finally {
+			closeStatement(statement);
+			connectionPool.releaseConnection(connection);
+		}
 	}
 
 }

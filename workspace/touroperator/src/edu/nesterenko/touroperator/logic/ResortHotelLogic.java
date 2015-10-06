@@ -37,4 +37,43 @@ public class ResortHotelLogic {
 			throw new LogicException(e);
 		}
 	}
+	
+	public static void delete(String id) throws LogicException {
+		ResortHotelDao resortHotelDao = new ResortHotelDao();
+		try {
+			int idInt = Validator.checkInt(id);
+			resortHotelDao.delete(idInt);
+		} catch (DaoException | ValidationException e) {
+			throw new LogicException(e);
+		}
+	}
+	
+	public static void editResortHotel(String id, String name, String description, 
+			String resortId, String stars) throws LogicException {
+		try {
+			int idInteger = Validator.checkInt(id);
+			Validator.checkOnlyLatters(name);
+			int resortIdInteger = Validator.checkInt(resortId);
+			int starsInteger = Validator.checkInt(stars);
+			ResortHotelDao resortHotelDao = new ResortHotelDao();	
+			ResortHotel resortHotel = new ResortHotel(idInteger, name, description, 
+					new Resort(resortIdInteger, null, null, null), starsInteger);
+			
+			resortHotelDao.update(resortHotel);
+		} catch (DaoException | ValidationException e) {
+			throw new LogicException(e);
+		} 	
+	}
+	
+	public static ResortHotel findByKey(String id) throws LogicException {
+		ResortHotel resortHotel;
+		try {
+			int idInteger = Validator.checkInt(id);
+			ResortHotelDao resortHotelDao = new ResortHotelDao();
+			resortHotel = resortHotelDao.findByKey(idInteger);
+		} catch (ValidationException | DaoException e) {
+			throw new LogicException(e);
+		}
+		return resortHotel;
+	}
 }

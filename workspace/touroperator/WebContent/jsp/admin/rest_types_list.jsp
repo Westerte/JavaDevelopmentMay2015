@@ -26,11 +26,11 @@
 		<form action="Controller" method="post">
 			<input type="hidden" name="command" value="add_rest_type">
 			<br>
-			<input type="text" name="name" placeholder="<fmt:message key="restType.lables.name" bundle="${rb}"/>">
+			<input type="text" name="name" placeholder="<fmt:message key="restType.lables.name" bundle="${rb}"/>" value="${name}">
 			<br>
 			<fmt:message key="restType.lables.description" bundle="${rb}"/>
 			<br>
-			<textarea name="description" rows="10" cols="10"></textarea>
+			<textarea name="description">${description}</textarea>
 			<br>
 			<input type="submit" value="<fmt:message key="restType.lables.add" bundle="${rb}"/>">
 		</form>

@@ -35,10 +35,13 @@ public class AddResortCommand implements Command {
 			
 			String name = request.getParameter("name");
 			String description = request.getParameter("description");
-			int cityId = Integer.parseInt(request.getParameter("city"));
+			String cityId = request.getParameter("city");
 			try {
 				ResortLogic.addResort(name, description, cityId);
 			} catch (LogicException e) {
+				request.setAttribute("name", name);
+				request.setAttribute("description", description);
+				request.setAttribute("city", cityId);
 				LOG.error(e);
 			}
 			List<Resort> resortList = null;

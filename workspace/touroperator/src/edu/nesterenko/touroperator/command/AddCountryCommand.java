@@ -36,6 +36,7 @@ public class AddCountryCommand implements Command {
 			try {				
 				CountryLogic.addCountry(name);				
 			} catch (LogicException e) {
+				request.setAttribute("name", name);
 				LOG.error(e);
 			}
 			try {

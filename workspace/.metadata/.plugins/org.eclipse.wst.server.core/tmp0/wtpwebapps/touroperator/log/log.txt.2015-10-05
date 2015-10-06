@@ -1,0 +1,2 @@
+2015-10-05 20:20:43,564 [http-bio-8080-exec-10] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: edu.nesterenko.touroperator.validation.ValidationException: login no much pattern
+2015-10-05 20:20:47,287 [http-bio-8080-exec-10] ERROR edu.nesterenko.touroperator.command.LoginCommand  - edu.nesterenko.touroperator.logic.LogicException: edu.nesterenko.touroperator.validation.ValidationException: password no much pattern

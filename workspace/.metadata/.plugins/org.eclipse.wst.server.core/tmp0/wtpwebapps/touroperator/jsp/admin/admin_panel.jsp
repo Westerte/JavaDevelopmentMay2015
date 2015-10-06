@@ -26,6 +26,8 @@
 			<a href="Controller?command=resort_hotel_list_page"><fmt:message key="adminPanel.lables.resortHotels" bundle="${rb}"/></a>
 			<br>
 			<a href="Controller?command=rest_type_list_page"><fmt:message key="adminPanel.lables.restTypes" bundle="${rb}"/></a>
+			<br>
+			<a href="Controller?command=tour_list_page"><fmt:message key="adminPanel.lables.tours" bundle="${rb}"/></a>
 		<div id="page-buffer"></div>	
 	</div>	
 	<c:import url="${configBundle.getResourceBundle().handleGetObject('path.sample.footer')}"/>

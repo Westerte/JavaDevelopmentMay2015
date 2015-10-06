@@ -1,0 +1,55 @@
+package edu.nesterenko.touroperator.command;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.log4j.Logger;
+
+import edu.nesterenko.touroperator.entity.ResortHotel;
+import edu.nesterenko.touroperator.entity.RestType;
+import edu.nesterenko.touroperator.entity.Tour;
+import edu.nesterenko.touroperator.logic.TourLogic;
+import edu.nesterenko.touroperator.logic.RestTypeLogic;
+import edu.nesterenko.touroperator.logic.LogicException;
+import edu.nesterenko.touroperator.logic.ResortHotelLogic;
+import edu.nesterenko.touroperator.resource.ConfigurationManager;
+
+
+public class TourEditPageCommand  implements Command {
+	private final static Logger LOG = Logger.getLogger(TourEditPageCommand .class);
+	private static TourEditPageCommand  instance = new TourEditPageCommand ();
+	
+	private TourEditPageCommand () {}
+	
+	public static TourEditPageCommand  getInstance() {
+		return instance;
+	}
+	
+	@Override
+	public String execute(HttpServletRequest request) {
+		String jspPath;		
+		try {
+			String id = request.getParameter("id");
+			Tour tour = TourLogic.findByKey(id);
+			request.setAttribute("tour", tour);
+			jspPath = ConfigurationManager.getProperty("path.page.tourEditPage");
+		} catch (LogicException e) {
+			LOG.error(e);
+			try {
+				List<Tour> tourList = TourLogic.findAll();
+				List<ResortHotel> resortHotelList = ResortHotelLogic.findAll();
+				List<RestType> restTypeList = RestTypeLogic.findAll();
+				request.setAttribute("tourList", tourList);
+				request.setAttribute("resortHotelList", resortHotelList);
+				request.setAttribute("restTypeList", restTypeList);
+				jspPath = ConfigurationManager.getProperty("path.page.tourList");
+			} catch(LogicException e1) {
+				LOG.error(e1);
+				jspPath = ConfigurationManager.getProperty("path.page.main");
+			}
+		}
+		return jspPath;
+	}
+
+}

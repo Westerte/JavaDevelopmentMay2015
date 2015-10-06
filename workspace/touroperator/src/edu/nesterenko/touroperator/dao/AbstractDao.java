@@ -13,9 +13,9 @@ public interface AbstractDao<K, T extends BusinessEntity> {
 	List<T> findAll() throws DaoException;
 	T findByKey(K key) throws DaoException;
 	void add(K key, T entity) throws DaoException;
-	void delete(K key);
+	void delete(K key) throws DaoException;
 	void delete(T entity);
-	T update(T entity);
+	void update(T entity) throws DaoException;
 	
 	default void closeStatement(Statement statement) {
 		if(statement != null) {

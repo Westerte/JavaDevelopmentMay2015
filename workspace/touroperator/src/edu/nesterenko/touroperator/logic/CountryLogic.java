@@ -32,4 +32,38 @@ public class CountryLogic {
 			throw new LogicException(e);
 		}
 	}
+	
+	public static void delete(String id) throws LogicException {
+		CountryDao ñountryDao = new CountryDao();
+		try {
+			int idInt = Validator.checkInt(id);
+			ñountryDao.delete(idInt);
+		} catch (DaoException | ValidationException e) {
+			throw new LogicException(e);
+		}
+	}
+	
+	public static void editCountry(String id, String name) throws LogicException {
+		try {
+			int idInteger = Validator.checkInt(id);
+			Validator.checkOnlyLatters(name);
+			Country country = new Country(idInteger, name);
+			CountryDao countryDao = new CountryDao();
+			countryDao.update(country);				
+		} catch (DaoException | ValidationException e) {
+			throw new LogicException(e);
+		}
+	}
+	
+	public static Country findByKey(String id) throws LogicException {
+		Country ñountry;
+		try {
+			int idInteger = Validator.checkInt(id);
+			CountryDao ñountryDao = new CountryDao();
+			ñountry = ñountryDao.findByKey(idInteger);
+		} catch (ValidationException | DaoException e) {
+			throw new LogicException(e);
+		}
+		return ñountry;
+	}
 }

@@ -37,6 +37,8 @@ public class AddRestTypeCommand implements Command {
 			try {				
 				RestTypeLogic.addRestType(name, description);				
 			} catch (LogicException e) {
+				request.setAttribute("name", name);
+				request.setAttribute("description", description);
 				LOG.error(e);
 			}
 			try {

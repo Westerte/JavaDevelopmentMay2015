@@ -24,7 +24,7 @@
 		</c:forEach>
 		<form action="Controller" method="post">
 			<input type="hidden" name="command" value="add_country">
-			<input type="text" name="name" placeholder="<fmt:message key="country.lables.name" bundle="${rb}"/>">
+			<input type="text" name="name" placeholder="<fmt:message key="country.lables.name" bundle="${rb}"/>" value="${name}">
 			<input type="submit" value="<fmt:message key="country.lables.add" bundle="${rb}"/>">
 		</form>
 		<div id="page-buffer"></div>	

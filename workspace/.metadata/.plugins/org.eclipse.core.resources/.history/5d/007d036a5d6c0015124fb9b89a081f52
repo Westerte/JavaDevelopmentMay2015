@@ -1,0 +1,5 @@
+package edu.nesterenko.touroperator.command;
+
+public class CityEditPageCommand {
+
+}

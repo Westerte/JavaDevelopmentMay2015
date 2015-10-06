@@ -22,6 +22,12 @@ public class TourDao implements AbstractDao<Integer, Tour> {
 			+ " VALUES(?,?,?,?,?,?,?,?,?,?)";
 	private final static String SELECT_BY_ID = 
 			"SELECT * FROM `tour` WHERE `tour_id` = ?";
+	private final static String DELETE_ELEMENT = "DELETE FROM `tour` WHERE `tour_id` = ?"; 
+	private final static String UPDATE_ELEMENT = "UPDATE INTO `tour`"
+			+ "`tour_name` = ?, `tour_description` = ?, `tour_cost` = ?, `tour_begin_date` = ?, "
+			+ "`tour_end_date` = ?, `tour_food` = ?, `tour_path` = ?, "
+			+ "`tour_path_time` = ?, `rest_type_id` = ?, `resort_hotel_id` = ?"
+			+ " WHERE `tour_id` = ?";
 
 	@Override
 	public List<Tour> findAll() throws DaoException {
@@ -84,12 +90,11 @@ public class TourDao implements AbstractDao<Integer, Tour> {
 			statement.setDouble(3, entity.getCost());
 			statement.setDate(4, new Date(entity.getBeginDate().getTime()));
 			statement.setDate(5, new Date(entity.getEndDate().getTime()));
-			statement.setInt(6, entity.getDays());
-			statement.setString(7, entity.getFood());
-			statement.setString(8, entity.getPath());
-			statement.setDouble(9, entity.getPathTime());
-			statement.setInt(10, entity.getRestType().getId());
-			statement.setInt(11, entity.getResortHotel().getId());
+			statement.setString(6, entity.getFood());
+			statement.setString(7, entity.getPath());
+			statement.setDouble(8, entity.getPathTime());
+			statement.setInt(9, entity.getRestType().getId());
+			statement.setInt(10, entity.getResortHotel().getId());
 			statement.executeUpdate();
 		} catch (ConnectionPoolException | SQLException e) {
 			throw new DaoException(e);
@@ -100,8 +105,21 @@ public class TourDao implements AbstractDao<Integer, Tour> {
 	}
 
 	@Override
-	public void delete(Integer key) {
-		throw new UnsupportedOperationException();
+	public void delete(Integer key) throws DaoException {
+		ConnectionPool connectionPool = ConnectionPool.getInstance();
+		PreparedStatement statement = null;
+		ConnectionWrapper connection = null;
+		try {
+			connection = connectionPool.grapConnection();
+			statement = connection.prepareStatement(DELETE_ELEMENT);
+			statement.setInt(1, key);
+			statement.executeUpdate();
+		} catch (ConnectionPoolException | SQLException e) {
+			throw new DaoException(e);
+		} finally {
+			closeStatement(statement);
+			connectionPool.releaseConnection(connection);
+		}
 	}
 
 	@Override
@@ -110,8 +128,31 @@ public class TourDao implements AbstractDao<Integer, Tour> {
 	}
 
 	@Override
-	public Tour update(Tour entity) {
-		throw new UnsupportedOperationException();
+	public void update(Tour entity) throws DaoException {
+		ConnectionPool connectionPool = ConnectionPool.getInstance();
+		PreparedStatement statement = null;
+		ConnectionWrapper connection = null;
+		try {
+			connection = connectionPool.grapConnection();
+			statement = connection.prepareStatement(UPDATE_ELEMENT);
+			statement.setString(1, entity.getName());
+			statement.setString(2, entity.getDescription());
+			statement.setDouble(3, entity.getCost());
+			statement.setDate(4, new Date(entity.getBeginDate().getTime()));
+			statement.setDate(5, new Date(entity.getEndDate().getTime()));
+			statement.setString(6, entity.getFood());
+			statement.setString(7, entity.getPath());
+			statement.setDouble(8, entity.getPathTime());
+			statement.setInt(9, entity.getRestType().getId());
+			statement.setInt(10, entity.getResortHotel().getId());
+			statement.setInt(11, entity.getId());
+			statement.executeUpdate();
+		} catch (ConnectionPoolException | SQLException e) {
+			throw new DaoException(e);
+		} finally {
+			closeStatement(statement);
+			connectionPool.releaseConnection(connection);
+		}
 	}
 	
 	private Tour makeTour(ResultSet resultSet) throws DaoException {

@@ -19,6 +19,9 @@ public class CountryDao implements AbstractDao<Integer, Country> {
 	private final static String ADD_NEW = "INSERT INTO `country`"
 			+ "(`country_name`) VALUES(?)";
 	private final static String SELECT_BY_ID = "SELECT * FROM `country` WHERE `country_id` = ?";
+	private final static String DELETE_ELEMENT = "DELETE FROM `country` WHERE `country_id` = ?";
+	private final static String UPDATE_ELEMENT = "UPDATE `country` SET `country_name` = ? "
+			+ "WHERE `country_id` = ?";
 	@Override
 	public List<Country> findAll() throws DaoException {
 		List<Country> countryList = new ArrayList<Country>();
@@ -85,8 +88,21 @@ public class CountryDao implements AbstractDao<Integer, Country> {
 	}
 
 	@Override
-	public void delete(Integer key) {
-		throw new UnsupportedOperationException();
+	public void delete(Integer key) throws DaoException {
+		ConnectionPool connectionPool = ConnectionPool.getInstance();
+		PreparedStatement statement = null;
+		ConnectionWrapper connection = null;
+		try {
+			connection = connectionPool.grapConnection();
+			statement = connection.prepareStatement(DELETE_ELEMENT);
+			statement.setInt(1, key);
+			statement.executeUpdate();
+		} catch (ConnectionPoolException | SQLException e) {
+			throw new DaoException(e);
+		} finally {
+			closeStatement(statement);
+			connectionPool.releaseConnection(connection);
+		}
 		
 	}
 
@@ -97,8 +113,22 @@ public class CountryDao implements AbstractDao<Integer, Country> {
 	}
 
 	@Override
-	public Country update(Country entity) {
-		return null;
+	public void update(Country entity) throws DaoException {
+		ConnectionPool connectionPool = ConnectionPool.getInstance();
+		PreparedStatement statement = null;
+		ConnectionWrapper connection = null;
+		try {
+			connection = connectionPool.grapConnection();
+			statement = connection.prepareStatement(UPDATE_ELEMENT);
+			statement.setString(1, entity.getName());
+			statement.setInt(2, entity.getId());
+			statement.executeUpdate();
+		} catch (ConnectionPoolException | SQLException e) {
+			throw new DaoException(e);
+		} finally {
+			closeStatement(statement);
+			connectionPool.releaseConnection(connection);
+		}
 	}
 	
 	private Country makeCountry(ResultSet resultSet) throws DaoException {

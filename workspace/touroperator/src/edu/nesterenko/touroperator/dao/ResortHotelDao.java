@@ -20,6 +20,11 @@ public class ResortHotelDao implements AbstractDao<Integer, ResortHotel> {
 			+ " `resort_hotel_stars`) VALUES(?,?,?,?)";
 	private final static String SELECT_BY_ID = 
 			"SELECT * FROM `resort_hotel` WHERE `resort_hotel_id` = ?";
+	private final static String DELETE_ELEMENT = "DELETE FROM `resort_hotel`"
+			+ " WHERE `resort_hotel_id` = ?"; 
+	private final static String UPDATE_ELEMENT = "UPDATE `resort_hotel` SET `resort_hotel_name` = ?, "
+			+ "`resort_hotel_description` = ?, `resort_id` = ?,"
+			+ " `resort_hotel_stars` = ? WHERE `resort_hotel_id` = ?";
 
 	@Override
 	public List<ResortHotel> findAll() throws DaoException {
@@ -90,8 +95,21 @@ public class ResortHotelDao implements AbstractDao<Integer, ResortHotel> {
 	}
 
 	@Override
-	public void delete(Integer key) {
-		throw new UnsupportedOperationException();
+	public void delete(Integer key) throws DaoException {
+		ConnectionPool connectionPool = ConnectionPool.getInstance();
+		PreparedStatement statement = null;
+		ConnectionWrapper connection = null;
+		try {
+			connection = connectionPool.grapConnection();
+			statement = connection.prepareStatement(DELETE_ELEMENT);
+			statement.setInt(1, key);
+			statement.executeUpdate();
+		} catch (ConnectionPoolException | SQLException e) {
+			throw new DaoException(e);
+		} finally {
+			closeStatement(statement);
+			connectionPool.releaseConnection(connection);
+		}
 	}
 
 	@Override
@@ -100,8 +118,25 @@ public class ResortHotelDao implements AbstractDao<Integer, ResortHotel> {
 	}
 
 	@Override
-	public ResortHotel update(ResortHotel entity) {
-		throw new UnsupportedOperationException();
+	public void update(ResortHotel entity) throws DaoException {
+		ConnectionPool connectionPool = ConnectionPool.getInstance();
+		PreparedStatement statement = null;
+		ConnectionWrapper connection = null;
+		try {
+			connection = connectionPool.grapConnection();
+			statement = connection.prepareStatement(UPDATE_ELEMENT);
+			statement.setString(1, entity.getName());
+			statement.setString(2, entity.getDescription());
+			statement.setInt(3, entity.getResort().getId());
+			statement.setInt(4, entity.getStars());
+			statement.setInt(5, entity.getId());
+			statement.executeUpdate();
+		} catch (ConnectionPoolException | SQLException e) {
+			throw new DaoException(e);
+		} finally {
+			closeStatement(statement);
+			connectionPool.releaseConnection(connection);
+		}
 	}
 
 	private ResortHotel makeResortHotel(ResultSet resultSet) throws DaoException {

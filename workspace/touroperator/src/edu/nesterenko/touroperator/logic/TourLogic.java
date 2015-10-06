@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import edu.nesterenko.touroperator.dao.DaoException;
+import edu.nesterenko.touroperator.dao.RestTypeDao;
 import edu.nesterenko.touroperator.dao.TourDao;
 import edu.nesterenko.touroperator.entity.ResortHotel;
 import edu.nesterenko.touroperator.entity.RestType;
@@ -18,7 +19,7 @@ public class TourLogic {
 			String pathTime, String restType, String resortHotel) 
 			 throws LogicException {
 		try {
-			Validator.checkOnlyLatters(name);
+			Validator.checkEmpty(name);
 			Validator.checkEmpty(path);
 			double costDouble = Validator.checkDouble(cost);
 			double pathTimeDouble = Validator.checkDouble(pathTime);
@@ -44,6 +45,53 @@ public class TourLogic {
 		} catch (DaoException e) {
 			throw new LogicException(e);
 		}
+	}
+	
+	public static void delete(String id) throws LogicException {
+		RestTypeDao restTypeDao = new RestTypeDao();
+		try {
+			int idInt = Validator.checkInt(id);
+			restTypeDao.delete(idInt);
+		} catch (DaoException | ValidationException e) {
+			throw new LogicException(e);
+		}
+	}
+	
+	public static void editTour(String id, String name, String description, String cost,
+			String beginDate, String endDate, String food, String path, 
+			String pathTime, String restType, String resortHotel) 
+			 throws LogicException {
+		try {
+			int idInteger = Validator.checkInt(id);
+			Validator.checkEmpty(name);
+			Validator.checkEmpty(path);
+			double costDouble = Validator.checkDouble(cost);
+			double pathTimeDouble = Validator.checkDouble(pathTime);
+			Date beginDateObject = Validator.checkDate(beginDate);
+			Date endDateObject = Validator.checkDate(endDate);
+			int restTypeId = Validator.checkInt(restType);
+			int resortHotelId = Validator.checkInt(resortHotel);
+			Tour tour = new Tour(idInteger, name, description, costDouble, beginDateObject, 
+					endDateObject, 0, food, path, 
+					pathTimeDouble, new RestType(restTypeId, null, null),
+					new ResortHotel(resortHotelId, null, null, null, 0));
+			TourDao tourDao = new TourDao();
+			tourDao.update(tour);				
+		} catch (DaoException | ValidationException e) {
+			throw new LogicException(e);
+		}
+	}
+	
+	public static Tour findByKey(String id) throws LogicException {
+		Tour tour;
+		try {
+			int idInteger = Validator.checkInt(id);
+			TourDao tourDao = new TourDao();
+			tour = tourDao.findByKey(idInteger);
+		} catch (ValidationException | DaoException e) {
+			throw new LogicException(e);
+		}
+		return tour;
 	}
 
 }

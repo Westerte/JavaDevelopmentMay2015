@@ -1,0 +1,138 @@
+package edu.nesterenko.touroperator.dao;
+
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import edu.nesterenko.touroperator.connectionpool.ConnectionPool;
+import edu.nesterenko.touroperator.connectionpool.ConnectionPoolException;
+import edu.nesterenko.touroperator.connectionpool.ConnectionWrapper;
+import edu.nesterenko.touroperator.entity.Tour;
+
+public class TourDao implements AbstractDao<Integer, Tour> {
+	private final static String FIND_ALL = "SELECT * FROM `tour`";
+	private final static String ADD_NEW = "INSERT INTO `tour`"
+			+ "(`tour_name`, `tour_description`, `tour_begin_date`, "
+			+ "`tour_end_date`, `tour_food`, `tour_path`, "
+			+ "`tour_path_time`, `rest_type_id`, `resort_hotel_id`)"
+			+ " VALUES(?,?,?,?,?,?,?,?,?,?)";
+	private final static String SELECT_BY_ID = 
+			"SELECT * FROM `tour` WHERE `tour_id` = ?";
+
+	@Override
+	public List<Tour> findAll() throws DaoException {
+		List<Tour> tourList = new ArrayList<Tour>();
+		ConnectionPool connectionPool = ConnectionPool.getInstance();
+		Statement statement = null;
+		ConnectionWrapper connection = null;
+		try {
+			connection = connectionPool.grapConnection();
+			statement = connection.createStatement();
+			ResultSet resultSet = statement.executeQuery(FIND_ALL);
+			while(resultSet.next()) {
+				tourList.add(makeTour(resultSet));
+			}
+			
+		} catch (ConnectionPoolException | SQLException e) {
+			throw new DaoException(e);
+		} finally {
+			closeStatement(statement);
+			connectionPool.releaseConnection(connection);
+		}
+		return tourList;
+	}
+
+	@Override
+	public Tour findByKey(Integer key) throws DaoException {
+		Tour tour;
+		ConnectionPool connectionPool = ConnectionPool.getInstance();
+		PreparedStatement statement = null;
+		ConnectionWrapper connection = null;
+		try {
+			connection = connectionPool.grapConnection();
+			statement = connection.prepareStatement(SELECT_BY_ID);
+			statement.setInt(1, key);
+			ResultSet resultSet = statement.executeQuery();
+			if(resultSet.next()) {
+				tour = makeTour(resultSet);
+			} else {
+				throw new DaoException("No tour with such key");
+			}
+		} catch (ConnectionPoolException | SQLException e) {
+			throw new DaoException(e);
+		} finally {
+			closeStatement(statement);
+			connectionPool.releaseConnection(connection);
+		}
+		return tour;
+	}
+
+	@Override
+	public void add(Integer key, Tour entity) throws DaoException {
+		ConnectionPool connectionPool = ConnectionPool.getInstance();
+		PreparedStatement statement = null;
+		ConnectionWrapper connection = null;
+		try {
+			connection = connectionPool.grapConnection();
+			statement = connection.prepareStatement(ADD_NEW);
+			statement.setString(1, entity.getName());
+			statement.setString(2, entity.getDescription());
+			statement.setDate(3, new Date(entity.getBeginDate().getTime()));
+			statement.setDate(4, new Date(entity.getEndDate().getTime()));
+			statement.setInt(5, entity.getDays());
+			statement.setString(6, entity.getFood());
+			statement.setString(7, entity.getPath());
+			statement.setDouble(8, entity.getPathTime());
+			statement.setInt(9, entity.getRestType().getId());
+			statement.setInt(10, entity.getResortHotel().getId());
+			statement.executeUpdate();
+		} catch (ConnectionPoolException | SQLException e) {
+			throw new DaoException(e);
+		} finally {
+			closeStatement(statement);
+			connectionPool.releaseConnection(connection);
+		}
+	}
+
+	@Override
+	public void delete(Integer key) {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public void delete(Tour entity) {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public Tour update(Tour entity) {
+		throw new UnsupportedOperationException();
+	}
+	
+	private Tour makeTour(ResultSet resultSet) throws DaoException {
+		RestTypeDao restTypeDao = new RestTypeDao();
+		ResortHotelDao resortHotelDao = new ResortHotelDao();
+		try {
+			return new Tour(resultSet.getInt("tour_id"), 
+						resultSet.getString("tour_name"), 
+						resultSet.getString("tour_description"), 
+						resultSet.getDouble("tour_cost"),
+						resultSet.getDate("tour_begin_date"),
+						resultSet.getDate("tour_end_date"),
+						resultSet.getInt("tour_days"),
+						resultSet.getString("tour_food"),
+						resultSet.getString("tour_path"),
+						resultSet.getDouble("tour_path_time"),
+						restTypeDao.findByKey(resultSet.getInt("rest_type_id")),
+						resortHotelDao.findByKey(resultSet.getInt("resort_hotel_id")));
+		} catch (SQLException | DaoException e) {
+			throw new DaoException(e);
+		}
+	}
+
+}
+

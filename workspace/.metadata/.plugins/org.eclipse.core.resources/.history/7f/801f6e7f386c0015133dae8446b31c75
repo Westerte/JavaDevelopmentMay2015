@@ -1,0 +1,68 @@
+package edu.nesterenko.touroperator.logic;
+
+import java.util.List;
+
+import edu.nesterenko.touroperator.dao.ResortHotelDao;
+import edu.nesterenko.touroperator.dao.CountryDao;
+import edu.nesterenko.touroperator.dao.DaoException;
+import edu.nesterenko.touroperator.entity.ResortHotel;
+import edu.nesterenko.touroperator.entity.Resort;
+import edu.nesterenko.touroperator.validation.ValidationException;
+import edu.nesterenko.touroperator.validation.Validator;
+
+public class ResortHotelLogic {
+	
+	private ResortHotelLogic() {}
+	
+	public static void addResortHotel(String name, String description, 
+			String resortId, String stars) throws LogicException {
+		try {
+			Validator.checkOnlyLatters(name);
+			int resortIdInteger = Validator.checkInt(resortId);
+			int starsInteger = Validator.checkInt(stars);
+			ResortHotelDao resortHotelDao = new ResortHotelDao();	
+			ResortHotel resortHotel = new ResortHotel(0, name, description, 
+					new Resort(resortIdInteger, null, null, null), starsInteger);
+			
+				resortHotelDao.add(0, resortHotel);
+		} catch (DaoException | ValidationException e) {
+			throw new LogicException(e);
+		} 	
+	}
+	
+	public static List<ResortHotel> findAll() throws LogicException {
+		ResortHotelDao resortHotelDao = new ResortHotelDao();
+		try {
+			return resortHotelDao.findAll();
+		} catch (DaoException e) {
+			throw new LogicException(e);
+		}
+	}
+	
+	public static void delete(String id) throws LogicException {
+		ResortHotelDao resortHotelDao = new ResortHotelDao();
+		try {
+			int idInt = Validator.checkInt(id);
+			resortHotelDao.delete(idInt);
+		} catch (DaoException | ValidationException e) {
+			throw new LogicException(e);
+		}
+	}
+	
+	public static void editResortHotel(String id, String name, String description, 
+			String resortId, String stars) throws LogicException {
+		try {
+			int idInteger = Validator.checkInt(id);
+			Validator.checkOnlyLatters(name);
+			int resortIdInteger = Validator.checkInt(resortId);
+			int starsInteger = Validator.checkInt(stars);
+			ResortHotelDao resortHotelDao = new ResortHotelDao();	
+			ResortHotel resortHotel = new ResortHotel(idInteger, name, description, 
+					new Resort(resortIdInteger, null, null, null), starsInteger);
+			
+			resortHotelDao.update(0, resortHotel);
+		} catch (DaoException | ValidationException e) {
+			throw new LogicException(e);
+		} 	
+	}
+}
