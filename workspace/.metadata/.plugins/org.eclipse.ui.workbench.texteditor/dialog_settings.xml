@@ -6,30 +6,30 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="passport" key="selection"/>
+		<item value="tour" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="passport"/>
-			<item value="passort"/>
-			<item value="select"/>
-			<item value="?"/>
-			<item value="byKey"/>
-			<item value="by"/>
-			<item value="hiden"/>
-			<item value="form"/>
+			<item value="restType"/>
+			<item value="city"/>
+			<item value="City"/>
+			<item value="RestType"/>
+			<item value="double"/>
+			<item value="checkLogin"/>
+			<item value="setPath"/>
+			<item value="sePath"/>
 		</list>
 		<list key="replacehistory">
-			<item value="?,"/>
-			<item value="ValidationException"/>
-			<item value="AddCommand"/>
-			<item value="ViewAllCommand"/>
-			<item value="EditCommand"/>
-			<item value="DeleteCommand"/>
-			<item value="nationalityDao.findByKey(nationalityId)"/>
-			<item value="martialDao(martialId)"/>
+			<item value="tour"/>
+			<item value="Tour"/>
+			<item value="restType"/>
+			<item value="RestType"/>
+			<item value="Resort"/>
+			<item value="resort"/>
+			<item value="resortHotel"/>
+			<item value="ResortHotel"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

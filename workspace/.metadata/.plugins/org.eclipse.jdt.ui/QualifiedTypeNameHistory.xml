@@ -1,33 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.mysql.jdbc.PreparedStatement"/>
-<fullyQualifiedTypeName name="com.mysql.jdbc.Statement"/>
-<fullyQualifiedTypeName name="org.apache.naming.java.javaURLContextFactory"/>
-<fullyQualifiedTypeName name="edu.nesterenko.touroperator.command.EmptyCommand"/>
-<fullyQualifiedTypeName name="edu.nesterenko.touroperator.command.AdminPanelPageCommand"/>
-<fullyQualifiedTypeName name="edu.nesterenko.touroperator.command.Command"/>
-<fullyQualifiedTypeName name="java.sql.Statement"/>
-<fullyQualifiedTypeName name="edu.nesterenko.touroperator.resource.RegexManager"/>
-<fullyQualifiedTypeName name="edu.nesterenko.touroperator.logic.LogicException"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="edu.nesterenko.touroperator.logic.CountryLogic"/>
 <fullyQualifiedTypeName name="edu.nesterenko.touroperator.dao.DaoException"/>
 <fullyQualifiedTypeName name="edu.nesterenko.touroperator.command.CityListPageCommand"/>
 <fullyQualifiedTypeName name="edu.nesterenko.touroperator.entity.Country"/>
-<fullyQualifiedTypeName name="edu.nesterenko.touroperator.logic.CityLogic"/>
 <fullyQualifiedTypeName name="java.sql.DriverManager"/>
 <fullyQualifiedTypeName name="edu.nesterenko.touroperator.entity.Resort"/>
 <fullyQualifiedTypeName name="edu.nesterenko.touroperator.dao.CountryDao"/>
 <fullyQualifiedTypeName name="edu.nesterenko.touroperator.command.AddResortHotelCommand"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
-<fullyQualifiedTypeName name="edu.nesterenko.touroperator.entity.RestType"/>
 <fullyQualifiedTypeName name="edu.nesterenko.touroperator.entity.BusinessEntity"/>
-<fullyQualifiedTypeName name="edu.nesterenko.touroperator.validation.Validator"/>
 <fullyQualifiedTypeName name="edu.nesterenko.bank.entity.Entity"/>
 <fullyQualifiedTypeName name="edu.nesterenko.bank.connectionpool.ConnectionPool"/>
 <fullyQualifiedTypeName name="edu.nesterenko.bank.connectionpool.ConnectionWrapper"/>
 <fullyQualifiedTypeName name="java.lang.UnsupportedOperationException"/>
-<fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="edu.nesterenko.touroperator.dao.CityDao"/>
 <fullyQualifiedTypeName name="edu.nesterenko.touroperator.dao.MartialDao"/>
 <fullyQualifiedTypeName name="edu.nesterenko.touroperator.dao.NationalityDao"/>
@@ -42,7 +28,6 @@
 <fullyQualifiedTypeName name="edu.nesterenko.touroperator.dao.ClientDao"/>
 <fullyQualifiedTypeName name="java.lang.NumberFormatException"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
-<fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="java.text.DateFormat"/>
 <fullyQualifiedTypeName name="edu.nesterenko.bank.entity.Nationality"/>
 <fullyQualifiedTypeName name="edu.nesterenko.bank.entity.Disability"/>
@@ -57,7 +42,22 @@
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
 <fullyQualifiedTypeName name="edu.nesterenko.bank.logic.ClientLogic"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="edu.nesterenko.bank.entity.Client"/>
 <fullyQualifiedTypeName name="edu.nesterenko.bank.resource.ConfigurationManager"/>
+<fullyQualifiedTypeName name="edu.nesterenko.touroperator.dao.RestTypeDao"/>
+<fullyQualifiedTypeName name="edu.nesterenko.touroperator.dao.ResortHotelDao"/>
+<fullyQualifiedTypeName name="edu.nesterenko.touroperator.resource.ConfigurationManager"/>
+<fullyQualifiedTypeName name="edu.nesterenko.touroperator.validation.Validator"/>
+<fullyQualifiedTypeName name="edu.nesterenko.touroperator.logic.LogicException"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="edu.nesterenko.touroperator.logic.CountryLogic"/>
+<fullyQualifiedTypeName name="edu.nesterenko.touroperator.logic.CityLogic"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="edu.nesterenko.touroperator.entity.ResortHotel"/>
+<fullyQualifiedTypeName name="edu.nesterenko.touroperator.entity.RestType"/>
+<fullyQualifiedTypeName name="edu.nesterenko.touroperator.logic.ResortHotelLogic"/>
+<fullyQualifiedTypeName name="edu.nesterenko.touroperator.logic.RestTypeLogic"/>
+<fullyQualifiedTypeName name="edu.nesterenko.touroperator.command.TourListPageCommand"/>
+<fullyQualifiedTypeName name="edu.nesterenko.touroperator.command.AddTourCommand"/>
 </qualifiedTypeNameHistroy>
